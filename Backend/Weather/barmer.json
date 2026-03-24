@@ -1,0 +1,3322 @@
+{
+  "district": "Barmer",
+  "district_hi": "बाड़मेर",
+  "tehsils": [
+    {
+      "tehsil": "Barmer",
+      "tehsil_hi": "बाड़मेर",
+      "villages": [
+        {
+          "name": "Aaidanpura",
+          "name_hi": "ऐदानपुरा"
+        },
+        {
+          "name": "Aainath Ka Tala",
+          "name_hi": "आईनाथ का ताला"
+        },
+        {
+          "name": "Abdasar",
+          "name_hi": "अबदासर"
+        },
+        {
+          "name": "Abhaniyon Ka Sara",
+          "name_hi": "अभनियों का सड़ा"
+        },
+        {
+          "name": "Adarsh Basti Bishala",
+          "name_hi": "आदर्श बस्ती बिशाला"
+        },
+        {
+          "name": "Adarsh Basti Gudisar",
+          "name_hi": "आदर्श बस्ती गुडिसर"
+        },
+        {
+          "name": "Adarsh Basti Nand",
+          "name_hi": "आदर्श बस्ती नांद"
+        },
+        {
+          "name": "Adarsh Chawa",
+          "name_hi": "आदर्श चावा"
+        },
+        {
+          "name": "Adarsh Chooli",
+          "name_hi": "आदर्श चूली"
+        },
+        {
+          "name": "Adarsh Dhoondha",
+          "name_hi": "आदर्श धूँधड़ा"
+        },
+        {
+          "name": "Adarsh Mahabar",
+          "name_hi": "आदर्श महाबर"
+        },
+        {
+          "name": "Adarsh Undkha",
+          "name_hi": "आदर्श उंडखा"
+        },
+        {
+          "name": "Ajabnagar",
+          "name_hi": "अजबनगर"
+        },
+        {
+          "name": "Akal",
+          "name_hi": "आकल"
+        },
+        {
+          "name": "Alaniyon Ki Dhani",
+          "name_hi": "अलानियों की ढाणी"
+        },
+        {
+          "name": "Alika Tala",
+          "name_hi": "अलीका ताला"
+        },
+        {
+          "name": "Amarpura",
+          "name_hi": "अमरपुरा"
+        },
+        {
+          "name": "Andaniyon Ka Tala",
+          "name_hi": "अंदानियों का ताला"
+        },
+        {
+          "name": "Andeka Tala",
+          "name_hi": "अंदेका ताला"
+        },
+        {
+          "name": "Asara Ki Beri",
+          "name_hi": "आसरा की बेरी"
+        },
+        {
+          "name": "Asuon Ki Dhani",
+          "name_hi": "असुओं की ढाणी"
+        },
+        {
+          "name": "Ati",
+          "name_hi": "अती"
+        },
+        {
+          "name": "Bakaniyon Ka Was",
+          "name_hi": "बकानियों का वास"
+        },
+        {
+          "name": "Bakhse Ka Tala",
+          "name_hi": "बख्से का ताला"
+        },
+        {
+          "name": "Balau",
+          "name_hi": "बलाऊ"
+        },
+        {
+          "name": "Balera",
+          "name_hi": "बलेरा"
+        },
+        {
+          "name": "Bandra",
+          "name_hi": "बंद्रा"
+        },
+        {
+          "name": "Bankana",
+          "name_hi": "बांकरणा"
+        },
+        {
+          "name": "Bankasar",
+          "name_hi": "बांकासर"
+        },
+        {
+          "name": "Barmer (M)",
+          "name_hi": "बाड़मेर (नगर)"
+        },
+        {
+          "name": "Barmer Adrash Agoor",
+          "name_hi": "बाड़मेर आदर्श अगूर"
+        },
+        {
+          "name": "Barmer Agor",
+          "name_hi": "बाड़मेर अगोर"
+        },
+        {
+          "name": "Barmer City (Rural)",
+          "name_hi": "बाड़मेर सिटी (ग्रामीण)"
+        },
+        {
+          "name": "Barmer Gadan",
+          "name_hi": "बाड़मेर गदन"
+        },
+        {
+          "name": "Barmer Magra",
+          "name_hi": "बाड़मेर मागरा"
+        },
+        {
+          "name": "Beebara",
+          "name_hi": "बीबरा"
+        },
+        {
+          "name": "Berdho Ki Dhani",
+          "name_hi": "बेरधों की ढाणी"
+        },
+        {
+          "name": "Beriwala Gaon",
+          "name_hi": "बेरीवाला गांव"
+        },
+        {
+          "name": "Beriwala Tala",
+          "name_hi": "बेरीवाला ताला"
+        },
+        {
+          "name": "Bhadkha",
+          "name_hi": "भड़खा"
+        },
+        {
+          "name": "Bhadkha Purohitan",
+          "name_hi": "भड़खा पुरोहितान"
+        },
+        {
+          "name": "Bhadresh Gandhau",
+          "name_hi": "भद्रेश गंधाऊ"
+        },
+        {
+          "name": "Bhadresh Punasiya",
+          "name_hi": "भद्रेश पुनासिया"
+        },
+        {
+          "name": "Bhagasar",
+          "name_hi": "भागासर"
+        },
+        {
+          "name": "Bhanbhuo Ki Dhani",
+          "name_hi": "भंभुओं की ढाणी"
+        },
+        {
+          "name": "Bhation Ka Der",
+          "name_hi": "भाटियों का डेर"
+        },
+        {
+          "name": "Bhurtiya",
+          "name_hi": "भूरतिया"
+        },
+        {
+          "name": "Bidasar",
+          "name_hi": "बीडासर"
+        }
+      ]
+    },
+    {
+      "tehsil": "Baytoo",
+      "tehsil_hi": "बायतू",
+      "villages": [
+        {
+          "name": "Ahoniyon Baniyalon Ki Dhani",
+          "name_hi": "आहोनियों बनियालों की ढाणी"
+        },
+        {
+          "name": "Akdara",
+          "name_hi": "आकदरा"
+        },
+        {
+          "name": "Akhe Ka Dhara",
+          "name_hi": "आखे का धरा"
+        },
+        {
+          "name": "Aklabya Nagar",
+          "name_hi": "अक्लव्य नगर"
+        },
+        {
+          "name": "Amarji Ki Dhani",
+          "name_hi": "अमरजी की ढाणी"
+        },
+        {
+          "name": "Ambed Nagar",
+          "name_hi": "अंबेड नगर"
+        },
+        {
+          "name": "Anasar Borla",
+          "name_hi": "आनासर बोरला"
+        },
+        {
+          "name": "Andoniyon Ki Dhani",
+          "name_hi": "अंदोनियों की ढाणी"
+        },
+        {
+          "name": "Bagasar",
+          "name_hi": "बागासर"
+        },
+        {
+          "name": "Bagdawon Ki Dhani",
+          "name_hi": "बागदावों की ढाणी"
+        }
+      ]
+    },
+    {
+      "district": "Barmer",
+      "district_hi": "बाड़मेर",
+      "tehsils": [
+        {
+          "tehsil": "Barmer",
+          "tehsil_hi": "बाड़मेर",
+          "villages": [
+            {
+              "name": "Aaidanpura",
+              "name_hi": "ऐदानपुरा"
+            },
+            {
+              "name": "Aainath Ka Tala",
+              "name_hi": "आईनाथ का ताला"
+            },
+            {
+              "name": "Abdasar",
+              "name_hi": "अबदासर"
+            },
+            {
+              "name": "Abhaniyon Ka Sara",
+              "name_hi": "अभनियों का सड़ा"
+            },
+            {
+              "name": "Adarsh Basti Bishala",
+              "name_hi": "आदर्श बस्ती बिशाला"
+            },
+            {
+              "name": "Adarsh Basti Gudisar",
+              "name_hi": "आदर्श बस्ती गुडिसर"
+            },
+            {
+              "name": "Adarsh Basti Nand",
+              "name_hi": "आदर्श बस्ती नांद"
+            },
+            {
+              "name": "Adarsh Chawa",
+              "name_hi": "आदर्श चावा"
+            },
+            {
+              "name": "Adarsh Chooli",
+              "name_hi": "आदर्श चूली"
+            },
+            {
+              "name": "Adarsh Dhoondha",
+              "name_hi": "आदर्श धूँधड़ा"
+            },
+            {
+              "name": "Adarsh Mahabar",
+              "name_hi": "आदर्श महाबर"
+            },
+            {
+              "name": "Adarsh Undkha",
+              "name_hi": "आदर्श उंडखा"
+            },
+            {
+              "name": "Ajabnagar",
+              "name_hi": "अजबनगर"
+            },
+            {
+              "name": "Akal",
+              "name_hi": "आकल"
+            },
+            {
+              "name": "Alaniyon Ki Dhani",
+              "name_hi": "अलानियों की ढाणी"
+            },
+            {
+              "name": "Alika Tala",
+              "name_hi": "अलीका ताला"
+            },
+            {
+              "name": "Amarpura",
+              "name_hi": "अमरपुरा"
+            },
+            {
+              "name": "Andaniyon Ka Tala",
+              "name_hi": "अंदानियों का ताला"
+            },
+            {
+              "name": "Andeka Tala",
+              "name_hi": "अंदेका ताला"
+            },
+            {
+              "name": "Asara Ki Beri",
+              "name_hi": "आसरा की बेरी"
+            },
+            {
+              "name": "Asuon Ki Dhani",
+              "name_hi": "असुओं की ढाणी"
+            },
+            {
+              "name": "Ati",
+              "name_hi": "अती"
+            },
+            {
+              "name": "Bakaniyon Ka Was",
+              "name_hi": "बकानियों का वास"
+            },
+            {
+              "name": "Bakhse Ka Tala",
+              "name_hi": "बख्से का ताला"
+            },
+            {
+              "name": "Balau",
+              "name_hi": "बलाऊ"
+            },
+            {
+              "name": "Balera",
+              "name_hi": "बलेरा"
+            },
+            {
+              "name": "Bandra",
+              "name_hi": "बंद्रा"
+            },
+            {
+              "name": "Bankana",
+              "name_hi": "बांकरणा"
+            },
+            {
+              "name": "Bankasar",
+              "name_hi": "बांकासर"
+            },
+            {
+              "name": "Barmer (M)",
+              "name_hi": "बाड़मेर (नगर)"
+            },
+            {
+              "name": "Barmer Adrash Agoor",
+              "name_hi": "बाड़मेर आदर्श अगूर"
+            },
+            {
+              "name": "Barmer Agor",
+              "name_hi": "बाड़मेर अगोर"
+            },
+            {
+              "name": "Barmer City (Rural)",
+              "name_hi": "बाड़मेर सिटी (ग्रामीण)"
+            },
+            {
+              "name": "Barmer Gadan",
+              "name_hi": "बाड़मेर गदन"
+            },
+            {
+              "name": "Barmer Magra",
+              "name_hi": "बाड़मेर मागरा"
+            },
+            {
+              "name": "Beebara",
+              "name_hi": "बीबरा"
+            },
+            {
+              "name": "Berdho Ki Dhani",
+              "name_hi": "बेरधों की ढाणी"
+            },
+            {
+              "name": "Beriwala Gaon",
+              "name_hi": "बेरीवाला गांव"
+            },
+            {
+              "name": "Beriwala Tala",
+              "name_hi": "बेरीवाला ताला"
+            },
+            {
+              "name": "Bhadkha",
+              "name_hi": "भड़खा"
+            },
+            {
+              "name": "Bhadkha Purohitan",
+              "name_hi": "भड़खा पुरोहितान"
+            },
+            {
+              "name": "Bhadresh Gandhau",
+              "name_hi": "भद्रेश गंधाऊ"
+            },
+            {
+              "name": "Bhadresh Punasiya",
+              "name_hi": "भद्रेश पुनासिया"
+            },
+            {
+              "name": "Bhagasar",
+              "name_hi": "भागासर"
+            },
+            {
+              "name": "Bhanbhuo Ki Dhani",
+              "name_hi": "भंभुओं की ढाणी"
+            },
+            {
+              "name": "Bhation Ka Der",
+              "name_hi": "भाटियों का डेर"
+            },
+            {
+              "name": "Bhurtiya",
+              "name_hi": "भूरतिया"
+            },
+            {
+              "name": "Bidasar",
+              "name_hi": "बीडासर"
+            }
+          ]
+        },
+        {
+          "tehsil": "Baytoo",
+          "tehsil_hi": "बायतू",
+          "villages": [
+            {
+              "name": "Ahoniyon Baniyalon Ki Dhani",
+              "name_hi": "आहोनियों बनियालों की ढाणी"
+            },
+            {
+              "name": "Akdara",
+              "name_hi": "आकदरा"
+            },
+            {
+              "name": "Akhe Ka Dhara",
+              "name_hi": "आखे का धरा"
+            },
+            {
+              "name": "Aklabya Nagar",
+              "name_hi": "अक्लव्य नगर"
+            },
+            {
+              "name": "Amarji Ki Dhani",
+              "name_hi": "अमरजी की ढाणी"
+            },
+            {
+              "name": "Ambed Nagar",
+              "name_hi": "अंबेड नगर"
+            },
+            {
+              "name": "Anasar Borla",
+              "name_hi": "आनासर बोरला"
+            },
+            {
+              "name": "Andoniyon Ki Dhani",
+              "name_hi": "अंदोनियों की ढाणी"
+            },
+            {
+              "name": "Bagasar",
+              "name_hi": "बागासर"
+            },
+            {
+              "name": "Bagdawon Ki Dhani",
+              "name_hi": "बागदावों की ढाणी"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tehsil": "Pachpadra",
+      "tehsil_hi": "पचपदरा",
+      "villages": [
+        {
+          "name": "Aadampura",
+          "name_hi": "आदामपुरा"
+        },
+        {
+          "name": "Aarmbha Goliya",
+          "name_hi": "आरंभा गोलिया"
+        },
+        {
+          "name": "Aieenath Nagar",
+          "name_hi": "आईनाथ नगर"
+        },
+        {
+          "name": "Akarli Bakshiram",
+          "name_hi": "अकरली बक्षीराम"
+        },
+        {
+          "name": "Akarli Dhansingh",
+          "name_hi": "अकरली धनसिंह"
+        },
+        {
+          "name": "Akarli Sutharon Ki Dhani",
+          "name_hi": "अकरली सुथारों की ढाणी"
+        },
+        {
+          "name": "Alechari",
+          "name_hi": "अलेचरी"
+        },
+        {
+          "name": "Araba Chauhanan",
+          "name_hi": "अरबा चौहानन"
+        },
+        {
+          "name": "Arawa Dudawatan",
+          "name_hi": "अरावा दुदावतन"
+        },
+        {
+          "name": "Arawa Nagnecha",
+          "name_hi": "अरावा नागनेचा"
+        },
+        {
+          "name": "Arawa Purohitan",
+          "name_hi": "अरावा पुरोहितान"
+        },
+        {
+          "name": "Arawa Unda",
+          "name_hi": "अरावा उंडा"
+        },
+        {
+          "name": "Asara",
+          "name_hi": "आसरा"
+        },
+        {
+          "name": "Asotara",
+          "name_hi": "आसोतरा"
+        },
+        {
+          "name": "Badoo Ka Bara",
+          "name_hi": "बड़ू का बाड़ा"
+        },
+        {
+          "name": "Bagawas",
+          "name_hi": "बगावास"
+        },
+        {
+          "name": "Bagiya Charnan",
+          "name_hi": "बागिया चारणन"
+        },
+        {
+          "name": "Baglop",
+          "name_hi": "बागलोप"
+        },
+        {
+          "name": "Bagnawas",
+          "name_hi": "बगनावास"
+        },
+        {
+          "name": "Bagundi",
+          "name_hi": "बागुंडी"
+        },
+        {
+          "name": "Bajawas",
+          "name_hi": "बाजावास"
+        },
+        {
+          "name": "Balaniya",
+          "name_hi": "बलानिया"
+        },
+        {
+          "name": "Balau Jati",
+          "name_hi": "बलाऊ जाटी"
+        },
+        {
+          "name": "Balau Sansan",
+          "name_hi": "बलाऊ सानसण"
+        },
+        {
+          "name": "Balotra (M)",
+          "name_hi": "बालोतरा (नगर)"
+        },
+        {
+          "name": "Bamani",
+          "name_hi": "बामणी"
+        },
+        {
+          "name": "Bamseen",
+          "name_hi": "बामसीन"
+        },
+        {
+          "name": "Bandaron Ki Dhani",
+          "name_hi": "बंदरों की ढाणी"
+        },
+        {
+          "name": "Baniyawas",
+          "name_hi": "बनियावास"
+        },
+        {
+          "name": "Bankiyawas Kalan",
+          "name_hi": "बांकीयावास कलां"
+        },
+        {
+          "name": "Bankiyawas Khurd",
+          "name_hi": "बांकीयावास खुर्द"
+        },
+        {
+          "name": "Barla",
+          "name_hi": "बरला"
+        },
+        {
+          "name": "Barnama Charnan",
+          "name_hi": "बरनामा चारणन"
+        },
+        {
+          "name": "Barnama Jageer",
+          "name_hi": "बरनामा जागीर"
+        },
+        {
+          "name": "Bedarlai",
+          "name_hi": "बेदरलई"
+        },
+        {
+          "name": "Bhagatlai",
+          "name_hi": "भागतलाई"
+        },
+        {
+          "name": "Bhagoniyon Ki Dhani",
+          "name_hi": "भागोनियों की ढाणी"
+        },
+        {
+          "name": "Bhagvanpura",
+          "name_hi": "भगवानपुरा"
+        },
+        {
+          "name": "Bhakharsar",
+          "name_hi": "भाखरसार"
+        },
+        {
+          "name": "Bhakhri Khera",
+          "name_hi": "भाखरी खेड़ा"
+        },
+        {
+          "name": "Bhandiyawas",
+          "name_hi": "भांडियावास"
+        },
+        {
+          "name": "Bheemarlai",
+          "name_hi": "भीमारलाई"
+        },
+        {
+          "name": "Bheemarlai Station",
+          "name_hi": "भीमारलाई स्टेशन"
+        },
+        {
+          "name": "Bhinda Kua",
+          "name_hi": "भिंडा कुआं"
+        },
+        {
+          "name": "Bhom Sagar",
+          "name_hi": "भोम सागर"
+        },
+        {
+          "name": "Bithooja",
+          "name_hi": "बिठूजा"
+        },
+        {
+          "name": "Borwas",
+          "name_hi": "बोरवास"
+        },
+        {
+          "name": "Botala Purohitan",
+          "name_hi": "बोटाला पुरोहितान"
+        },
+        {
+          "name": "Budiwara",
+          "name_hi": "बुड़ीवाड़ा"
+        },
+        {
+          "name": "Chak Charnan",
+          "name_hi": "चक चारणन"
+        },
+        {
+          "name": "Champa Beri",
+          "name_hi": "चंपा बेरी"
+        },
+        {
+          "name": "Chandesara",
+          "name_hi": "चांदेसरा"
+        },
+        {
+          "name": "Chandiyon Ki Dhani",
+          "name_hi": "चंदियों की ढाणी"
+        },
+        {
+          "name": "Chandrai",
+          "name_hi": "चन्द्राई"
+        },
+        {
+          "name": "Chaukriya Ki Dhani",
+          "name_hi": "चौकरिया की ढाणी"
+        },
+        {
+          "name": "Chhachharlai Kalan",
+          "name_hi": "छछरलई कलां"
+        },
+        {
+          "name": "Chhachharlai Khurd",
+          "name_hi": "छछरलई खुर्द"
+        },
+        {
+          "name": "Chilanadi",
+          "name_hi": "चीलानाड़ी"
+        },
+        {
+          "name": "Chirdani",
+          "name_hi": "चीर्दनी"
+        },
+        {
+          "name": "Chiriyara",
+          "name_hi": "चिरियाड़ा"
+        },
+        {
+          "name": "Chogapura",
+          "name_hi": "चोगापुरा"
+        },
+        {
+          "name": "Daukiyon Ka Tala",
+          "name_hi": "दौकियों का ताला"
+        },
+        {
+          "name": "Daukiyon Ki Dhani",
+          "name_hi": "दौकियों की ढाणी"
+        },
+        {
+          "name": "Demon Ki Dhani",
+          "name_hi": "देमोन की ढाणी"
+        },
+        {
+          "name": "Deoriya",
+          "name_hi": "देवरिया"
+        },
+        {
+          "name": "Dharmsar",
+          "name_hi": "धर्मसर"
+        },
+        {
+          "name": "Dhatarwalon Ki Dhani",
+          "name_hi": "धतरवालों की ढाणी"
+        },
+        {
+          "name": "Dhoondhali",
+          "name_hi": "धूंधली"
+        },
+        {
+          "name": "Doli Kalan",
+          "name_hi": "डोली कलां"
+        },
+        {
+          "name": "Doli Khurd",
+          "name_hi": "डोली खुर्द"
+        },
+        {
+          "name": "Doli Rajguro",
+          "name_hi": "डोली राजगुरो"
+        },
+        {
+          "name": "Doodhwa",
+          "name_hi": "दूधवा"
+        },
+        {
+          "name": "Doodhwa Der",
+          "name_hi": "दूधवा डेर"
+        },
+        {
+          "name": "Doodhwa Malinath",
+          "name_hi": "दूधवा मलीनाथ"
+        },
+        {
+          "name": "Durgapura",
+          "name_hi": "दुर्गापुरा"
+        },
+        {
+          "name": "Ekarli",
+          "name_hi": "इकरली"
+        },
+        {
+          "name": "Ganganiyon Ki Dhani",
+          "name_hi": "गंगानियों की ढाणी"
+        },
+        {
+          "name": "Gangapura",
+          "name_hi": "गंगापुरा"
+        },
+        {
+          "name": "Gangawas",
+          "name_hi": "गंगावास"
+        },
+        {
+          "name": "Gharoi Charnan",
+          "name_hi": "घरौई चारणन"
+        },
+        {
+          "name": "Gharoi Nadi",
+          "name_hi": "घरौई नाड़ी"
+        },
+        {
+          "name": "Gharoi Soda",
+          "name_hi": "घरौई सोडा"
+        },
+        {
+          "name": "Gharsika Bara",
+          "name_hi": "घरसीका बाड़ा"
+        },
+        {
+          "name": "Godaron Ki Dhani",
+          "name_hi": "गोड़रों की ढाणी"
+        },
+        {
+          "name": "Godawas",
+          "name_hi": "गोदावास"
+        },
+        {
+          "name": "Godawas Kalan",
+          "name_hi": "गोदावास कलां"
+        },
+        {
+          "name": "Gol Soda",
+          "name_hi": "गोल सोडा"
+        },
+        {
+          "name": "Gol Station",
+          "name_hi": "गोल स्टेशन"
+        },
+        {
+          "name": "Goliya Vida",
+          "name_hi": "गोलीया विदा"
+        },
+        {
+          "name": "Googri",
+          "name_hi": "गूगड़ी"
+        },
+        {
+          "name": "Gopri",
+          "name_hi": "गोप्री"
+        },
+        {
+          "name": "Gudnagar",
+          "name_hi": "गुड़नगर"
+        },
+        {
+          "name": "Gundawari",
+          "name_hi": "गुंडावड़ी"
+        },
+        {
+          "name": "Gwalnada",
+          "name_hi": "ग्वालनाड़ा"
+        },
+        {
+          "name": "Haliyan",
+          "name_hi": "हेलियां"
+        },
+        {
+          "name": "Hanumanpura",
+          "name_hi": "हनुमानपुरा"
+        },
+        {
+          "name": "Hapanada",
+          "name_hi": "हापनाड़ा"
+        },
+        {
+          "name": "Hari Nagar",
+          "name_hi": "हरि नगर"
+        },
+        {
+          "name": "Harmat Nagar",
+          "name_hi": "हरमत नगर"
+        },
+        {
+          "name": "Hempura",
+          "name_hi": "हेमपुरा"
+        },
+        {
+          "name": "Himtani Bhabhuon Ki Dhani",
+          "name_hi": "हिमताणी भाभुओं की ढाणी"
+        },
+        {
+          "name": "Hotloo",
+          "name_hi": "होटलू"
+        },
+        {
+          "name": "Ikadani",
+          "name_hi": "इकड़ानी"
+        },
+        {
+          "name": "Indira Nagar",
+          "name_hi": "इंदिरा नगर"
+        },
+        {
+          "name": "Jagsa",
+          "name_hi": "जगसा"
+        },
+        {
+          "name": "Jamatnagar",
+          "name_hi": "जमातनगर"
+        },
+        {
+          "name": "Janiyana",
+          "name_hi": "जानीयाना"
+        },
+        {
+          "name": "Jasol",
+          "name_hi": "जसोल"
+        },
+        {
+          "name": "Jasti",
+          "name_hi": "जस्ती"
+        },
+        {
+          "name": "Jawahar Pura",
+          "name_hi": "जवाहरपुरा"
+        },
+        {
+          "name": "Jerla",
+          "name_hi": "जेरला"
+        }
+      ]
+    },
+    {
+      "tehsil": "Ramsar",
+      "tehsil_hi": "रामसर",
+      "villages": [
+        {
+          "name": "Aazadnagar",
+          "name_hi": "आज़ादनगर"
+        },
+        {
+          "name": "Abhe Ka Par",
+          "name_hi": "अभे का पार"
+        },
+        {
+          "name": "Ajabpura",
+          "name_hi": "अजबपुरा"
+        },
+        {
+          "name": "Ajbani",
+          "name_hi": "अजबानी"
+        },
+        {
+          "name": "Ajbe Ka Par",
+          "name_hi": "अजबे का पार"
+        },
+        {
+          "name": "Alarakh Ka Par",
+          "name_hi": "अलारख का पार"
+        },
+        {
+          "name": "Alarakhpura",
+          "name_hi": "अलारखपुरा"
+        },
+        {
+          "name": "Amol Khoniyon Ki Dhani",
+          "name_hi": "अमोल खोनीयों की ढाणी"
+        },
+        {
+          "name": "Anta",
+          "name_hi": "अंता"
+        },
+        {
+          "name": "Babuguleriya",
+          "name_hi": "बाबूगुलेरिया"
+        },
+        {
+          "name": "Baldeo Nagar",
+          "name_hi": "बालदेव नगर"
+        },
+        {
+          "name": "Baloo Ka Par",
+          "name_hi": "बालू का पार"
+        },
+        {
+          "name": "Bamaniyawas",
+          "name_hi": "बामणियावास"
+        },
+        {
+          "name": "Bane Ki Basti",
+          "name_hi": "बने की बस्ती"
+        },
+        {
+          "name": "Bangli",
+          "name_hi": "बांगली"
+        },
+        {
+          "name": "Bano Ka Tala",
+          "name_hi": "बानो का तला"
+        },
+        {
+          "name": "Banwa",
+          "name_hi": "बनवा"
+        },
+        {
+          "name": "Basra",
+          "name_hi": "बसरा"
+        },
+        {
+          "name": "Bhachbhar",
+          "name_hi": "भाचभर"
+        },
+        {
+          "name": "Bhadaroo",
+          "name_hi": "भदरू"
+        },
+        {
+          "name": "Bhanpura",
+          "name_hi": "भानपुरा"
+        },
+        {
+          "name": "Bhanwarlai",
+          "name_hi": "भंवरलाई"
+        },
+        {
+          "name": "Bheelon Ka Par",
+          "name_hi": "भीलوں का पार"
+        },
+        {
+          "name": "Bheelon Ki Dhani",
+          "name_hi": "भीलों की ढाणी"
+        },
+        {
+          "name": "Bheende Ka Par",
+          "name_hi": "भींडे का पार"
+        },
+        {
+          "name": "Bhomani Ki Dhani",
+          "name_hi": "भोमाणी की ढाणी"
+        },
+        {
+          "name": "Bindu Sinhani",
+          "name_hi": "बिंदू सिन्हाणी"
+        },
+        {
+          "name": "Boothiya",
+          "name_hi": "बूथीया"
+        },
+        {
+          "name": "Bukar",
+          "name_hi": "बुकड़"
+        },
+        {
+          "name": "Bukri",
+          "name_hi": "बूकरी"
+        },
+        {
+          "name": "Chadar Bankalsar",
+          "name_hi": "चादर बांकलसर"
+        },
+        {
+          "name": "Chadar Dakhnad",
+          "name_hi": "चादर दक्खनाड़"
+        },
+        {
+          "name": "Chadar Mandroop",
+          "name_hi": "चादर मंद्रूप"
+        },
+        {
+          "name": "Chainpura",
+          "name_hi": "चैनपुरा"
+        },
+        {
+          "name": "Chandaniyon Ka Par",
+          "name_hi": "चंदानियों का पार"
+        },
+        {
+          "name": "Chari",
+          "name_hi": "चारी"
+        },
+        {
+          "name": "Charwa @ Jharwa",
+          "name_hi": "चारवा @ झारवा"
+        },
+        {
+          "name": "Charwa Takhata Bad",
+          "name_hi": "चारवा तख़ताबाद"
+        },
+        {
+          "name": "Chauthiya",
+          "name_hi": "चौथिया"
+        },
+        {
+          "name": "Chawa",
+          "name_hi": "चावा"
+        },
+        {
+          "name": "Chimanpura",
+          "name_hi": "चिमनपुरा"
+        },
+        {
+          "name": "Dabe Ka Par",
+          "name_hi": "डाबे का पार"
+        },
+        {
+          "name": "Davkiyon Ki Dhani",
+          "name_hi": "दवकियों की ढाणी"
+        },
+        {
+          "name": "Derasar",
+          "name_hi": "देरासर"
+        },
+        {
+          "name": "Devraj Nagar",
+          "name_hi": "देवराज नगर"
+        },
+        {
+          "name": "Dewaniyon Ka Par",
+          "name_hi": "देवाणियों का पार"
+        },
+        {
+          "name": "Dhanora",
+          "name_hi": "धनौरा"
+        },
+        {
+          "name": "Farsani Jakhron Ki Dhani",
+          "name_hi": "फरसानि जाखरों की ढाणी"
+        },
+        {
+          "name": "Gagariya Station",
+          "name_hi": "गगारिया स्टेशन"
+        },
+        {
+          "name": "Gagriya",
+          "name_hi": "गगरिया"
+        },
+        {
+          "name": "Gandhi Nagar",
+          "name_hi": "गांधी नगर"
+        },
+        {
+          "name": "Gangala",
+          "name_hi": "गंगाला"
+        },
+        {
+          "name": "Ganganiyon Ka Par",
+          "name_hi": "गंगानियों का पार"
+        },
+        {
+          "name": "Ganganiyon Ki Dhani",
+          "name_hi": "गंगानियों की ढाणी"
+        },
+        {
+          "name": "Gardiya",
+          "name_hi": "गढ़िया"
+        },
+        {
+          "name": "Genani Kadwasaron Ki Dhani",
+          "name_hi": "जेनानी कडवासरों की ढाणी"
+        },
+        {
+          "name": "Gidaliyon Ka Tala",
+          "name_hi": "गिदालियों का तला"
+        },
+        {
+          "name": "Guruon Ka Goliya",
+          "name_hi": "गुरुओं का गोलिया"
+        },
+        {
+          "name": "Hafatnagar",
+          "name_hi": "हाफ़त नगर"
+        },
+        {
+          "name": "Hafidaniyon Ka Tala",
+          "name_hi": "हाफीदानियों का तला"
+        },
+        {
+          "name": "Haji Khan Ka Tala",
+          "name_hi": "हाजी खान का तला"
+        },
+        {
+          "name": "Haji Pirana Ki Dhani",
+          "name_hi": "हाजी पीराना की ढाणी"
+        },
+        {
+          "name": "Hale Potaron Ki Basti",
+          "name_hi": "हाले पोटरों की बस्ती"
+        },
+        {
+          "name": "Hathma",
+          "name_hi": "हथमा"
+        },
+        {
+          "name": "Hemawas",
+          "name_hi": "हेमावास"
+        },
+        {
+          "name": "Hindiya",
+          "name_hi": "हिंदिया"
+        },
+        {
+          "name": "Hothoyoniyon Ki Basti",
+          "name_hi": "होठोयोनियों की बस्ती"
+        },
+        {
+          "name": "Husen Ki Dhani",
+          "name_hi": "हुसैन की ढाणी"
+        },
+        {
+          "name": "Iloliya",
+          "name_hi": "इलोलिया"
+        },
+        {
+          "name": "Indrawas",
+          "name_hi": "इंद्रावास"
+        },
+        {
+          "name": "Indrohi",
+          "name_hi": "इंद्रोही"
+        },
+        {
+          "name": "Jadam Ka Par",
+          "name_hi": "जादम का पार"
+        },
+        {
+          "name": "Jagmal Ka Tala",
+          "name_hi": "जगमल का तला"
+        },
+        {
+          "name": "Jaitaniyon Ka Par",
+          "name_hi": "जैतानियों का पार"
+        },
+        {
+          "name": "Jakhron Ka Tala",
+          "name_hi": "जाखरों का तला"
+        },
+        {
+          "name": "Jaleela",
+          "name_hi": "जलीला"
+        },
+        {
+          "name": "Janeki Beri",
+          "name_hi": "जनेकी बेरी"
+        },
+        {
+          "name": "Jaton Ki Basti",
+          "name_hi": "जाटों की बस्ती"
+        },
+        {
+          "name": "Jaydoo",
+          "name_hi": "जैडू"
+        },
+        {
+          "name": "Jheloon",
+          "name_hi": "झेलून"
+        },
+        {
+          "name": "Joona Labhoo Ka Tala",
+          "name_hi": "जूना लभू का तला"
+        },
+        {
+          "name": "Jummafakir Ki Basti",
+          "name_hi": "जुम्माफकीर की बस्ती"
+        },
+        {
+          "name": "Kachhboniyo Ki Basti",
+          "name_hi": "कछबोनियों की बस्ती"
+        },
+        {
+          "name": "Kanpura",
+          "name_hi": "कणपुरा"
+        },
+        {
+          "name": "Kantal Ka Par",
+          "name_hi": "कांतल का पार"
+        },
+        {
+          "name": "Kantaliya Ka Par",
+          "name_hi": "कंतलिया का पार"
+        },
+        {
+          "name": "Kelan Ka Par",
+          "name_hi": "केलन का पार"
+        },
+        {
+          "name": "Khadeen",
+          "name_hi": "खडीं"
+        },
+        {
+          "name": "Khara Rathoran",
+          "name_hi": "खारा राठोरन"
+        },
+        {
+          "name": "Kharchi",
+          "name_hi": "खर्ची"
+        },
+        {
+          "name": "Khariya Kalan",
+          "name_hi": "खारिया कलां"
+        },
+        {
+          "name": "Khariya Kita",
+          "name_hi": "खारिया कीता"
+        },
+        {
+          "name": "Khariya Rathoran",
+          "name_hi": "खारिया राठोरन"
+        },
+        {
+          "name": "Khejdiyali Nari",
+          "name_hi": "खेड़ीयाली नाड़ी"
+        },
+        {
+          "name": "Khiyala",
+          "name_hi": "खियाला"
+        },
+        {
+          "name": "Kindeeya Chaniyon Ki Dhani",
+          "name_hi": "किंदेया चानियों की ढाणी"
+        },
+        {
+          "name": "Kotriya Tala",
+          "name_hi": "कोटरिया तला"
+        },
+        {
+          "name": "Kumharon Ka Teeba",
+          "name_hi": "कुम्हारों का टीबा"
+        },
+        {
+          "name": "Labrau",
+          "name_hi": "लबराऊ"
+        },
+        {
+          "name": "Ladhe Ka Par",
+          "name_hi": "लाढे का पार"
+        },
+        {
+          "name": "Lakriyali",
+          "name_hi": "लकड़ियाली"
+        },
+        {
+          "name": "Lasuwa",
+          "name_hi": "लसूवा"
+        },
+        {
+          "name": "Leel Nagar",
+          "name_hi": "लील नगर"
+        },
+        {
+          "name": "Maghasarder",
+          "name_hi": "मघासरडर"
+        },
+        {
+          "name": "Manakki Dhani",
+          "name_hi": "मनक्की ढाणी"
+        },
+        {
+          "name": "Mananiyon Ki Basti",
+          "name_hi": "मनानियों की बस्ती"
+        },
+        {
+          "name": "Mandroop Ka Par",
+          "name_hi": "मंद्रूप का पार"
+        },
+        {
+          "name": "Mandroop Ka Tala",
+          "name_hi": "मंद्रूप का तला"
+        },
+        {
+          "name": "Mathinani Ki Basti",
+          "name_hi": "मथीनानी की बस्ती"
+        },
+        {
+          "name": "Mekaran Wala",
+          "name_hi": "मेकड़न वाला"
+        },
+        {
+          "name": "Mithariya Tala",
+          "name_hi": "मिठारिया तला"
+        },
+        {
+          "name": "Mithuvaniyo Ki Basti",
+          "name_hi": "मिठुवानियों की बस्ती"
+        },
+        {
+          "name": "Mohammad Ka Par",
+          "name_hi": "मुहम्मद का पार"
+        },
+        {
+          "name": "Nageka Par",
+          "name_hi": "नगे का पार"
+        },
+        {
+          "name": "Naisiyae",
+          "name_hi": "नईसियाए"
+        },
+        {
+          "name": "Neelsar",
+          "name_hi": "नीलसर"
+        },
+        {
+          "name": "Nihalaniyon Ka Tobha",
+          "name_hi": "निहलानियों का टोभा"
+        },
+        {
+          "name": "Nohadiyo Ki Basti",
+          "name_hi": "नोहड़ियों की बस्ती"
+        },
+        {
+          "name": "Nopatiya",
+          "name_hi": "नोपाटिया"
+        },
+        {
+          "name": "Paboodan Singh Ki Dhani",
+          "name_hi": "पाबूदन सिंह की ढाणी"
+        },
+        {
+          "name": "Paboosariya",
+          "name_hi": "पाबूसरैया"
+        },
+        {
+          "name": "Padhariya",
+          "name_hi": "पधारिया"
+        },
+        {
+          "name": "Pandhikapar",
+          "name_hi": "पंढ़ी का पार"
+        },
+        {
+          "name": "Peerawas",
+          "name_hi": "पीरावास"
+        },
+        {
+          "name": "Peere Ka Par",
+          "name_hi": "पीरे का पार"
+        },
+        {
+          "name": "Pemaneyon Ka Tala",
+          "name_hi": "पेमानेयों का तला"
+        },
+        {
+          "name": "Pooniyon Ka Tala",
+          "name_hi": "पूणियों का तला"
+        },
+        {
+          "name": "Purpuriya",
+          "name_hi": "पुरपुरिया"
+        },
+        {
+          "name": "Rajiv Nagar",
+          "name_hi": "राजीव नगर"
+        },
+        {
+          "name": "Ramaniyon Ka Tala",
+          "name_hi": "रमानीयों का तला"
+        },
+        {
+          "name": "Ramdeo Ka Mandir",
+          "name_hi": "रामदेव का मंदिर"
+        },
+        {
+          "name": "Ramdeoriya Tala",
+          "name_hi": "रामदेवरिया तला"
+        },
+        {
+          "name": "Ramdiyon Ki Basti",
+          "name_hi": "रामदियों की बस्ती"
+        },
+        {
+          "name": "Ramsar",
+          "name_hi": "रामसर"
+        },
+        {
+          "name": "Ramsaragor",
+          "name_hi": "रामसरागोर"
+        },
+        {
+          "name": "Rathoron Ka Tala",
+          "name_hi": "राठोरों का तला"
+        },
+        {
+          "name": "Rawat Ka Tala",
+          "name_hi": "रावत का तला"
+        },
+        {
+          "name": "Rodi Nadi",
+          "name_hi": "रोड़ी नाड़ी"
+        },
+        {
+          "name": "Sabu Ka Par",
+          "name_hi": "साबू का पार"
+        },
+        {
+          "name": "Sajjan Ka Par",
+          "name_hi": "सज्जन का पार"
+        },
+        {
+          "name": "Salariya Kanlariya",
+          "name_hi": "सलारिया कंलारिया"
+        },
+        {
+          "name": "Samoton Ka Par",
+          "name_hi": "समोतों का पार"
+        },
+        {
+          "name": "Sangrani",
+          "name_hi": "सांगरणी"
+        },
+        {
+          "name": "Sankalaniyo Ki Basti",
+          "name_hi": "संकलानियों की बस्ती"
+        },
+        {
+          "name": "Selau",
+          "name_hi": "सेलाऊ"
+        },
+        {
+          "name": "Setrau",
+          "name_hi": "सेत्राउ"
+        },
+        {
+          "name": "Shaheed Pahar Singh Nagar",
+          "name_hi": "शहीद पहाड़ सिंह नगर"
+        },
+        {
+          "name": "Shere Ka Tala",
+          "name_hi": "शेर के तला"
+        },
+        {
+          "name": "Sigar Palo Ki Dhani",
+          "name_hi": "सिगर पालों की ढाणी"
+        },
+        {
+          "name": "Sihani",
+          "name_hi": "सिहानी"
+        },
+        {
+          "name": "Siyai",
+          "name_hi": "सियाई"
+        },
+        {
+          "name": "Sobhdar Ki Basti",
+          "name_hi": "सोभदार की बस्ती"
+        },
+        {
+          "name": "Sodha Basti",
+          "name_hi": "सोढ़ा बस्ती"
+        },
+        {
+          "name": "Sodhai",
+          "name_hi": "सोढ़ाई"
+        },
+        {
+          "name": "Sodhon Ki Basti",
+          "name_hi": "सोधों की बस्ती"
+        },
+        {
+          "name": "Subhash Nagar",
+          "name_hi": "सुभाष नगर"
+        },
+        {
+          "name": "Sujawal Ka Par",
+          "name_hi": "सुजावल का पार"
+        },
+        {
+          "name": "Surali",
+          "name_hi": "सुराली"
+        },
+        {
+          "name": "Suwara",
+          "name_hi": "सुवारा"
+        },
+        {
+          "name": "Talab Ka Par",
+          "name_hi": "तालाब का पार"
+        },
+        {
+          "name": "Tamliyar",
+          "name_hi": "तामलियार"
+        },
+        {
+          "name": "Ubhre Ka Par",
+          "name_hi": "उभरे का पार"
+        },
+        {
+          "name": "Veeraniyon Ki Dhani",
+          "name_hi": "वीरानियों की ढाणी"
+        },
+        {
+          "name": "Viradka Par",
+          "name_hi": "वीराड़का पार"
+        },
+        {
+          "name": "Virmiyar",
+          "name_hi": "वीरमियार"
+        },
+        {
+          "name": "Vishlon Ki Basti",
+          "name_hi": "विश्लों की बस्ती"
+        },
+        {
+          "name": "Vishnoiyon Ka Tala",
+          "name_hi": "विश्नोयों का तला"
+        },
+        {
+          "name": "Wagta Ki Beri",
+          "name_hi": "वागता की बेरी"
+        }
+      ]
+    },
+    {
+      "tehsil": "Chohtan",
+      "tehsil_hi": "चोहटन",
+      "villages": [
+        {
+          "name": "Aakal",
+          "name_hi": "आक़ल"
+        },
+        {
+          "name": "Aakora",
+          "name_hi": "आकोरा"
+        },
+        {
+          "name": "Aambawa",
+          "name_hi": "आंबावा"
+        },
+        {
+          "name": "Abdul Raheem Ka Tala",
+          "name_hi": "अब्दुल रहीम का तला"
+        },
+        {
+          "name": "Abdula Ka Tala",
+          "name_hi": "अब्दुला का तला"
+        },
+        {
+          "name": "Adarsh Dharasar",
+          "name_hi": "आदर्श धरासर"
+        },
+        {
+          "name": "Adarsh Kekad",
+          "name_hi": "आदर्श केकड़"
+        },
+        {
+          "name": "Adarsh Nagar",
+          "name_hi": "आदर्श नगर"
+        },
+        {
+          "name": "Adarsh Sonri",
+          "name_hi": "आदर्श सोनरी"
+        },
+        {
+          "name": "Adarsh Vishu Nagar",
+          "name_hi": "आदर्श विष्णु नगर"
+        },
+        {
+          "name": "Aeronwala",
+          "name_hi": "एरोंवाला"
+        },
+        {
+          "name": "Aginshah Ki Dhani",
+          "name_hi": "अगीनशाह की ढाणी"
+        },
+        {
+          "name": "Ahsan Ka Tala",
+          "name_hi": "अहसन का तला"
+        },
+        {
+          "name": "Aidan Ki Dhani",
+          "name_hi": "ऐदान की ढाणी"
+        },
+        {
+          "name": "Alamsar",
+          "name_hi": "आलमसर"
+        },
+        {
+          "name": "Ali Ki Basti",
+          "name_hi": "अली की बस्ती"
+        },
+        {
+          "name": "Ali Ki Dhani",
+          "name_hi": "अली की ढाणी"
+        },
+        {
+          "name": "Alisaron Ki Basti",
+          "name_hi": "अलीसारों की बस्ती"
+        },
+        {
+          "name": "Alkhu Fakir Ki Basti",
+          "name_hi": "अलखू फकीर की बस्ती"
+        },
+        {
+          "name": "Aloo Ka Tala",
+          "name_hi": "आलू का तला"
+        },
+        {
+          "name": "Ambedkar Nagar",
+          "name_hi": "अंबेडकर नगर"
+        },
+        {
+          "name": "Ami Mohammad Shahki Basti",
+          "name_hi": "अमी मोहम्मद शाह की बस्ती"
+        },
+        {
+          "name": "Amirgarh",
+          "name_hi": "अमीरगढ़"
+        },
+        {
+          "name": "Amrawas",
+          "name_hi": "अमरावास"
+        },
+        {
+          "name": "Antiya",
+          "name_hi": "अंटिया"
+        },
+        {
+          "name": "Arbi Ki Gafan",
+          "name_hi": "अरबी की गफन"
+        },
+        {
+          "name": "Arta",
+          "name_hi": "अर्ता"
+        },
+        {
+          "name": "Arti",
+          "name_hi": "आरती"
+        },
+        {
+          "name": "Azad Nagar",
+          "name_hi": "आज़ाद नगर"
+        },
+        {
+          "name": "Bachhla",
+          "name_hi": "बछला"
+        },
+        {
+          "name": "Bachhraoo",
+          "name_hi": "बच्छराऊ"
+        },
+        {
+          "name": "Bachwal",
+          "name_hi": "बचवाल"
+        },
+        {
+          "name": "Badha",
+          "name_hi": "बढ़ा"
+        },
+        {
+          "name": "Bagoniyon Ki Dhani",
+          "name_hi": "बागोनियों की ढाणी"
+        },
+        {
+          "name": "Bajrangpura",
+          "name_hi": "बजरंगपुरा"
+        },
+        {
+          "name": "Bakhasar",
+          "name_hi": "बाखासर"
+        },
+        {
+          "name": "Balasar",
+          "name_hi": "बालासर"
+        },
+        {
+          "name": "Bamarla",
+          "name_hi": "बामरला"
+        },
+        {
+          "name": "Bamarlader",
+          "name_hi": "बामरलादर"
+        },
+        {
+          "name": "Bamnor Ameershah",
+          "name_hi": "बमनोर अमीरशाह"
+        },
+        {
+          "name": "Bamnor Bhanwarshah",
+          "name_hi": "बमनोर भंवरशाह"
+        },
+        {
+          "name": "Banda Bera",
+          "name_hi": "बांदा बेरा"
+        },
+        {
+          "name": "Bandhniya",
+          "name_hi": "बांधनिया"
+        },
+        {
+          "name": "Baneniyon Ki Dhani",
+          "name_hi": "बनेनियों की ढाणी"
+        },
+        {
+          "name": "Bankalsar",
+          "name_hi": "बांकलसर"
+        },
+        {
+          "name": "Bankana",
+          "name_hi": "बांकेना"
+        },
+        {
+          "name": "Banon Ki Dhani",
+          "name_hi": "बनों की ढाणी"
+        },
+        {
+          "name": "Baotalai",
+          "name_hi": "बाओतालाई"
+        },
+        {
+          "name": "Bawarwala",
+          "name_hi": "बावरवाला"
+        },
+        {
+          "name": "Bawri Kalan",
+          "name_hi": "बावड़ी कलां"
+        },
+        {
+          "name": "Beejasar",
+          "name_hi": "बीजासर"
+        },
+        {
+          "name": "Beelasar",
+          "name_hi": "बीलासर"
+        },
+        {
+          "name": "Beendoniyon Ki Dhani",
+          "name_hi": "बींदोनियों की ढाणी"
+        },
+        {
+          "name": "Beerron Ka Tala",
+          "name_hi": "बीरोन का तला"
+        },
+        {
+          "name": "Beesasar",
+          "name_hi": "बीसासर"
+        },
+        {
+          "name": "Beniwalsar",
+          "name_hi": "बेनीवालसर"
+        },
+        {
+          "name": "Bhabhoote Ki Dhani",
+          "name_hi": "भाभूते की ढाणी"
+        },
+        {
+          "name": "Bhaduoy Ka Tala",
+          "name_hi": "भादुओं का तला"
+        },
+        {
+          "name": "Bhadupura",
+          "name_hi": "भादुपुरा"
+        },
+        {
+          "name": "Bhakhar Pura",
+          "name_hi": "भाखरपुरा"
+        },
+        {
+          "name": "Bhalgaon",
+          "name_hi": "भालगांव"
+        },
+        {
+          "name": "Bhandariya",
+          "name_hi": "भंडारिया"
+        },
+        {
+          "name": "Bhanwar",
+          "name_hi": "भंवर"
+        },
+        {
+          "name": "Bhanwariya",
+          "name_hi": "भंवरिया"
+        },
+        {
+          "name": "Bhara",
+          "name_hi": "भारा"
+        },
+        {
+          "name": "Bhara Gulmohmmad",
+          "name_hi": "भारा गुल मोहम्मद"
+        },
+        {
+          "name": "Bhariyon Ki Basti",
+          "name_hi": "भारियों की बस्ती"
+        },
+        {
+          "name": "Bharon Ka Tala",
+          "name_hi": "भरों का तला"
+        },
+        {
+          "name": "Bhawanipura",
+          "name_hi": "भवानीपुरा"
+        },
+        {
+          "name": "Bheelon Ka Bas",
+          "name_hi": "भीलों का बास"
+        },
+        {
+          "name": "Bheemwas",
+          "name_hi": "भीमवास"
+        },
+        {
+          "name": "Bheruri",
+          "name_hi": "भेरूरी"
+        },
+        {
+          "name": "Bhikhaneyonn Ki Dhani",
+          "name_hi": "भीखनेयों की ढाणी"
+        },
+        {
+          "name": "Bhilon Ka Tala",
+          "name_hi": "भीलों का तला"
+        },
+        {
+          "name": "Bhiye Ki Beri",
+          "name_hi": "भीये की बेरी"
+        },
+        {
+          "name": "Bhojawas",
+          "name_hi": "भोयावास"
+        },
+        {
+          "name": "Bhojriya",
+          "name_hi": "भोजड़िया"
+        },
+        {
+          "name": "Bhomasar",
+          "name_hi": "भोमासर"
+        },
+        {
+          "name": "Bhookransar",
+          "name_hi": "भूक्रांसर"
+        },
+        {
+          "name": "Bhooniya",
+          "name_hi": "भूनिया"
+        },
+        {
+          "name": "Bijrar",
+          "name_hi": "बिजरार"
+        },
+        {
+          "name": "Bilalani",
+          "name_hi": "बिलालानी"
+        },
+        {
+          "name": "Birdon Ka Tala",
+          "name_hi": "बिरड़ों का तला"
+        },
+        {
+          "name": "Bisaraniya",
+          "name_hi": "बिसारणिया"
+        },
+        {
+          "name": "Boli",
+          "name_hi": "बोली"
+        },
+        {
+          "name": "Booth Rathoran",
+          "name_hi": "बूथ राठोरन"
+        },
+        {
+          "name": "Borla",
+          "name_hi": "बोरला"
+        },
+        {
+          "name": "Borla Jatan",
+          "name_hi": "बोरला जाटान"
+        },
+        {
+          "name": "Budiyon Ka Tala",
+          "name_hi": "बुड़ियों का तला"
+        },
+        {
+          "name": "Buran Ka Tala",
+          "name_hi": "बूरन का तला"
+        },
+        {
+          "name": "Chalkana",
+          "name_hi": "चल्काना"
+        },
+        {
+          "name": "Chamanpura",
+          "name_hi": "चमनपुरा"
+        },
+        {
+          "name": "Champa Beri",
+          "name_hi": "चंपा बेरी"
+        },
+        {
+          "name": "Chandasani",
+          "name_hi": "चंदासाणी"
+        },
+        {
+          "name": "Chaukhapura",
+          "name_hi": "चौखापुरा"
+        },
+        {
+          "name": "Cheetradi",
+          "name_hi": "चितरड़ी"
+        },
+        {
+          "name": "Chhachhi Beri",
+          "name_hi": "छाछी बेरी"
+        },
+        {
+          "name": "Chhota Bhojriya",
+          "name_hi": "छोटा भोजड़िया"
+        },
+        {
+          "name": "Chhota Hathala",
+          "name_hi": "छोटा हाथाला"
+        },
+        {
+          "name": "Chicharasar",
+          "name_hi": "चिचरासर"
+        },
+        {
+          "name": "Chimnasar",
+          "name_hi": "चिमनासर"
+        },
+        {
+          "name": "Chohtan",
+          "name_hi": "चोहटन"
+        },
+        {
+          "name": "Chohtan Aagor",
+          "name_hi": "चोहटन आगोर"
+        },
+        {
+          "name": "Chuli Doongri",
+          "name_hi": "चूली डूंगरी"
+        },
+        {
+          "name": "Darjion Ka Tala",
+          "name_hi": "दरजियों का तला"
+        },
+        {
+          "name": "Dasoriya",
+          "name_hi": "दसौरिया"
+        },
+        {
+          "name": "Daukiyon Ki Basti",
+          "name_hi": "दौकियों की बस्ती"
+        },
+        {
+          "name": "Dedoosar",
+          "name_hi": "डिडूसर"
+        },
+        {
+          "name": "Deedawa",
+          "name_hi": "दीडावा"
+        },
+        {
+          "name": "Deengarh",
+          "name_hi": "दीनगढ़"
+        },
+        {
+          "name": "Deepla",
+          "name_hi": "दीपला"
+        },
+        {
+          "name": "Deluon Ka Tala",
+          "name_hi": "देलुओं का तला"
+        },
+        {
+          "name": "Deopura",
+          "name_hi": "देवपुरा"
+        },
+        {
+          "name": "Devaniyon Ka Tala",
+          "name_hi": "देवाणियों का तला"
+        },
+        {
+          "name": "Devpura Kartiya",
+          "name_hi": "देवपुरा करटिया"
+        },
+        {
+          "name": "Dhakon Ka Tala",
+          "name_hi": "ढाकों का तला"
+        },
+        {
+          "name": "Dhanaoo",
+          "name_hi": "धनाऊ"
+        },
+        {
+          "name": "Dhanoniyon Ka Tala",
+          "name_hi": "धनोनियों का तला"
+        },
+        {
+          "name": "Dharampuriji Ka Khoonta",
+          "name_hi": "धरमपुरीजी का खूँटा"
+        },
+        {
+          "name": "Dharasar",
+          "name_hi": "धरासर"
+        },
+        {
+          "name": "Dheerasar",
+          "name_hi": "धीरेसर"
+        },
+        {
+          "name": "Dhemba",
+          "name_hi": "ढेंबा"
+        },
+        {
+          "name": "Dhok",
+          "name_hi": "ढोक"
+        },
+        {
+          "name": "Dholkiya",
+          "name_hi": "ढोलकिया"
+        },
+        {
+          "name": "Dhurawa",
+          "name_hi": "धुरावा"
+        },
+        {
+          "name": "Dob Ki Beri",
+          "name_hi": "डोब की बेरी"
+        },
+        {
+          "name": "Dudhadiyon Ka Tala",
+          "name_hi": "दूधाड़ियों का तला"
+        },
+        {
+          "name": "Dudhwa Khurd",
+          "name_hi": "दूधवा खुर्द"
+        },
+        {
+          "name": "Dungerpura",
+          "name_hi": "डूंगरपुरा"
+        },
+        {
+          "name": "Ekal",
+          "name_hi": "एकल"
+        },
+        {
+          "name": "Fakiron Ka Niwan",
+          "name_hi": "फकीरों का निवान"
+        },
+        {
+          "name": "Fitkariya",
+          "name_hi": "फिटकारिया"
+        },
+        {
+          "name": "Foosani Dalasar",
+          "name_hi": "फूसानी दलासर"
+        },
+        {
+          "name": "Gandhi Nagar",
+          "name_hi": "गांधी नगर"
+        },
+        {
+          "name": "Gangapur",
+          "name_hi": "गंगापुर"
+        },
+        {
+          "name": "Gangasara",
+          "name_hi": "गंगासरा"
+        },
+        {
+          "name": "Gangasariya",
+          "name_hi": "गंगासरिया"
+        },
+        {
+          "name": "Gangupura",
+          "name_hi": "गंगूपुरा"
+        },
+        {
+          "name": "Ghoniya",
+          "name_hi": "घोनिया"
+        },
+        {
+          "name": "Gira",
+          "name_hi": "गीरा"
+        },
+        {
+          "name": "Girdhari Ka Tala",
+          "name_hi": "गिरधारी का तला"
+        },
+        {
+          "name": "Godaron Ka Tala",
+          "name_hi": "गोड़रों का तला"
+        },
+        {
+          "name": "Godaron Ki Dhani",
+          "name_hi": "गोड़रों की ढाणी"
+        },
+        {
+          "name": "Gohar Ka Tala",
+          "name_hi": "गोहर का तला"
+        },
+        {
+          "name": "Goliyar",
+          "name_hi": "गोलीयर"
+        },
+        {
+          "name": "Gomrakh Dham",
+          "name_hi": "गोमरख धाम"
+        },
+        {
+          "name": "Gora",
+          "name_hi": "गोरा"
+        },
+        {
+          "name": "Goron Ka Tala",
+          "name_hi": "गोरों का तला"
+        },
+        {
+          "name": "Gorsiyon Ka Tala",
+          "name_hi": "गोरसियों का तला"
+        },
+        {
+          "name": "Guloniyon Ki Dhani",
+          "name_hi": "गुलोनियों की ढाणी"
+        },
+        {
+          "name": "Gumane Ka Tala",
+          "name_hi": "गुमाने का तला"
+        },
+        {
+          "name": "Hajiyoniyo Ki Dhani",
+          "name_hi": "हाजियों की ढाणी"
+        },
+        {
+          "name": "Hanumanpur",
+          "name_hi": "हनुमानपुर"
+        },
+        {
+          "name": "Hanumanpura",
+          "name_hi": "हनुमानपुरा"
+        },
+        {
+          "name": "Harchandaniyon Ki Dhani",
+          "name_hi": "हर्चंदानियों की ढाणी"
+        },
+        {
+          "name": "Hardanpura",
+          "name_hi": "हरदानपुरा"
+        },
+        {
+          "name": "Harpaliya",
+          "name_hi": "हरपालिया"
+        },
+        {
+          "name": "Harpuniyon Wala",
+          "name_hi": "हरपूनीयों वाला"
+        },
+        {
+          "name": "Hathla",
+          "name_hi": "हथला"
+        },
+        {
+          "name": "Hazi Jamasar",
+          "name_hi": "हाजी जामासर"
+        },
+        {
+          "name": "Hazi Ka Tala",
+          "name_hi": "हाजी का तला"
+        },
+        {
+          "name": "Heerpura",
+          "name_hi": "हीरपुरा"
+        },
+        {
+          "name": "Hejam Ka Bhara",
+          "name_hi": "हेजम का भरा"
+        },
+        {
+          "name": "Hejam Ka Tala",
+          "name_hi": "हेजम का तला"
+        },
+        {
+          "name": "Hemawas",
+          "name_hi": "हेमावास"
+        },
+        {
+          "name": "Hironion Ka Tala",
+          "name_hi": "हिरोनियों का तला"
+        },
+        {
+          "name": "Hoodo Ka Tala",
+          "name_hi": "हूडो का तला"
+        },
+        {
+          "name": "Hudasar",
+          "name_hi": "हुडासर"
+        },
+        {
+          "name": "Huron Ka Tala",
+          "name_hi": "हूरों का तला"
+        },
+        {
+          "name": "Husain Ka Tala",
+          "name_hi": "हुसैन का तला"
+        },
+        {
+          "name": "Ibre Ka Tala",
+          "name_hi": "इबरे का तला"
+        },
+        {
+          "name": "Ishwarpura",
+          "name_hi": "ईश्वरपुरा"
+        },
+        {
+          "name": "Isrol",
+          "name_hi": "इसरोल"
+        },
+        {
+          "name": "Itada",
+          "name_hi": "इताड़ा"
+        },
+        {
+          "name": "Itadiya",
+          "name_hi": "इताड़िया"
+        },
+        {
+          "name": "Jairamderiya",
+          "name_hi": "जयरामदेऱिया"
+        },
+        {
+          "name": "Jaisar",
+          "name_hi": "जैसर"
+        },
+        {
+          "name": "Jakharo Ki Dhani",
+          "name_hi": "जाखरों की ढाणी"
+        },
+        {
+          "name": "Jakhron Ka Tala",
+          "name_hi": "जाखरों का तला"
+        },
+        {
+          "name": "Jakhron Ki Dhani",
+          "name_hi": "जाखरों की ढाणी"
+        },
+        {
+          "name": "Jaleela",
+          "name_hi": "जलीला"
+        },
+        {
+          "name": "Jam Ka Tala",
+          "name_hi": "जाम का तला"
+        },
+        {
+          "name": "Jambheswar Nagar",
+          "name_hi": "जांभेश्वर नगर"
+        },
+        {
+          "name": "Jamgarh",
+          "name_hi": "जामगढ़"
+        },
+        {
+          "name": "Jandooyon Ka Tala",
+          "name_hi": "जंदुओं का तला"
+        },
+        {
+          "name": "Jani Ki Basti",
+          "name_hi": "जानी की बस्ती"
+        },
+        {
+          "name": "Janiyawala",
+          "name_hi": "जानियावाला"
+        },
+        {
+          "name": "Janiyon Ki Basti",
+          "name_hi": "जानियों की बस्ती"
+        },
+        {
+          "name": "Janpaliya",
+          "name_hi": "जांपलिया"
+        },
+        {
+          "name": "Jasnath Nagar",
+          "name_hi": "जसनाथ नगर"
+        },
+        {
+          "name": "Jato Ki Dhani",
+          "name_hi": "जाटों की ढाणी"
+        },
+        {
+          "name": "Jaton Ka Bera",
+          "name_hi": "जाटों का बेरा"
+        },
+        {
+          "name": "Jaton Ki Basti",
+          "name_hi": "जाटों की बस्ती"
+        },
+        {
+          "name": "Jethmalpura",
+          "name_hi": "जेतमलपुरा"
+        },
+        {
+          "name": "Jhangiya",
+          "name_hi": "झंगिया"
+        },
+        {
+          "name": "Jharpa",
+          "name_hi": "झरपा"
+        },
+        {
+          "name": "Joona Lakhwara",
+          "name_hi": "जूना लखवाड़ा"
+        },
+        {
+          "name": "Jorapura",
+          "name_hi": "जोरापुरा"
+        },
+        {
+          "name": "Kairnada",
+          "name_hi": "कैरनाड़ा"
+        },
+        {
+          "name": "Kaloo Ki Beri",
+          "name_hi": "कालू की बेरी"
+        },
+        {
+          "name": "Kalyanpura",
+          "name_hi": "कल्याणपुरा"
+        },
+        {
+          "name": "Kananiyon Ki Basti",
+          "name_hi": "कनानियों की बस्ती"
+        },
+        {
+          "name": "Kankarala",
+          "name_hi": "कांकड़ाला"
+        },
+        {
+          "name": "Kaprau",
+          "name_hi": "कापराउ"
+        },
+        {
+          "name": "Kartiya",
+          "name_hi": "करटिया"
+        },
+        {
+          "name": "Kayam Ka Tala",
+          "name_hi": "कायम का तला"
+        },
+        {
+          "name": "Kekar",
+          "name_hi": "केकर"
+        },
+        {
+          "name": "Kelnor",
+          "name_hi": "केलनोर"
+        },
+        {
+          "name": "Khairaj Ka Tala",
+          "name_hi": "खैराज का तला"
+        },
+        {
+          "name": "Kharader",
+          "name_hi": "खारादेर"
+        },
+        {
+          "name": "Kharawala",
+          "name_hi": "खारावाला"
+        },
+        {
+          "name": "Khari",
+          "name_hi": "खारी"
+        },
+        {
+          "name": "Khariya Der",
+          "name_hi": "खारिया डेर"
+        },
+        {
+          "name": "Khavala",
+          "name_hi": "खावला"
+        },
+        {
+          "name": "Kheechdon Ki Dhani",
+          "name_hi": "खीचड़ों की ढाणी"
+        },
+        {
+          "name": "Khempura",
+          "name_hi": "खेमपुरा"
+        },
+        {
+          "name": "Khera",
+          "name_hi": "खेड़ा"
+        },
+        {
+          "name": "Khileriyon Ki Basti",
+          "name_hi": "खिलेरियों की बस्ती"
+        },
+        {
+          "name": "Kiphayat Nagar",
+          "name_hi": "किफायत नगर"
+        },
+        {
+          "name": "Kitnor Nadi",
+          "name_hi": "कितनोर नाड़ी"
+        },
+        {
+          "name": "Kitnoriya",
+          "name_hi": "कितनोरिया"
+        },
+        {
+          "name": "Konra",
+          "name_hi": "कोनरा"
+        },
+        {
+          "name": "Kothe Ka Tala",
+          "name_hi": "कोठे का तला"
+        },
+        {
+          "name": "Kottilani",
+          "name_hi": "कोट्टीलानी"
+        },
+        {
+          "name": "Krishan Ka Tala",
+          "name_hi": "कृष्ण का तला"
+        },
+        {
+          "name": "Krishanpura",
+          "name_hi": "कृष्णपुरा"
+        },
+        {
+          "name": "Kumbhoniyon Ka Tala",
+          "name_hi": "कुंभोनियों का तला"
+        },
+        {
+          "name": "Kundanpura",
+          "name_hi": "कुंदनपुरा"
+        },
+        {
+          "name": "Lachhiye Ka Tala",
+          "name_hi": "लच्छिये का तला"
+        },
+        {
+          "name": "Ladhusara",
+          "name_hi": "लधूसरा"
+        },
+        {
+          "name": "Lakhasar",
+          "name_hi": "लखासर"
+        },
+        {
+          "name": "Lakhe Ka Tala",
+          "name_hi": "लखे का तला"
+        },
+        {
+          "name": "Lakhwara",
+          "name_hi": "लखवाड़ा"
+        },
+        {
+          "name": "Lakrasar",
+          "name_hi": "लक्रासर"
+        },
+        {
+          "name": "Leelsar",
+          "name_hi": "लीलसर"
+        },
+        {
+          "name": "Leelsar Dakhnad",
+          "name_hi": "लीलसर दक्षिणाड़"
+        },
+        {
+          "name": "Lidiyala",
+          "name_hi": "लीडियाला"
+        },
+        {
+          "name": "Lomrodon Ka Tala",
+          "name_hi": "लोमरोड़ों का तला"
+        },
+        {
+          "name": "Loombasar",
+          "name_hi": "लूंबासर"
+        },
+        {
+          "name": "Machron Ka Tala",
+          "name_hi": "माचरों का तला"
+        },
+        {
+          "name": "Madawao",
+          "name_hi": "मडावो"
+        },
+        {
+          "name": "Madhuri Ka Tala",
+          "name_hi": "मधुरी का तला"
+        },
+        {
+          "name": "Mahadevpura",
+          "name_hi": "महादेवपुरा"
+        },
+        {
+          "name": "Mahendrapura",
+          "name_hi": "महेंद्रपुरा"
+        },
+        {
+          "name": "Majnani",
+          "name_hi": "मज्नानी"
+        },
+        {
+          "name": "Malei Ka Tala",
+          "name_hi": "मलेई का तला"
+        },
+        {
+          "name": "Maluk Ka Tala",
+          "name_hi": "मलूक का तला"
+        },
+        {
+          "name": "Manasar",
+          "name_hi": "मानासर"
+        },
+        {
+          "name": "Mandasar",
+          "name_hi": "मंडासर"
+        },
+        {
+          "name": "Mandirwala",
+          "name_hi": "मंदिरवाला"
+        },
+        {
+          "name": "Mandon Ki Beri",
+          "name_hi": "मंडों की बेरी"
+        },
+        {
+          "name": "Manglasar",
+          "name_hi": "मंगला सर"
+        },
+        {
+          "name": "Manjhi Ka Tala",
+          "name_hi": "मांझी का तला"
+        },
+        {
+          "name": "Manpura",
+          "name_hi": "मानपुरा"
+        },
+        {
+          "name": "Mantunda",
+          "name_hi": "मन्तूड़ा"
+        },
+        {
+          "name": "Mate Ka Tala",
+          "name_hi": "माटे का तला"
+        },
+        {
+          "name": "Meethe Ka Tala",
+          "name_hi": "मीठे का तला"
+        },
+        {
+          "name": "Meethi Nadi",
+          "name_hi": "मीठी नाड़ी"
+        },
+        {
+          "name": "Meethri",
+          "name_hi": "मीठरी"
+        },
+        {
+          "name": "Meghasar",
+          "name_hi": "मेघासर"
+        },
+        {
+          "name": "Meghpura",
+          "name_hi": "मेघपुरा"
+        },
+        {
+          "name": "Meghsingh Ki Dhani",
+          "name_hi": "मेघसिंह की ढाणी"
+        },
+        {
+          "name": "Mehrangadh",
+          "name_hi": "मेहरानगढ़"
+        },
+        {
+          "name": "Mithabera",
+          "name_hi": "मिठाबेरा"
+        },
+        {
+          "name": "Mitharaoo",
+          "name_hi": "मिठाराऊ"
+        },
+        {
+          "name": "Miyazal Ki Beri",
+          "name_hi": "मियाँज़ाल की बेरी"
+        },
+        {
+          "name": "Miyen Ka Tala",
+          "name_hi": "मियाँ का तला"
+        },
+        {
+          "name": "Mogawa",
+          "name_hi": "मोगावा"
+        },
+        {
+          "name": "Moolani",
+          "name_hi": "मूलाणी"
+        },
+        {
+          "name": "Moti Ki Beri",
+          "name_hi": "मोती की बेरी"
+        },
+        {
+          "name": "Mudhon Ka Tal",
+          "name_hi": "मूधों का ताल"
+        },
+        {
+          "name": "Mukne Ka Tala",
+          "name_hi": "मुखणे का तला"
+        },
+        {
+          "name": "Nagodar Ki Basti",
+          "name_hi": "नागोदर की बस्ती"
+        },
+        {
+          "name": "Nandram Ki Dhani",
+          "name_hi": "नंदराम की ढाणी"
+        },
+        {
+          "name": "Naroniyon Ka Tala",
+          "name_hi": "नारोनियों का तला"
+        },
+        {
+          "name": "Naseer Ki Dhani",
+          "name_hi": "नसीर की ढाणी"
+        },
+        {
+          "name": "Nawapura",
+          "name_hi": "नवापुरा"
+        },
+        {
+          "name": "Nawatala Bakhasar",
+          "name_hi": "नवातला बाखासर"
+        },
+        {
+          "name": "Nawatala Jaitmalan",
+          "name_hi": "नवातला जैतमलन"
+        },
+        {
+          "name": "Nawatala Rathoran",
+          "name_hi": "नवातला राठोरन"
+        },
+        {
+          "name": "Naya Bhojriya",
+          "name_hi": "नया भोजड़िया"
+        },
+        {
+          "name": "Neembali",
+          "name_hi": "नींबली"
+        },
+        {
+          "name": "Nehron Ka Tala",
+          "name_hi": "नेहरों का तला"
+        },
+        {
+          "name": "Nehron Ki Basti",
+          "name_hi": "नेहरों की बस्ती"
+        },
+        {
+          "name": "Nehron Ki Nari",
+          "name_hi": "नेहरों की नाड़ी"
+        },
+        {
+          "name": "Netrar",
+          "name_hi": "नेत्रार"
+        },
+        {
+          "name": "Nimbala",
+          "name_hi": "नींबाला"
+        },
+        {
+          "name": "Nohariyon Ki Basti",
+          "name_hi": "नौरियों की बस्ती"
+        },
+        {
+          "name": "Ogala",
+          "name_hi": "ओगाला"
+        },
+        {
+          "name": "Ojiya",
+          "name_hi": "ओजिया"
+        },
+        {
+          "name": "Pabuberi",
+          "name_hi": "पाबूबेरी"
+        },
+        {
+          "name": "Pabudanpura",
+          "name_hi": "पाबूदनपुरा"
+        },
+        {
+          "name": "Padmani",
+          "name_hi": "पद्मनी"
+        },
+        {
+          "name": "Pancharla",
+          "name_hi": "पांचरला"
+        },
+        {
+          "name": "Pandarwali",
+          "name_hi": "पांदरवाली"
+        },
+        {
+          "name": "Pandhi Ka Niwan",
+          "name_hi": "पांधी का निवान"
+        },
+        {
+          "name": "Panoniyon Ki Dhani",
+          "name_hi": "पानोनीयों की ढाणी"
+        },
+        {
+          "name": "Panoriya",
+          "name_hi": "पनोड़िया"
+        },
+        {
+          "name": "Parariya",
+          "name_hi": "परारिया"
+        },
+        {
+          "name": "Pawariya",
+          "name_hi": "पवारिया"
+        },
+        {
+          "name": "Pawdon Ka Tala",
+          "name_hi": "पावडों का तला"
+        },
+        {
+          "name": "Peepli Beri",
+          "name_hi": "पीपली बेरी"
+        },
+        {
+          "name": "Peeru Ka Tala",
+          "name_hi": "पीरू का तला"
+        },
+        {
+          "name": "Phagliya",
+          "name_hi": "फागलिया"
+        },
+        {
+          "name": "Phagloo Ka Tala",
+          "name_hi": "फागलू का तला"
+        },
+        {
+          "name": "Pingalpura",
+          "name_hi": "पिंगलपुरा"
+        },
+        {
+          "name": "Pokrasar",
+          "name_hi": "पोकरासर"
+        },
+        {
+          "name": "Poonjasar",
+          "name_hi": "पूंजासर"
+        },
+        {
+          "name": "Poshal",
+          "name_hi": "पोशल"
+        },
+        {
+          "name": "Prabhat Nagar",
+          "name_hi": "प्रभात नगर"
+        },
+        {
+          "name": "Prem Nagar",
+          "name_hi": "प्रेम नगर"
+        },
+        {
+          "name": "Prem Singh Ki Dhani",
+          "name_hi": "प्रेम सिंह की ढाणी"
+        },
+        {
+          "name": "Puroniyon Ka Tala",
+          "name_hi": "पुरोनियों का तला"
+        },
+        {
+          "name": "Rabasar",
+          "name_hi": "राबासर"
+        },
+        {
+          "name": "Rajeev Nagar",
+          "name_hi": "राजीव नगर"
+        },
+        {
+          "name": "Rajgarh",
+          "name_hi": "राजगढ़"
+        },
+        {
+          "name": "Rajro Ki Basti",
+          "name_hi": "राजरो की बस्ती"
+        },
+        {
+          "name": "Ramderiya",
+          "name_hi": "रामदेऱिया"
+        },
+        {
+          "name": "Ramderiya Tala",
+          "name_hi": "रामदेऱिया तला"
+        },
+        {
+          "name": "Ramderiya West",
+          "name_hi": "रामदेऱिया वेस्ट"
+        },
+        {
+          "name": "Ramji Ki Dhani",
+          "name_hi": "रामजी की ढाणी"
+        },
+        {
+          "name": "Ramnagar",
+          "name_hi": "रामनगर"
+        },
+        {
+          "name": "Rampura",
+          "name_hi": "रामपुरा"
+        },
+        {
+          "name": "Ramzan Ki Gafan",
+          "name_hi": "रमज़ान की गफन"
+        },
+        {
+          "name": "Ranatali",
+          "name_hi": "राणातली"
+        },
+        {
+          "name": "Rangwali",
+          "name_hi": "रंगवाली"
+        },
+        {
+          "name": "Ranisar",
+          "name_hi": "राणीसर"
+        },
+        {
+          "name": "Ranjeetpura",
+          "name_hi": "रणजीतपुरा"
+        },
+        {
+          "name": "Ranwa",
+          "name_hi": "रनवा"
+        },
+        {
+          "name": "Rarli",
+          "name_hi": "रारली"
+        },
+        {
+          "name": "Rasbani",
+          "name_hi": "रसबानी"
+        },
+        {
+          "name": "Ratanpura",
+          "name_hi": "रतनपुरा"
+        },
+        {
+          "name": "Ratasar",
+          "name_hi": "रतासर"
+        },
+        {
+          "name": "Ratasarder",
+          "name_hi": "रतासरडेर"
+        },
+        {
+          "name": "Rate Ka Tala",
+          "name_hi": "राते का तला"
+        },
+        {
+          "name": "Rodiyon Ka Tala",
+          "name_hi": "रोड़ियों का तला"
+        },
+        {
+          "name": "Roheera Nadi",
+          "name_hi": "रोहेड़ा नाड़ी"
+        },
+        {
+          "name": "Rohila",
+          "name_hi": "रोहिला"
+        },
+        {
+          "name": "Roogpura",
+          "name_hi": "रुगपुरा"
+        },
+        {
+          "name": "Sadram Ki Beri",
+          "name_hi": "सदराम की बेरी"
+        },
+        {
+          "name": "Sadul Ki Gafan",
+          "name_hi": "सादुल की गफन"
+        },
+        {
+          "name": "Sagarbao",
+          "name_hi": "सागरबाओ"
+        },
+        {
+          "name": "Saharanpur",
+          "name_hi": "सहारनपुर"
+        },
+        {
+          "name": "Saiyon Ka Tala",
+          "name_hi": "सायों का तला"
+        },
+        {
+          "name": "Saiyon Ki Basti",
+          "name_hi": "सायों की बस्ती"
+        },
+        {
+          "name": "Sakriya Tala",
+          "name_hi": "सक्रिया तला"
+        },
+        {
+          "name": "Salriya",
+          "name_hi": "सलरिया"
+        },
+        {
+          "name": "Sam",
+          "name_hi": "साम"
+        },
+        {
+          "name": "Samawali",
+          "name_hi": "समावली"
+        },
+        {
+          "name": "Samelon Ka Tala",
+          "name_hi": "समेलों का तला"
+        },
+        {
+          "name": "Samon Ki Basti",
+          "name_hi": "समों की बस्ती"
+        },
+        {
+          "name": "Samon Ki Dhani",
+          "name_hi": "समों की ढाणी"
+        },
+        {
+          "name": "Samrathal Dhora",
+          "name_hi": "समराठल धोरा"
+        },
+        {
+          "name": "Sanau",
+          "name_hi": "सनाउ"
+        },
+        {
+          "name": "Sanwa",
+          "name_hi": "सांवा"
+        },
+        {
+          "name": "Sanwlasi",
+          "name_hi": "सांवलासी"
+        },
+        {
+          "name": "Sanwlor",
+          "name_hi": "सांव्लोर"
+        },
+        {
+          "name": "Saraiyon Ka Tala",
+          "name_hi": "सरैयों का तला"
+        },
+        {
+          "name": "Saraswati Nagar",
+          "name_hi": "सरस्वती नगर"
+        },
+        {
+          "name": "Sarla",
+          "name_hi": "सरला"
+        },
+        {
+          "name": "Sarnon Ka Tala",
+          "name_hi": "सरनों का तला"
+        },
+        {
+          "name": "Sarnon Ki Nari",
+          "name_hi": "सरनों की नाड़ी"
+        },
+        {
+          "name": "Saroope Ka Tala",
+          "name_hi": "सरूपे का तला"
+        },
+        {
+          "name": "Sata",
+          "name_hi": "साटा"
+        },
+        {
+          "name": "Sauwon Ka Tala",
+          "name_hi": "सौवों का तला"
+        },
+        {
+          "name": "Savalen Ka Tala",
+          "name_hi": "सावलें का तला"
+        },
+        {
+          "name": "Sayed Mozali Ka Tala",
+          "name_hi": "सैयद मोजली का तला"
+        },
+        {
+          "name": "Seeloron Ki Basti",
+          "name_hi": "सीलोरों की बस्ती"
+        },
+        {
+          "name": "Serwa",
+          "name_hi": "सेरवा"
+        },
+        {
+          "name": "Sevron Ki Basti",
+          "name_hi": "सेवरों की बस्ती"
+        },
+        {
+          "name": "Sewron Ka Tala",
+          "name_hi": "सेवरों का तला"
+        },
+        {
+          "name": "Sherpur",
+          "name_hi": "शेरपुर"
+        },
+        {
+          "name": "Sherpura",
+          "name_hi": "शेरपुरा"
+        },
+        {
+          "name": "Shivpura",
+          "name_hi": "शिवपुरा"
+        },
+        {
+          "name": "Shobhala Darsan",
+          "name_hi": "शोभाला दर्शन"
+        },
+        {
+          "name": "Shri Ramwala",
+          "name_hi": "श्री रामवाला"
+        },
+        {
+          "name": "Sinhaniya",
+          "name_hi": "सिन्हानिया"
+        },
+        {
+          "name": "Sinhar",
+          "name_hi": "सिन्हार"
+        },
+        {
+          "name": "Siyagpura",
+          "name_hi": "सियागपुरा"
+        },
+        {
+          "name": "Siyolon Ka Der",
+          "name_hi": "सियोलों का डेर"
+        },
+        {
+          "name": "Sobhala Jetmalan",
+          "name_hi": "सोभला जेटमलान"
+        },
+        {
+          "name": "Sodiyar",
+          "name_hi": "सोदियार"
+        },
+        {
+          "name": "Somaradi",
+          "name_hi": "सोमारड़ी"
+        },
+        {
+          "name": "Somrad",
+          "name_hi": "सोमराड़"
+        },
+        {
+          "name": "Sonardi",
+          "name_hi": "सोनारड़ी"
+        },
+        {
+          "name": "Sonri",
+          "name_hi": "सोनरी"
+        },
+        {
+          "name": "Soorpura",
+          "name_hi": "सूरपुरा"
+        },
+        {
+          "name": "Suhagi",
+          "name_hi": "सुहागी"
+        },
+        {
+          "name": "Sujon Ka Niwan",
+          "name_hi": "सुझोन का निवान"
+        },
+        {
+          "name": "Sukaliya",
+          "name_hi": "सूकल्या"
+        },
+        {
+          "name": "Sumar Ki Basti",
+          "name_hi": "सुमार की बस्ती"
+        },
+        {
+          "name": "Sundarnagar",
+          "name_hi": "सुंदरनगर"
+        },
+        {
+          "name": "Surjanpur",
+          "name_hi": "सूरजनपुर"
+        },
+        {
+          "name": "Surte Ka Tala",
+          "name_hi": "सूरते का तला"
+        },
+        {
+          "name": "Surte Ki Dhani",
+          "name_hi": "सूरते की ढाणी"
+        },
+        {
+          "name": "Sutharon Ka Tala",
+          "name_hi": "सुथारों का तला"
+        },
+        {
+          "name": "Sutharon Katala",
+          "name_hi": "सुथारों का तला"
+        },
+        {
+          "name": "Sutharon Ki Beri",
+          "name_hi": "सुथारों की बेरी"
+        },
+        {
+          "name": "Tajaniyon Ka Tala",
+          "name_hi": "तजानियों का तला"
+        },
+        {
+          "name": "Tajasar",
+          "name_hi": "ताजासर"
+        },
+        {
+          "name": "Talsar",
+          "name_hi": "तलसर"
+        },
+        {
+          "name": "Tamachi Ki Gafan",
+          "name_hi": "तमाची की गफन"
+        },
+        {
+          "name": "Tanka Station",
+          "name_hi": "टांका स्टेशन"
+        },
+        {
+          "name": "Taratara",
+          "name_hi": "तारातरा"
+        },
+        {
+          "name": "Taratara Math",
+          "name_hi": "तारातरा मठ"
+        },
+        {
+          "name": "Taratarader",
+          "name_hi": "तारातराडेर"
+        },
+        {
+          "name": "Tardon Ka Tala",
+          "name_hi": "तर्डों का तला"
+        },
+        {
+          "name": "Tareesara",
+          "name_hi": "तरीसरा"
+        },
+        {
+          "name": "Tarla",
+          "name_hi": "तारला"
+        },
+        {
+          "name": "Thananiyon Ki Basti",
+          "name_hi": "ठनानियों की बस्ती"
+        },
+        {
+          "name": "Thathar Kader",
+          "name_hi": "ठाठर कदर"
+        },
+        {
+          "name": "Thoriyawala",
+          "name_hi": "थोरियावाला"
+        },
+        {
+          "name": "Udsiyar",
+          "name_hi": "उदसियार"
+        },
+        {
+          "name": "Ummed Nagar",
+          "name_hi": "उम्मेद नगर"
+        },
+        {
+          "name": "Ummedpura",
+          "name_hi": "उम्मेदपुरा"
+        },
+        {
+          "name": "Uparla",
+          "name_hi": "ऊपरला"
+        },
+        {
+          "name": "Vasiya Ka Tala",
+          "name_hi": "वासिया का तला"
+        },
+        {
+          "name": "Venrdi",
+          "name_hi": "वेनरड़ी"
+        },
+        {
+          "name": "Vishanasar",
+          "name_hi": "विशनासर"
+        },
+        {
+          "name": "Vishnu Nagar",
+          "name_hi": "विष्णु नगर"
+        },
+        {
+          "name": "Vishnu Nagar",
+          "name_hi": "विष्णु नगर"
+        },
+        {
+          "name": "Vishnu Nagari",
+          "name_hi": "विष्णु नागरी"
+        }
+      ]
+    }
+  ]
+}

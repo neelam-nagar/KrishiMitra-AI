@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sellers List</title>
+</head>
+<body>
+
+<h2>All Sellers</h2>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>City</th>
+        <th>Crop</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+
+    {% for s in sellers %}
+    <tr>
+        <td>{{ s.name }}</td>
+        <td>{{ s.phone }}</td>
+        <td>{{ s.city }}</td>
+        <td>{{ s.crop }}</td>
+        <td>{{ s.price }}</td>
+        <td>{{ s.quantity }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

@@ -1,0 +1,921 @@
+{
+  "area": {
+    "en": "Western Rajasthan",
+    "hi": "पश्चिमी राजस्थान"
+  },
+
+  "districts": {
+    "en": [
+      "Jodhpur",
+      "Jaisalmer",
+      "Barmer",
+      "Bikaner",
+      "Churu",
+      "Nagaur",
+      "Sirohi"
+    ],
+    "hi": [
+      "जोधपुर",
+      "जैसलमेर",
+      "बाड़मेर",
+      "बीकानेर",
+      "चूरू",
+      "नागौर",
+      "सिरोही"
+    ]
+  },
+
+  "introduction": {
+    "en": "Western Rajasthan represents the arid and semi-arid zone of the state. This region is characterized by low rainfall, extreme temperatures, sandy soils, and limited water resources. Organic farming in this region focuses on moisture conservation, low-input crops, and resilient traditional practices.",
+    "hi": "पश्चिमी राजस्थान राज्य का शुष्क एवं अर्ध-शुष्क क्षेत्र है। यहाँ कम वर्षा, अत्यधिक तापमान, रेतीली मिट्टी और सीमित जल संसाधन पाए जाते हैं। इस क्षेत्र में जैविक खेती का आधार नमी संरक्षण, कम लागत वाली फसलें और पारंपरिक टिकाऊ तरीके हैं।"
+  },
+
+  "agro_climatic_characteristics": {
+    "rainfall": {
+      "en": "Average annual rainfall ranges between 100 mm to 350 mm.",
+      "hi": "औसत वार्षिक वर्षा 100 से 350 मिमी के बीच होती है।"
+    },
+    "temperature": {
+      "summer": {
+        "en": "40°C to 48°C",
+        "hi": "40°C से 48°C"
+      },
+      "winter": {
+        "en": "2°C to 15°C",
+        "hi": "2°C से 15°C"
+      }
+    },
+    "climate_nature": {
+      "en": "Arid to semi-arid climate with high evaporation losses and frequent droughts.",
+      "hi": "अत्यधिक शुष्क से अर्ध-शुष्क जलवायु, जिसमें अधिक वाष्पीकरण और बार-बार सूखे की स्थिति रहती है।"
+    }
+  },
+
+  "soil_profile": {
+    "major_soil_types": {
+      "en": [
+        "Sandy soil",
+        "Sandy loam soil",
+        "Desert soil"
+      ],
+      "hi": [
+        "रेतीली मिट्टी",
+        "रेतीली दोमट मिट्टी",
+        "मरुस्थलीय मिट्टी"
+      ]
+    },
+    "soil_properties": {
+      "en": [
+        "Low organic matter",
+        "Low water holding capacity",
+        "Highly permeable soil"
+      ],
+      "hi": [
+        "जैविक पदार्थ की कमी",
+        "कम जल धारण क्षमता",
+        "अधिक जल रिसाव"
+      ]
+    },
+    "soil_related_problems": {
+      "en": [
+        "Wind erosion",
+        "Rapid moisture loss",
+        "Nutrient leaching"
+      ],
+      "hi": [
+        "पवन अपरदन",
+        "तेजी से नमी की हानि",
+        "पोषक तत्वों का बह जाना"
+      ]
+    }
+  },
+
+  "soil_improvement_under_organic_farming": {
+    "principles": {
+      "en": [
+        "Increase organic matter to improve water retention",
+        "Protect soil from wind erosion",
+        "Build soil fertility gradually"
+      ],
+      "hi": [
+        "जल धारण क्षमता बढ़ाने हेतु जैविक पदार्थ बढ़ाना",
+        "पवन अपरदन से मिट्टी की रक्षा",
+        "धीरे-धीरे मिट्टी की उर्वरता बढ़ाना"
+      ]
+    },
+    "recommended_practices": {
+      "en": [
+        "Regular application of farmyard manure",
+        "Use of compost and vermicompost",
+        "Green manuring with drought tolerant legumes",
+        "Mulching with crop residues"
+      ],
+      "hi": [
+        "गोबर की खाद का नियमित प्रयोग",
+        "कम्पोस्ट और वर्मी कम्पोस्ट का उपयोग",
+        "सूखा सहनशील दलहनी हरी खाद",
+        "फसल अवशेष से मल्चिंग"
+      ]
+    }
+  },
+
+  "water_resources": {
+    "sources": {
+      "en": [
+        "Rainfall",
+        "Tube wells (limited)",
+        "Tankas (traditional water storage)",
+        "Ponds and khadins"
+      ],
+      "hi": [
+        "वर्षा",
+        "सीमित ट्यूबवेल",
+        "टांके (पारंपरिक जल भंडारण)",
+        "तालाब और खडीन"
+      ]
+    },
+    "water_availability": {
+      "en": "Scarce and unreliable",
+      "hi": "सीमित और अनिश्चित"
+    },
+    "organic_water_management_guidelines": {
+      "en": [
+        "Harvest and store rainwater efficiently",
+        "Use drip or pitcher irrigation wherever possible",
+        "Avoid water intensive crops"
+      ],
+      "hi": [
+        "वर्षा जल का संग्रह और संरक्षण",
+        "जहाँ संभव हो ड्रिप या घड़ा सिंचाई",
+        "अधिक पानी मांगने वाली फसलों से बचें"
+      ]
+    }
+  },
+
+  "cropping_seasons": {
+    "kharif": {
+      "en": "July to September (rain-dependent)",
+      "hi": "जुलाई से सितंबर (वर्षा आधारित)"
+    },
+    "rabi": {
+      "en": "October to February (limited area)",
+      "hi": "अक्टूबर से फरवरी (सीमित क्षेत्र)"
+    },
+    "zaid": {
+      "en": "Not common",
+      "hi": "प्रचलित नहीं"
+    }
+  }  ,
+
+  "major_crops_overview": {
+    "kharif_crops": {
+      "en": [
+        "Pearl Millet (Bajra)",
+        "Cluster Bean (Guar)",
+        "Green gram (Moong)",
+        "Moth bean",
+        "Sesame (Til)"
+      ],
+      "hi": [
+        "बाजरा",
+        "ग्वार",
+        "मूंग",
+        "मोठ",
+        "तिल"
+      ]
+    },
+
+    "rabi_crops": {
+      "en": [
+        "Cumin (Jeera)",
+        "Mustard",
+        "Chickpea (Chana)",
+        "Wheat (limited irrigated area)"
+      ],
+      "hi": [
+        "जीरा",
+        "सरसों",
+        "चना",
+        "गेहूं (सीमित सिंचाई क्षेत्र)"
+      ]
+    },
+
+    "perennial_and_special_crops": {
+      "en": [
+        "Isabgol (Psyllium)",
+        "Fodder crops",
+        "Medicinal plants (limited pockets)"
+      ],
+      "hi": [
+        "इसबगोल",
+        "चारा फसलें",
+        "औषधीय फसलें (सीमित क्षेत्र)"
+      ]
+    }
+  },
+
+  "cropping_systems_in_western_rajasthan": {
+    "rainfed_systems": {
+      "en": [
+        "Bajra → Moth bean",
+        "Guar → Moong",
+        "Bajra → Sesamum"
+      ],
+      "hi": [
+        "बाजरा → मोठ",
+        "ग्वार → मूंग",
+        "बाजरा → तिल"
+      ]
+    },
+
+    "irrigated_systems_limited": {
+      "en": [
+        "Cumin → Moth bean",
+        "Wheat → Moong"
+      ],
+      "hi": [
+        "जीरा → मोठ",
+        "गेहूं → मूंग"
+      ]
+    },
+
+    "benefits": {
+      "en": [
+        "Low water requirement",
+        "Improved soil fertility through legumes",
+        "Reduced risk under drought conditions"
+      ],
+      "hi": [
+        "कम पानी की आवश्यकता",
+        "दलहनी फसलों से मिट्टी उर्वरता में वृद्धि",
+        "सूखे की स्थिति में जोखिम कम"
+      ]
+    }
+  },
+
+  "crop_selection_logic": {
+    "soil_based_selection": {
+      "en": [
+        "Sandy soils are best suited for bajra, guar and moth bean",
+        "Light textured soils support cumin and isabgol"
+      ],
+      "hi": [
+        "रेतीली मिट्टी बाजरा, ग्वार और मोठ के लिए उपयुक्त",
+        "हल्की बनावट वाली मिट्टी जीरा और इसबगोल के लिए अच्छी"
+      ]
+    },
+
+    "water_based_selection": {
+      "en": [
+        "Rainfed areas should prefer drought tolerant crops",
+        "Irrigated pockets can grow cumin and wheat"
+      ],
+      "hi": [
+        "वर्षा आधारित क्षेत्रों में सूखा सहनशील फसलें लें",
+        "सिंचित क्षेत्रों में जीरा और गेहूं संभव"
+      ]
+    },
+
+    "climate_based_selection": {
+      "en": [
+        "High temperature and low humidity favor bajra and guar",
+        "Cool and dry winter supports cumin cultivation"
+      ],
+      "hi": [
+        "अधिक तापमान और कम नमी बाजरा व ग्वार के लिए अनुकूल",
+        "ठंडी और शुष्क सर्दी जीरा के लिए उपयुक्त"
+      ]
+    }
+  },
+
+  "organic_crop_planning_guidelines": {
+    "en": [
+      "Select crops based on rainfall pattern",
+      "Avoid water intensive crops",
+      "Include legumes in every cropping cycle",
+      "Adopt traditional drought-resilient practices"
+    ],
+    "hi": [
+      "वर्षा पैटर्न के अनुसार फसल चयन करें",
+      "अधिक पानी मांगने वाली फसलों से बचें",
+      "हर फसल चक्र में दलहन शामिल करें",
+      "पारंपरिक सूखा-सहिष्णु तरीकों को अपनाएँ"
+    ]
+  }  ,
+
+  "crop_wise_detailed_guidance": {
+
+    "bajra": {
+      "title": {
+        "en": "Organic Pearl Millet (Bajra) Cultivation – Complete Guide",
+        "hi": "जैविक बाजरा खेती – संपूर्ण मार्गदर्शिका"
+      },
+      "season": {
+        "en": "Kharif",
+        "hi": "खरीफ"
+      },
+      "field_selection": {
+        "en": [
+          "Light sandy to sandy loam soils",
+          "Fields with good drainage and low water retention"
+        ],
+        "hi": [
+          "हल्की रेतीली या रेतीली दोमट मिट्टी",
+          "अच्छे जल निकास वाले खेत"
+        ]
+      },
+      "land_preparation": {
+        "en": [
+          "One deep ploughing before monsoon",
+          "Two light ploughings after first rainfall"
+        ],
+        "hi": [
+          "मानसून से पहले एक गहरी जुताई",
+          "पहली बारिश के बाद दो हल्की जुताई"
+        ]
+      },
+      "sowing_time": {
+        "en": "July",
+        "hi": "जुलाई"
+      },
+      "seed_rate": {
+        "en": "2–3 kg per acre",
+        "hi": "2–3 किलोग्राम प्रति एकड़"
+      },
+      "seed_treatment": {
+        "en": [
+          "Trichoderma 5 g per kg seed",
+          "Shade drying before sowing"
+        ],
+        "hi": [
+          "ट्राइकोडर्मा 5 ग्राम प्रति किलोग्राम बीज",
+          "छाया में सुखाकर बुवाई"
+        ]
+      },
+      "nutrient_management": {
+        "en": [
+          "Apply compost before sowing",
+          "Jeevamrut at 20 days if moisture permits"
+        ],
+        "hi": [
+          "बुवाई से पहले कम्पोस्ट डालें",
+          "नमी होने पर 20 दिन पर जीवामृत"
+        ]
+      },
+      "weed_management": {
+        "en": [
+          "One hand weeding at 20–25 days"
+        ],
+        "hi": [
+          "20–25 दिन पर एक बार निराई"
+        ]
+      },
+      "pest_management": {
+        "en": [
+          "Neem oil spray for shoot fly",
+          "Bird perches to control insects"
+        ],
+        "hi": [
+          "तना मक्खी हेतु नीम तेल छिड़काव",
+          "कीट नियंत्रण हेतु पक्षी बैठने की खूँटी"
+        ]
+      },
+      "harvesting": {
+        "en": "September to October",
+        "hi": "सितंबर से अक्टूबर"
+      }
+    },
+
+    "guar": {
+      "title": {
+        "en": "Organic Cluster Bean (Guar) Cultivation – Complete Guide",
+        "hi": "जैविक ग्वार खेती – संपूर्ण मार्गदर्शिका"
+      },
+      "season": {
+        "en": "Kharif",
+        "hi": "खरीफ"
+      },
+      "sowing_time": {
+        "en": "July",
+        "hi": "जुलाई"
+      },
+      "seed_rate": {
+        "en": "8–10 kg per acre",
+        "hi": "8–10 किलोग्राम प्रति एकड़"
+      },
+      "seed_treatment": {
+        "en": [
+          "Rhizobium culture",
+          "Trichoderma for disease prevention"
+        ],
+        "hi": [
+          "राइजोबियम कल्चर",
+          "रोग रोकथाम हेतु ट्राइकोडर्मा"
+        ]
+      },
+      "nutrient_management": {
+        "en": [
+          "Minimal compost application",
+          "Jeevamrut once at vegetative stage"
+        ],
+        "hi": [
+          "कम मात्रा में कम्पोस्ट",
+          "वृद्धि अवस्था पर एक बार जीवामृत"
+        ]
+      },
+      "pest_management": {
+        "en": [
+          "Neem oil spray for sucking pests"
+        ],
+        "hi": [
+          "रस चूसने वाले कीटों हेतु नीम तेल"
+        ]
+      },
+      "harvesting": {
+        "en": "October",
+        "hi": "अक्टूबर"
+      }
+    },
+
+    "moong": {
+      "title": {
+        "en": "Organic Green Gram (Moong) Cultivation – Complete Guide",
+        "hi": "जैविक मूंग खेती – संपूर्ण मार्गदर्शिका"
+      },
+      "season": {
+        "en": "Kharif",
+        "hi": "खरीफ"
+      },
+      "sowing_time": {
+        "en": "July",
+        "hi": "जुलाई"
+      },
+      "seed_rate": {
+        "en": "6–8 kg per acre",
+        "hi": "6–8 किलोग्राम प्रति एकड़"
+      },
+      "seed_treatment": {
+        "en": [
+          "Rhizobium culture",
+          "Trichoderma treatment"
+        ],
+        "hi": [
+          "राइजोबियम कल्चर",
+          "ट्राइकोडर्मा उपचार"
+        ]
+      },
+      "nutrient_management": {
+        "en": [
+          "Compost before sowing",
+          "Jeevamrut at flowering stage"
+        ],
+        "hi": [
+          "बुवाई से पहले कम्पोस्ट",
+          "फूल अवस्था पर जीवामृत"
+        ]
+      },
+      "pest_management": {
+        "en": [
+          "Neem oil spray for pod borer"
+        ],
+        "hi": [
+          "फली छेदक हेतु नीम तेल"
+        ]
+      },
+      "harvesting": {
+        "en": "September",
+        "hi": "सितंबर"
+      }
+    },
+
+    "cumin": {
+      "title": {
+        "en": "Organic Cumin (Jeera) Cultivation – Complete Guide",
+        "hi": "जैविक जीरा खेती – संपूर्ण मार्गदर्शिका"
+      },
+      "season": {
+        "en": "Rabi",
+        "hi": "रबी"
+      },
+      "sowing_time": {
+        "en": "October to November",
+        "hi": "अक्टूबर से नवंबर"
+      },
+      "seed_rate": {
+        "en": "5–6 kg per acre",
+        "hi": "5–6 किलोग्राम प्रति एकड़"
+      },
+      "seed_treatment": {
+        "en": [
+          "Trichoderma treatment",
+          "Shade drying before sowing"
+        ],
+        "hi": [
+          "ट्राइकोडर्मा उपचार",
+          "छाया में सुखाना"
+        ]
+      },
+      "nutrient_management": {
+        "en": [
+          "Apply well-decomposed compost",
+          "Avoid excess nitrogen"
+        ],
+        "hi": [
+          "अच्छी सड़ी हुई कम्पोस्ट डालें",
+          "अधिक नाइट्रोजन से बचें"
+        ]
+      },
+      "pest_and_disease_management": {
+        "en": [
+          "Neem oil spray for aphids",
+          "Proper spacing to avoid wilt"
+        ],
+        "hi": [
+          "माहू नियंत्रण हेतु नीम तेल",
+          "उकठा रोग से बचाव हेतु उचित दूरी"
+        ]
+      },
+      "harvesting": {
+        "en": "February to March",
+        "hi": "फरवरी से मार्च"
+      }
+    }
+
+  }  ,
+
+  "month_wise_farming_calendar": {
+    "January": {
+      "en": [
+        "Monitor cumin and mustard for aphids",
+        "Light irrigation in irrigated rabi fields",
+        "Remove weeds manually"
+      ],
+      "hi": [
+        "जीरा और सरसों में माहू की निगरानी",
+        "सिंचित रबी खेतों में हल्की सिंचाई",
+        "हाथ से खरपतवार हटाना"
+      ]
+    },
+
+    "February": {
+      "en": [
+        "Disease monitoring in cumin (wilt)",
+        "Neem oil spray if required",
+        "Prepare storage for harvested crops"
+      ],
+      "hi": [
+        "जीरा में उकठा रोग की निगरानी",
+        "आवश्यकता पर नीम तेल छिड़काव",
+        "कटाई के लिए भंडारण तैयारी"
+      ]
+    },
+
+    "March": {
+      "en": [
+        "Harvest cumin and mustard",
+        "Proper drying of produce",
+        "Safe storage to avoid pest infestation"
+      ],
+      "hi": [
+        "जीरा और सरसों की कटाई",
+        "उपज को अच्छी तरह सुखाना",
+        "कीट से बचाव हेतु सुरक्षित भंडारण"
+      ]
+    },
+
+    "April": {
+      "en": [
+        "Field cleaning and residue management",
+        "Prepare compost pits",
+        "Repair bunds and water harvesting structures"
+      ],
+      "hi": [
+        "खेत की सफाई और अवशेष प्रबंधन",
+        "कम्पोस्ट गड्ढे तैयार करना",
+        "मेढ़ और जल संग्रह संरचनाओं की मरम्मत"
+      ]
+    },
+
+    "May": {
+      "en": [
+        "Deep summer ploughing to control pests",
+        "Expose soil to sunlight",
+        "Plan kharif crops based on rainfall"
+      ],
+      "hi": [
+        "कीट नियंत्रण हेतु गहरी जुताई",
+        "मिट्टी को धूप में खुला छोड़ना",
+        "वर्षा के अनुसार खरीफ योजना"
+      ]
+    },
+
+    "June": {
+      "en": [
+        "Seed treatment for bajra, guar and moong",
+        "Rainwater harvesting preparations",
+        "Sowing after first effective rainfall"
+      ],
+      "hi": [
+        "बाजरा, ग्वार और मूंग के लिए बीज उपचार",
+        "वर्षा जल संग्रह की तैयारी",
+        "पहली अच्छी बारिश के बाद बुवाई"
+      ]
+    },
+
+    "July": {
+      "en": [
+        "Weeding in kharif crops",
+        "Apply Jeevamrut if moisture is adequate",
+        "Mulching to conserve moisture"
+      ],
+      "hi": [
+        "खरीफ फसलों में निराई",
+        "नमी होने पर जीवामृत प्रयोग",
+        "नमी संरक्षण हेतु मल्चिंग"
+      ]
+    },
+
+    "August": {
+      "en": [
+        "Monitor pests like shoot fly and caterpillars",
+        "Neem-based sprays if needed",
+        "Maintain field bunds against wind erosion"
+      ],
+      "hi": [
+        "तना मक्खी और इल्ली की निगरानी",
+        "आवश्यकता पर नीम आधारित छिड़काव",
+        "पवन अपरदन से बचाव हेतु मेढ़ मजबूत करें"
+      ]
+    },
+
+    "September": {
+      "en": [
+        "Harvest bajra and moong",
+        "Dry produce properly",
+        "Prepare land for rabi crops"
+      ],
+      "hi": [
+        "बाजरा और मूंग की कटाई",
+        "उपज को अच्छी तरह सुखाना",
+        "रबी फसलों के लिए खेत तैयारी"
+      ]
+    },
+
+    "October": {
+      "en": [
+        "Apply compost and FYM",
+        "Sowing of cumin and mustard",
+        "Ensure proper spacing"
+      ],
+      "hi": [
+        "कम्पोस्ट और गोबर खाद डालना",
+        "जीरा और सरसों की बुवाई",
+        "उचित दूरी बनाए रखना"
+      ]
+    },
+
+    "November": {
+      "en": [
+        "Early weed control in rabi crops",
+        "Light irrigation if available",
+        "Disease monitoring"
+      ],
+      "hi": [
+        "रबी फसलों में शुरुआती खरपतवार नियंत्रण",
+        "उपलब्धता अनुसार हल्की सिंचाई",
+        "रोग निगरानी"
+      ]
+    },
+
+    "December": {
+      "en": [
+        "Protect crops from cold stress",
+        "Monitor aphids and diseases",
+        "Weed removal if required"
+      ],
+      "hi": [
+        "ठंड से फसलों की सुरक्षा",
+        "माहू और रोगों की निगरानी",
+        "आवश्यकता पर निराई"
+      ]
+    }
+  },
+
+  "common_problems_and_solutions": {
+    "drought_related": {
+      "en": [
+        "Crop failure due to delayed monsoon",
+        "Moisture stress during flowering"
+      ],
+      "solutions_en": [
+        "Select drought tolerant crops",
+        "Use mulching and rainwater harvesting"
+      ],
+      "hi": [
+        "देरी से मानसून के कारण फसल नुकसान",
+        "फूल अवस्था में नमी की कमी"
+      ],
+      "solutions_hi": [
+        "सूखा सहनशील फसलें चुनें",
+        "मल्चिंग और वर्षा जल संरक्षण अपनाएँ"
+      ]
+    },
+
+    "soil_related": {
+      "en": [
+        "Wind erosion in sandy soils",
+        "Low soil fertility"
+      ],
+      "solutions_en": [
+        "Wind breaks using trees",
+        "Regular organic manure application"
+      ],
+      "hi": [
+        "रेतीली मिट्टी में पवन अपरदन",
+        "मिट्टी की कम उर्वरता"
+      ],
+      "solutions_hi": [
+        "पेड़ लगाकर पवन अवरोध",
+        "नियमित जैविक खाद प्रयोग"
+      ]
+    },
+
+    "pest_related": {
+      "en": [
+        "Shoot fly in bajra",
+        "Aphids in cumin and mustard"
+      ],
+      "solutions_en": [
+        "Neem oil spray",
+        "Use bird perches and light traps"
+      ],
+      "hi": [
+        "बाजरा में तना मक्खी",
+        "जीरा और सरसों में माहू"
+      ],
+      "solutions_hi": [
+        "नीम तेल छिड़काव",
+        "पक्षी खूँटी और लाइट ट्रैप का प्रयोग"
+      ]
+    }
+  }  ,
+
+  "district_specific_notes": {
+    "Jodhpur": {
+      "en": [
+        "Predominantly sandy soils with low organic matter",
+        "Bajra, guar and moth bean are major crops",
+        "Rainwater harvesting structures like khadins are useful",
+        "Wind erosion control is very important"
+      ],
+      "hi": [
+        "मुख्यतः रेतीली मिट्टी और कम जैविक पदार्थ",
+        "बाजरा, ग्वार और मोठ प्रमुख फसलें",
+        "खडीन जैसे वर्षा जल संग्रह उपयोगी",
+        "पवन अपरदन रोकथाम अत्यंत आवश्यक"
+      ]
+    },
+
+    "Jaisalmer": {
+      "en": [
+        "Extreme arid climate with very low rainfall",
+        "Bajra and guar suitable under rainfed conditions",
+        "Traditional water storage systems are essential",
+        "Crop failure risk is high without moisture conservation"
+      ],
+      "hi": [
+        "अत्यधिक शुष्क जलवायु और बहुत कम वर्षा",
+        "वर्षा आधारित बाजरा और ग्वार उपयुक्त",
+        "पारंपरिक जल भंडारण प्रणालियाँ आवश्यक",
+        "नमी संरक्षण के बिना फसल जोखिम अधिक"
+      ]
+    },
+
+    "Barmer": {
+      "en": [
+        "Sandy to sandy loam soils",
+        "Guar and cumin are important cash crops",
+        "Wind erosion is a major issue",
+        "Organic mulching improves soil condition"
+      ],
+      "hi": [
+        "रेतीली से रेतीली दोमट मिट्टी",
+        "ग्वार और जीरा प्रमुख नकदी फसलें",
+        "पवन अपरदन बड़ी समस्या",
+        "जैविक मल्चिंग से मिट्टी सुधरती है"
+      ]
+    },
+
+    "Bikaner": {
+      "en": [
+        "Desert soils with very low fertility",
+        "Bajra, moth bean and fodder crops are common",
+        "Irrigated pockets allow cumin and mustard",
+        "Organic inputs improve soil resilience"
+      ],
+      "hi": [
+        "मरुस्थलीय मिट्टी और कम उर्वरता",
+        "बाजरा, मोठ और चारा फसलें सामान्य",
+        "सिंचित क्षेत्रों में जीरा और सरसों संभव",
+        "जैविक इनपुट से मिट्टी मजबूत होती है"
+      ]
+    },
+
+    "Churu": {
+      "en": [
+        "Highly drought-prone district",
+        "Bajra and moth bean dominate cropping system",
+        "Shelter belts reduce wind impact",
+        "Low-input organic farming is suitable"
+      ],
+      "hi": [
+        "अत्यधिक सूखा प्रभावित जिला",
+        "बाजरा और मोठ प्रमुख फसलें",
+        "शेल्टर बेल्ट से हवा का प्रभाव कम होता है",
+        "कम लागत जैविक खेती उपयुक्त"
+      ]
+    },
+
+    "Nagaur": {
+      "en": [
+        "Sandy loam soils with moderate fertility",
+        "Cumin, bajra and pulses are important crops",
+        "Balanced irrigation required in canal areas",
+        "Organic crop rotation improves yield stability"
+      ],
+      "hi": [
+        "रेतीली दोमट मिट्टी और मध्यम उर्वरता",
+        "जीरा, बाजरा और दलहन प्रमुख फसलें",
+        "नहर क्षेत्रों में संतुलित सिंचाई आवश्यक",
+        "जैविक फसल चक्र से उपज स्थिर रहती है"
+      ]
+    },
+
+    "Sirohi": {
+      "en": [
+        "Semi-arid climate with comparatively better rainfall",
+        "Wheat, mustard and vegetables in irrigated pockets",
+        "Organic manure improves soil structure",
+        "Diversified cropping recommended"
+      ],
+      "hi": [
+        "तुलनात्मक रूप से बेहतर वर्षा वाला अर्ध-शुष्क क्षेत्र",
+        "सिंचित क्षेत्रों में गेहूं, सरसों और सब्ज़ियाँ",
+        "जैविक खाद से मिट्टी संरचना सुधरती है",
+        "फसल विविधीकरण की सिफारिश"
+      ]
+    }
+  },
+
+  "dos_and_donts": {
+    "dos": {
+      "en": [
+        "Adopt drought tolerant crops",
+        "Harvest and conserve rainwater",
+        "Use organic mulching to reduce evaporation",
+        "Apply compost and FYM regularly",
+        "Protect fields from wind erosion"
+      ],
+      "hi": [
+        "सूखा सहनशील फसलें अपनाएँ",
+        "वर्षा जल का संग्रह और संरक्षण करें",
+        "नमी बचाने हेतु जैविक मल्चिंग करें",
+        "नियमित कम्पोस्ट और गोबर खाद डालें",
+        "खेत को पवन अपरदन से बचाएँ"
+      ]
+    },
+
+    "donts": {
+      "en": [
+        "Do not grow water intensive crops",
+        "Do not leave soil bare during summer",
+        "Do not ignore wind erosion control",
+        "Do not use chemical fertilizers and pesticides"
+      ],
+      "hi": [
+        "अधिक पानी वाली फसलें न लें",
+        "गर्मी में मिट्टी को खाली न छोड़ें",
+        "पवन अपरदन नियंत्रण की अनदेखी न करें",
+        "रासायनिक खाद और कीटनाशक का प्रयोग न करें"
+      ]
+    }
+  },
+
+  "final_guiding_principles": {
+    "en": [
+      "Water conservation is the backbone of organic farming in Western Rajasthan",
+      "Low-input and drought resilient crops ensure sustainability",
+      "Soil healing through organic matter is a long-term process",
+      "Traditional knowledge combined with organic practices gives best results",
+      "Healthy soil and moisture management secure farmer livelihood"
+    ],
+    "hi": [
+      "पश्चिमी राजस्थान में जैविक खेती का आधार जल संरक्षण है",
+      "कम लागत और सूखा सहनशील फसलें टिकाऊ खेती देती हैं",
+      "जैविक पदार्थ से मिट्टी सुधार एक दीर्घकालीन प्रक्रिया है",
+      "पारंपरिक ज्ञान और जैविक तरीकों का संयोजन सर्वोत्तम है",
+      "स्वस्थ मिट्टी और जल प्रबंधन से किसान की आजीविका सुरक्षित होती है"
+    ]
+  }
+
+}

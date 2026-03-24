@@ -1,0 +1,12 @@
+Kisan Compensation Report (Indicative)
+Timestamp: 2025-12-23T10:49:56.993066
+Crop: Wheat
+Cause: Flood
+Damage %: 30.0
+PMFBY estimate (per ha): ₹9000.0
+SDRF estimate (per ha): ₹4050.0
+Total estimate (per ha): ₹13050.0
+
+IMPORTANT: This is only an approximate estimate based on generic norms.
+Actual compensation will depend on district notifications,
+official crop-cutting / damage assessment and insurer / government decisions.
