@@ -12,8 +12,6 @@ import './widgets/market_selector_widget.dart';
 import '../../data/crop_price/crop_price_api.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-/// Crop Price Screen - Real-time market prices for crops
-/// Displays current prices from different mandis/markets with filtering
 class CropPriceScreen extends StatefulWidget {
   const CropPriceScreen({super.key});
 
