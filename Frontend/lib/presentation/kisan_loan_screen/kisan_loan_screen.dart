@@ -490,7 +490,7 @@ class LoanDetailScreen extends StatelessWidget {
                 List<String>.from(data["extra"]),
               ),
 
-              // 📄 DOCUMENTS
+          
               expandableSection(
                 isEnglish
                     ? "Documents Required"
