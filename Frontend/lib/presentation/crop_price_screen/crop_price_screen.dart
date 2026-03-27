@@ -18,7 +18,6 @@ class CropPriceScreen extends StatefulWidget {
   @override
   State<CropPriceScreen> createState() => _CropPriceScreenState();
 }
-
 class _CropPriceScreenState extends State<CropPriceScreen>
     with SingleTickerProviderStateMixin {
 
