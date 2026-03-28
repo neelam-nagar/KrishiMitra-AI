@@ -6,7 +6,9 @@ import 'package:provider/provider.dart';
 /// Typing indicator animation for AI processing
 /// Shows agriculture-themed loading animation
 class TypingIndicatorWidget extends StatefulWidget {
-  const TypingIndicatorWidget({super.key});
+  final bool isTyping;
+
+  const TypingIndicatorWidget({super.key, required this.isTyping});
 
   @override
   State<TypingIndicatorWidget> createState() => _TypingIndicatorWidgetState();
@@ -33,6 +35,9 @@ class _TypingIndicatorWidgetState extends State<TypingIndicatorWidget>
 
   @override
   Widget build(BuildContext context) {
+    if (!widget.isTyping) {
+      return const SizedBox();
+    }
     final theme = Theme.of(context);
     final lang = context.watch<LanguageProvider>().currentLanguage;
 
