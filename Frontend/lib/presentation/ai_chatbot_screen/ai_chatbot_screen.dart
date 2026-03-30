@@ -89,7 +89,7 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
   Future<void> _getAIResponse(String message) async {
     try {
       final response = await http.post(
-        Uri.parse("http://10.0.2.2:8000/chat"),
+        Uri.parse("http://127.0.0.1:8000/chat"),
         headers: {
           "Content-Type": "application/json",
         },
@@ -160,7 +160,7 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
         children: [
           Expanded(
             child: ListView.builder(
-              padding: EdgeInsets.only(bottom: 10.h),
+              padding: const EdgeInsets.only(bottom: 80),
               controller: _scrollController,
               itemCount: _messages.length + (_isTyping ? 1 : 0),
               itemBuilder: (context, index) {
@@ -171,21 +171,9 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
               },
             ),
           ),
-          Expanded(
-            flex: 0,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  if (_showSuggestions)
-                    SuggestedQuestionsWidget(
-                      onQuestionTap: _handleSendMessage,
-                    ),
-                  QuickActionButtonsWidget(
-                    onActionTap: _handleSendMessage,
-                  ),
-                ],
-              ),
-            ),
+
+          QuickActionButtonsWidget(
+            onActionTap: _handleSendMessage,
           ),
           MessageInputWidget(
             onSendMessage: _handleSendMessage,
