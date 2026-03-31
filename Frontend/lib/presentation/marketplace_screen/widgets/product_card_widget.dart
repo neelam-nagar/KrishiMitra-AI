@@ -66,11 +66,11 @@ class ProductCardWidget extends StatelessWidget {
               child: Stack(
                 children: [
                   CustomImageWidget(
-                    imageUrl: product['image'] as String,
+                    imageUrl: (product['image'] ?? '') as String,
                     width: double.infinity,
                     height: 25.h,
                     fit: BoxFit.cover,
-                    semanticLabel: product['semanticLabel'] as String,
+                    semanticLabel: (product['semanticLabel'] ?? '') as String,
                   ),
                   if (product['isOrganic'] == true)
                     Positioned(
@@ -136,14 +136,14 @@ class ProductCardWidget extends StatelessWidget {
                             ),
                             SizedBox(width: 1.w),
                             Text(
-                              '${product['quantity']} ${product['unit']}',
+                              '${product['quantity'] ?? 0} ${product['unit'] ?? ''}',
                               style: theme.textTheme.bodyMedium,
                             ),
                           ],
                         ),
                       ),
                       Text(
-                        '₹${product['pricePerUnit']}/${product['unit']}',
+                        '₹${product['pricePerUnit'] ?? 0}/${product['unit'] ?? ''}',
                         style: theme.textTheme.titleMedium?.copyWith(
                           color: theme.colorScheme.primary,
                           fontWeight: FontWeight.w700,
@@ -166,8 +166,8 @@ class ProductCardWidget extends StatelessWidget {
                       Expanded(
                         child: Text(
                           isHindi
-                              ? '${product['location']} • ${product['distance']} किमी दूर'
-                              : '${product['location']} • ${product['distance']} km away',
+                              ? '${product['location'] ?? ''} • ${product['distance'] ?? 0} किमी दूर'
+                              : '${product['location'] ?? ''} • ${product['distance'] ?? 0} km away',
                           style: theme.textTheme.bodySmall,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
@@ -186,7 +186,7 @@ class ProductCardWidget extends StatelessWidget {
                       ),
                       SizedBox(width: 1.w),
                       Text(
-                        '${product['sellerRating']}',
+                        '${product['sellerRating'] ?? 0}',
                         style: theme.textTheme.bodySmall?.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
@@ -202,8 +202,8 @@ class ProductCardWidget extends StatelessWidget {
                       SizedBox(width: 1.w),
                       Text(
                         isHindi
-                            ? 'कटाई: ${product['harvestDate']}'
-                            : 'Harvested: ${product['harvestDate']}',
+                            ? 'कटाई: ${product['harvestDate'] ?? ''}'
+                            : 'Harvested: ${product['harvestDate'] ?? ''}',
                         style: theme.textTheme.bodySmall,
                       ),
                     ],
@@ -236,7 +236,7 @@ class ProductCardWidget extends StatelessWidget {
                           child: ElevatedButton.icon(
                             onPressed: () {
                               HapticFeedback.lightImpact();
-                              _makePhoneCall(product['contactNumber'] as String);
+                              _makePhoneCall((product['contactNumber'] ?? '').toString());
                             },
                             icon: CustomIconWidget(
                               iconName: 'phone',

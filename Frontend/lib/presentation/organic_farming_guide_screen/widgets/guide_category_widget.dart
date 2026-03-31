@@ -3,69 +3,83 @@ import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 import '../../../core/language_provider.dart';
 
-/// Guide category widget for filtering guides
-class GuideCategoryWidget extends StatelessWidget {
-  final List<String> categories;
-  final String selectedCategory;
-  final Function(String) onCategoryChanged;
+/// Region selection widget
+class RegionSelectionWidget extends StatelessWidget {
+  final Function(String) onRegionSelected;
 
-  const GuideCategoryWidget({
+  const RegionSelectionWidget({
     super.key,
-    required this.categories,
-    required this.selectedCategory,
-    required this.onCategoryChanged,
+    required this.onRegionSelected,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final lang = context.watch<LanguageProvider>().currentLanguage; // 'hi' or 'en'
+    final lang = context.watch<LanguageProvider>().currentLanguage;
 
-    return Container(
-      height: 6.h,
-      margin: EdgeInsets.symmetric(vertical: 1.h),
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.symmetric(horizontal: 4.w),
-        itemCount: categories.length,
-        itemBuilder: (context, index) {
-          final category = categories[index];
-          final isSelected = category == selectedCategory;
+    final regions = [
+      {"key": "hadoti_region", "en": "Hadoti", "hi": "हाड़ौती"},
+      {"key": "eastern_rajasthan", "en": "Eastern Rajasthan", "hi": "पूर्वी राजस्थान"},
+      {"key": "western_rajasthan", "en": "Western Rajasthan", "hi": "पश्चिमी राजस्थान"},
+      {"key": "shekhawati_region", "en": "Shekhawati", "hi": "शेखावाटी"},
+      {"key": "southern_rajasthan", "en": "Southern Rajasthan", "hi": "दक्षिणी राजस्थान"},
+    ];
 
-          return Padding(
-            padding: EdgeInsets.only(right: 2.w),
-            child: FilterChip(
-              label: Text(_getCategoryName(category, lang)),
-              selected: isSelected,
-              onSelected: (_) => onCategoryChanged(category),
-              backgroundColor: theme.colorScheme.surface,
-              selectedColor: theme.colorScheme.primary,
-              labelStyle: theme.textTheme.bodyMedium?.copyWith(
-                color: isSelected
-                    ? theme.colorScheme.onPrimary
-                    : theme.colorScheme.onSurface,
-                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+    return ListView.builder(
+      padding: EdgeInsets.all(4.w),
+      itemCount: regions.length,
+      itemBuilder: (context, index) {
+        final region = regions[index];
+
+        return Container(
+          margin: EdgeInsets.only(bottom: 2.h),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            gradient: LinearGradient(
+              colors: [
+                Colors.green.shade100,
+                Colors.green.shade50,
+              ],
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.05),
+                blurRadius: 6,
+                offset: const Offset(0, 3),
+              ),
+            ],
+          ),
+          child: ListTile(
+            contentPadding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.5.h),
+            leading: CircleAvatar(
+              backgroundColor: Colors.green.shade200,
+              child: Icon(Icons.agriculture, color: Colors.green.shade800),
+            ),
+            title: Text(
+              lang == 'en'
+                  ? (region['en'] ?? region['key'])
+                  : (region['hi'] ?? region['key']),
+              style: theme.textTheme.bodyLarge?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: Colors.green.shade900,
               ),
             ),
-          );
-        },
-      ),
+            subtitle: Text(
+              lang == 'en' ? 'View farming guide' : 'खेती गाइड देखें',
+              style: theme.textTheme.bodySmall,
+            ),
+            trailing: Container(
+              padding: const EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                color: Colors.green.shade700,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Icon(Icons.arrow_forward, color: Colors.white, size: 16),
+            ),
+            onTap: () => onRegionSelected(region['key']!),
+          ),
+        );
+      },
     );
-  }
-
-  /// Get localized category name
-  String _getCategoryName(String category, String lang) {
-    if (lang == 'en') return category;
-
-    final translations = {
-      'All': 'सभी',
-      'Basics': 'बुनियादी',
-      'Soil Health': 'मिट्टी स्वास्थ्य',
-      'Pest Control': 'कीट नियंत्रण',
-      'Techniques': 'तकनीक',
-      'Certification': 'प्रमाणन',
-    };
-
-    return translations[category] ?? category;
   }
 }
