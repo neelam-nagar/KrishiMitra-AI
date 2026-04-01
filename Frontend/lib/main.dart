@@ -4,6 +4,9 @@ import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
 import 'core/app_export.dart';
 import 'core/language_provider.dart';
 import 'core/location_provider.dart';
@@ -11,6 +14,10 @@ import 'widgets/custom_error_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   bool _hasShownError = false;
 

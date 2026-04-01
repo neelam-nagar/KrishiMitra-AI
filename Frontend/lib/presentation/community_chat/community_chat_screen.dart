@@ -2,6 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../../services/firestore_service.dart';
 import '../../core/language_provider.dart';
 import '../../widgets/custom_bottom_bar.dart';
 import '../../core/app_export.dart';
@@ -26,6 +28,7 @@ class _CommunityChatScreenState extends State<CommunityChatScreen> {
   File? _selectedImage;
 
   final ImagePicker _picker = ImagePicker();
+  final FirestoreService _firestoreService = FirestoreService();
 
   /// 📷 Pick image from camera or gallery
   Future<void> _pickImage(ImageSource source) async {
@@ -41,24 +44,30 @@ class _CommunityChatScreenState extends State<CommunityChatScreen> {
     }
   }
 
-  /// ➕ Add post
-  void _addPost() {
-    if (_postController.text.trim().isEmpty && _selectedImage == null) return;
+  Future<void> _addPost() async {
+    print("Post button clicked 🔥");
 
-    setState(() {
-      _posts.insert(
-        0,
-        PostModel(
-          id: DateTime.now().millisecondsSinceEpoch.toString(),
-          userName: 'Neelam',
-          text: _postController.text.trim(),
-          imagePath: _selectedImage?.path,
-          isOwner: true,
-        ),
-      );
+    final message = _postController.text.trim();
+
+    if (message.isEmpty && _selectedImage == null) {
+      print("Nothing to post ❌");
+      return;
+    }
+
+    try {
+      await FirebaseFirestore.instance.collection('posts').add({
+        'message': message,
+        'username': 'Neelam', // temporary (later from auth)
+        'time': FieldValue.serverTimestamp(),
+      });
+
       _postController.clear();
-      _selectedImage = null;
-    });
+      setState(() {
+        _selectedImage = null;
+      });
+    } catch (e) {
+      print("Error posting: $e");
+    }
   }
 
   /// 📸 Image picker bottom sheet
@@ -92,6 +101,12 @@ class _CommunityChatScreenState extends State<CommunityChatScreen> {
   }
 
   @override
+  void dispose() {
+    _postController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -107,6 +122,7 @@ class _CommunityChatScreenState extends State<CommunityChatScreen> {
               children: [
                 TextField(
                   controller: _postController,
+                  onSubmitted: (value) => _addPost(),
                   decoration: InputDecoration(
                     hintText: isHindi
                         ? 'सवाल पूछें या जानकारी साझा करें...'
@@ -124,14 +140,18 @@ class _CommunityChatScreenState extends State<CommunityChatScreen> {
                     if (_selectedImage != null)
                       Text(isHindi ? 'तस्वीर चुनी गई' : 'Image selected'),
                     const Spacer(),
-                    ElevatedButton.icon(
-                      onPressed: _addPost,
-                      icon: const Icon(Icons.send),
-                      label: Text(isHindi ? 'पोस्ट करें' : 'Post'),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF2E7D32),
+                    SizedBox(
+                      height: 45,
+                      child: ElevatedButton.icon(
+                        onPressed: _addPost,
+                        icon: const Icon(Icons.send),
+                        label: Text(isHindi ? 'पोस्ट करें' : 'Post'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF2E7D32),
+                          minimumSize: const Size(100, 45),
+                        ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ],
@@ -140,16 +160,50 @@ class _CommunityChatScreenState extends State<CommunityChatScreen> {
 
           /// 🧵 Posts feed
           Expanded(
-            child: ListView.builder(
-              itemCount: _posts.length,
-              itemBuilder: (context, index) {
-                final post = _posts[index];
-                return PostCard(
-                  post: post,
-                  onDelete: () {
-                    setState(() {
-                      _posts.removeAt(index);
-                    });
+            child: StreamBuilder(
+              stream: FirebaseFirestore.instance
+                  .collection('posts')
+                  .orderBy('time', descending: true)
+                  .snapshots(),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+
+                if (snapshot.data!.docs.isEmpty) {
+                  return Center(
+                    child: Text(isHindi ? 'अभी कोई पोस्ट नहीं है' : 'No posts yet'),
+                  );
+                }
+
+                final posts = snapshot.data!.docs;
+
+                return ListView.builder(
+                  itemCount: posts.length,
+                  itemBuilder: (context, index) {
+                    final doc = posts[index];
+                    final data = doc.data() as Map<String, dynamic>;
+
+                    return Card(
+                      margin: const EdgeInsets.all(10),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              data['username'] ?? 'User',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF2E7D32),
+                              ),
+                            ),
+                            const SizedBox(height: 5),
+                            Text(data['message'] ?? ''),
+                          ],
+                        ),
+                      ),
+                    );
                   },
                 );
               },

@@ -12,9 +12,10 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  String _name = 'Neelam Nagar';
-  String _phone = '+91 9828833182';
-  String _village = 'Baran';
+  String _name = 'Farmer Name';
+  String _phone = '+91 XXXXXXXX';
+  String _village = 'Your Village';
+  String _photoUrl = "";
 
   @override
   Widget build(BuildContext context) {
@@ -49,28 +50,43 @@ class _ProfileScreenState extends State<ProfileScreen> {
             width: double.infinity,
             padding: const EdgeInsets.fromLTRB(20, 28, 20, 32),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary,
+              gradient: LinearGradient(
+                colors: [
+                  Theme.of(context).colorScheme.primary,
+                  Theme.of(context).colorScheme.primary.withOpacity(0.8),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
               borderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20),
+                bottomLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30),
               ),
             ),
             child: Column(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(color: Colors.white, width: 1.2),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.15),
+                        blurRadius: 12,
+                        offset: Offset(0, 6),
+                      ),
+                    ],
                   ),
                   child: CircleAvatar(
-                    radius: 44,
+                    radius: 50,
                     backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.person_outline,
-                      size: 42,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+                    backgroundImage: _photoUrl.isNotEmpty ? NetworkImage(_photoUrl) : null,
+                    child: _photoUrl.isEmpty
+                        ? Icon(
+                            Icons.person_outline,
+                            size: 48,
+                            color: Theme.of(context).colorScheme.primary,
+                          )
+                        : null,
                   ),
                 ),
                 const SizedBox(height: 14),
@@ -78,8 +94,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   _name,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w700,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.5,
                   ),
                 ),
                 const SizedBox(height: 6),
@@ -87,20 +104,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   _phone,
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.85),
-                    fontSize: 14,
+                    fontSize: 15,
+                    letterSpacing: 0.3,
                   ),
                 ),
                 const SizedBox(height: 20),
                 Container(
                   padding: const EdgeInsets.symmetric(vertical: 14),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.15),
-                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.white.withOpacity(0.18),
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      _ProfileStat(title: lang == 'en' ? 'Village' : 'गांव', value: _village),
+                      _ProfileStat(title: lang == 'en' ? 'Location' : 'स्थान', value: _village),
                       const SizedBox(width: 24),
                       _ProfileStat(title: lang == 'en' ? 'Language' : 'भाषा', value: lang == 'en' ? 'English' : 'हिंदी'),
                     ],
@@ -120,7 +138,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 setState(() {
                   _name = result['name'] ?? _name;
                   _phone = result['phone'] ?? _phone;
-                  _village = result['village'] ?? _village;
+                  _village = result['location'] ?? _village;
+                  _photoUrl = result['photo'] ?? _photoUrl;
                 });
               }
             },
@@ -132,44 +151,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               final provider = context.read<LanguageProvider>();
               provider.changeLanguage(
                 provider.currentLanguage == 'en' ? 'hi' : 'en',
-              );
-            },
-          ),
-          _profileTile(
-            icon: Icons.notifications,
-            title: lang == 'en' ? 'Notifications' : 'सूचनाएं',
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                    lang == 'en'
-                        ? 'Notifications feature coming soon'
-                        : 'सूचनाएं फीचर जल्द आ रहा है',
-                  ),
-                ),
-              );
-            },
-          ),
-          _profileTile(
-            icon: Icons.help_outline,
-            title: lang == 'en' ? 'Help & Support' : 'सहायता',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (_) => AlertDialog(
-                  title: Text(lang == 'en' ? 'Help & Support' : 'सहायता'),
-                  content: Text(
-                    lang == 'en'
-                        ? 'For any help, contact: support@krishimitra.ai'
-                        : 'किसी भी सहायता के लिए संपर्क करें: support@krishimitra.ai',
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: Text(lang == 'en' ? 'OK' : 'ठीक है'),
-                    ),
-                  ],
-                ),
               );
             },
           ),
@@ -221,7 +202,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     bool isLogout = false,
   }) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       child: Builder(
         builder: (context) => InkWell(
           borderRadius: BorderRadius.circular(14),
@@ -233,12 +214,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(14),
+              borderRadius: BorderRadius.circular(18),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
-                  blurRadius: 8,
-                  offset: const Offset(0, 4),
+                  color: Colors.black.withOpacity(0.06),
+                  blurRadius: 12,
+                  offset: const Offset(0, 6),
                 ),
               ],
             ),
