@@ -77,6 +77,11 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
         'text': message,
         'time': _getCurrentTime(),
       });
+      _messages.add({
+        'isUser': false,
+        'text': "⏳ KrishiMitra AI soch raha hai...",
+        'time': _getCurrentTime(),
+      });
       _isTyping = true;
       _showSuggestions = false;
     });
@@ -89,7 +94,7 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
   Future<void> _getAIResponse(String message) async {
     try {
       final response = await http.post(
-        Uri.parse("http://127.0.0.1:8000/chat"),
+        Uri.parse("https://krishimitra-ai-6.onrender.com/chat"),
         headers: {
           "Content-Type": "application/json",
         },
@@ -105,6 +110,7 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
 
       if (data["status"] == "success") {
         setState(() {
+          _messages.removeLast();
           _messages.add({
             'isUser': false,
             'text': data["answer"],
@@ -117,6 +123,7 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
       }
     } catch (e) {
       setState(() {
+        _messages.removeLast();
         _messages.add({
           'isUser': false,
           'text': "Server se connect nahi ho pa raha, dobara try karein",
