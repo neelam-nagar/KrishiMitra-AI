@@ -194,9 +194,9 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
       final district = locationProvider.district;
       final tehsil = locationProvider.tehsil;
       final village = locationProvider.village;
-final url =
-    "https://krishimitra-ai-3-65a1.onrender.com/weather"
-    "?district=$district&tehsil=$tehsil&village=$village";
+      final url =
+          "https://krishimitra-ai-3-65a1.onrender.com/weather"
+          "?district=$district&tehsil=$tehsil&village=$village";
 
       final response = await http.get(Uri.parse(url));
       final data = json.decode(response.body);
