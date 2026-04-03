@@ -32,7 +32,35 @@ def get_7_day_forecast(lat, lon):
         f"&daily=temperature_2m_max,temperature_2m_min,rain_sum"
         f"&timezone=auto"
     )
-    return requests.get(url).json()
+
+    res = requests.get(url).json()
+
+    forecast = []
+
+    for i in range(len(res["daily"]["time"])):
+        date = res["daily"]["time"][i]
+        tmax = res["daily"]["temperature_2m_max"][i]
+        tmin = res["daily"]["temperature_2m_min"][i]
+        rain = res["daily"]["rain_sum"][i]
+
+        # simple condition logic
+        if rain > 0:
+            condition = "Rainy"
+        elif tmax >= 30:
+            condition = "Sunny"
+        else:
+            condition = "Cloudy"
+
+        forecast.append({
+            "date": date,
+            "highTemp": tmax,
+            "lowTemp": tmin,
+            "rainfallProbability": rain,
+            "humidity": 0,
+            "condition": condition
+        })
+
+    return forecast
 
 
 # --------------------------
@@ -123,6 +151,7 @@ def get_weather_for_chatbot(json_file, district_name, tehsil_name, village_name)
             return "Weather data available nahi hai"
 
         hourly = get_hourly_forecast(lat, lon)
+        forecast = get_7_day_forecast(lat, lon)
 
         return {
             "location": {
@@ -132,7 +161,8 @@ def get_weather_for_chatbot(json_file, district_name, tehsil_name, village_name)
                 "village": village_name
             },
             "current": current,
-            "hourly": hourly[:6]
+            "hourly": hourly[:6],
+            "forecast": forecast
         }
 
     except Exception:
