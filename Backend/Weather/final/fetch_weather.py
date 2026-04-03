@@ -10,7 +10,7 @@ def get_current_weather(lat, lon):
     url = (
         f"https://api.open-meteo.com/v1/forecast?"
         f"latitude={lat}&longitude={lon}"
-        f"&current=temperature_2m,relativehumidity_2m,rain,windspeed_10m"
+        f"&current=temperature_2m,relative_humidity_2m,rain,wind_speed_10m"
     )
     res = requests.get(url).json()
 
@@ -19,9 +19,9 @@ def get_current_weather(lat, lon):
 
     return {
         "temperature": res["current"].get("temperature_2m"),
-        "humidity": res["current"].get("relativehumidity_2m"),
+        "humidity": res["current"].get("relative_humidity_2m"),
         "rain": res["current"].get("rain"),
-        "wind": res["current"].get("windspeed_10m")
+        "wind": res["current"].get("wind_speed_10m")
     }
 
 
@@ -116,9 +116,15 @@ def get_weather_for_chatbot(json_file, district_name, tehsil_name, village_name)
 
         districts = data["districts"]
 
-        district = next(d for d in districts if d["district"].lower() == district_name.lower())
-        tehsil = next(t for t in district["tehsils"] if t["tehsil"].lower() == tehsil_name.lower())
-        village = next(v for v in tehsil["villages"] if v["village"].lower() == village_name.lower())
+        district = next((d for d in districts if d["district"].lower() == district_name.lower()), None)
+        if not district:
+            return {"error": "District not found"}
+        tehsil = next((t for t in district["tehsils"] if t["tehsil"].lower() == tehsil_name.lower()), None)
+        if not tehsil:
+            return {"error": "Tehsil not found"}
+        village = next((v for v in tehsil["villages"] if v["village"].lower() == village_name.lower()), None)
+        if not village:
+            return {"error": "Village not found"}
 
         lat = float(village["lat"])
         lon = float(village["lon"])
@@ -143,8 +149,9 @@ def get_weather_for_chatbot(json_file, district_name, tehsil_name, village_name)
             "forecast": forecast
         }
 
-    except Exception:
-        return "Weather data abhi update ho raha hai"
+    except Exception as e:
+        print("ERROR:", e)
+        return {"error": str(e)}
 
 
 def main(json_file):
