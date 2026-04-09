@@ -519,7 +519,7 @@ in the Software without restriction...
 
 **Project Maintainer** — Neelam Nagar
 
-📧 Email: your-real-email@gmail.com  
+📧 Email: neelunagar82@gmail.com  
 🐙 GitHub: https://github.com/neelam-nagar  
 🔗 LinkedIn: https://www.linkedin.com/in/neelamnagar/
 
