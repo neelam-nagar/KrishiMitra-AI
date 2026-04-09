@@ -450,7 +450,7 @@ Base URL: `http://your-backend-url:8000/api/v1`
 |---|---|---|
 | ![Market](assets/screenshots/market_placeholder.png) | ![Schemes](assets/screenshots/schemes_placeholder.png) | ![Community](assets/screenshots/community_placeholder.png) |
 
-> 🎥 **Demo Video**: [Watch on YouTube](#) *(Coming Soon)*
+> 🎥 **Demo Video**: *(Coming Soon)*
 
 ---
 
