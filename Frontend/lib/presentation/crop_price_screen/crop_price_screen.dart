@@ -62,7 +62,7 @@ class _CropPriceScreenState extends State<CropPriceScreen> {
         mandi: _selectedMandi!,
         crop: _selectedCrop,
       );
-      final raw = (r is List) ? r : List<dynamic>.from(r['prices'] ?? r['data'] ?? []);
+      final raw = List<dynamic>.from((r is List) ? r : (r['prices'] ?? r['data'] ?? []));
       final minP = r['minPrice'] ?? 0;
       final maxP = r['maxPrice'] ?? 0;
       final avgP = r['avgPrice'] ?? 0;
