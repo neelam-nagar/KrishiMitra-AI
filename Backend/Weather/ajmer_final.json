@@ -1,0 +1,5168 @@
+{
+  "district": "Ajmer",
+  "district_hi": "अजमेर",
+  "tehsils": [
+    {
+      "tehsil": "Ajmer",
+      "tehsil_hi": "अजमेर",
+      "villages": [
+        {
+          "name": "Ajaysar",
+          "name_hi": "अजयसर",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Ajmer (M Corp.)",
+          "name_hi": "अजमेर (एम कॉर्प.)",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Akhri",
+          "name_hi": "आखरी",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Amba Maseena",
+          "name_hi": "अम्बा मसीना",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Aradka",
+          "name_hi": "अरड़का",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Babayacha",
+          "name_hi": "बाबायाचा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Badiya Ka Bala",
+          "name_hi": "बड़िया का बाला",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Badlya (CT)",
+          "name_hi": "बादल्या (सीटी)",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Baghpura",
+          "name_hi": "बाघपुरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Balwanta",
+          "name_hi": "बलवंटा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Banseli",
+          "name_hi": "बांसेली",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Bargaon",
+          "name_hi": "बरगाँव",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Beer",
+          "name_hi": "बीर",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Bhanwta",
+          "name_hi": "भंवता",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Bhawani Khera",
+          "name_hi": "भावानी खेड़ा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Bhoodol",
+          "name_hi": "भूडोल",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Boraj-Kazipura (CT)",
+          "name_hi": "बोराज-काज़ीपुरा (सीटी)",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Bubani",
+          "name_hi": "बुबानी",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Chachiyawas",
+          "name_hi": "चाचियावास",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Chandiyawas",
+          "name_hi": "चांदियावास",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Chawandiya",
+          "name_hi": "चावंडिया",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Chhatri",
+          "name_hi": "छतरी",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Danta",
+          "name_hi": "डांटा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Daurai (Rural)",
+          "name_hi": "दौराई (ग्रामीण)",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Dedula",
+          "name_hi": "डेडुला",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Deo Nagar",
+          "name_hi": "देव नगर",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Doomara",
+          "name_hi": "डूमरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Doongariya Khurd",
+          "name_hi": "दुंगरिया खुर्द",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Gagwana",
+          "name_hi": "गागवाना",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Ganahera",
+          "name_hi": "गनहेड़ा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Gegal",
+          "name_hi": "गेगल",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Ghooghra",
+          "name_hi": "घूघरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Godiyawas",
+          "name_hi": "गोदियावास",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Goyala",
+          "name_hi": "गोयला",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Gudha",
+          "name_hi": "गुढ़ा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Gudli",
+          "name_hi": "गुढली",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Guwardi",
+          "name_hi": "गुवाड़ी",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Hansiyawas",
+          "name_hi": "हंसियावास",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Hathi Khera",
+          "name_hi": "हाथी खेड़ा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Hatoondi",
+          "name_hi": "हटूंड़ी",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Hokaran",
+          "name_hi": "होकड़न",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Hoshiyara",
+          "name_hi": "होशियारा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Jatiya",
+          "name_hi": "जटिया",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Jatli",
+          "name_hi": "जाटली",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Kadel",
+          "name_hi": "कड़ेल",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Kaklana",
+          "name_hi": "कक्लाना",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Kawalai",
+          "name_hi": "कावलाई",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Kayampura",
+          "name_hi": "कायमपुरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Kayar",
+          "name_hi": "काएर",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Khajpura",
+          "name_hi": "खजपुरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Kharekhari",
+          "name_hi": "खारेखड़ी",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Khonda",
+          "name_hi": "खोंडा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Khori",
+          "name_hi": "खोरी",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Kishanpura",
+          "name_hi": "किशनपुरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Lachchipura",
+          "name_hi": "लच्छीपुरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Ladpura",
+          "name_hi": "लाडपुरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Leela Seori",
+          "name_hi": "लीला सेओरी",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Leswa",
+          "name_hi": "लेसवा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Lohagal",
+          "name_hi": "लोहागल",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Madarpura",
+          "name_hi": "मदारपुरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Magra",
+          "name_hi": "मागरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Magri",
+          "name_hi": "मागड़ी",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Majhewla",
+          "name_hi": "मझेवला",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Makarwali",
+          "name_hi": "माकरवाली",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Manpura",
+          "name_hi": "मानपुरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Miyapur",
+          "name_hi": "मियापुर",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Muhami (Mohami)",
+          "name_hi": "मुहामी (मोहमी)",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Naharpura",
+          "name_hi": "नाहरपुरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Nand",
+          "name_hi": "नांद",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Nareli",
+          "name_hi": "नरेली",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Narwar",
+          "name_hi": "नरवर",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Nolkha",
+          "name_hi": "नोलखा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Oontra",
+          "name_hi": "ऊनत्रा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Padampura",
+          "name_hi": "पदनपुरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Palra",
+          "name_hi": "पालड़ा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Pushkar (M)",
+          "name_hi": "पुष्कर (नगर)",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Pushkar (Rural)",
+          "name_hi": "पुष्कर (ग्रामीण)",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Ramner Dhani",
+          "name_hi": "रामनेर ढाणी",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Rampura Nand",
+          "name_hi": "रायपुरा नांद",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Rasoolpura",
+          "name_hi": "रसूलपुरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Rewat",
+          "name_hi": "रेवट",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Saradhana",
+          "name_hi": "सरधाना",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Sarana",
+          "name_hi": "सराना",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Sedariya",
+          "name_hi": "सेदड़िया",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Somalpur",
+          "name_hi": "सोमालपुर",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Tabeeji (Rural)",
+          "name_hi": "तबीजी (ग्रामीण)",
+          "lat": 26.4691,
+          "lon": 74.639
+        },
+        {
+          "name": "Tilora",
+          "name_hi": "तिलोरा",
+          "lat": 26.4691,
+          "lon": 74.639
+        }
+      ],
+      "lat": 26.4691,
+      "lon": 74.639
+    },
+    {
+      "tehsil": "Beawar",
+      "tehsil_hi": "ब्यावर",
+      "villages": [
+        {
+          "name": "Adabala",
+          "name_hi": "अदाबाला",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Amarpura(Kali Kankar)",
+          "name_hi": "अमरपुरा (काली कंकर)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Amarpura(Khera Kalan)",
+          "name_hi": "अमरपुरा (खेड़ा कलां)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Anakar",
+          "name_hi": "अनाकर",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Asan(Khera Kalan)",
+          "name_hi": "असां (खेड़ा कलां)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Ateetmand",
+          "name_hi": "अतीतमंद",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Badiya Ajba",
+          "name_hi": "बड़िया अज्बा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Badiya Bhau (Jawaja)",
+          "name_hi": "बड़िया भाऊ (जवाजा)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Badiya Gena",
+          "name_hi": "बड़िया गेना",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Badiya Jagga",
+          "name_hi": "बड़िया जग्गा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Badiya Loomba",
+          "name_hi": "बड़िया लूंबा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Badiya Mota",
+          "name_hi": "बड़िया मोटा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Badiya Shyama",
+          "name_hi": "बड़िया श्यामा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Badiya Teja",
+          "name_hi": "बड़िया तेजा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bagaliya",
+          "name_hi": "बागलिया",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Baghmal",
+          "name_hi": "बाघमल",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bala Charat",
+          "name_hi": "बाला चराट",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Balai Khera",
+          "name_hi": "बलई खेड़ा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Balar (Rural)",
+          "name_hi": "बालर (ग्रामीण)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bamanhera",
+          "name_hi": "बमनहेड़ा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Banar Khera",
+          "name_hi": "बनार खेड़ा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Banewari",
+          "name_hi": "बनेवारी",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Banjari",
+          "name_hi": "बंजारी",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bar Kochara",
+          "name_hi": "बर कोचरा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Barakhan",
+          "name_hi": "बराखां",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Baral (Jawaja)",
+          "name_hi": "बराल (जवाजा)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bariya Bhau(Pakhariyawas)",
+          "name_hi": "बरिया भाऊ (पखारियावास)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bariya Nanga",
+          "name_hi": "बरिया नंगा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bassi (Jawaja)",
+          "name_hi": "बसी (जवाजा)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bayla",
+          "name_hi": "बायला",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Beawar (M Cl + OG)",
+          "name_hi": "ब्यावर (नगर परिषद + ओजी)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Beawar Khas",
+          "name_hi": "ब्यावर खास",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Been",
+          "name_hi": "बीन",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bhagwanpura (Jawaja)",
+          "name_hi": "भगवानपुरा (जवाजा)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bhagwanpura (Naya Nagar)",
+          "name_hi": "भगवानपुरा (नया नगर)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bhainsapa",
+          "name_hi": "भैंसपा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bhairoon Khera (Bar Kochara)",
+          "name_hi": "भैरों खेड़ा (बर कोचरा)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bhairoon Khera (Dhola Danta)",
+          "name_hi": "भैरों खेड़ा (ढोला डांटा)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bhambipura",
+          "name_hi": "भांबीपुरा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bhawani Khera(Beawar Khas)",
+          "name_hi": "भवानी खेड़ा (ब्यावर खास)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bhawani Khera(Kaliyawas)",
+          "name_hi": "भवानी खेड़ा (कलियावास)",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bheelaton Ka Wadiya",
+          "name_hi": "भीलटों का वड़िया",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        },
+        {
+          "name": "Bhojpura",
+          "name_hi": "भोजपुरा",
+          "lat": 26.5227411,
+          "lon": 74.717497
+        }
+      ],
+      "lat": 26.5227411,
+      "lon": 74.717497
+    },
+    {
+      "tehsil": "Bhinay",
+      "tehsil_hi": "भिनाय",
+      "villages": [
+        {
+          "name": "Amargarh",
+          "name_hi": "अमरगढ़",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Arjunpura",
+          "name_hi": "अर्जुनपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Bagrai",
+          "name_hi": "बागरई",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Balapura",
+          "name_hi": "बालापुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Bandanwara",
+          "name_hi": "बंदनवाड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Baneriya",
+          "name_hi": "बनेरिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Bargaon",
+          "name_hi": "बरगाँव",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Barla @ Kala Talab",
+          "name_hi": "बरला @ काला तालाब",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Barla Khera",
+          "name_hi": "बरला खेड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Barli",
+          "name_hi": "बरली",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Beeliya",
+          "name_hi": "बेेलिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Bhairoo Khera",
+          "name_hi": "भैरों खेड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Bhinay",
+          "name_hi": "भिनाय",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Boobkiya",
+          "name_hi": "बूबकिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Chapaneri",
+          "name_hi": "छापनेरी",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Chawandiya",
+          "name_hi": "चावंडिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Chhachhundra",
+          "name_hi": "छाछुंद्रा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Daulatpura",
+          "name_hi": "दौलतपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Deoliya Kalan",
+          "name_hi": "देोलिया कलां",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Deopura",
+          "name_hi": "देोपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Dhandhon Ka Khera",
+          "name_hi": "धंधों का खेड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Dhani",
+          "name_hi": "ढाणी",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Dhantol",
+          "name_hi": "धंतोल",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Ekalseenga",
+          "name_hi": "एकलसींगा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Gajjanadi",
+          "name_hi": "गज्जनाड़ी",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Ganahera",
+          "name_hi": "गनहेड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Ghana",
+          "name_hi": "घाणा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Gopalpura",
+          "name_hi": "गोपालपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Gordhanpura",
+          "name_hi": "गोर्धनपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Gowaliya",
+          "name_hi": "गोवालिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Gujarwara",
+          "name_hi": "गुजरवाड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Gurha Kalan",
+          "name_hi": "गुड़हा कलां",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Gurha Khurd",
+          "name_hi": "गुड़हा खुर्द",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Heerapura",
+          "name_hi": "हीरापुर",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Hiyaliya",
+          "name_hi": "हियालिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Jetpura",
+          "name_hi": "जेटपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Jhanbarkiya",
+          "name_hi": "झनबरकीया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Jheepiya",
+          "name_hi": "झीपिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Jorawarpura",
+          "name_hi": "जोरावरपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Kachariya",
+          "name_hi": "कचरिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Kanai Kalan",
+          "name_hi": "कनाई कलां",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Kanai Khurd",
+          "name_hi": "कनाई खुर्द",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Karati",
+          "name_hi": "कराती",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Keetap",
+          "name_hi": "कीताप",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Keriya Khurd",
+          "name_hi": "केरिया खुर्द",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Kerot",
+          "name_hi": "केरोट",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Khatanon Ka Khera",
+          "name_hi": "खटनों का खेड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Khayra",
+          "name_hi": "खैरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Kheri",
+          "name_hi": "खेड़ी",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Kumhariya",
+          "name_hi": "कुंहरिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Kumhariya Khera",
+          "name_hi": "कुंहरिया खेड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Kurthal",
+          "name_hi": "कूर्थल",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Lamgara",
+          "name_hi": "लामगड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Laxmipura",
+          "name_hi": "लक्ष्मीपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Mataji Ka Khera",
+          "name_hi": "माताजी का खेड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Mathaniya",
+          "name_hi": "मथानिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Moondiya Khera",
+          "name_hi": "मूंडिया खेड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Motipura",
+          "name_hi": "मोतीपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Nagola",
+          "name_hi": "नगोला",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Nandsi",
+          "name_hi": "नंदसी",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Neemera",
+          "name_hi": "नीमेरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Neemra",
+          "name_hi": "नीमरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Padaliya",
+          "name_hi": "पडालिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Padanga",
+          "name_hi": "पडांगा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Pandonlai",
+          "name_hi": "पंडोनलाई",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Peeloda",
+          "name_hi": "पीलोदा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Peepaliya",
+          "name_hi": "पीपलिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Pratappura",
+          "name_hi": "प्रतापपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Raghunath Garh",
+          "name_hi": "रघुनाथगढ़",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Raghunathpura",
+          "name_hi": "रघुनाथपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Rammaliya",
+          "name_hi": "रममलिया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Rampura",
+          "name_hi": "रामपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Ratakot",
+          "name_hi": "रताकोट",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Ratanpura",
+          "name_hi": "रत्नपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Ren",
+          "name_hi": "रेन",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Rooppura",
+          "name_hi": "रूपपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Sapnikhera",
+          "name_hi": "सपनिखेड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Sargaon",
+          "name_hi": "सरगाँव",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Sawaipura",
+          "name_hi": "सवाईपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Sedariya",
+          "name_hi": "सेदड़िया",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Singhawal",
+          "name_hi": "सिंहवाल",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Sobri",
+          "name_hi": "सोबड़ी",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Sol Kalan",
+          "name_hi": "सोल कलां",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Solkhurd",
+          "name_hi": "सोल खुर्द",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Soorajpura",
+          "name_hi": "सूरजपुरा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Telara",
+          "name_hi": "टेलाड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Udaigarh Khera",
+          "name_hi": "उदयगढ़ खेड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        },
+        {
+          "name": "Udaipura Khera",
+          "name_hi": "उदयपुरा खेड़ा",
+          "lat": 26.0527669,
+          "lon": 74.7728638
+        }
+      ],
+      "lat": 26.0527669,
+      "lon": 74.7728638
+    },
+    {
+      "tehsil": "Kekri",
+      "tehsil_hi": "केकड़ी",
+      "villages": [
+        {
+          "name": "Alamboo",
+          "name_hi": "अलम्बू",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Aloli",
+          "name_hi": "अलोली",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Amali",
+          "name_hi": "अमाली",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Amali (Jooniyan)",
+          "name_hi": "अमाली (जूनीयां)",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Ambapura",
+          "name_hi": "अम्बापुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Baghera",
+          "name_hi": "बगहेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Bajta",
+          "name_hi": "बजटा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Balapura",
+          "name_hi": "बलापुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Baneriya",
+          "name_hi": "बनेरिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Barh Ka Jhopra",
+          "name_hi": "बरह का झोपड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Beerwara",
+          "name_hi": "बीरवाड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Bhandawas",
+          "name_hi": "भांडावास",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Bharai",
+          "name_hi": "भराई",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Bheemrawas",
+          "name_hi": "भीमरवास",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Bisundani",
+          "name_hi": "बिसूंदनी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Bogla",
+          "name_hi": "बोगला",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Chak Jooniya",
+          "name_hi": "चक जूनीयां",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Chand Thali",
+          "name_hi": "चाँद थली",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Cheeklya",
+          "name_hi": "चीकल्या",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Cheetiwas",
+          "name_hi": "चींटीवास",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Chhabariya",
+          "name_hi": "छाबड़िया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Chosla",
+          "name_hi": "चोसला",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Dayalpura",
+          "name_hi": "दयालपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Deogaon",
+          "name_hi": "देवगाँव",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Deokhera",
+          "name_hi": "देवखेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Deokheri",
+          "name_hi": "देवखेड़ी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Deoliya Khurd",
+          "name_hi": "देोलिया खुर्द",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Deopura",
+          "name_hi": "देोपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Dholai",
+          "name_hi": "ढोलाई",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Dhoondhari",
+          "name_hi": "ढूंधारी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Dhunwaliya",
+          "name_hi": "धुनवालिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Ekalseenga",
+          "name_hi": "एकलसींगा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Ghatiyali",
+          "name_hi": "घाटियाली",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Girwarpura",
+          "name_hi": "गिरवरपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Gordha",
+          "name_hi": "गोरधा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Gothra",
+          "name_hi": "गोठड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Gulgaon",
+          "name_hi": "गुलगाँव",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Jal Ka Khera",
+          "name_hi": "जल का खेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Jaswantpura",
+          "name_hi": "जसवंतपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Jeetapura",
+          "name_hi": "जीतापुर",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Jooniya",
+          "name_hi": "जूनीयां",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kabariya",
+          "name_hi": "कबरिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kachariya",
+          "name_hi": "कचरिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kadera",
+          "name_hi": "कडेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kalakhet",
+          "name_hi": "कालाखेत",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kalera Kanwarji",
+          "name_hi": "कलेरा कंवरजी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kalera Krishna Gopal",
+          "name_hi": "कलेरा कृष्ण गोपाल",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kali Talai Ka Khera",
+          "name_hi": "काली तलई का खेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kanoj",
+          "name_hi": "कनोज",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kekri (M)",
+          "name_hi": "केकड़ी (नगर)",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kekri (Rural)",
+          "name_hi": "केकड़ी (ग्रामीण)",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kesarpura",
+          "name_hi": "केसरपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Khawas",
+          "name_hi": "खवास",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Khejri",
+          "name_hi": "खेजड़ी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kohra",
+          "name_hi": "कोहरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kushayata",
+          "name_hi": "कुशायता",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Lasadiya",
+          "name_hi": "लसड़िया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Laxmipura",
+          "name_hi": "लक्ष्मीपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Madhopura",
+          "name_hi": "माधोपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Mandha",
+          "name_hi": "मांधां",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Mankhand",
+          "name_hi": "मनखण्ड",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Meenon Ka Naya Gaon",
+          "name_hi": "मीनों का नया गाँव",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Mehroo Kalan",
+          "name_hi": "महरू कलां",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Mehroo Khurd",
+          "name_hi": "महरू खुर्द",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Meoda Kalan",
+          "name_hi": "मियोड़ा कलां",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Meoda Khurd",
+          "name_hi": "मियोड़ा खुर्द",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Modi",
+          "name_hi": "मोदी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Molkiya",
+          "name_hi": "मोलकिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Motalao",
+          "name_hi": "मोटालाओ",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Nai Khera",
+          "name_hi": "नई खेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Naiki",
+          "name_hi": "नईकी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Naya Gaon",
+          "name_hi": "नया गाँव",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Neemera (Sawar)",
+          "name_hi": "नीमेरा (सावर)",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Neemod",
+          "name_hi": "नीमोड़",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Padaliya (Sawar)",
+          "name_hi": "पडालिया (सावर)",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Para",
+          "name_hi": "पारा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Peepaliya",
+          "name_hi": "पीपलिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Peeplaj",
+          "name_hi": "पीपलाज",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Pharkiya",
+          "name_hi": "फरकिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Pranhera",
+          "name_hi": "प्राणहेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Pratappura",
+          "name_hi": "प्रतापपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Rainagar",
+          "name_hi": "रैनगर",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Rajpura",
+          "name_hi": "राजपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sadara",
+          "name_hi": "सदारा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sadari",
+          "name_hi": "सदड़ी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sakariya",
+          "name_hi": "सकारिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Salari",
+          "name_hi": "सालारी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sarsari",
+          "name_hi": "सरसरी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sawar",
+          "name_hi": "सावर",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Shambhoopura",
+          "name_hi": "शंभूपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sheshupra",
+          "name_hi": "शेषुपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Shokya Khera",
+          "name_hi": "शोक्या खेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sundarpura",
+          "name_hi": "सुंदरपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Surajpura",
+          "name_hi": "सूरजपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Tankawas",
+          "name_hi": "टांका वास",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Taswariya",
+          "name_hi": "तसवारिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Titariya",
+          "name_hi": "तितारिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Udaisagar",
+          "name_hi": "उदयसागर",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Ugai",
+          "name_hi": "उगाई",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Ugan Khera",
+          "name_hi": "उगन खेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Ummedpura",
+          "name_hi": "उम्मेदपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Undri",
+          "name_hi": "उंदरी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Unkarpura",
+          "name_hi": "उनकरपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        }
+      ],
+      "lat": 25.974212,
+      "lon": 75.1545672
+    },
+    {
+      "tehsil": "Kekri",
+      "tehsil_hi": "केकड़ी",
+      "villages": [
+        {
+          "name": "Alamboo",
+          "name_hi": "अलम्बू",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Aloli",
+          "name_hi": "अलोली",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Amali",
+          "name_hi": "अमाली",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Amali (Jooniyan)",
+          "name_hi": "अमाली (जूनीयां)",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Ambapura",
+          "name_hi": "अम्बापुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Baghera",
+          "name_hi": "बगहेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Bajta",
+          "name_hi": "बजटा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Balapura",
+          "name_hi": "बलापुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Baneriya",
+          "name_hi": "बनेरिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Barh Ka Jhopra",
+          "name_hi": "बरह का झोपड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Beerwara",
+          "name_hi": "बीरवाड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Bhandawas",
+          "name_hi": "भांडावास",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Bharai",
+          "name_hi": "भराई",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Bheemrawas",
+          "name_hi": "भीमरवास",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Bisundani",
+          "name_hi": "बिसूंदनी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Bogla",
+          "name_hi": "बोगला",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Chak Jooniya",
+          "name_hi": "चक जूनीयां",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Chand Thali",
+          "name_hi": "चाँद थली",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Cheeklya",
+          "name_hi": "चीकल्या",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Cheetiwas",
+          "name_hi": "चींटीवास",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Chhabariya",
+          "name_hi": "छाबड़िया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Chosla",
+          "name_hi": "चोसला",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Dayalpura",
+          "name_hi": "दयालपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Deogaon",
+          "name_hi": "देवगाँव",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Deokhera",
+          "name_hi": "देवखेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Deokheri",
+          "name_hi": "देवखेड़ी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Deoliya Khurd",
+          "name_hi": "देोलिया खुर्द",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Deopura",
+          "name_hi": "देोपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Dholai",
+          "name_hi": "ढोलाई",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Dhoondhari",
+          "name_hi": "ढूंधारी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Dhunwaliya",
+          "name_hi": "धुनवालिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Ekalseenga",
+          "name_hi": "एकलसींगा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Ghatiyali",
+          "name_hi": "घाटियाली",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Girwarpura",
+          "name_hi": "गिरवरपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Gordha",
+          "name_hi": "गोरधा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Gothra",
+          "name_hi": "गोठड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Gulgaon",
+          "name_hi": "गुलगाँव",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Jal Ka Khera",
+          "name_hi": "जल का खेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Jaswantpura",
+          "name_hi": "जसवंतपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Jeetapura",
+          "name_hi": "जीतापुर",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Jooniya",
+          "name_hi": "जूनीयां",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kabariya",
+          "name_hi": "कबरिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kachariya",
+          "name_hi": "कचरिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kadera",
+          "name_hi": "कडेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kalakhet",
+          "name_hi": "कालाखेत",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kalera Kanwarji",
+          "name_hi": "कलेरा कंवरजी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kalera Krishna Gopal",
+          "name_hi": "कलेरा कृष्ण गोपाल",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kali Talai Ka Khera",
+          "name_hi": "काली तलई का खेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kanoj",
+          "name_hi": "कनोज",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kekri (M)",
+          "name_hi": "केकड़ी (नगर)",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kekri (Rural)",
+          "name_hi": "केकड़ी (ग्रामीण)",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kesarpura",
+          "name_hi": "केसरपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Khawas",
+          "name_hi": "खवास",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Khejri",
+          "name_hi": "खेजड़ी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kohra",
+          "name_hi": "कोहरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Kushayata",
+          "name_hi": "कुशायता",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Lasadiya",
+          "name_hi": "लसड़िया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Laxmipura",
+          "name_hi": "लक्ष्मीपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Madhopura",
+          "name_hi": "माधोपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Mandha",
+          "name_hi": "मांधां",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Mankhand",
+          "name_hi": "मनखण्ड",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Meenon Ka Naya Gaon",
+          "name_hi": "मीनों का नया गाँव",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Mehroo Kalan",
+          "name_hi": "महरू कलां",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Mehroo Khurd",
+          "name_hi": "महरू खुर्द",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Meoda Kalan",
+          "name_hi": "मियोड़ा कलां",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Meoda Khurd",
+          "name_hi": "मियोड़ा खुर्द",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Modi",
+          "name_hi": "मोदी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Molkiya",
+          "name_hi": "मोलकिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Motalao",
+          "name_hi": "मोटालाओ",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Nai Khera",
+          "name_hi": "नई खेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Naiki",
+          "name_hi": "नईकी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Naya Gaon",
+          "name_hi": "नया गाँव",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Neemera (Sawar)",
+          "name_hi": "नीमेरा (सावर)",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Neemod",
+          "name_hi": "नीमोड़",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Padaliya (Sawar)",
+          "name_hi": "पडालिया (सावर)",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Para",
+          "name_hi": "पारा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Peepaliya",
+          "name_hi": "पीपलिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Peeplaj",
+          "name_hi": "पीपलाज",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Pharkiya",
+          "name_hi": "फरकिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Pranhera",
+          "name_hi": "प्राणहेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Pratappura",
+          "name_hi": "प्रतापपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Rainagar",
+          "name_hi": "रैनगर",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Rajpura",
+          "name_hi": "राजपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sadara",
+          "name_hi": "सदारा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sadari",
+          "name_hi": "सदड़ी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sakariya",
+          "name_hi": "सकारिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Salari",
+          "name_hi": "सालारी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sarsari",
+          "name_hi": "सरसरी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sawar",
+          "name_hi": "सावर",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Shambhoopura",
+          "name_hi": "शंभूपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sheshupra",
+          "name_hi": "शेषुपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Shokya Khera",
+          "name_hi": "शोक्या खेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Sundarpura",
+          "name_hi": "सुंदरपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Surajpura",
+          "name_hi": "सूरजपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Tankawas",
+          "name_hi": "टांका वास",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Taswariya",
+          "name_hi": "तसवारिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Titariya",
+          "name_hi": "तितारिया",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Udaisagar",
+          "name_hi": "उदयसागर",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Ugai",
+          "name_hi": "उगाई",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Ugan Khera",
+          "name_hi": "उगन खेड़ा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Ummedpura",
+          "name_hi": "उम्मेदपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Undri",
+          "name_hi": "उंदरी",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        },
+        {
+          "name": "Unkarpura",
+          "name_hi": "उनकरपुरा",
+          "lat": 25.974212,
+          "lon": 75.1545672
+        }
+      ],
+      "lat": 25.974212,
+      "lon": 75.1545672
+    },
+    {
+      "tehsil": "Masuda",
+      "tehsil_hi": "मसूदा",
+      "villages": [
+        {
+          "name": "Adeda",
+          "name_hi": "अदेडा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Akrol",
+          "name_hi": "अक्रोल",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Amarpura",
+          "name_hi": "अमरपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Amarpura (Akol)",
+          "name_hi": "अमरपुरा (अकोल)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Amarsingh Ka Badiya",
+          "name_hi": "अमर सिंह का बड़िया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Amratpura",
+          "name_hi": "अमरतपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Andheri Deori",
+          "name_hi": "अंधेरी देवरी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Araji Guwardi",
+          "name_hi": "आराजी गुवाड़ी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bachpari",
+          "name_hi": "बचपड़ी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bahadurpura",
+          "name_hi": "बहादुरपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Banola",
+          "name_hi": "बनौला",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bara Asan",
+          "name_hi": "बड़ा आसन",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Baral (CT)",
+          "name_hi": "बराल (सीटी)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bari",
+          "name_hi": "बाड़ी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bariya Meda",
+          "name_hi": "बरिया मेड़ा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bassi",
+          "name_hi": "बासी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Begaliyawas",
+          "name_hi": "बेगालियावास",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bhagawanpura",
+          "name_hi": "भगवानपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bhagwanpura (Masuda)",
+          "name_hi": "भगवानपुरा (मसूदा)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bhairoon Khera",
+          "name_hi": "भैरों खेड़ा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bhairoon Khera (Hanutiya)",
+          "name_hi": "भैरों खेड़ा (हनूटिया)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bhalesariya",
+          "name_hi": "भालेसरिया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bharkala",
+          "name_hi": "भरकला",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bhawani Khera",
+          "name_hi": "भवानी खेड़ा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Bhawanipura",
+          "name_hi": "भवानीपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Chak Masooda",
+          "name_hi": "चक मसूदा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Chawadiya",
+          "name_hi": "चावड़िया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Chodasiya",
+          "name_hi": "चोदासिया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Danaji Ki Dhani",
+          "name_hi": "दानाजी की ढाणी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Daulatpura",
+          "name_hi": "दौलतपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Daulatpura-II",
+          "name_hi": "दौलतपुरा-II",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Dedpura",
+          "name_hi": "डेडपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Deogarh",
+          "name_hi": "देवगढ़",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Deogarh (Kharwa)",
+          "name_hi": "देवगढ़ (खरवा)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Deogarh @ Sooti Khera",
+          "name_hi": "देवगढ़ @ सूटी खेड़ा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Deomagri",
+          "name_hi": "देवमगरी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Deomali",
+          "name_hi": "देवमाली",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Deopura",
+          "name_hi": "देवपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Deopura (Hanutiya)",
+          "name_hi": "देवपुरा (हनूटिया)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Deopura (Sathana)",
+          "name_hi": "देवपुरा (सथाना)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Devipura",
+          "name_hi": "देवीपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Dewas",
+          "name_hi": "देवास",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Dhani Khera",
+          "name_hi": "ढाणी खेड़ा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Dhola Danta",
+          "name_hi": "ढोला डांटा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Fateh Garh",
+          "name_hi": "फतेहगढ़",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Fatehgarh",
+          "name_hi": "फतेहगढ़",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Ganesh Magri",
+          "name_hi": "गणेश मगरी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Ganeshpura",
+          "name_hi": "गणेशपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Ganeshpura (Hanutiya)",
+          "name_hi": "गणेशपुरा (हनूटिया)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Gena Ka Badiya",
+          "name_hi": "गेना का बड़िया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Gopal Sagar",
+          "name_hi": "गोपाल सागर",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Gurha",
+          "name_hi": "गुड़ा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Guwadia",
+          "name_hi": "गुवाड़िया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Guwardi",
+          "name_hi": "गुवाड़ी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Hanootiya",
+          "name_hi": "हनूटिया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Harajpura",
+          "name_hi": "हराजपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Himmata Rooparel",
+          "name_hi": "हिम्मता रूपरेल",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Indragarh",
+          "name_hi": "इंद्रगढ़",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Indrapura",
+          "name_hi": "इंद्रपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Jaisingh Pura",
+          "name_hi": "जैसिंहपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Jal Kheda",
+          "name_hi": "जलखेड़ा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Jaliya (Jamola)",
+          "name_hi": "जलिया (जामोला)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Jaliya II",
+          "name_hi": "जलिया II",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Jamola",
+          "name_hi": "जामोला",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Jaswant Pura Lahri",
+          "name_hi": "जसवंतपुरा लाहरी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Jaswantpura",
+          "name_hi": "जसवंतपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Jeewana",
+          "name_hi": "जीवाना",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Jetpura",
+          "name_hi": "जेटपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Jhank",
+          "name_hi": "झांक",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Jujharon Ka Badiya",
+          "name_hi": "जुझारों का बड़िया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kalaheri",
+          "name_hi": "कलेहेड़ी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kalyan Pura",
+          "name_hi": "कल्याणपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kana Khera",
+          "name_hi": "काना खेड़ा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kankar Nadi",
+          "name_hi": "कंकर नाड़ी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kanpura",
+          "name_hi": "कनपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kanpura (Daulatpura)",
+          "name_hi": "कनपुरा (दौलतपुरा)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Karnipura",
+          "name_hi": "कर्णीपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Karwai",
+          "name_hi": "करवई",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kashipura",
+          "name_hi": "काशीपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Keloo",
+          "name_hi": "केलू",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Keriya",
+          "name_hi": "केरिया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kesarpura (Kalakheda)",
+          "name_hi": "केसरपुरा (कालाखेड़ा)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kesharpura (Sathana)",
+          "name_hi": "केशरपुरा (सथाना)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kesharpura (Surajpura)",
+          "name_hi": "केशरपुरा (सूरजपुरा)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kharwa",
+          "name_hi": "खरवा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kheempura",
+          "name_hi": "खीमपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kheta Khera",
+          "name_hi": "खेता खेड़ा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Khoontiya",
+          "name_hi": "खूंंटिया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kirap",
+          "name_hi": "किराप",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Koompura",
+          "name_hi": "कूमपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Kushalpura",
+          "name_hi": "कुशलपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Lachhmikhera",
+          "name_hi": "लक्ष्मीखेड़ा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Ladpura",
+          "name_hi": "लाडपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Lalawas",
+          "name_hi": "लालावास",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Lamba",
+          "name_hi": "लांबा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Landi",
+          "name_hi": "लांडी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Laxmi Pura",
+          "name_hi": "लक्ष्मीपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Lodiyana",
+          "name_hi": "लोदियाना",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Loolwa",
+          "name_hi": "लूलवा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Lordi",
+          "name_hi": "लोरड़ी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Madhogarh",
+          "name_hi": "माधोगढ़",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Manpura",
+          "name_hi": "मानपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Masooda",
+          "name_hi": "मसूदा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Mayla",
+          "name_hi": "मायला",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Mohanpura",
+          "name_hi": "मोहनपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Mokhampura",
+          "name_hi": "मोखमपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Moondoti",
+          "name_hi": "मूंडोटी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Motipura",
+          "name_hi": "मोतीपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Moyana",
+          "name_hi": "मोयाना",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Nadi",
+          "name_hi": "नाड़ी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Nagar",
+          "name_hi": "नगर",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Nagli",
+          "name_hi": "नागली",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Nandwara",
+          "name_hi": "नंदवाड़ा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Nasoon",
+          "name_hi": "नासून",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Naya Gaon",
+          "name_hi": "नया गाँव",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Neemgarh",
+          "name_hi": "नीमगढ़",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Peeplaj",
+          "name_hi": "पीपलाज",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Peethamakna Ka Badiya",
+          "name_hi": "पीथमकना का बड़िया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Peethawas",
+          "name_hi": "पीठावास",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Pratappura-1",
+          "name_hi": "प्रतापपुरा-1",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Pratapura",
+          "name_hi": "प्रतापुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Raghpura",
+          "name_hi": "रघपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Rail Ka Badiya",
+          "name_hi": "रेल का बड़िया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Ramgarh",
+          "name_hi": "रामगढ़",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Rampura",
+          "name_hi": "रामपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Rampura Gaina",
+          "name_hi": "रामपुरा गैना",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Rani Sagar",
+          "name_hi": "रानी सागर",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Ratangarh",
+          "name_hi": "रत्नगढ़",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Ratanpura",
+          "name_hi": "रत्नपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Ratanpura Ghata",
+          "name_hi": "रत्नपुरा घाटा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Rawla Badiya",
+          "name_hi": "रावला बड़िया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        }
+      ],
+      "lat": 26.094991,
+      "lon": 74.498247
+    },
+    {
+      "tehsil": "Masuda",
+      "tehsil_hi": "मसूदा",
+      "villages": [
+        {
+          "name": "Reechhmal",
+          "name_hi": "रीछमल",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Renpura",
+          "name_hi": "रेनपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Roopaheli Kalan",
+          "name_hi": "रूपाहेली कलां",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Roopaheli Khurd",
+          "name_hi": "रूपाहेली खुर्द",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Rooparel",
+          "name_hi": "रूपरेल",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Sabalpura",
+          "name_hi": "सबलपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Salarmala Ii",
+          "name_hi": "सलारमाला II",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Salarmala-I",
+          "name_hi": "सलारमाला-I",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Santhaliya",
+          "name_hi": "संथलिया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Sarhiyan",
+          "name_hi": "सरहियां",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Sarkana",
+          "name_hi": "सरकाना",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Satawariya",
+          "name_hi": "सतावड़िया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Sathana",
+          "name_hi": "सथाना",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Shergarh",
+          "name_hi": "शेरगढ़",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Shiv Nagar",
+          "name_hi": "शिव नगर",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Shivpura Ghata",
+          "name_hi": "शिवपुरा घाटा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Shivpuri",
+          "name_hi": "शिवपुरी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Shyam Garh",
+          "name_hi": "श्यामगढ़",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Shyampura",
+          "name_hi": "श्यामपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Shyopura",
+          "name_hi": "श्योपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Sikhrani",
+          "name_hi": "सिखरानी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Soona Chodsiya",
+          "name_hi": "सूना चोदसिया",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Surajpura",
+          "name_hi": "सूरजपुरा",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Surajpura (Kesharpura)",
+          "name_hi": "सूरजपुरा (केशरपुरा)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Topas",
+          "name_hi": "टोपास",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Uttami",
+          "name_hi": "उत्तमी",
+          "lat": 26.094991,
+          "lon": 74.498247
+        },
+        {
+          "name": "Vijainagar (M)",
+          "name_hi": "विजयनगर (नगर)",
+          "lat": 26.094991,
+          "lon": 74.498247
+        }
+      ],
+      "lat": 26.094991,
+      "lon": 74.498247
+    },
+    {
+      "tehsil": "Nasirabad",
+      "tehsil_hi": "नसीराबाद",
+      "villages": [
+        {
+          "name": "Ajba Ka Bariya",
+          "name_hi": "अज्बा का बड़िया",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Amarpura",
+          "name_hi": "अमरपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Ansari",
+          "name_hi": "अंसारी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Ashapura",
+          "name_hi": "आशापुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Baghsuri",
+          "name_hi": "बाघसुरी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Bakhtawarpura",
+          "name_hi": "बख्तावरपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Banewara",
+          "name_hi": "बनेवाड़ा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Banewari",
+          "name_hi": "बनेवारी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Bara Patthar",
+          "name_hi": "बड़ा पत्थर",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Bewanja",
+          "name_hi": "बेवाँजा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Bhagnanpura",
+          "name_hi": "भगननपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Bhairoo Khera",
+          "name_hi": "भैरों खेड़ा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Bhatiyani",
+          "name_hi": "भाटियानी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Bhawani Khera",
+          "name_hi": "भवानी खेड़ा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Bheempura",
+          "name_hi": "भीमपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Bithoor",
+          "name_hi": "बिठूर",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Brahmanon Ki Badiya",
+          "name_hi": "ब्राह्मणों की बड़िया",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Bubaniya",
+          "name_hi": "बुबानिया",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Budhpura",
+          "name_hi": "बूढ़पुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Chainpura",
+          "name_hi": "चैनपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Chandsen",
+          "name_hi": "चांदसेन",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Chat",
+          "name_hi": "छात",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Chat Sardarpura",
+          "name_hi": "छात सरदारपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Deoliya",
+          "name_hi": "देोलिया",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Derathoo",
+          "name_hi": "डेराथू",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Dewla Ki Dang",
+          "name_hi": "देवला की डांग",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Dhal",
+          "name_hi": "ढाल",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Dholadanta",
+          "name_hi": "ढोलाडांटा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Dholadanta Derathoo",
+          "name_hi": "ढोलाडांटा डेराथू",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Dholadanta Nyara",
+          "name_hi": "ढोलाडांटा न्यारा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Dilwara",
+          "name_hi": "दिलवाड़ा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Dilwari",
+          "name_hi": "दिलवाड़ी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Doonga Ji Ka Badiya",
+          "name_hi": "डूंगाजी का बड़िया",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Gaderi",
+          "name_hi": "गदेरी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Hanwantiya",
+          "name_hi": "हनवंतिया",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Hardi",
+          "name_hi": "हरड़ी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Hathi Batta",
+          "name_hi": "हाथी बट्टा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Jagpura",
+          "name_hi": "जगपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Jaswantpura",
+          "name_hi": "जसवंतपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Jhabarkiya",
+          "name_hi": "झबरकिया",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Jharwasa",
+          "name_hi": "झारवासा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Jilawara",
+          "name_hi": "जिलावाड़ा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Kabrichat",
+          "name_hi": "कब्रीछात",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Kadampura",
+          "name_hi": "कदनपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Kaledi",
+          "name_hi": "कलेड़ी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Kalyanipura",
+          "name_hi": "कल्याणीपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Kana Kheri",
+          "name_hi": "काना खेड़ी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Kanpura",
+          "name_hi": "कनपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Keriya Khurd",
+          "name_hi": "केरिया खुर्द",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Kesarpura",
+          "name_hi": "केसरपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Khapri",
+          "name_hi": "खापरी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Khapri Ki Dang",
+          "name_hi": "खापरी की डांग",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Kurari",
+          "name_hi": "कुराड़ी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Lavera",
+          "name_hi": "लावेड़ा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Laxmipura",
+          "name_hi": "लक्ष्मीपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Liri Ka Badiya",
+          "name_hi": "लीरी का बड़िया",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Loharwara",
+          "name_hi": "लोहारवाड़ा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Mandiyani",
+          "name_hi": "मंडियानी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Manpura",
+          "name_hi": "मानपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Maoshiya",
+          "name_hi": "माओशिया",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Modi",
+          "name_hi": "मोदी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Mohanpura",
+          "name_hi": "मोहनपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Morajhari",
+          "name_hi": "मोराझारी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Motipura",
+          "name_hi": "मोतीपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Naharpura",
+          "name_hi": "नाहरपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Nandla",
+          "name_hi": "नंदला",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Nasirabad (CB)",
+          "name_hi": "नसीराबाद (कैंट बोर्ड)",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Nawab",
+          "name_hi": "नवाब",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Nayagaon",
+          "name_hi": "नयागाँव",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Nepoli",
+          "name_hi": "नेपोली",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Nizampura",
+          "name_hi": "निजामपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Nyara",
+          "name_hi": "न्यारा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Pachmata",
+          "name_hi": "पचमाता",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Pharkiya",
+          "name_hi": "फरकिया",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Raghunathpura",
+          "name_hi": "रघुनाथपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Rajgarh",
+          "name_hi": "राजगढ़",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Rajosi",
+          "name_hi": "राजोसी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Rajpura",
+          "name_hi": "राजपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Rambari",
+          "name_hi": "रांबड़ी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Rampura Aheeran",
+          "name_hi": "रामपुरा अहीरन",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Rampura Hanvantiya",
+          "name_hi": "रामपुरा हनवंतिया",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Rampura Nyara",
+          "name_hi": "रामपुरा न्यारा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Ramsar",
+          "name_hi": "रामसर",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Rasoolpura",
+          "name_hi": "रसूलपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Rata Khera",
+          "name_hi": "राता खेड़ा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Samproda",
+          "name_hi": "समप्रोड़ा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Sanod",
+          "name_hi": "सानोद",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Soorajpura",
+          "name_hi": "सूरजपुरा",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Srinagar",
+          "name_hi": "श्रीनगर",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Tihari",
+          "name_hi": "तिहारी",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        },
+        {
+          "name": "Tilana",
+          "name_hi": "तिलाना",
+          "lat": 26.2950699,
+          "lon": 74.7173813
+        }
+      ],
+      "lat": 26.2950699,
+      "lon": 74.7173813
+    },
+    {
+      "tehsil": "Peesangan",
+      "tehsil_hi": "पीसांगन",
+      "villages": [
+        {
+          "name": "Akhepura",
+          "name_hi": "आखेपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Alipura",
+          "name_hi": "अलीपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Amargarh",
+          "name_hi": "अमरगढ़",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Arjunpura Jageer",
+          "name_hi": "अर्जुनपुरा जागीर",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Arjunpura Khalsa",
+          "name_hi": "अर्जुनपुरा खालसा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Bakhtawarpura",
+          "name_hi": "बख्तावरपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Bhagwanpura",
+          "name_hi": "भगवानपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Bhatsoori",
+          "name_hi": "भाटसूड़ी",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Bidkachiyawas",
+          "name_hi": "बिडकचियावास",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Budhwara",
+          "name_hi": "बुधवाड़ा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Dantra",
+          "name_hi": "दांतरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Daulat Khera",
+          "name_hi": "दौलत खेड़ा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Daulatpura",
+          "name_hi": "दौलतपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Devnagar",
+          "name_hi": "देवनगर",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Dhuwariya",
+          "name_hi": "धुवड़िया",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Dodiyana",
+          "name_hi": "डोडियाना",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Fatehpura",
+          "name_hi": "फतेहपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Gangara",
+          "name_hi": "गांगरां",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Garhi Goojran",
+          "name_hi": "गढ़ी गूजरान",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Gigalpura",
+          "name_hi": "गीगलपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Gola",
+          "name_hi": "गोला",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Govindgarh",
+          "name_hi": "गोविंदगढ़",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Hanwantpura",
+          "name_hi": "हनवंतपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Jaswantpura",
+          "name_hi": "जसवंतपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Jetgarh",
+          "name_hi": "जेटगढ़",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Jethana",
+          "name_hi": "जेताना",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Kaisarpura",
+          "name_hi": "काइसरपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Kalesara",
+          "name_hi": "कलेसरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Karnos",
+          "name_hi": "कर्णोस",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Kesharpura",
+          "name_hi": "केशरपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Kotaj",
+          "name_hi": "कोटाज",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Lamana",
+          "name_hi": "लमाना",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Leeri",
+          "name_hi": "लेरी",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Lyali Khera",
+          "name_hi": "ल्याली खेड़ा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Makrera",
+          "name_hi": "माकरड़ा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Mangaliyawas",
+          "name_hi": "मांगलियावास",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Mewariya",
+          "name_hi": "मेवारिया",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Motisar",
+          "name_hi": "मोतीसर",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Nad",
+          "name_hi": "नाड़",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Nagelao",
+          "name_hi": "नगेलेओ",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Nathoothala",
+          "name_hi": "नाथूथाला",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Nooriyawas",
+          "name_hi": "नूरियावास",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Pabuthan",
+          "name_hi": "पाबुठान",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Pagara",
+          "name_hi": "पगारा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Peesangan",
+          "name_hi": "पीसांगन",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Picholiya",
+          "name_hi": "पिचोलिया",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Pratappura",
+          "name_hi": "प्रतापपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Prithviraj Khera",
+          "name_hi": "पृथ्वीराज खेड़ा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Raimala",
+          "name_hi": "रैमाला",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Ram Nagar",
+          "name_hi": "राम नगर",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Rampura Dabla",
+          "name_hi": "रामपुरा डाबला",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Ratangarh",
+          "name_hi": "रत्नगढ़",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Reechhmaliya",
+          "name_hi": "रीछमलिया",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Roopnagar Thoriya",
+          "name_hi": "रूपनगर थोरिया",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Rudlai",
+          "name_hi": "रूडलई",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Samla",
+          "name_hi": "समला",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Samrathpura",
+          "name_hi": "समर्थपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Sarsari",
+          "name_hi": "सरसरी",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Sawaipura",
+          "name_hi": "सवाईपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Sethan",
+          "name_hi": "सेठन",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Shivpura",
+          "name_hi": "शिवपुरा",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Surajkund",
+          "name_hi": "सूरजकुंड",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        },
+        {
+          "name": "Titardi",
+          "name_hi": "तितरड़ी",
+          "lat": 26.3969115,
+          "lon": 74.3823651
+        }
+      ],
+      "lat": 26.3969115,
+      "lon": 74.3823651
+    },
+    {
+      "tehsil": "Sarwar",
+      "tehsil_hi": "सरवार",
+      "villages": [
+        {
+          "name": "Ahera",
+          "name_hi": "अहेड़ा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Ajgara",
+          "name_hi": "अजगरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Ajgari",
+          "name_hi": "अजगारी",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Arwar",
+          "name_hi": "अरवार",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Badla",
+          "name_hi": "बड़ला",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Bahera",
+          "name_hi": "बहेड़ा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Balapura",
+          "name_hi": "बलापुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Banthali",
+          "name_hi": "बंथली",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Banti",
+          "name_hi": "बांटी",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Baori",
+          "name_hi": "बावड़ी",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Barol",
+          "name_hi": "बारोल",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Beeliya",
+          "name_hi": "बेेलिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Bhagwanpura",
+          "name_hi": "भगवानपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Bhagwantpura",
+          "name_hi": "भगवंतपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Bhatolao",
+          "name_hi": "भाठोलाओ",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Bilawatya Khera",
+          "name_hi": "बिलावत्या खेड़ा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Birla",
+          "name_hi": "बिरला",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Boroda",
+          "name_hi": "बोरोड़ा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Chak Beeliya",
+          "name_hi": "चक बेेलिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Chakwa",
+          "name_hi": "चकवा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Chakwi",
+          "name_hi": "चकवी",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Chandali",
+          "name_hi": "चांदली",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Chandma",
+          "name_hi": "चांदमा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Chandolai",
+          "name_hi": "चांदोलाई",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Chhapri",
+          "name_hi": "छापरी",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Dabrela",
+          "name_hi": "डबरेला",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Dantri",
+          "name_hi": "दांतड़ी",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Daulatpura",
+          "name_hi": "दौलतपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Deoriya",
+          "name_hi": "देवरिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Dhanma",
+          "name_hi": "धनमा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Dhigariya",
+          "name_hi": "धिगड़िया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Dhigariya Goojran",
+          "name_hi": "धिगड़िया गूजरान",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Dhos",
+          "name_hi": "धोस",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Dorai",
+          "name_hi": "डोराई",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Fatehgarh",
+          "name_hi": "फतेहगढ़",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Ganeshpura",
+          "name_hi": "गणेशपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Goojarwara",
+          "name_hi": "गूजरवाड़ा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Gopalpura",
+          "name_hi": "गोपालपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Gordhanpura",
+          "name_hi": "गोर्धनपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Goyla",
+          "name_hi": "गॉयला",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Gudaliya",
+          "name_hi": "गुडालिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Gundali",
+          "name_hi": "गुंदली",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Harpura",
+          "name_hi": "हरिपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Heengtara",
+          "name_hi": "हींगतरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Hingoniyan",
+          "name_hi": "हिंगोनियां",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Indrapura",
+          "name_hi": "इंद्रपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Iraniyan",
+          "name_hi": "ईरानियां",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Jadana",
+          "name_hi": "जदाना",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Jagpura",
+          "name_hi": "जगपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Jaliya",
+          "name_hi": "जलिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Jatipura",
+          "name_hi": "जातीपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Jawla",
+          "name_hi": "जवला",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Jhaloosi",
+          "name_hi": "झलूसी",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Jotayan",
+          "name_hi": "जोतायन",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Kacholiya",
+          "name_hi": "कचोलिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Kalawat",
+          "name_hi": "कलावत",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Kalyanpura",
+          "name_hi": "कल्याणपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Kasana",
+          "name_hi": "कसाना",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Kasheer",
+          "name_hi": "कशीयर",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Kebaniya",
+          "name_hi": "केबनिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Keriya Kalan",
+          "name_hi": "केरिया कलां",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Kesharpura",
+          "name_hi": "केशरपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Khandra",
+          "name_hi": "खांद्रा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Kharwar",
+          "name_hi": "खरवार",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Kheeriya",
+          "name_hi": "खीरिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Kheri",
+          "name_hi": "खेड़ी",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Kotri",
+          "name_hi": "कोटड़ी",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Kumhariya",
+          "name_hi": "कुंहरिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Lachchhipura",
+          "name_hi": "लच्छीपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Lallai",
+          "name_hi": "लल्लाई",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Laxmipura",
+          "name_hi": "लक्ष्मीपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Madanpura",
+          "name_hi": "मदनपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Madhopura",
+          "name_hi": "माधोपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Manoharpura",
+          "name_hi": "मनौहरपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Manpura",
+          "name_hi": "मानपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Marogala",
+          "name_hi": "मारोगला",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Miyan",
+          "name_hi": "मियां",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Mohammadgarh",
+          "name_hi": "मुहम्मदगढ़",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Moondoti",
+          "name_hi": "मूंडोटी",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Motipura",
+          "name_hi": "मोतीपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Peeproli",
+          "name_hi": "पीप्रोली",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Pratappura",
+          "name_hi": "प्रतापपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Rajpura",
+          "name_hi": "राजपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Ramgarh",
+          "name_hi": "रामगढ़",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Rampali",
+          "name_hi": "रामपाली",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Rigrot",
+          "name_hi": "रिगरोट",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sadapur",
+          "name_hi": "सदापुर",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sameliya",
+          "name_hi": "समेलिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sanganer",
+          "name_hi": "सांगानेर",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sanodiya",
+          "name_hi": "सनोड़िया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sapla",
+          "name_hi": "सपला",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sapli",
+          "name_hi": "सपली",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sapunda",
+          "name_hi": "सपुंडा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sarana",
+          "name_hi": "सराना",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sarwar (M)",
+          "name_hi": "सरवार (नगर)",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Satolao",
+          "name_hi": "सतोलाव",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Shergarh",
+          "name_hi": "शेरगढ़",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Shokaliya",
+          "name_hi": "शोकलिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Shokli",
+          "name_hi": "शोकली",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sholiya",
+          "name_hi": "शोलिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Shyampura",
+          "name_hi": "श्यामपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sohanpura",
+          "name_hi": "सोहनपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sompura",
+          "name_hi": "सोमपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Soonpa",
+          "name_hi": "सूनपा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Soorajpura",
+          "name_hi": "सूरजपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Soyla",
+          "name_hi": "सोयला",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Srirampura",
+          "name_hi": "श्रीरामपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Sunariya",
+          "name_hi": "सुनारिया",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Syar",
+          "name_hi": "स्यार",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Tajpura",
+          "name_hi": "ताजपुरा",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        },
+        {
+          "name": "Tantoti",
+          "name_hi": "टांटोती",
+          "lat": 26.0636337,
+          "lon": 75.0130175
+        }
+      ],
+      "lat": 26.0636337,
+      "lon": 75.0130175
+    }
+  ]
+}

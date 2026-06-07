@@ -1,0 +1,12 @@
+Kisan Compensation Report (Indicative)
+Timestamp: 2025-12-24T12:59:55.525840
+Crop: Wheat
+Cause: Hailstorm
+Damage %: 50.0
+PMFBY estimate (per ha): ₹15000.0
+SDRF estimate (per ha): ₹6750.0
+Total estimate (per ha): ₹21750.0
+
+IMPORTANT: This is only an approximate estimate based on generic norms.
+Actual compensation will depend on district notifications,
+official crop-cutting / damage assessment and insurer / government decisions.
