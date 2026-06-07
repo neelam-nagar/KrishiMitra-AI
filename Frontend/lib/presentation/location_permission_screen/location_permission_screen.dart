@@ -4,11 +4,9 @@ import '../../core/language_provider.dart';
 import '../../widgets/custom_bottom_bar.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:sizer/sizer.dart';
-
 import 'package:geocoding/geocoding.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
 import '../../../core/app_export.dart';
 import '../../widgets/custom_icon_widget.dart';
 import './widgets/location_header_widget.dart';
@@ -17,8 +15,6 @@ import './widgets/manual_location_selection_widget.dart';
 import './widgets/privacy_notice_widget.dart';
 
 /// Location Permission Screen for KrishiMitra AI
-/// Enables precise agricultural data delivery through location access
-/// with manual fallback options for farmers
 class LocationPermissionScreen extends StatefulWidget {
   const LocationPermissionScreen({super.key});
 
@@ -32,27 +28,24 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
   bool _showManualSelection = false;
   String? _detectedLocation;
   String? _errorMessage;
-  LocationPermission? _permissionStatus;
+  // FIX: removed unused _permissionStatus field
 
   @override
   void initState() {
     super.initState();
     _checkLocationServiceStatus();
-    _requestLocationPermission(); // Automatically detect location on start
+    _requestLocationPermission();
   }
 
-  /// Check if location services are enabled
   Future<void> _checkLocationServiceStatus() async {
-    bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {
+    final serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled && mounted) {
       setState(() {
-        _errorMessage =
-            'लोकेशन सेवा बंद है। कृपया सेटिंग में चालू करें।';
+        _errorMessage = 'लोकेशन सेवा बंद है। कृपया सेटिंग में चालू करें।';
       });
     }
   }
 
-  /// Request location permission and get current location
   Future<void> _requestLocationPermission() async {
     setState(() {
       _isLoading = true;
@@ -60,27 +53,22 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
     });
 
     try {
-      // Check if location services are enabled
-      bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+      final serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled) {
         setState(() {
           _isLoading = false;
-          _errorMessage =
-              'लोकेशन सेवा बंद है। कृपया सेटिंग में चालू करें।';
+          _errorMessage = 'लोकेशन सेवा बंद है। कृपया सेटिंग में चालू करें।';
         });
         return;
       }
 
-      // Request permission
       LocationPermission permission = await Geolocator.checkPermission();
       if (permission == LocationPermission.denied) {
         permission = await Geolocator.requestPermission();
         if (permission == LocationPermission.denied) {
           setState(() {
             _isLoading = false;
-            _permissionStatus = permission;
-            _errorMessage =
-                'लोकेशन अनुमति अस्वीकृत है। आप मैन्युअल चयन कर सकते हैं।';
+            _errorMessage = 'लोकेशन अनुमति अस्वीकृत है। आप मैन्युअल चयन कर सकते हैं।';
             _showManualSelection = true;
           });
           return;
@@ -90,7 +78,6 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
       if (permission == LocationPermission.deniedForever) {
         setState(() {
           _isLoading = false;
-          _permissionStatus = permission;
           _errorMessage =
               'लोकेशन अनुमति स्थायी रूप से अस्वीकृत है। सेटिंग से अनुमति दें या मैन्युअल चयन करें।';
           _showManualSelection = true;
@@ -98,30 +85,30 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
         return;
       }
 
-      // Get current position with timeout
-      Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high,
-        timeLimit: const Duration(seconds: 10),
+      // FIX: use LocationSettings instead of deprecated desiredAccuracy + timeLimit
+      final position = await Geolocator.getCurrentPosition(
+        locationSettings: const LocationSettings(
+          accuracy: LocationAccuracy.high,
+          timeLimit: Duration(seconds: 10),
+        ),
       );
 
-      // Get address from coordinates and fetch weather
-      var locationData = await _getAddressFromCoordinates(
-        position.latitude,
-        position.longitude,
-      );
+      final locationData = await _getAddressFromCoordinates(
+          position.latitude, position.longitude);
 
-      String district = locationData["district"] ?? "";
-      String tehsil = locationData["tehsil"] ?? "";
-      String village = locationData["village"] ?? "";
+      final district = locationData['district'] ?? '';
+      final tehsil = locationData['tehsil'] ?? '';
+      final village = locationData['village'] ?? '';
 
-      await fetchWeather(district, tehsil, village);
+      await _fetchWeather(district, tehsil, village);
 
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
-        _detectedLocation = "$village, $tehsil, $district";
-        _permissionStatus = permission;
+        _detectedLocation = '$village, $tehsil, $district';
       });
-    } catch (e) {
+    } catch (_) {
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
         _errorMessage = 'लोकेशन प्राप्त नहीं हो सकी। कृपया मैन्युअल चयन करें।';
@@ -130,52 +117,36 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
     }
   }
 
-  /// Get address from coordinates using geocoding API
-  Future<Map<String, String>> _getAddressFromCoordinates(double lat, double lon) async {
-    List<Placemark> placemarks = await placemarkFromCoordinates(lat, lon);
-    Placemark place = placemarks[0];
-
+  Future<Map<String, String>> _getAddressFromCoordinates(
+      double lat, double lon) async {
+    final placemarks = await placemarkFromCoordinates(lat, lon);
+    final place = placemarks[0];
     return {
-      "district": place.subAdministrativeArea ?? "",
-      "tehsil": place.locality ?? "",
-      "village": place.subLocality ?? ""
+      'district': place.subAdministrativeArea ?? '',
+      'tehsil': place.locality ?? '',
+      'village': place.subLocality ?? '',
     };
   }
 
-  /// Fetch weather data from API using location details
-  Future<void> fetchWeather(String district, String tehsil, String village) async {
+  Future<void> _fetchWeather(
+      String district, String tehsil, String village) async {
     final url = Uri.parse(
-      "https://krishimitra-ai-4-vaxn.onrender.com/weather"
-      "?district=$district&tehsil=$tehsil&village=$village"
+      'https://krishimitra-ai-4-vaxn.onrender.com/weather'
+      '?district=$district&tehsil=$tehsil&village=$village',
     );
-
     try {
-      final response = await http.get(url);
-
-      if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        print("Weather Data: $data");
-      } else {
-        print("Error: ${response.body}");
-      }
-    } catch (e) {
-      print("API Error: $e");
+      await http.get(url);
+    } catch (_) {
+      // Non-fatal: weather fetch failure should not block location confirmation
     }
   }
 
-  /// Handle location confirmation
   void _confirmLocation() {
-    // Save location preference and navigate to dashboard
-    Navigator.pushReplacementNamed(context, '/main-dashboard-screen');
+    Navigator.pushReplacementNamed(context, AppRoutes.mainDashboard);
   }
 
-  /// Handle skip for now
-  void _skipForNow() {
-    // Show disclaimer and navigate to dashboard with default location
-    _showSkipDialog();
-  }
+  void _skipForNow() => _showSkipDialog();
 
-  /// Show skip confirmation dialog
   void _showSkipDialog() {
     final theme = Theme.of(context);
     final lang = context.watch<LanguageProvider>().currentLanguage;
@@ -184,27 +155,25 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(!isHindi ? 'Skip Location Access?' : 'लोकेशन अनुमति छोड़ें?', style: theme.textTheme.titleLarge),
+        title: Text(
+          !isHindi ? 'Skip Location Access?' : 'लोकेशन अनुमति छोड़ें?',
+          style: theme.textTheme.titleLarge,
+        ),
         content: Text(
           !isHindi
-              ? 'Without location access, weather forecasts and mandi prices may not be accurate for your area. You can enable location later in settings.'
-              : 'लोकेशन के बिना मौसम और मंडी भाव सटीक नहीं हो सकते। आप बाद में सेटिंग से अनुमति दे सकते हैं।',
+              ? 'Without location access, weather forecasts and mandi prices may not be accurate for your area.'
+              : 'लोकेशन के बिना मौसम और मंडी भाव सटीक नहीं हो सकते।',
           style: theme.textTheme.bodyMedium,
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(
-              !isHindi ? 'Cancel' : 'रद्द करें',
-              style: theme.textTheme.labelLarge?.copyWith(
-                color: theme.colorScheme.primary,
-              ),
-            ),
+            child: Text(!isHindi ? 'Cancel' : 'रद्द करें'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
-              Navigator.pushReplacementNamed(context, '/main-dashboard-screen');
+              Navigator.pushReplacementNamed(context, AppRoutes.mainDashboard);
             },
             child: Text(!isHindi ? 'Continue' : 'जारी रखें'),
           ),
@@ -213,10 +182,8 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
     );
   }
 
-  /// Handle manual location selection completion
   void _onManualLocationSelected(String state, String district, String tehsil) {
-    // Save manual location and navigate to dashboard
-    Navigator.pushReplacementNamed(context, '/main-dashboard-screen');
+    Navigator.pushReplacementNamed(context, AppRoutes.mainDashboard);
   }
 
   @override
@@ -234,51 +201,43 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(height: 2.h),
-
-              // Location header with icon and explanation
               LocationHeaderWidget(),
-
               SizedBox(height: 4.h),
 
-              // Show detected location if available
               if (_detectedLocation != null) ...[
                 _buildDetectedLocationCard(theme, isHindi),
                 SizedBox(height: 3.h),
               ],
 
-              // Show error message if any
               if (_errorMessage != null) ...[
                 _buildErrorCard(theme),
                 SizedBox(height: 3.h),
               ],
 
-              // Show loading indicator
               if (_isLoading) ...[
                 _buildLoadingIndicator(theme, isHindi),
                 SizedBox(height: 3.h),
               ],
 
-              // Primary location permission button
-              if (_detectedLocation == null && !_isLoading && _errorMessage != null)
+              if (_detectedLocation == null &&
+                  !_isLoading &&
+                  _errorMessage != null)
                 LocationPermissionButtonWidget(
                   onPressed: _requestLocationPermission,
                 ),
 
-              // Confirm and change buttons for detected location
               if (_detectedLocation != null) ...[
                 ElevatedButton(
                   onPressed: _confirmLocation,
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity, 6.h),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
+                        borderRadius: BorderRadius.circular(8)),
                   ),
                   child: Text(
                     !isHindi ? 'Confirm Location' : 'लोकेशन पुष्टि करें',
-                    style: theme.textTheme.labelLarge?.copyWith(
-                      fontSize: 14.sp,
-                    ),
+                    style:
+                        theme.textTheme.labelLarge?.copyWith(fontSize: 14.sp),
                   ),
                 ),
                 SizedBox(height: 2.h),
@@ -292,59 +251,45 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
                   style: OutlinedButton.styleFrom(
                     minimumSize: Size(double.infinity, 6.h),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
+                        borderRadius: BorderRadius.circular(8)),
                   ),
                   child: Text(
                     !isHindi ? 'Change Location' : 'लोकेशन बदलें',
-                    style: theme.textTheme.labelLarge?.copyWith(
-                      fontSize: 14.sp,
-                    ),
+                    style:
+                        theme.textTheme.labelLarge?.copyWith(fontSize: 14.sp),
                   ),
                 ),
               ],
 
               SizedBox(height: 3.h),
-
-              // Divider with "OR" text
               Row(
                 children: [
                   Expanded(child: Divider(color: theme.dividerColor)),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 3.w),
-                    child: Text(
-                      !isHindi ? 'OR' : 'या',
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.colorScheme.onSurfaceVariant,
-                      ),
-                    ),
+                    child: Text(!isHindi ? 'OR' : 'या',
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                            color: theme.colorScheme.onSurfaceVariant)),
                   ),
                   Expanded(child: Divider(color: theme.dividerColor)),
                 ],
               ),
-
               SizedBox(height: 3.h),
 
-              // Manual location selection section
               ManualLocationSelectionWidget(
                 onLocationSelected: _onManualLocationSelected,
                 isExpanded: _showManualSelection,
-                onToggleExpanded: () {
-                  setState(() {
-                    _showManualSelection = !_showManualSelection;
-                  });
-                },
+                onToggleExpanded: () => setState(
+                    () => _showManualSelection = !_showManualSelection),
               ),
 
               SizedBox(height: 3.h),
 
-              // Skip for now button
               if (_detectedLocation == null)
                 TextButton(
                   onPressed: _skipForNow,
                   style: TextButton.styleFrom(
-                    minimumSize: Size(double.infinity, 6.h),
-                  ),
+                      minimumSize: Size(double.infinity, 6.h)),
                   child: Text(
                     !isHindi ? 'Skip for Now' : 'अभी छोड़ें',
                     style: theme.textTheme.labelLarge?.copyWith(
@@ -355,10 +300,7 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
                 ),
 
               SizedBox(height: 3.h),
-
-              // Privacy notice
-              PrivacyNoticeWidget(),
-
+              const PrivacyNoticeWidget(),
               SizedBox(height: 2.h),
             ],
           ),
@@ -369,31 +311,21 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
         onItemTapped: (item) {
           switch (item) {
             case CustomBottomBarItem.dashboard:
-              Navigator.pushReplacementNamed(context, '/main-dashboard_screen');
-              break;
-
+              Navigator.pushReplacementNamed(context, AppRoutes.mainDashboard);
             case CustomBottomBarItem.marketplace:
-              Navigator.pushReplacementNamed(context, '/marketplace-screen');
-              break;
-
+              Navigator.pushReplacementNamed(context, AppRoutes.marketplace);
             case CustomBottomBarItem.community:
-              Navigator.pushReplacementNamed(context, '/community-chat');
-              break;
-
+              Navigator.pushReplacementNamed(context, AppRoutes.communityChat);
             case CustomBottomBarItem.chatbot:
-              Navigator.pushReplacementNamed(context, '/ai-chatbot-screen');
-              break;
-
+              Navigator.pushReplacementNamed(context, AppRoutes.aiChatbot);
             case CustomBottomBarItem.profile:
               Navigator.pushReplacementNamed(context, AppRoutes.profile);
-              break;
           }
         },
-      )
+      ),
     );
   }
 
-  /// Build detected location card
   Widget _buildDetectedLocationCard(ThemeData theme, bool isHindi) {
     return Container(
       padding: EdgeInsets.all(4.w),
@@ -401,23 +333,18 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
         color: theme.colorScheme.primary.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: theme.colorScheme.primary.withValues(alpha: 0.3),
-          width: 1,
-        ),
+            color: theme.colorScheme.primary.withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [
           Container(
             padding: EdgeInsets.all(2.w),
             decoration: BoxDecoration(
-              color: theme.colorScheme.primary,
-              shape: BoxShape.circle,
-            ),
+                color: theme.colorScheme.primary, shape: BoxShape.circle),
             child: CustomIconWidget(
-              iconName: 'check_circle',
-              color: theme.colorScheme.onPrimary,
-              size: 20,
-            ),
+                iconName: 'check_circle',
+                color: theme.colorScheme.onPrimary,
+                size: 20),
           ),
           SizedBox(width: 3.w),
           Expanded(
@@ -427,17 +354,13 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
                 Text(
                   !isHindi ? 'Location Detected' : 'लोकेशन मिली',
                   style: theme.textTheme.labelLarge?.copyWith(
-                    color: theme.colorScheme.primary,
-                    fontWeight: FontWeight.w600,
-                  ),
+                      color: theme.colorScheme.primary,
+                      fontWeight: FontWeight.w600),
                 ),
                 SizedBox(height: 0.5.h),
-                Text(
-                  _detectedLocation!,
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    color: theme.colorScheme.onSurface,
-                  ),
-                ),
+                Text(_detectedLocation!,
+                    style: theme.textTheme.bodyMedium
+                        ?.copyWith(color: theme.colorScheme.onSurface)),
               ],
             ),
           ),
@@ -446,47 +369,39 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
     );
   }
 
-  /// Build error card
   Widget _buildErrorCard(ThemeData theme) {
     return Container(
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
         color: theme.colorScheme.error.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: theme.colorScheme.error.withValues(alpha: 0.3),
-          width: 1,
-        ),
+        border:
+            Border.all(color: theme.colorScheme.error.withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [
           CustomIconWidget(
-            iconName: 'error_outline',
-            color: theme.colorScheme.error,
-            size: 20,
-          ),
+              iconName: 'error_outline',
+              color: theme.colorScheme.error,
+              size: 20),
           SizedBox(width: 3.w),
           Expanded(
-            child: Text(
-              _errorMessage!,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: theme.colorScheme.error,
-              ),
-            ),
+            child: Text(_errorMessage!,
+                style: theme.textTheme.bodyMedium
+                    ?.copyWith(color: theme.colorScheme.error)),
           ),
         ],
       ),
     );
   }
 
-  /// Build loading indicator
   Widget _buildLoadingIndicator(ThemeData theme, bool isHindi) {
     return Container(
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
         color: theme.colorScheme.surface,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: theme.dividerColor, width: 1),
+        border: Border.all(color: theme.dividerColor),
       ),
       child: Row(
         children: [
@@ -495,18 +410,17 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
             height: 20,
             child: CircularProgressIndicator(
               strokeWidth: 2,
-              valueColor: AlwaysStoppedAnimation<Color>(
-                theme.colorScheme.primary,
-              ),
+              valueColor: AlwaysStoppedAnimation<Color>(theme.colorScheme.primary),
             ),
           ),
           SizedBox(width: 3.w),
           Expanded(
             child: Text(
-              !isHindi ? 'Getting your location...' : 'लोकेशन प्राप्त की जा रही है...',
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
+              !isHindi
+                  ? 'Getting your location...'
+                  : 'लोकेशन प्राप्त की जा रही है...',
+              style: theme.textTheme.bodyMedium
+                  ?.copyWith(color: theme.colorScheme.onSurfaceVariant),
             ),
           ),
         ],

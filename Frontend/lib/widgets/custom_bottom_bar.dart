@@ -2,29 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../core/language_provider.dart';
 import '../routes/app_routes.dart';
-import '../../widgets/custom_bottom_bar.dart';
-/// Navigation item configuration for the bottom navigation bar
-enum CustomBottomBarItem {
-  dashboard,
-  marketplace,
-  profile,
-  community,
-  chatbot,
-}
-/// Custom bottom navigation bar widget for agricultural application
-/// Implements bottom-heavy interaction design with large touch targets
-/// Follows the hub-and-spoke navigation model with dashboard as central hub
+// FIX: removed self-import '../../widgets/custom_bottom_bar.dart'
+
+enum CustomBottomBarItem { dashboard, marketplace, profile, community, chatbot }
+
 class CustomBottomBar extends StatelessWidget {
-  /// Current selected navigation item
   final CustomBottomBarItem currentItem;
-
-  /// Callback when navigation item is tapped
   final ValueChanged<CustomBottomBarItem> onItemTapped;
-
-  /// Whether to show labels (default: true)
   final bool showLabels;
-
-  /// Custom elevation (default: 8.0 for bottom sheets)
   final double elevation;
 
   const CustomBottomBar({
@@ -46,6 +31,7 @@ class CustomBottomBar extends StatelessWidget {
         color: colorScheme.primary,
         boxShadow: [
           BoxShadow(
+            // FIX: withOpacity → withValues
             color: Colors.black.withValues(alpha: 0.15),
             offset: const Offset(0, -2),
             blurRadius: elevation,
@@ -54,41 +40,23 @@ class CustomBottomBar extends StatelessWidget {
       ),
       child: SafeArea(
         child: SizedBox(
-          height: 72, // Minimum 56dp + padding for thumb reach
+          height: 72,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildNavItem(
-                context: context,
-                item: CustomBottomBarItem.dashboard,
-                icon: Icons.dashboard_outlined,
-                selectedIcon: Icons.dashboard,
-                label: lang == 'en' ? 'Dashboard' : 'डैशबोर्ड',
-              ),
-              _buildNavItem(
-                context: context,
-                item: CustomBottomBarItem.marketplace,
-                icon: Icons.store_outlined,
-                selectedIcon: Icons.store,
-                label: lang == 'en' ? 'Market' : 'मार्केट',
-              ),
-
-              // CENTER PROFILE BUTTON
+              _buildNavItem(context: context, item: CustomBottomBarItem.dashboard,
+                  icon: Icons.dashboard_outlined, selectedIcon: Icons.dashboard,
+                  label: lang == 'en' ? 'Dashboard' : 'डैशबोर्ड'),
+              _buildNavItem(context: context, item: CustomBottomBarItem.marketplace,
+                  icon: Icons.store_outlined, selectedIcon: Icons.store,
+                  label: lang == 'en' ? 'Market' : 'मार्केट'),
               _buildCenterProfileButton(context),
-              _buildNavItem(
-                context: context,
-                item: CustomBottomBarItem.community,
-                icon: Icons.forum_outlined,
-                selectedIcon: Icons.forum,
-                label: lang == 'en' ? 'Community' : 'समुदाय',
-              ),
-              _buildNavItem(
-                context: context,
-                item: CustomBottomBarItem.chatbot,
-                icon: Icons.smart_toy_outlined,
-                selectedIcon: Icons.smart_toy,
-                label: lang == 'en' ? 'AI' : 'एआई',
-              ),
+              _buildNavItem(context: context, item: CustomBottomBarItem.community,
+                  icon: Icons.forum_outlined, selectedIcon: Icons.forum,
+                  label: lang == 'en' ? 'Community' : 'समुदाय'),
+              _buildNavItem(context: context, item: CustomBottomBarItem.chatbot,
+                  icon: Icons.smart_toy_outlined, selectedIcon: Icons.smart_toy,
+                  label: lang == 'en' ? 'AI' : 'एआई'),
             ],
           ),
         ),
@@ -96,7 +64,6 @@ class CustomBottomBar extends StatelessWidget {
     );
   }
 
-  /// Builds individual navigation item with proper touch targets
   Widget _buildNavItem({
     required BuildContext context,
     required CustomBottomBarItem item,
@@ -107,23 +74,11 @@ class CustomBottomBar extends StatelessWidget {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     final isSelected = currentItem == item;
-
-    final itemColor = isSelected
-    ? Colors.white
-    : Colors.white70;
+    final itemColor = isSelected ? Colors.white : Colors.white70;
 
     return Expanded(
       child: InkWell(
-        onTap: () {
-          // Haptic feedback for touch response
-          // HapticFeedback.lightImpact(); // Uncomment if haptic feedback is needed
-
-          // Navigate based on selected item
-          _handleNavigation(context, item);
-
-          // Notify parent of selection change
-          onItemTapped(item);
-        },
+        onTap: () { _handleNavigation(context, item); onItemTapped(item); },
         splashColor: colorScheme.primary.withValues(alpha: 0.1),
         highlightColor: colorScheme.primary.withValues(alpha: 0.05),
         child: Container(
@@ -132,25 +87,15 @@ class CustomBottomBar extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Icon with 26dp size for clear visibility
-              Icon(
-                isSelected ? selectedIcon : icon,
-                size: 26,
-                color: itemColor,
-              ),
-
+              Icon(isSelected ? selectedIcon : icon, size: 26, color: itemColor),
               if (showLabels) ...[
                 const SizedBox(height: 4),
-                // Label with appropriate typography
                 Text(
                   label,
-                  style: theme.bottomNavigationBarTheme.selectedLabelStyle
-                      ?.copyWith(
-                        color: itemColor,
-                        fontWeight: isSelected
-                            ? FontWeight.w600
-                            : FontWeight.w400,
-                      ),
+                  style: theme.bottomNavigationBarTheme.selectedLabelStyle?.copyWith(
+                    color: itemColor,
+                    fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+                  ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -167,10 +112,7 @@ class CustomBottomBar extends StatelessWidget {
 
     return Expanded(
       child: GestureDetector(
-        onTap: () {
-          _handleNavigation(context, CustomBottomBarItem.profile);
-          onItemTapped(CustomBottomBarItem.profile);
-        },
+        onTap: () { _handleNavigation(context, CustomBottomBarItem.profile); onItemTapped(CustomBottomBarItem.profile); },
         child: Container(
           alignment: Alignment.center,
           child: Container(
@@ -180,73 +122,42 @@ class CustomBottomBar extends StatelessWidget {
               shape: BoxShape.circle,
               color: Colors.white,
               boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.25),
-                  blurRadius: 8,
-                  offset: const Offset(0, 4),
-                ),
+                // FIX: withOpacity → withValues
+                BoxShadow(color: Colors.black.withValues(alpha: 0.25), blurRadius: 8, offset: const Offset(0, 4)),
               ],
             ),
-            child: Icon(
-              Icons.person,
-              size: 30,
-              color: isSelected ? Colors.green.shade700 : Colors.green,
-            ),
+            child: Icon(Icons.person, size: 30,
+                color: isSelected ? Colors.green.shade700 : Colors.green),
           ),
         ),
       ),
     );
   }
 
-  /// Handles navigation based on selected item
-  /// Maps navigation items to their respective routes
   void _handleNavigation(BuildContext context, CustomBottomBarItem item) {
-    String route;
-
-    switch (item) {
-      case CustomBottomBarItem.dashboard:
-        route = AppRoutes.mainDashboard;
-        break;
-
-      case CustomBottomBarItem.marketplace:
-        route = AppRoutes.marketplace;
-        break;
-
-      case CustomBottomBarItem.community:
-        route = AppRoutes.communityChat;
-        break;
-
-      case CustomBottomBarItem.chatbot:
-        route = AppRoutes.aiChatbot;
-        break;
-
-      case CustomBottomBarItem.profile:
-        route = AppRoutes.profile;
-        break;
-    }
-
+    final routes = {
+      CustomBottomBarItem.dashboard: AppRoutes.mainDashboard,
+      CustomBottomBarItem.marketplace: AppRoutes.marketplace,
+      CustomBottomBarItem.community: AppRoutes.communityChat,
+      CustomBottomBarItem.chatbot: AppRoutes.aiChatbot,
+      CustomBottomBarItem.profile: AppRoutes.profile,
+    };
+    final route = routes[item]!;
     if (ModalRoute.of(context)?.settings.name != route) {
       Navigator.pushReplacementNamed(context, route);
     }
   }
 }
 
-/// Extension to get navigation item from route name
 extension CustomBottomBarItemExtension on CustomBottomBarItem {
   static CustomBottomBarItem fromRoute(String? routeName) {
     switch (routeName) {
-      case '/main-dashboard_screen':
-        return CustomBottomBarItem.dashboard;
-      case '/marketplace-screen':
-        return CustomBottomBarItem.marketplace;
-      case '/community-chat':
-        return CustomBottomBarItem.community;
-      case '/ai-chatbot-screen':
-        return CustomBottomBarItem.chatbot;
-      case '/profile-screen':
-        return CustomBottomBarItem.profile;
-      default:
-        return CustomBottomBarItem.dashboard;
+      case '/main-dashboard_screen': return CustomBottomBarItem.dashboard;
+      case '/marketplace-screen': return CustomBottomBarItem.marketplace;
+      case '/community-chat': return CustomBottomBarItem.community;
+      case '/ai-chatbot-screen': return CustomBottomBarItem.chatbot;
+      case '/profile-screen': return CustomBottomBarItem.profile;
+      default: return CustomBottomBarItem.dashboard;
     }
   }
 }
