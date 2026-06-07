@@ -1,0 +1,4435 @@
+{
+    "district": "Bundi",
+    "tehsils": [
+        {
+            "tehsil": "Bundi",
+            "villages": [
+                {
+                    "village": "Ajeta",
+                    "lat": "25.4718710",
+                    "lon": "75.8464336"
+                },
+                {
+                    "village": "Akher",
+                    "lat": "25.4930232",
+                    "lon": "75.7841957"
+                },
+                {
+                    "village": "Aktasa",
+                    "lat": "25.3175719",
+                    "lon": "75.7264423"
+                },
+                {
+                    "village": "Alfanagar",
+                    "lat": "25.2804797",
+                    "lon": "75.7114005"
+                },
+                {
+                    "village": "Alkodiya",
+                    "lat": "25.3249230",
+                    "lon": "75.6899214"
+                },
+                {
+                    "village": "Amli",
+                    "lat": "25.3312360",
+                    "lon": "75.5798113"
+                },
+                {
+                    "village": "Amthoon",
+                    "lat": "25.2470250",
+                    "lon": "75.6456327"
+                },
+                {
+                    "village": "Andher",
+                    "lat": "25.3242393",
+                    "lon": "75.6373018"
+                },
+                {
+                    "village": "Anoppura",
+                    "lat": "25.3041874",
+                    "lon": "75.5340528"
+                },
+                {
+                    "village": "Anthara",
+                    "lat": "25.3924587",
+                    "lon": "75.7842063"
+                },
+                {
+                    "village": "Astoli",
+                    "lat": "25.4288576",
+                    "lon": "75.5787062"
+                },
+                {
+                    "village": "Badoonda",
+                    "lat": "25.3509296",
+                    "lon": "75.8136892"
+                },
+                {
+                    "village": "Bagda",
+                    "lat": "25.3828629",
+                    "lon": "75.7113576"
+                },
+                {
+                    "village": "Bagli",
+                    "lat": "25.5367300",
+                    "lon": "76.2741709"
+                },
+                {
+                    "village": "Bahadurpura",
+                    "lat": "25.4297684",
+                    "lon": "75.6784201"
+                },
+                {
+                    "village": "Bajar",
+                    "lat": "25.3185223",
+                    "lon": "75.8065223"
+                },
+                {
+                    "village": "Bakchanch",
+                    "lat": "25.3185223",
+                    "lon": "75.8065223"
+                },
+                {
+                    "village": "Bakshpura",
+                    "lat": "25.2868436",
+                    "lon": "75.7850432"
+                },
+                {
+                    "village": "Balapura",
+                    "lat": "25.5563028",
+                    "lon": "75.6002605"
+                },
+                {
+                    "village": "Balapura",
+                    "lat": "25.5563028",
+                    "lon": "75.6002605"
+                },
+                {
+                    "village": "Baldeopura",
+                    "lat": "25.3848984",
+                    "lon": "75.6893849"
+                },
+                {
+                    "village": "Baldeopura",
+                    "lat": "25.3848984",
+                    "lon": "75.6893849"
+                },
+                {
+                    "village": "Ballop",
+                    "lat": "25.3848984",
+                    "lon": "75.6893849"
+                },
+                {
+                    "village": "Bambori",
+                    "lat": "25.4222880",
+                    "lon": "75.7906008"
+                },
+                {
+                    "village": "Banka Khera",
+                    "lat": "25.4167840",
+                    "lon": "75.8092689"
+                },
+                {
+                    "village": "Banki",
+                    "lat": "25.3189296",
+                    "lon": "75.5349540"
+                },
+                {
+                    "village": "Baradhudhala",
+                    "lat": "25.3189296",
+                    "lon": "75.5349540"
+                },
+                {
+                    "village": "Barfoo",
+                    "lat": "25.0746767",
+                    "lon": "75.4729414"
+                },
+                {
+                    "village": "Barkhera",
+                    "lat": "25.3653510",
+                    "lon": "75.6564367"
+                },
+                {
+                    "village": "Baroondhan",
+                    "lat": "25.3151957",
+                    "lon": "75.6742251"
+                },
+                {
+                    "village": "Barwas",
+                    "lat": "25.5389953",
+                    "lon": "75.4992056"
+                },
+                {
+                    "village": "Bathwara",
+                    "lat": "25.3947849",
+                    "lon": "75.7730913"
+                },
+                {
+                    "village": "Bawadi Khera",
+                    "lat": "25.3322930",
+                    "lon": "75.6142401"
+                },
+                {
+                    "village": "Beebanwa",
+                    "lat": "25.3322930",
+                    "lon": "75.6142401"
+                },
+                {
+                    "village": "Beechari",
+                    "lat": "25.4384110",
+                    "lon": "75.9279299"
+                },
+                {
+                    "village": "Beelooba",
+                    "lat": "25.4384110",
+                    "lon": "75.9279299"
+                },
+                {
+                    "village": "Beodiya",
+                    "lat": "25.4384110",
+                    "lon": "75.9279299"
+                },
+                {
+                    "village": "Bhagwanpura @Chainpuriya",
+                    "lat": "25.4384110",
+                    "lon": "75.9279299"
+                },
+                {
+                    "village": "Bhairoopura Barad",
+                    "lat": "25.3081738",
+                    "lon": "75.5447173"
+                },
+                {
+                    "village": "Bhairoopura Ojha",
+                    "lat": "25.4675316",
+                    "lon": "75.7851290"
+                },
+                {
+                    "village": "Bhalsanawa",
+                    "lat": "25.3838904",
+                    "lon": "75.5816674"
+                },
+                {
+                    "village": "Bhanwarda",
+                    "lat": "25.3699994",
+                    "lon": "75.6819606"
+                },
+                {
+                    "village": "Bhanwriya Kua",
+                    "lat": "25.2841467",
+                    "lon": "75.6592369"
+                },
+                {
+                    "village": "Bharta Baori",
+                    "lat": "25.2780155",
+                    "lon": "75.6762314"
+                },
+                {
+                    "village": "Bhatonka Khera",
+                    "lat": "25.4320745",
+                    "lon": "75.9162569"
+                },
+                {
+                    "village": "Bhawani Pura",
+                    "lat": "25.4320745",
+                    "lon": "75.9162569"
+                },
+                {
+                    "village": "Bhawani Pura @ Bangamata",
+                    "lat": "25.4320745",
+                    "lon": "75.9162569"
+                },
+                {
+                    "village": "Bhawanipura",
+                    "lat": "25.2807319",
+                    "lon": "75.8682346"
+                },
+                {
+                    "village": "Bheem Ka Khera",
+                    "lat": "25.2807319",
+                    "lon": "75.8682346"
+                },
+                {
+                    "village": "Bheemganj",
+                    "lat": "25.6033342",
+                    "lon": "75.4727697"
+                },
+                {
+                    "village": "Bheempuriya",
+                    "lat": "25.3559760",
+                    "lon": "75.6166381"
+                },
+                {
+                    "village": "Bhoomakhera",
+                    "lat": "25.3669070",
+                    "lon": "75.8350610"
+                },
+                {
+                    "village": "Bhopat Pura",
+                    "lat": "25.3669070",
+                    "lon": "75.8350610"
+                },
+                {
+                    "village": "Bijari",
+                    "lat": "25.3669070",
+                    "lon": "75.8350610"
+                },
+                {
+                    "village": "Bijnawar",
+                    "lat": "25.3669070",
+                    "lon": "75.8350610"
+                },
+                {
+                    "village": "Bisanpura",
+                    "lat": "25.3669070",
+                    "lon": "75.8350610"
+                },
+                {
+                    "village": "Budhpura (CT)",
+                    "lat": "25.1050505",
+                    "lon": "75.4551744"
+                },
+                {
+                    "village": "Bundi (M + OG)",
+                    "lat": "25.1050505",
+                    "lon": "75.4551744"
+                },
+                {
+                    "village": "Chakmoheeepura",
+                    "lat": "25.1050505",
+                    "lon": "75.4551744"
+                },
+                {
+                    "village": "Chanda Ka Talab",
+                    "lat": "25.2614830",
+                    "lon": "75.6157636"
+                },
+                {
+                    "village": "Chandanheli",
+                    "lat": "25.3022087",
+                    "lon": "75.8416700"
+                },
+                {
+                    "village": "Chapras",
+                    "lat": "25.3022087",
+                    "lon": "75.8416700"
+                },
+                {
+                    "village": "Chatkherla",
+                    "lat": "25.3022087",
+                    "lon": "75.8416700"
+                },
+                {
+                    "village": "Chhant Ka Khera",
+                    "lat": "25.3022087",
+                    "lon": "75.8416700"
+                },
+                {
+                    "village": "Chhaparda",
+                    "lat": "25.4841909",
+                    "lon": "75.9365558"
+                },
+                {
+                    "village": "Chhapawda",
+                    "lat": "25.4841909",
+                    "lon": "75.9365558"
+                },
+                {
+                    "village": "Chhawani",
+                    "lat": "25.4366089",
+                    "lon": "75.9008932"
+                },
+                {
+                    "village": "Dabi",
+                    "lat": "25.0958204",
+                    "lon": "75.5173020"
+                },
+                {
+                    "village": "Daboosar",
+                    "lat": "25.0958204",
+                    "lon": "75.5173020"
+                },
+                {
+                    "village": "Daglawda",
+                    "lat": "25.0958204",
+                    "lon": "75.5173020"
+                },
+                {
+                    "village": "Dalelpura (OG)",
+                    "lat": "25.0958204",
+                    "lon": "75.5173020"
+                },
+                {
+                    "village": "Dasalya",
+                    "lat": "25.0614210",
+                    "lon": "75.5304801"
+                },
+                {
+                    "village": "Daulat Pura",
+                    "lat": "25.3986035",
+                    "lon": "75.5708098"
+                },
+                {
+                    "village": "Dayalpura",
+                    "lat": "25.4480799",
+                    "lon": "75.7175159"
+                },
+                {
+                    "village": "Dehit",
+                    "lat": "25.2779379",
+                    "lon": "75.8330226"
+                },
+                {
+                    "village": "Deloonda",
+                    "lat": "25.2779379",
+                    "lon": "75.8330226"
+                },
+                {
+                    "village": "Delunda",
+                    "lat": "25.4670667",
+                    "lon": "75.8675909"
+                },
+                {
+                    "village": "Deogarh",
+                    "lat": "25.1107435",
+                    "lon": "75.4214430"
+                },
+                {
+                    "village": "Devariya",
+                    "lat": "25.6590899",
+                    "lon": "75.9084034"
+                },
+                {
+                    "village": "Dhanatari",
+                    "lat": "25.3152248",
+                    "lon": "75.6476712"
+                },
+                {
+                    "village": "Dhaneshwar",
+                    "lat": "25.0809542",
+                    "lon": "75.5871391"
+                },
+                {
+                    "village": "Dhola Ki Jhonpariyan",
+                    "lat": "25.0809542",
+                    "lon": "75.5871391"
+                },
+                {
+                    "village": "Dhorela",
+                    "lat": "25.1140660",
+                    "lon": "75.4443812"
+                },
+                {
+                    "village": "Dolara",
+                    "lat": "25.3634557",
+                    "lon": "76.1353397"
+                },
+                {
+                    "village": "Dora",
+                    "lat": "25.1926511",
+                    "lon": "75.6532717"
+                },
+                {
+                    "village": "Dulhepura",
+                    "lat": "25.2715153",
+                    "lon": "75.6167936"
+                },
+                {
+                    "village": "Ebra",
+                    "lat": "25.4164933",
+                    "lon": "75.8222293"
+                },
+                {
+                    "village": "Fatehpura",
+                    "lat": "25.1069547",
+                    "lon": "75.4286313"
+                },
+                {
+                    "village": "Gadegal",
+                    "lat": "25.3386348",
+                    "lon": "75.6509972"
+                },
+                {
+                    "village": "Gagos",
+                    "lat": "25.2627056",
+                    "lon": "75.7119369"
+                },
+                {
+                    "village": "Gamach",
+                    "lat": "25.2724468",
+                    "lon": "75.8979749"
+                },
+                {
+                    "village": "Gandhigram",
+                    "lat": "25.4387307",
+                    "lon": "75.6897712"
+                },
+                {
+                    "village": "Ganeshpura",
+                    "lat": "25.0644921",
+                    "lon": "75.4872751"
+                },
+                {
+                    "village": "Ganeshpura",
+                    "lat": "25.0644921",
+                    "lon": "75.4872751"
+                },
+                {
+                    "village": "Ganeshpura",
+                    "lat": "25.0644921",
+                    "lon": "75.4872751"
+                },
+                {
+                    "village": "Ganpatpura",
+                    "lat": "25.4605185",
+                    "lon": "75.6982040"
+                },
+                {
+                    "village": "Gardara",
+                    "lat": "25.2085523",
+                    "lon": "75.4890775"
+                },
+                {
+                    "village": "Garnara",
+                    "lat": "25.3491455",
+                    "lon": "75.5521953"
+                },
+                {
+                    "village": "Gobariya",
+                    "lat": "25.3491455",
+                    "lon": "75.5521953"
+                },
+                {
+                    "village": "Gogpura",
+                    "lat": "25.4693139",
+                    "lon": "75.8964729"
+                },
+                {
+                    "village": "Golpur",
+                    "lat": "25.2708944",
+                    "lon": "75.4695940"
+                },
+                {
+                    "village": "Gopalniwas",
+                    "lat": "25.3419607",
+                    "lon": "75.6071484"
+                },
+                {
+                    "village": "Gopalpura",
+                    "lat": "25.0993766",
+                    "lon": "75.4331159"
+                },
+                {
+                    "village": "Gopalpura (Barad)",
+                    "lat": "25.0993766",
+                    "lon": "75.4331159"
+                },
+                {
+                    "village": "Gordhanpura",
+                    "lat": "25.4435265",
+                    "lon": "75.7252407"
+                },
+                {
+                    "village": "Gordhanpura",
+                    "lat": "25.4435265",
+                    "lon": "75.7252407"
+                },
+                {
+                    "village": "Govindpur Baori",
+                    "lat": "25.4435265",
+                    "lon": "75.7252407"
+                },
+                {
+                    "village": "Gudha",
+                    "lat": "25.0504189",
+                    "lon": "75.5507898"
+                },
+                {
+                    "village": "Gudha Nathawatan",
+                    "lat": "25.3793539",
+                    "lon": "75.5199981"
+                },
+                {
+                    "village": "Gudhamakdooka",
+                    "lat": "25.5220725",
+                    "lon": "75.7885623"
+                },
+                {
+                    "village": "Gulkheri",
+                    "lat": "25.5165537",
+                    "lon": "75.8136463"
+                },
+                {
+                    "village": "Gumampura",
+                    "lat": "25.3352022",
+                    "lon": "75.6850719"
+                },
+                {
+                    "village": "Guwar",
+                    "lat": "25.2442690",
+                    "lon": "75.5293321"
+                },
+                {
+                    "village": "Guwari",
+                    "lat": "25.4533694",
+                    "lon": "75.8086681"
+                },
+                {
+                    "village": "Hanotya",
+                    "lat": "25.4551518",
+                    "lon": "75.9356868"
+                },
+                {
+                    "village": "Hari Pura",
+                    "lat": "25.4551518",
+                    "lon": "75.9356868"
+                },
+                {
+                    "village": "Haripura",
+                    "lat": "25.4537763",
+                    "lon": "75.5427646"
+                },
+                {
+                    "village": "Haripura @ Jawara Ki Jhopariyan",
+                    "lat": "25.5285205",
+                    "lon": "75.8031750"
+                },
+                {
+                    "village": "Hattipura",
+                    "lat": "25.4116286",
+                    "lon": "75.5953789"
+                },
+                {
+                    "village": "Hazari Bhiroon Ki Jhopariyan",
+                    "lat": "25.3673335",
+                    "lon": "75.5840063"
+                },
+                {
+                    "village": "Holaspura",
+                    "lat": "25.2848258",
+                    "lon": "75.5262422"
+                },
+                {
+                    "village": "Itoda",
+                    "lat": "25.3800712",
+                    "lon": "75.6811666"
+                },
+                {
+                    "village": "Jakhana",
+                    "lat": "25.4263771",
+                    "lon": "75.8763456"
+                },
+                {
+                    "village": "Jakhmoond",
+                    "lat": "25.4263771",
+                    "lon": "75.8763456"
+                },
+                {
+                    "village": "Jal Ki Jhonpariyan",
+                    "lat": "25.2626280",
+                    "lon": "75.7173013"
+                },
+                {
+                    "village": "Jalera",
+                    "lat": "25.4031586",
+                    "lon": "75.7513547"
+                },
+                {
+                    "village": "Jaloda",
+                    "lat": "25.3416601",
+                    "lon": "75.7452607"
+                },
+                {
+                    "village": "Jalodi",
+                    "lat": "25.3409038",
+                    "lon": "75.7517624"
+                },
+                {
+                    "village": "Jaloti",
+                    "lat": "25.1829618",
+                    "lon": "75.6877756"
+                },
+                {
+                    "village": "Jameetpura",
+                    "lat": "25.3107828",
+                    "lon": "75.7591867"
+                },
+                {
+                    "village": "Jaoti Kalan",
+                    "lat": "25.4504825",
+                    "lon": "75.7405185"
+                },
+                {
+                    "village": "Jaoti Khurd",
+                    "lat": "25.4378491",
+                    "lon": "75.7539725"
+                },
+                {
+                    "village": "Jarkhoda",
+                    "lat": "25.3427558",
+                    "lon": "75.7011437"
+                },
+                {
+                    "village": "Jawahar Sagar",
+                    "lat": "25.0019083",
+                    "lon": "75.6432056"
+                },
+                {
+                    "village": "Jawaran",
+                    "lat": "25.5315313",
+                    "lon": "75.8357477"
+                },
+                {
+                    "village": "Jharbala Pura",
+                    "lat": "25.4762102",
+                    "lon": "75.7642507"
+                },
+                {
+                    "village": "Kachhaliya",
+                    "lat": "25.1708442",
+                    "lon": "75.6192827"
+                },
+                {
+                    "village": "Kalpuriya",
+                    "lat": "25.3534698",
+                    "lon": "75.6266963"
+                },
+                {
+                    "village": "Kalyanpura",
+                    "lat": "25.6022119",
+                    "lon": "75.8222508"
+                },
+                {
+                    "village": "Kanan",
+                    "lat": "25.2613084",
+                    "lon": "75.8943271"
+                },
+                {
+                    "village": "Kanjri Silor",
+                    "lat": "25.4266581",
+                    "lon": "75.6008398"
+                },
+                {
+                    "village": "Kanti",
+                    "lat": "25.4257570",
+                    "lon": "75.5511760"
+                },
+                {
+                    "village": "Kanwarpura",
+                    "lat": "25.6938998",
+                    "lon": "76.2460613"
+                },
+                {
+                    "village": "Karad Ka Baradha",
+                    "lat": "25.6938998",
+                    "lon": "76.2460613"
+                },
+                {
+                    "village": "Karjoona",
+                    "lat": "25.3619627",
+                    "lon": "75.6029105"
+                },
+                {
+                    "village": "Karondi",
+                    "lat": "25.3619627",
+                    "lon": "75.6029105"
+                },
+                {
+                    "village": "Katunara",
+                    "lat": "25.4457548",
+                    "lon": "75.6785488"
+                },
+                {
+                    "village": "Kesarpura",
+                    "lat": "25.5068225",
+                    "lon": "75.8693933"
+                },
+                {
+                    "village": "Kethooda",
+                    "lat": "25.2495092",
+                    "lon": "75.7348537"
+                },
+                {
+                    "village": "Kewariya",
+                    "lat": "25.2487328",
+                    "lon": "75.5014586"
+                },
+                {
+                    "village": "Khadipur",
+                    "lat": "25.1246156",
+                    "lon": "75.6701374"
+                },
+                {
+                    "village": "Khaloonda",
+                    "lat": "25.3464501",
+                    "lon": "75.8618188"
+                },
+                {
+                    "village": "Khankhera",
+                    "lat": "25.3655885",
+                    "lon": "75.6722295"
+                },
+                {
+                    "village": "Kharibara",
+                    "lat": "25.5079457",
+                    "lon": "75.8814418"
+                },
+                {
+                    "village": "Khatiyari",
+                    "lat": "25.4985431",
+                    "lon": "75.8087754"
+                },
+                {
+                    "village": "Khatkar",
+                    "lat": "25.5084396",
+                    "lon": "75.8495235"
+                },
+                {
+                    "village": "Kherla",
+                    "lat": "25.2948174",
+                    "lon": "75.7526100"
+                },
+                {
+                    "village": "Kheroli",
+                    "lat": "25.2808386",
+                    "lon": "75.7564402"
+                },
+                {
+                    "village": "Kheroona",
+                    "lat": "25.4214353",
+                    "lon": "75.5340957"
+                },
+                {
+                    "village": "Khunetiya",
+                    "lat": "25.4214353",
+                    "lon": "75.5340957"
+                },
+                {
+                    "village": "Khurar",
+                    "lat": "25.2950599",
+                    "lon": "75.7210457"
+                },
+                {
+                    "village": "Khyawada",
+                    "lat": "25.4796389",
+                    "lon": "75.9173512"
+                },
+                {
+                    "village": "Kishanpura",
+                    "lat": "25.4185477",
+                    "lon": "75.7509040"
+                },
+                {
+                    "village": "Kishanpura",
+                    "lat": "25.4185477",
+                    "lon": "75.7509040"
+                },
+                {
+                    "village": "Kothya",
+                    "lat": "25.3660733",
+                    "lon": "75.6933117"
+                },
+                {
+                    "village": "Kotkhera",
+                    "lat": "25.3616137",
+                    "lon": "75.6435835"
+                },
+                {
+                    "village": "Kumhariya",
+                    "lat": "25.3337282",
+                    "lon": "75.5980825"
+                },
+                {
+                    "village": "Kundaliya",
+                    "lat": "25.4677253",
+                    "lon": "75.7196188"
+                },
+                {
+                    "village": "Kunwarti",
+                    "lat": "25.4078298",
+                    "lon": "75.6905115"
+                },
+                {
+                    "village": "Ladpur",
+                    "lat": "25.3645803",
+                    "lon": "75.8427429"
+                },
+                {
+                    "village": "Lakha Ki Jhopariyan",
+                    "lat": "25.3645803",
+                    "lon": "75.8427429"
+                },
+                {
+                    "village": "Lalpura",
+                    "lat": "25.3824946",
+                    "lon": "75.7288456"
+                },
+                {
+                    "village": "Lamba Peepal",
+                    "lat": "25.2891815",
+                    "lon": "75.7496166"
+                },
+                {
+                    "village": "Lambakhoh",
+                    "lat": "25.0522851",
+                    "lon": "75.4758596"
+                },
+                {
+                    "village": "Laxmi Pura",
+                    "lat": "25.2534294",
+                    "lon": "75.6603097"
+                },
+                {
+                    "village": "Laxmipura",
+                    "lat": "25.6905063",
+                    "lon": "75.8588469"
+                },
+                {
+                    "village": "Leelera Charnan",
+                    "lat": "25.6905063",
+                    "lon": "75.8588469"
+                },
+                {
+                    "village": "Leelera Vyasan",
+                    "lat": "25.3787142",
+                    "lon": "75.7616758"
+                },
+                {
+                    "village": "Lohali",
+                    "lat": "25.4878517",
+                    "lon": "75.8766675"
+                },
+                {
+                    "village": "Loicha",
+                    "lat": "25.2925087",
+                    "lon": "75.5650162"
+                },
+                {
+                    "village": "Mahrampura",
+                    "lat": "25.3591609",
+                    "lon": "75.5856585"
+                },
+                {
+                    "village": "Malipura",
+                    "lat": "25.3009672",
+                    "lon": "75.5796289"
+                },
+                {
+                    "village": "Mandawara",
+                    "lat": "25.3435509",
+                    "lon": "75.5566156"
+                },
+                {
+                    "village": "Mandawari",
+                    "lat": "25.3367246",
+                    "lon": "75.5461550"
+                },
+                {
+                    "village": "Manditya",
+                    "lat": "25.3367246",
+                    "lon": "75.5461550"
+                },
+                {
+                    "village": "Mandri",
+                    "lat": "25.2826722",
+                    "lon": "75.7265818"
+                },
+                {
+                    "village": "Mangal",
+                    "lat": "25.3770857",
+                    "lon": "75.5571842"
+                },
+                {
+                    "village": "Mangli",
+                    "lat": "25.5232924",
+                    "lon": "75.5228519"
+                },
+                {
+                    "village": "Matoonda",
+                    "lat": "25.4279468",
+                    "lon": "75.7132888"
+                },
+                {
+                    "village": "Megharawat Ki Jhonpariyan",
+                    "lat": "25.4279468",
+                    "lon": "75.7132888"
+                },
+                {
+                    "village": "Meharana",
+                    "lat": "25.2465592",
+                    "lon": "75.8496952"
+                },
+                {
+                    "village": "Mohanpura",
+                    "lat": "25.7380937",
+                    "lon": "76.1892414"
+                },
+                {
+                    "village": "Moheepura",
+                    "lat": "25.3338349",
+                    "lon": "75.6973565"
+                },
+                {
+                    "village": "Moti Pura",
+                    "lat": "25.4319485",
+                    "lon": "75.7471275"
+                },
+                {
+                    "village": "Motipura",
+                    "lat": "25.3143326",
+                    "lon": "75.4466772"
+                },
+                {
+                    "village": "Motuka",
+                    "lat": "25.2800916",
+                    "lon": "75.7235777"
+                },
+                {
+                    "village": "Nainda",
+                    "lat": "25.3343585",
+                    "lon": "75.7447564"
+                },
+                {
+                    "village": "Namana",
+                    "lat": "25.3115587",
+                    "lon": "75.6151628"
+                },
+                {
+                    "village": "Nanakpuriya",
+                    "lat": "25.3115587",
+                    "lon": "75.6151628"
+                },
+                {
+                    "village": "Nandpura",
+                    "lat": "25.4412691",
+                    "lon": "75.7920062"
+                },
+                {
+                    "village": "Naroli",
+                    "lat": "25.4412691",
+                    "lon": "75.7920062"
+                },
+                {
+                    "village": "Narsingh Pura",
+                    "lat": "25.4412691",
+                    "lon": "75.7920062"
+                },
+                {
+                    "village": "Naya Bardha",
+                    "lat": "25.2686435",
+                    "lon": "75.7406688"
+                },
+                {
+                    "village": "Nayagaon",
+                    "lat": "25.4700500",
+                    "lon": "75.7521915"
+                },
+                {
+                    "village": "Neem Ka Khera",
+                    "lat": "25.3393524",
+                    "lon": "75.4782414"
+                },
+                {
+                    "village": "Notara",
+                    "lat": "25.5262550",
+                    "lon": "76.1199331"
+                },
+                {
+                    "village": "Onarji Ki Jhonpariyan",
+                    "lat": "25.3303342",
+                    "lon": "75.4494238"
+                },
+                {
+                    "village": "Onkarpura",
+                    "lat": "25.4642382",
+                    "lon": "75.7703447"
+                },
+                {
+                    "village": "Pakal Puriya",
+                    "lat": "25.3458295",
+                    "lon": "75.5804980"
+                },
+                {
+                    "village": "Palka",
+                    "lat": "25.1547924",
+                    "lon": "75.5465412"
+                },
+                {
+                    "village": "Parana (Bheelonwala)",
+                    "lat": "25.1547924",
+                    "lon": "75.5465412"
+                },
+                {
+                    "village": "Parana (Karadonka)",
+                    "lat": "25.1547924",
+                    "lon": "75.5465412"
+                },
+                {
+                    "village": "Peepalda",
+                    "lat": "25.3553119",
+                    "lon": "75.7533932"
+                },
+                {
+                    "village": "Peepalda Hadon Ka",
+                    "lat": "25.3553119",
+                    "lon": "75.7533932"
+                },
+                {
+                    "village": "Peeplya",
+                    "lat": "25.3553119",
+                    "lon": "75.7533932"
+                },
+                {
+                    "village": "Peetambpura",
+                    "lat": "25.3553119",
+                    "lon": "75.7533932"
+                },
+                {
+                    "village": "Prempura",
+                    "lat": "25.3157486",
+                    "lon": "75.5788564"
+                },
+                {
+                    "village": "Raghunathpura",
+                    "lat": "25.5306503",
+                    "lon": "75.4855799"
+                },
+                {
+                    "village": "Raghunathpura",
+                    "lat": "25.5306503",
+                    "lon": "75.4855799"
+                },
+                {
+                    "village": "Raghuveer Pura",
+                    "lat": "25.4168518",
+                    "lon": "75.6106031"
+                },
+                {
+                    "village": "Raithal",
+                    "lat": "25.4287026",
+                    "lon": "75.8248901"
+                },
+                {
+                    "village": "Rajpura",
+                    "lat": "25.5301179",
+                    "lon": "75.6303978"
+                },
+                {
+                    "village": "Rajwas",
+                    "lat": "25.4961996",
+                    "lon": "75.8024668"
+                },
+                {
+                    "village": "Ramganj",
+                    "lat": "25.5663106",
+                    "lon": "76.2032962"
+                },
+                {
+                    "village": "Ramnagar",
+                    "lat": "25.3988167",
+                    "lon": "75.5476570"
+                },
+                {
+                    "village": "Rampuriya",
+                    "lat": "25.5538830",
+                    "lon": "75.4736495"
+                },
+                {
+                    "village": "Rampuriya (Tulsi)",
+                    "lat": "25.2001651",
+                    "lon": "75.7319999"
+                },
+                {
+                    "village": "Rampuriya (Dholaka)",
+                    "lat": "25.4743506",
+                    "lon": "75.8304262"
+                },
+                {
+                    "village": "Ratanpura",
+                    "lat": "25.6935904",
+                    "lon": "75.7226872"
+                },
+                {
+                    "village": "Rayata",
+                    "lat": "25.3739352",
+                    "lon": "75.6419635"
+                },
+                {
+                    "village": "Rihana",
+                    "lat": "25.3739352",
+                    "lon": "75.6419635"
+                },
+                {
+                    "village": "Roopnagar",
+                    "lat": "25.3607024",
+                    "lon": "75.5501032"
+                },
+                {
+                    "village": "Salariya",
+                    "lat": "25.3607024",
+                    "lon": "75.5501032"
+                },
+                {
+                    "village": "Samarba",
+                    "lat": "25.4703987",
+                    "lon": "75.7990551"
+                },
+                {
+                    "village": "Sandri",
+                    "lat": "25.2955449",
+                    "lon": "75.7245862"
+                },
+                {
+                    "village": "Sangawada",
+                    "lat": "25.4133342",
+                    "lon": "75.7776189"
+                },
+                {
+                    "village": "Sankarda",
+                    "lat": "25.3615701",
+                    "lon": "75.6302315"
+                },
+                {
+                    "village": "Sanwal Pura",
+                    "lat": "25.3615701",
+                    "lon": "75.6302315"
+                },
+                {
+                    "village": "Sanwar",
+                    "lat": "25.2429492",
+                    "lon": "75.8071661"
+                },
+                {
+                    "village": "Sapteeja",
+                    "lat": "25.3467943",
+                    "lon": "75.7197905"
+                },
+                {
+                    "village": "Sarwan Ki Jhonpariyan",
+                    "lat": "25.3044493",
+                    "lon": "75.5706811"
+                },
+                {
+                    "village": "Satheli",
+                    "lat": "25.3695341",
+                    "lon": "75.7803225"
+                },
+                {
+                    "village": "Sedari",
+                    "lat": "25.2992212",
+                    "lon": "75.8523130"
+                },
+                {
+                    "village": "Seelor",
+                    "lat": "25.3747204",
+                    "lon": "75.6098628"
+                },
+                {
+                    "village": "Seenta",
+                    "lat": "25.2368159",
+                    "lon": "75.8447385"
+                },
+                {
+                    "village": "Seenta",
+                    "lat": "25.2368159",
+                    "lon": "75.8447385"
+                },
+                {
+                    "village": "Seenti",
+                    "lat": "25.3507744",
+                    "lon": "75.5326366"
+                },
+                {
+                    "village": "Seeta Pura",
+                    "lat": "25.2974946",
+                    "lon": "75.6984830"
+                },
+                {
+                    "village": "Shahpura",
+                    "lat": "25.3923618",
+                    "lon": "75.5000639"
+                },
+                {
+                    "village": "Shivshakti Ka Khera",
+                    "lat": "25.3944165",
+                    "lon": "75.6932902"
+                },
+                {
+                    "village": "Shrinagar",
+                    "lat": "25.1050311",
+                    "lon": "75.4172158"
+                },
+                {
+                    "village": "Shyamoo",
+                    "lat": "25.2823617",
+                    "lon": "75.6072020"
+                },
+                {
+                    "village": "Shyopuriya",
+                    "lat": "25.2823617",
+                    "lon": "75.6072020"
+                },
+                {
+                    "village": "Shyopuriya Ki Baori",
+                    "lat": "25.2823617",
+                    "lon": "75.6072020"
+                },
+                {
+                    "village": "Sootra",
+                    "lat": "25.0880476",
+                    "lon": "75.5429792"
+                },
+                {
+                    "village": "Sundarpura",
+                    "lat": "25.2968932",
+                    "lon": "75.5650377"
+                },
+                {
+                    "village": "Suwasan",
+                    "lat": "25.3328167",
+                    "lon": "75.8503389"
+                },
+                {
+                    "village": "Talab Bardha",
+                    "lat": "25.3328167",
+                    "lon": "75.8503389"
+                },
+                {
+                    "village": "Talera (CT)",
+                    "lat": "25.3164866",
+                    "lon": "75.7299916"
+                },
+                {
+                    "village": "Teekhabada",
+                    "lat": "25.3790825",
+                    "lon": "75.5720973"
+                },
+                {
+                    "village": "Teerath",
+                    "lat": "25.2501011",
+                    "lon": "75.8756268"
+                },
+                {
+                    "village": "Teetarwasa",
+                    "lat": "25.3045172",
+                    "lon": "75.7898927"
+                },
+                {
+                    "village": "Thari",
+                    "lat": "25.1129974",
+                    "lon": "75.5495452"
+                },
+                {
+                    "village": "Theekariya Charnan",
+                    "lat": "25.3591124",
+                    "lon": "75.7231593"
+                },
+                {
+                    "village": "Theekariyan Kalan",
+                    "lat": "25.3477881",
+                    "lon": "75.7862234"
+                },
+                {
+                    "village": "Tulsi",
+                    "lat": "25.2335745",
+                    "lon": "75.7507324"
+                },
+                {
+                    "village": "Ulera",
+                    "lat": "25.3506969",
+                    "lon": "75.5098700"
+                },
+                {
+                    "village": "Umarthoona",
+                    "lat": "25.3985260",
+                    "lon": "75.5225301"
+                },
+                {
+                    "village": "Umrach",
+                    "lat": "25.3753020",
+                    "lon": "75.6529766"
+                },
+                {
+                    "village": "Vinayaka",
+                    "lat": "25.2517992",
+                    "lon": "75.8233022"
+                },
+                {
+                    "village": "Vyas Baori",
+                    "lat": "25.3443848",
+                    "lon": "75.5966234"
+                }
+            ]
+        },
+        {
+            "tehsil": "Hindoli",
+            "villages": [
+                {
+                    "village": "Abwar",
+                    "lat": "25.4130047",
+                    "lon": "75.3695798"
+                },
+                {
+                    "village": "Aklor",
+                    "lat": "25.5562447",
+                    "lon": "75.5251694"
+                },
+                {
+                    "village": "Akoda",
+                    "lat": "25.5292950",
+                    "lon": "75.6641936"
+                },
+                {
+                    "village": "Akoliya",
+                    "lat": "25.6135897",
+                    "lon": "75.6524992"
+                },
+                {
+                    "village": "Alod",
+                    "lat": "25.5458876",
+                    "lon": "75.5874288"
+                },
+                {
+                    "village": "Amarpura",
+                    "lat": "25.6218514",
+                    "lon": "75.5985760"
+                },
+                {
+                    "village": "Amartya",
+                    "lat": "25.5890526",
+                    "lon": "75.5095481"
+                },
+                {
+                    "village": "Anantganj",
+                    "lat": "25.5640072",
+                    "lon": "75.6112575"
+                },
+                {
+                    "village": "Ashok Nagar",
+                    "lat": "25.5149851",
+                    "lon": "75.5370140"
+                },
+                {
+                    "village": "Badodiya",
+                    "lat": "25.4858760",
+                    "lon": "75.5761099"
+                },
+                {
+                    "village": "Bahadur Pura",
+                    "lat": "25.4842490",
+                    "lon": "75.4828977"
+                },
+                {
+                    "village": "Bahadurpura",
+                    "lat": "25.4842490",
+                    "lon": "75.4828977"
+                },
+                {
+                    "village": "Bal",
+                    "lat": "25.6365548",
+                    "lon": "75.7100701"
+                },
+                {
+                    "village": "Balapura",
+                    "lat": "25.5563028",
+                    "lon": "75.6002605"
+                },
+                {
+                    "village": "Balola",
+                    "lat": "25.6043792",
+                    "lon": "75.5119085"
+                },
+                {
+                    "village": "Bandha Ka Khera",
+                    "lat": "25.4107177",
+                    "lon": "75.3259349"
+                },
+                {
+                    "village": "Bandi Ka Khera",
+                    "lat": "25.4492812",
+                    "lon": "75.4104566"
+                },
+                {
+                    "village": "Baori Khera",
+                    "lat": "25.4492812",
+                    "lon": "75.4104566"
+                },
+                {
+                    "village": "Bara Naya Gaon",
+                    "lat": "25.5025909",
+                    "lon": "75.5284738"
+                },
+                {
+                    "village": "Bargaon",
+                    "lat": "25.5907750",
+                    "lon": "75.7242322"
+                },
+                {
+                    "village": "Barodiya",
+                    "lat": "25.4858760",
+                    "lon": "75.5761099"
+                },
+                {
+                    "village": "Barwas",
+                    "lat": "25.5389953",
+                    "lon": "75.4992056"
+                },
+                {
+                    "village": "Basni",
+                    "lat": "25.6870160",
+                    "lon": "75.4384803"
+                },
+                {
+                    "village": "Basoli",
+                    "lat": "25.4278693",
+                    "lon": "75.3965735"
+                },
+                {
+                    "village": "Batwari",
+                    "lat": "25.6637415",
+                    "lon": "75.4507649"
+                },
+                {
+                    "village": "Beechri",
+                    "lat": "25.5293143",
+                    "lon": "75.5461550"
+                },
+                {
+                    "village": "Beekaran",
+                    "lat": "25.5293143",
+                    "lon": "75.5461550"
+                },
+                {
+                    "village": "Beel Ka Khera",
+                    "lat": "25.5293143",
+                    "lon": "75.5461550"
+                },
+                {
+                    "village": "Bhawanipura",
+                    "lat": "25.6099133",
+                    "lon": "75.6410622"
+                },
+                {
+                    "village": "Bhawanipura",
+                    "lat": "25.6099133",
+                    "lon": "75.6410622"
+                },
+                {
+                    "village": "Bheemganj",
+                    "lat": "25.6033342",
+                    "lon": "75.4727697"
+                },
+                {
+                    "village": "Bherpura Antri",
+                    "lat": "25.6033342",
+                    "lon": "75.4727697"
+                },
+                {
+                    "village": "Bhojgarh",
+                    "lat": "25.3515307",
+                    "lon": "75.3974533"
+                },
+                {
+                    "village": "Bhootpuriya",
+                    "lat": "25.3515307",
+                    "lon": "75.3974533"
+                },
+                {
+                    "village": "Bishanpura",
+                    "lat": "25.5406409",
+                    "lon": "75.3831625"
+                },
+                {
+                    "village": "Borda",
+                    "lat": "25.5621489",
+                    "lon": "75.6947064"
+                },
+                {
+                    "village": "Borkhandi",
+                    "lat": "25.4736532",
+                    "lon": "75.5997133"
+                },
+                {
+                    "village": "Borkhera",
+                    "lat": "25.5098146",
+                    "lon": "75.4793787"
+                },
+                {
+                    "village": "Borkhera",
+                    "lat": "25.5098146",
+                    "lon": "75.4793787"
+                },
+                {
+                    "village": "Brahmanon Ka Luhariya",
+                    "lat": "25.5098146",
+                    "lon": "75.4793787"
+                },
+                {
+                    "village": "Brahmanon Ki Jhopariyan",
+                    "lat": "25.5894493",
+                    "lon": "75.4343498"
+                },
+                {
+                    "village": "Chainpuriya",
+                    "lat": "25.5894493",
+                    "lon": "75.4343498"
+                },
+                {
+                    "village": "Chatarganj",
+                    "lat": "25.5386080",
+                    "lon": "75.5212426"
+                },
+                {
+                    "village": "Chawandiya",
+                    "lat": "25.6758289",
+                    "lon": "75.5344069"
+                },
+                {
+                    "village": "Cheta",
+                    "lat": "25.5428481",
+                    "lon": "75.5656600"
+                },
+                {
+                    "village": "Chhabariyon Ka Naya Gaon",
+                    "lat": "25.6781786",
+                    "lon": "75.7121622"
+                },
+                {
+                    "village": "Chohra",
+                    "lat": "25.4772950",
+                    "lon": "75.5148911"
+                },
+                {
+                    "village": "Dabeta",
+                    "lat": "25.5674914",
+                    "lon": "75.7650876"
+                },
+                {
+                    "village": "Dabla",
+                    "lat": "25.5493530",
+                    "lon": "75.6044125"
+                },
+                {
+                    "village": "Dablana",
+                    "lat": "25.5846400",
+                    "lon": "75.6517482"
+                },
+                {
+                    "village": "Danta",
+                    "lat": "25.6320472",
+                    "lon": "75.4475784"
+                },
+                {
+                    "village": "Dara Ka Naya Gaon",
+                    "lat": "25.6320472",
+                    "lon": "75.4475784"
+                },
+                {
+                    "village": "Datoonda",
+                    "lat": "25.6320472",
+                    "lon": "75.4475784"
+                },
+                {
+                    "village": "Deo Doongri",
+                    "lat": "25.6328017",
+                    "lon": "75.4992378"
+                },
+                {
+                    "village": "Deroli",
+                    "lat": "25.5244929",
+                    "lon": "75.4713750"
+                },
+                {
+                    "village": "Deva Ka Khera",
+                    "lat": "25.6643894",
+                    "lon": "75.4368067"
+                },
+                {
+                    "village": "Dhabhaiyon Ka Naya Gaon",
+                    "lat": "25.6643894",
+                    "lon": "75.4368067"
+                },
+                {
+                    "village": "Dhagariya",
+                    "lat": "25.5615295",
+                    "lon": "75.5802297"
+                },
+                {
+                    "village": "Dhakni",
+                    "lat": "25.4856049",
+                    "lon": "75.5612182"
+                },
+                {
+                    "village": "Dhanao",
+                    "lat": "25.5187515",
+                    "lon": "75.6336808"
+                },
+                {
+                    "village": "Dhanpuriya",
+                    "lat": "25.5187515",
+                    "lon": "75.6336808"
+                },
+                {
+                    "village": "Dhardhari",
+                    "lat": "25.5187515",
+                    "lon": "75.6336808"
+                },
+                {
+                    "village": "Dheganya",
+                    "lat": "25.4705149",
+                    "lon": "75.4488873"
+                },
+                {
+                    "village": "Dhowara",
+                    "lat": "25.5913195",
+                    "lon": "75.5948961"
+                },
+                {
+                    "village": "Durgapura",
+                    "lat": "25.6595541",
+                    "lon": "75.6216001"
+                },
+                {
+                    "village": "Fatehgarh",
+                    "lat": "25.5377077",
+                    "lon": "75.3612435"
+                },
+                {
+                    "village": "Fazalpura",
+                    "lat": "25.5377077",
+                    "lon": "75.3612435"
+                },
+                {
+                    "village": "Ganeshganj",
+                    "lat": "25.6411685",
+                    "lon": "75.5589652"
+                },
+                {
+                    "village": "Gokulpura",
+                    "lat": "25.6411685",
+                    "lon": "75.5589652"
+                },
+                {
+                    "village": "Gopalpura",
+                    "lat": "25.4120163",
+                    "lon": "75.3388524"
+                },
+                {
+                    "village": "Gordhanpura",
+                    "lat": "25.5561286",
+                    "lon": "75.3987193"
+                },
+                {
+                    "village": "Gorsya Ka Khera",
+                    "lat": "25.6090232",
+                    "lon": "75.6215787"
+                },
+                {
+                    "village": "Gothra",
+                    "lat": "25.6824524",
+                    "lon": "75.6554603"
+                },
+                {
+                    "village": "Gurha",
+                    "lat": "25.4956283",
+                    "lon": "75.4707634"
+                },
+                {
+                    "village": "Gurjanya",
+                    "lat": "25.4331742",
+                    "lon": "75.3461426"
+                },
+                {
+                    "village": "Haripura",
+                    "lat": "25.4537763",
+                    "lon": "75.5427646"
+                },
+                {
+                    "village": "Harmali Ka Khera",
+                    "lat": "25.6610531",
+                    "lon": "75.7440162"
+                },
+                {
+                    "village": "Harna",
+                    "lat": "25.6094296",
+                    "lon": "75.4966092"
+                },
+                {
+                    "village": "Hindoli",
+                    "lat": "25.5777823",
+                    "lon": "75.5024875"
+                },
+                {
+                    "village": "Holaspura",
+                    "lat": "25.5756596",
+                    "lon": "75.6770253"
+                },
+                {
+                    "village": "Huwalya",
+                    "lat": "25.7247174",
+                    "lon": "75.5032396"
+                },
+                {
+                    "village": "Jahazpuriya",
+                    "lat": "25.4823895",
+                    "lon": "75.4466557"
+                },
+                {
+                    "village": "Jainiwas",
+                    "lat": "25.4928683",
+                    "lon": "75.6449568"
+                },
+                {
+                    "village": "Jakholi Kalan",
+                    "lat": "25.4928683",
+                    "lon": "75.6449568"
+                },
+                {
+                    "village": "Jakholi Khurd",
+                    "lat": "25.4928683",
+                    "lon": "75.6449568"
+                },
+                {
+                    "village": "Jar Ka Nayagaon",
+                    "lat": "25.4789803",
+                    "lon": "75.5423140"
+                },
+                {
+                    "village": "Jetpura",
+                    "lat": "25.3963356",
+                    "lon": "75.2968597"
+                },
+                {
+                    "village": "Kabri",
+                    "lat": "25.6697660",
+                    "lon": "75.5157709"
+                },
+                {
+                    "village": "Kabul",
+                    "lat": "25.5196133",
+                    "lon": "75.5940914"
+                },
+                {
+                    "village": "Kachhola",
+                    "lat": "25.6592253",
+                    "lon": "75.5452859"
+                },
+                {
+                    "village": "Kachnariya",
+                    "lat": "25.6475230",
+                    "lon": "75.5956149"
+                },
+                {
+                    "village": "Kala Bhata",
+                    "lat": "25.5257128",
+                    "lon": "75.5747366"
+                },
+                {
+                    "village": "Kala Mal",
+                    "lat": "25.6429192",
+                    "lon": "75.4694652"
+                },
+                {
+                    "village": "Karadkheri",
+                    "lat": "25.6429192",
+                    "lon": "75.4694652"
+                },
+                {
+                    "village": "Keshopura",
+                    "lat": "25.5134746",
+                    "lon": "75.7491660"
+                },
+                {
+                    "village": "Khajoor Ka Nala",
+                    "lat": "25.7147422",
+                    "lon": "75.4974246"
+                },
+                {
+                    "village": "Khanderiya",
+                    "lat": "25.7147422",
+                    "lon": "75.4974246"
+                },
+                {
+                    "village": "Khantaron Ka Bada",
+                    "lat": "25.5991931",
+                    "lon": "75.6057429"
+                },
+                {
+                    "village": "Khatawada",
+                    "lat": "25.5726788",
+                    "lon": "75.6282091"
+                },
+                {
+                    "village": "Khati Khera",
+                    "lat": "25.5043726",
+                    "lon": "75.5519056"
+                },
+                {
+                    "village": "Kheenya",
+                    "lat": "25.5043726",
+                    "lon": "75.5519056"
+                },
+                {
+                    "village": "Khejara",
+                    "lat": "25.4190564",
+                    "lon": "75.3703737"
+                },
+                {
+                    "village": "Kherkhata",
+                    "lat": "25.4190564",
+                    "lon": "75.3703737"
+                },
+                {
+                    "village": "Khorhi",
+                    "lat": "25.6412943",
+                    "lon": "75.7731557"
+                },
+                {
+                    "village": "Kishanganj",
+                    "lat": "25.6750844",
+                    "lon": "75.4881334"
+                },
+                {
+                    "village": "Kumharla",
+                    "lat": "25.6889883",
+                    "lon": "75.7031500"
+                },
+                {
+                    "village": "Ladu",
+                    "lat": "25.6889883",
+                    "lon": "75.7031500"
+                },
+                {
+                    "village": "Lodha Ki Jhonpariyan",
+                    "lat": "25.5780209",
+                    "lon": "75.6565118"
+                },
+                {
+                    "village": "Luhariya",
+                    "lat": "25.6019023",
+                    "lon": "75.5591583"
+                },
+                {
+                    "village": "Maliyon Ki Jhoonpariyan",
+                    "lat": "25.6176916",
+                    "lon": "75.6433582"
+                },
+                {
+                    "village": "Mangli Kalan",
+                    "lat": "25.6176916",
+                    "lon": "75.6433582"
+                },
+                {
+                    "village": "Mangli Khurd",
+                    "lat": "25.5232924",
+                    "lon": "75.5228519"
+                },
+                {
+                    "village": "Marari",
+                    "lat": "25.4555587",
+                    "lon": "75.3866815"
+                },
+                {
+                    "village": "Mardiya",
+                    "lat": "25.4018405",
+                    "lon": "75.3296256"
+                },
+                {
+                    "village": "Mendi",
+                    "lat": "25.6488964",
+                    "lon": "75.5911088"
+                },
+                {
+                    "village": "Motipura",
+                    "lat": "25.6093522",
+                    "lon": "75.4854297"
+                },
+                {
+                    "village": "Mundgasa",
+                    "lat": "25.6093522",
+                    "lon": "75.4854297"
+                },
+                {
+                    "village": "Nadhahet",
+                    "lat": "25.6093522",
+                    "lon": "75.4854297"
+                },
+                {
+                    "village": "Nadhawa",
+                    "lat": "25.6093522",
+                    "lon": "75.4854297"
+                },
+                {
+                    "village": "Nandgaon",
+                    "lat": "25.5325672",
+                    "lon": "75.6129741"
+                },
+                {
+                    "village": "Narayanpur",
+                    "lat": "25.4721422",
+                    "lon": "75.4925537"
+                },
+                {
+                    "village": "Nathawa",
+                    "lat": "25.4601698",
+                    "lon": "75.5662608"
+                },
+                {
+                    "village": "Negarh",
+                    "lat": "25.4082368",
+                    "lon": "75.2835774"
+                },
+                {
+                    "village": "Nehdi Ki Jhonpariyan",
+                    "lat": "25.4082368",
+                    "lon": "75.2835774"
+                },
+                {
+                    "village": "Nehri",
+                    "lat": "25.4661949",
+                    "lon": "75.3717041"
+                },
+                {
+                    "village": "Net",
+                    "lat": "25.5847561",
+                    "lon": "75.5710244"
+                },
+                {
+                    "village": "Nimod",
+                    "lat": "25.6204584",
+                    "lon": "75.7699692"
+                },
+                {
+                    "village": "Odhandha",
+                    "lat": "25.6817368",
+                    "lon": "75.5653006"
+                },
+                {
+                    "village": "Owan",
+                    "lat": "25.4428484",
+                    "lon": "75.3456115"
+                },
+                {
+                    "village": "Pagara",
+                    "lat": "25.7075889",
+                    "lon": "75.5227446"
+                },
+                {
+                    "village": "Panidal",
+                    "lat": "25.7075889",
+                    "lon": "75.5227446"
+                },
+                {
+                    "village": "Paprala",
+                    "lat": "25.7075889",
+                    "lon": "75.5227446"
+                },
+                {
+                    "village": "Payra",
+                    "lat": "25.6084330",
+                    "lon": "75.5428076"
+                },
+                {
+                    "village": "Pech Ki Baori",
+                    "lat": "25.6387601",
+                    "lon": "75.4623091"
+                },
+                {
+                    "village": "Peepalwasa",
+                    "lat": "25.6759836",
+                    "lon": "75.6331122"
+                },
+                {
+                    "village": "Phalenda",
+                    "lat": "25.5196713",
+                    "lon": "75.3759527"
+                },
+                {
+                    "village": "Raghunathpura",
+                    "lat": "25.5306503",
+                    "lon": "75.4855799"
+                },
+                {
+                    "village": "Raghunathpura",
+                    "lat": "25.5306503",
+                    "lon": "75.4855799"
+                },
+                {
+                    "village": "Raghunathpura",
+                    "lat": "25.5306503",
+                    "lon": "75.4855799"
+                },
+                {
+                    "village": "Rajpura",
+                    "lat": "25.5301179",
+                    "lon": "75.6303978"
+                },
+                {
+                    "village": "Ralayata",
+                    "lat": "25.4974973",
+                    "lon": "75.3670907"
+                },
+                {
+                    "village": "Ramchandraji Ka Khera",
+                    "lat": "25.4974973",
+                    "lon": "75.3670907"
+                },
+                {
+                    "village": "Ramee Ki Jhonpariyan",
+                    "lat": "25.4974973",
+                    "lon": "75.3670907"
+                },
+                {
+                    "village": "Ramniwas",
+                    "lat": "25.6130866",
+                    "lon": "75.5963444"
+                },
+                {
+                    "village": "Rampuriya",
+                    "lat": "25.5538830",
+                    "lon": "75.4736495"
+                },
+                {
+                    "village": "Rampuriya",
+                    "lat": "25.5538830",
+                    "lon": "75.4736495"
+                },
+                {
+                    "village": "Rampuriya",
+                    "lat": "25.5538830",
+                    "lon": "75.4736495"
+                },
+                {
+                    "village": "Ranipura",
+                    "lat": "25.6352199",
+                    "lon": "75.7282447"
+                },
+                {
+                    "village": "Ren",
+                    "lat": "25.6404431",
+                    "lon": "75.6786346"
+                },
+                {
+                    "village": "Rigardi",
+                    "lat": "25.4288576",
+                    "lon": "75.3133178"
+                },
+                {
+                    "village": "Rishanda",
+                    "lat": "25.6582195",
+                    "lon": "75.7291460"
+                },
+                {
+                    "village": "Roneeja",
+                    "lat": "25.7054235",
+                    "lon": "75.6656956"
+                },
+                {
+                    "village": "Rosanda",
+                    "lat": "25.6495928",
+                    "lon": "75.4981327"
+                },
+                {
+                    "village": "Rughnathpura",
+                    "lat": "25.5161857",
+                    "lon": "75.5457473"
+                },
+                {
+                    "village": "Sahaspuriya",
+                    "lat": "25.5161857",
+                    "lon": "75.5457473"
+                },
+                {
+                    "village": "Salawlya",
+                    "lat": "25.5491788",
+                    "lon": "75.4454326"
+                },
+                {
+                    "village": "Samarwadi",
+                    "lat": "25.5491788",
+                    "lon": "75.4454326"
+                },
+                {
+                    "village": "Sanwatgarh",
+                    "lat": "25.5491788",
+                    "lon": "75.4454326"
+                },
+                {
+                    "village": "Sarodara",
+                    "lat": "25.4201078",
+                    "lon": "75.4298651"
+                },
+                {
+                    "village": "Sarsod",
+                    "lat": "25.6681608",
+                    "lon": "75.6747937"
+                },
+                {
+                    "village": "Sathoor",
+                    "lat": "25.6681608",
+                    "lon": "75.6747937"
+                },
+                {
+                    "village": "Seetla Ka Khera",
+                    "lat": "25.3900065",
+                    "lon": "75.3104854"
+                },
+                {
+                    "village": "Shankarpura",
+                    "lat": "25.6022893",
+                    "lon": "75.7128167"
+                },
+                {
+                    "village": "Singhari",
+                    "lat": "25.5563028",
+                    "lon": "75.4875541"
+                },
+                {
+                    "village": "Siyana",
+                    "lat": "25.5517729",
+                    "lon": "75.6672299"
+                },
+                {
+                    "village": "Solaki Jhonpariyan",
+                    "lat": "25.5517729",
+                    "lon": "75.6672299"
+                },
+                {
+                    "village": "Soohri",
+                    "lat": "25.5988448",
+                    "lon": "75.6942558"
+                },
+                {
+                    "village": "Soran",
+                    "lat": "25.6597088",
+                    "lon": "75.7618475"
+                },
+                {
+                    "village": "Sukhpura",
+                    "lat": "25.5771112",
+                    "lon": "75.4681349"
+                },
+                {
+                    "village": "Sukhpura",
+                    "lat": "25.5771112",
+                    "lon": "75.4681349"
+                },
+                {
+                    "village": "Swaroop Garh",
+                    "lat": "25.5771112",
+                    "lon": "75.4681349"
+                },
+                {
+                    "village": "Tahla",
+                    "lat": "25.5147915",
+                    "lon": "75.4607320"
+                },
+                {
+                    "village": "Talab Gaon",
+                    "lat": "25.4582469",
+                    "lon": "75.5953681"
+                },
+                {
+                    "village": "Taloda",
+                    "lat": "25.4820117",
+                    "lon": "75.4019058"
+                },
+                {
+                    "village": "Tanka Ki Jhonpariyan",
+                    "lat": "25.4820117",
+                    "lon": "75.4019058"
+                },
+                {
+                    "village": "Taradkya",
+                    "lat": "25.4820117",
+                    "lon": "75.4019058"
+                },
+                {
+                    "village": "Thana",
+                    "lat": "25.5393051",
+                    "lon": "75.4087400"
+                },
+                {
+                    "village": "Theekarda",
+                    "lat": "25.4877355",
+                    "lon": "75.6350326"
+                },
+                {
+                    "village": "Tonkra",
+                    "lat": "25.6081525",
+                    "lon": "75.4394460"
+                },
+                {
+                    "village": "Trishulya",
+                    "lat": "25.5039078",
+                    "lon": "75.6008720"
+                },
+                {
+                    "village": "Turkari",
+                    "lat": "25.4975941",
+                    "lon": "75.4830265"
+                },
+                {
+                    "village": "Umar",
+                    "lat": "25.6792615",
+                    "lon": "75.4591012"
+                },
+                {
+                    "village": "Vijaigarh",
+                    "lat": "25.6792615",
+                    "lon": "75.4591012"
+                },
+                {
+                    "village": "Vishdhari",
+                    "lat": "25.5653331",
+                    "lon": "75.7954395"
+                }
+            ]
+        },
+        {
+            "tehsil": "Indragarh",
+            "villages": [
+                {
+                    "village": "Abhaipur",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Amarpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Amli Khera",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Anghora",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Arnya",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Babai",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Bagli",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Bahrawali",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Bala Pura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Balapura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Baldeopura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Balwan",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Bara Khera",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Bargaon",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Baswara",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Belanganj",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Bhand Guwar",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Bishanpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Bohariya Gaon",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Boodhel",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Chaheencha",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Chak Makheeda",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Chak Malikpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Chakkherli",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Chamawali",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Chanda Kalan",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Chanda Khurd",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Chandra Ganj",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Chhappanpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Chhatrapura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Dadwara",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Dangaheri",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Dapta",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Daramataji",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Daulatpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Dei Khera",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Deopura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Dhagariya",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Dhakar Kheri",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Dharwan",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Dobarli",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Gendapura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Ghat Ka Barana",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Gudha",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Guhatha",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Hardo Ganj",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Heerapur",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Indragarh (M)",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Jainagar",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Jainiwas",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Jarla",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Jhapayta",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Jheera",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kailashpuri",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kankra Doongar",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kankra Mej",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kanpur",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kanwarpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kareeriya",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kemalaya",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Keshopura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Khakata",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kharayta",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kheriya Durjan",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kheriya Man",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kherli Deoji",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kherli Kalan",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kherli Khurd",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kherli Mafi",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kishanganj",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kishanpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kolaspura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kota Khurd",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Kotri",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Labaan",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Lakheri (M)",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Lakheri (Rural)",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Lalpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Laxmipura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Laxmipura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Mahapura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Makheeda",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Malikpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Maliyon Ki Badiya",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Mohanpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Mooi",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Moti Nagar",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Murjad Pura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Nanta",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Nawalpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Nayagaon",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Nayagaon (Papri)",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Notara",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Pacheepla",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Pali",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Paparli",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Papra",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Papri",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Peechoopura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Peepalda (Thag)",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Pratapgarh",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Raghunathpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Rakaspura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Ramajpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Ramganj",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Ramnagar",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Rampuriya",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Rebarpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Rooppura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Sakhawada",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Sangramganj",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Shahanpur",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Sherganj",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Shivganj",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Shyodanpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Sumerganj Mandi (CT)",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Sumerpura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Sunari",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Sundar Nagar",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Theekri",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Tokaspura",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                },
+                {
+                    "village": "Utrana",
+                    "lat": "25.7433704",
+                    "lon": "76.2089824"
+                }
+            ]
+        },
+        {
+            "tehsil": "Keshoraipatan",
+            "villages": [
+                {
+                    "village": "Ajanda",
+                    "lat": "25.4689264",
+                    "lon": "76.1473560"
+                },
+                {
+                    "village": "Amarpura",
+                    "lat": "25.5014870",
+                    "lon": "76.0871243"
+                },
+                {
+                    "village": "Anatpura",
+                    "lat": "25.3657049",
+                    "lon": "76.0233092"
+                },
+                {
+                    "village": "Ardana",
+                    "lat": "25.4605960",
+                    "lon": "76.0968017"
+                },
+                {
+                    "village": "Arnetha",
+                    "lat": "25.3898705",
+                    "lon": "76.0185844"
+                },
+                {
+                    "village": "Arniya",
+                    "lat": "25.3898705",
+                    "lon": "76.0185844"
+                },
+                {
+                    "village": "Baldara",
+                    "lat": "25.4444760",
+                    "lon": "75.9458256"
+                },
+                {
+                    "village": "Baleetha",
+                    "lat": "25.2896568",
+                    "lon": "76.0257125"
+                },
+                {
+                    "village": "Balkasa",
+                    "lat": "25.4076166",
+                    "lon": "76.0139322"
+                },
+                {
+                    "village": "Balod",
+                    "lat": "25.3579684",
+                    "lon": "76.0918021"
+                },
+                {
+                    "village": "Baniyani",
+                    "lat": "25.4122004",
+                    "lon": "75.9212673"
+                },
+                {
+                    "village": "Banjaron Ki Jhonpariyan",
+                    "lat": "25.4122004",
+                    "lon": "75.9212673"
+                },
+                {
+                    "village": "Banjharli",
+                    "lat": "25.4740794",
+                    "lon": "76.1071443"
+                },
+                {
+                    "village": "Barani",
+                    "lat": "25.4740794",
+                    "lon": "76.1071443"
+                },
+                {
+                    "village": "Beeraj",
+                    "lat": "25.3307997",
+                    "lon": "76.0433936"
+                },
+                {
+                    "village": "Beerampur",
+                    "lat": "25.3307997",
+                    "lon": "76.0433936"
+                },
+                {
+                    "village": "Bhainskhera",
+                    "lat": "25.4918805",
+                    "lon": "75.9662318"
+                },
+                {
+                    "village": "Bhaopura",
+                    "lat": "25.4918805",
+                    "lon": "75.9662318"
+                },
+                {
+                    "village": "Bheeya",
+                    "lat": "25.3326616",
+                    "lon": "75.9851789"
+                },
+                {
+                    "village": "Bhindi",
+                    "lat": "25.4099909",
+                    "lon": "75.9863162"
+                },
+                {
+                    "village": "Boodhya",
+                    "lat": "25.3860810",
+                    "lon": "75.9399676"
+                },
+                {
+                    "village": "Borda Kachhiyan",
+                    "lat": "25.3860810",
+                    "lon": "75.9399676"
+                },
+                {
+                    "village": "Bordamal",
+                    "lat": "25.3860810",
+                    "lon": "75.9399676"
+                },
+                {
+                    "village": "Boya Khera",
+                    "lat": "25.3860810",
+                    "lon": "75.9399676"
+                },
+                {
+                    "village": "Chadhgaon",
+                    "lat": "25.4559462",
+                    "lon": "76.0662889"
+                },
+                {
+                    "village": "Chak Hadiya Khera",
+                    "lat": "25.4559462",
+                    "lon": "76.0662889"
+                },
+                {
+                    "village": "Chardana",
+                    "lat": "25.4559462",
+                    "lon": "76.0662889"
+                },
+                {
+                    "village": "Chari",
+                    "lat": "25.3559906",
+                    "lon": "75.9474349"
+                },
+                {
+                    "village": "Chautra Ka Khera",
+                    "lat": "25.5012740",
+                    "lon": "76.0644435"
+                },
+                {
+                    "village": "Chawachh",
+                    "lat": "25.4221814",
+                    "lon": "75.9322429"
+                },
+                {
+                    "village": "Chharakwara",
+                    "lat": "25.4016661",
+                    "lon": "75.8700585"
+                },
+                {
+                    "village": "Chhoreda",
+                    "lat": "25.4279274",
+                    "lon": "75.9310305"
+                },
+                {
+                    "village": "Chitawa",
+                    "lat": "25.3256406",
+                    "lon": "75.8786630"
+                },
+                {
+                    "village": "Deoli",
+                    "lat": "25.4177724",
+                    "lon": "76.1144078"
+                },
+                {
+                    "village": "Deopura",
+                    "lat": "25.4177724",
+                    "lon": "76.1144078"
+                },
+                {
+                    "village": "Dheekoli",
+                    "lat": "25.4177724",
+                    "lon": "76.1144078"
+                },
+                {
+                    "village": "Dheengsi",
+                    "lat": "25.5215690",
+                    "lon": "76.0397029"
+                },
+                {
+                    "village": "Dolar",
+                    "lat": "25.3634557",
+                    "lon": "76.1353397"
+                },
+                {
+                    "village": "Dotana",
+                    "lat": "25.4612934",
+                    "lon": "75.9671330"
+                },
+                {
+                    "village": "Garjani",
+                    "lat": "25.4479443",
+                    "lon": "76.0708809"
+                },
+                {
+                    "village": "Gendoli Kalan",
+                    "lat": "25.5405054",
+                    "lon": "75.9683132"
+                },
+                {
+                    "village": "Gendoli Khurd",
+                    "lat": "25.5405054",
+                    "lon": "75.9683132"
+                },
+                {
+                    "village": "Goontha",
+                    "lat": "25.5405054",
+                    "lon": "75.9683132"
+                },
+                {
+                    "village": "Gopalpura",
+                    "lat": "25.5074713",
+                    "lon": "75.9038114"
+                },
+                {
+                    "village": "Gothra",
+                    "lat": "25.5024747",
+                    "lon": "75.9309768"
+                },
+                {
+                    "village": "Gudla",
+                    "lat": "25.2786558",
+                    "lon": "75.9009146"
+                },
+                {
+                    "village": "Gurli",
+                    "lat": "25.2936728",
+                    "lon": "75.8979749"
+                },
+                {
+                    "village": "Halihera",
+                    "lat": "25.3504642",
+                    "lon": "75.8962154"
+                },
+                {
+                    "village": "Haripura",
+                    "lat": "25.4663886",
+                    "lon": "76.0241031"
+                },
+                {
+                    "village": "Hathanapur",
+                    "lat": "25.3378591",
+                    "lon": "75.9666395"
+                },
+                {
+                    "village": "Higoniya",
+                    "lat": "25.4450573",
+                    "lon": "76.0480499"
+                },
+                {
+                    "village": "Indrapuriya",
+                    "lat": "25.3083387",
+                    "lon": "75.9638071"
+                },
+                {
+                    "village": "Isarda",
+                    "lat": "25.4864959",
+                    "lon": "76.0865235"
+                },
+                {
+                    "village": "Ishwarnagar",
+                    "lat": "25.3184447",
+                    "lon": "75.9208274"
+                },
+                {
+                    "village": "Jagannathpura",
+                    "lat": "25.5093304",
+                    "lon": "75.9597087"
+                },
+                {
+                    "village": "Jagdari",
+                    "lat": "25.3505514",
+                    "lon": "76.1199331"
+                },
+                {
+                    "village": "Jagnatha",
+                    "lat": "25.3039934",
+                    "lon": "76.0162496"
+                },
+                {
+                    "village": "Jahooriya",
+                    "lat": "25.5302050",
+                    "lon": "75.9256768"
+                },
+                {
+                    "village": "Jaithal",
+                    "lat": "25.4448829",
+                    "lon": "75.9601807"
+                },
+                {
+                    "village": "Jakhroon",
+                    "lat": "25.3186386",
+                    "lon": "76.0190016"
+                },
+                {
+                    "village": "Jalera",
+                    "lat": "25.5292417",
+                    "lon": "76.0593313"
+                },
+                {
+                    "village": "Jaloda",
+                    "lat": "25.3979832",
+                    "lon": "75.9560609"
+                },
+                {
+                    "village": "Jhadol",
+                    "lat": "25.3979832",
+                    "lon": "75.9560609"
+                },
+                {
+                    "village": "Jhalaji Ka Baran",
+                    "lat": "25.5039466",
+                    "lon": "76.0204982"
+                },
+                {
+                    "village": "Jharanya",
+                    "lat": "25.5039466",
+                    "lon": "76.0204982"
+                },
+                {
+                    "village": "Jhuwansa",
+                    "lat": "25.5039466",
+                    "lon": "76.0204982"
+                },
+                {
+                    "village": "Kamolar",
+                    "lat": "25.3655788",
+                    "lon": "75.9459329"
+                },
+                {
+                    "village": "Kanihera",
+                    "lat": "25.4107952",
+                    "lon": "75.8499312"
+                },
+                {
+                    "village": "Kanwarpura",
+                    "lat": "25.4865734",
+                    "lon": "76.1008572"
+                },
+                {
+                    "village": "Kaprain (M)",
+                    "lat": "25.4865734",
+                    "lon": "76.1008572"
+                },
+                {
+                    "village": "Karwala",
+                    "lat": "25.4075003",
+                    "lon": "75.9087467"
+                },
+                {
+                    "village": "Karwala Ki Jhonparyan",
+                    "lat": "25.4075003",
+                    "lon": "75.9087467"
+                },
+                {
+                    "village": "Keshonagar",
+                    "lat": "25.2831524",
+                    "lon": "75.9620637"
+                },
+                {
+                    "village": "Keshoraipatan (M)",
+                    "lat": "25.2915232",
+                    "lon": "75.9399658"
+                },
+                {
+                    "village": "Keshoraipatan (Rural)",
+                    "lat": "25.2915232",
+                    "lon": "75.9399658"
+                },
+                {
+                    "village": "Kherli",
+                    "lat": "25.2783648",
+                    "lon": "76.0268283"
+                },
+                {
+                    "village": "Kherli Bandha",
+                    "lat": "25.2783648",
+                    "lon": "76.0268283"
+                },
+                {
+                    "village": "Kherli Mehta",
+                    "lat": "25.3971109",
+                    "lon": "75.9646439"
+                },
+                {
+                    "village": "Kherli Vyasan",
+                    "lat": "25.3971109",
+                    "lon": "75.9646439"
+                },
+                {
+                    "village": "Kodija",
+                    "lat": "25.4037401",
+                    "lon": "75.8783412"
+                },
+                {
+                    "village": "Kodkya",
+                    "lat": "25.4547837",
+                    "lon": "76.1289024"
+                },
+                {
+                    "village": "Korkiya Balaji",
+                    "lat": "25.4762683",
+                    "lon": "75.9783554"
+                },
+                {
+                    "village": "Kuwagaon",
+                    "lat": "25.5277459",
+                    "lon": "75.9113431"
+                },
+                {
+                    "village": "Lachhmipura",
+                    "lat": "25.5277459",
+                    "lon": "75.9113431"
+                },
+                {
+                    "village": "Lakheri Khurd",
+                    "lat": "25.2693615",
+                    "lon": "75.9626055"
+                },
+                {
+                    "village": "Lesarda",
+                    "lat": "25.3467798",
+                    "lon": "75.9135532"
+                },
+                {
+                    "village": "Lohli",
+                    "lat": "25.5004315",
+                    "lon": "75.9850073"
+                },
+                {
+                    "village": "Madhorajpura",
+                    "lat": "25.3005791",
+                    "lon": "75.9867239"
+                },
+                {
+                    "village": "Mahuwa",
+                    "lat": "25.3005791",
+                    "lon": "75.9867239"
+                },
+                {
+                    "village": "Mayaja",
+                    "lat": "25.4078104",
+                    "lon": "75.8869457"
+                },
+                {
+                    "village": "Menoli",
+                    "lat": "25.4986400",
+                    "lon": "75.9925604"
+                },
+                {
+                    "village": "Morkhoondana",
+                    "lat": "25.4999376",
+                    "lon": "75.9469628"
+                },
+                {
+                    "village": "Nayagaon",
+                    "lat": "25.5358200",
+                    "lon": "75.9821963"
+                },
+                {
+                    "village": "Nayagaon @ Bohra Kajorji Ki Jhonpariya",
+                    "lat": "25.5358200",
+                    "lon": "75.9821963"
+                },
+                {
+                    "village": "Neemoda",
+                    "lat": "25.3432116",
+                    "lon": "75.8908081"
+                },
+                {
+                    "village": "Neemotha",
+                    "lat": "25.2662567",
+                    "lon": "76.0106921"
+                },
+                {
+                    "village": "Notara",
+                    "lat": "25.3271534",
+                    "lon": "76.0323429"
+                },
+                {
+                    "village": "Ohari",
+                    "lat": "25.3271534",
+                    "lon": "76.0323429"
+                },
+                {
+                    "village": "Padra",
+                    "lat": "25.3627965",
+                    "lon": "75.9244966"
+                },
+                {
+                    "village": "Patolya",
+                    "lat": "25.3627965",
+                    "lon": "75.9244966"
+                },
+                {
+                    "village": "Peelda (Samel)",
+                    "lat": "25.4774112",
+                    "lon": "75.9703088"
+                },
+                {
+                    "village": "Pholai",
+                    "lat": "25.5339419",
+                    "lon": "75.9406328"
+                },
+                {
+                    "village": "Pipaldda Hariji",
+                    "lat": "25.5339419",
+                    "lon": "75.9406328"
+                },
+                {
+                    "village": "Radi",
+                    "lat": "25.3581235",
+                    "lon": "75.9533572"
+                },
+                {
+                    "village": "Raghunathpura",
+                    "lat": "25.4147878",
+                    "lon": "75.8950782"
+                },
+                {
+                    "village": "Rampuriya",
+                    "lat": "25.4147878",
+                    "lon": "75.8950782"
+                },
+                {
+                    "village": "Rangpuriya",
+                    "lat": "25.3152442",
+                    "lon": "75.9006357"
+                },
+                {
+                    "village": "Rangrajpura",
+                    "lat": "25.3544587",
+                    "lon": "75.9977102"
+                },
+                {
+                    "village": "Roteda",
+                    "lat": "25.3839097",
+                    "lon": "76.1344600"
+                },
+                {
+                    "village": "Samadpuriya",
+                    "lat": "25.3374227",
+                    "lon": "76.0155523"
+                },
+                {
+                    "village": "Sarsala",
+                    "lat": "25.3576970",
+                    "lon": "76.0330725"
+                },
+                {
+                    "village": "Shreepura",
+                    "lat": "25.3576970",
+                    "lon": "76.0330725"
+                },
+                {
+                    "village": "Soonagar",
+                    "lat": "25.2455888",
+                    "lon": "75.9826898"
+                },
+                {
+                    "village": "Vijaynagar",
+                    "lat": "25.3020923",
+                    "lon": "75.8797788"
+                }
+            ]
+        },
+        {
+            "tehsil": "Nainwa",
+            "villages": [
+                {
+                    "village": "Antarda",
+                    "lat": "25.6577747",
+                    "lon": "76.0949778"
+                },
+                {
+                    "village": "Aon Ka Khera",
+                    "lat": "25.7005512",
+                    "lon": "75.8430862"
+                },
+                {
+                    "village": "Aranya",
+                    "lat": "25.8300826",
+                    "lon": "75.9404397"
+                },
+                {
+                    "village": "Ariyali",
+                    "lat": "25.7001838",
+                    "lon": "76.1253351"
+                },
+                {
+                    "village": "Arjunpura",
+                    "lat": "25.6076784",
+                    "lon": "76.0561180"
+                },
+                {
+                    "village": "Arnetha",
+                    "lat": "25.6076784",
+                    "lon": "76.0561180"
+                },
+                {
+                    "village": "Bachhola",
+                    "lat": "25.7704458",
+                    "lon": "75.7774257"
+                },
+                {
+                    "village": "Bagera",
+                    "lat": "25.7518937",
+                    "lon": "75.9230804"
+                },
+                {
+                    "village": "Balapura",
+                    "lat": "25.6960267",
+                    "lon": "75.7837343"
+                },
+                {
+                    "village": "Balapura",
+                    "lat": "25.6960267",
+                    "lon": "75.7837343"
+                },
+                {
+                    "village": "Balapura",
+                    "lat": "25.6960267",
+                    "lon": "75.7837343"
+                },
+                {
+                    "village": "Bamangaon",
+                    "lat": "25.7894393",
+                    "lon": "75.9600734"
+                },
+                {
+                    "village": "Bambooli",
+                    "lat": "25.8114626",
+                    "lon": "75.9223723"
+                },
+                {
+                    "village": "Bansi",
+                    "lat": "25.6444280",
+                    "lon": "75.8262634"
+                },
+                {
+                    "village": "Bansi",
+                    "lat": "25.6444280",
+                    "lon": "75.8262634"
+                },
+                {
+                    "village": "Bansoli",
+                    "lat": "25.6957754",
+                    "lon": "75.9877538"
+                },
+                {
+                    "village": "Banthali",
+                    "lat": "25.6268527",
+                    "lon": "76.1023593"
+                },
+                {
+                    "village": "Baori",
+                    "lat": "25.7049015",
+                    "lon": "76.0040617"
+                },
+                {
+                    "village": "Bari Parap",
+                    "lat": "25.7691317",
+                    "lon": "75.8870101"
+                },
+                {
+                    "village": "Batawati",
+                    "lat": "25.7691317",
+                    "lon": "75.8870101"
+                },
+                {
+                    "village": "Beejalwa",
+                    "lat": "25.7935352",
+                    "lon": "75.8130240"
+                },
+                {
+                    "village": "Beejanta",
+                    "lat": "25.6253920",
+                    "lon": "75.8649516"
+                },
+                {
+                    "village": "Bhainson Ka Nayagaon",
+                    "lat": "25.6253920",
+                    "lon": "75.8649516"
+                },
+                {
+                    "village": "Bhajneri",
+                    "lat": "25.6253920",
+                    "lon": "75.8649516"
+                },
+                {
+                    "village": "Bhamar",
+                    "lat": "25.6153117",
+                    "lon": "75.8547163"
+                },
+                {
+                    "village": "Bhandera",
+                    "lat": "25.6292613",
+                    "lon": "75.8099127"
+                },
+                {
+                    "village": "Bhanwarkhol @ Arjunpura",
+                    "lat": "25.6076784",
+                    "lon": "76.0561180"
+                },
+                {
+                    "village": "Bhaopura",
+                    "lat": "25.8260556",
+                    "lon": "75.8709168"
+                },
+                {
+                    "village": "Bhawanipura",
+                    "lat": "25.7553144",
+                    "lon": "75.9431648"
+                },
+                {
+                    "village": "Bheemganj",
+                    "lat": "25.7436023",
+                    "lon": "75.7795930"
+                },
+                {
+                    "village": "Bheroopura",
+                    "lat": "25.7436023",
+                    "lon": "75.7795930"
+                },
+                {
+                    "village": "Bhompura",
+                    "lat": "25.7692960",
+                    "lon": "75.9464586"
+                },
+                {
+                    "village": "Biharipura",
+                    "lat": "25.6734792",
+                    "lon": "76.0204124"
+                },
+                {
+                    "village": "Bishanpura",
+                    "lat": "25.7690738",
+                    "lon": "76.1347174"
+                },
+                {
+                    "village": "Boodhkarwar",
+                    "lat": "25.7690738",
+                    "lon": "76.1347174"
+                },
+                {
+                    "village": "Borda",
+                    "lat": "25.8057833",
+                    "lon": "76.0014009"
+                },
+                {
+                    "village": "Chainpuriya",
+                    "lat": "25.7805709",
+                    "lon": "75.8040762"
+                },
+                {
+                    "village": "Chak Bhawanipura",
+                    "lat": "25.7805709",
+                    "lon": "75.8040762"
+                },
+                {
+                    "village": "Chawandpura",
+                    "lat": "25.8532569",
+                    "lon": "76.0356581"
+                },
+                {
+                    "village": "Cheeton Ki Jhonpariya",
+                    "lat": "25.8532569",
+                    "lon": "76.0356581"
+                },
+                {
+                    "village": "Chhotiparap",
+                    "lat": "25.8532569",
+                    "lon": "76.0356581"
+                },
+                {
+                    "village": "Chipalta",
+                    "lat": "25.5748853",
+                    "lon": "75.9895027"
+                },
+                {
+                    "village": "Dakoon",
+                    "lat": "25.6488384",
+                    "lon": "75.8956146"
+                },
+                {
+                    "village": "Dalelpura",
+                    "lat": "25.7483569",
+                    "lon": "75.8901858"
+                },
+                {
+                    "village": "Dei",
+                    "lat": "25.6767282",
+                    "lon": "75.9442913"
+                },
+                {
+                    "village": "Delpura",
+                    "lat": "25.7094643",
+                    "lon": "75.9306979"
+                },
+                {
+                    "village": "Deopura",
+                    "lat": "25.6001123",
+                    "lon": "76.0364091"
+                },
+                {
+                    "village": "Deopura",
+                    "lat": "25.6001123",
+                    "lon": "76.0364091"
+                },
+                {
+                    "village": "Deopura",
+                    "lat": "25.6001123",
+                    "lon": "76.0364091"
+                },
+                {
+                    "village": "Deori Barwa",
+                    "lat": "25.7130796",
+                    "lon": "75.8301687"
+                },
+                {
+                    "village": "Devpura",
+                    "lat": "25.6743592",
+                    "lon": "76.0935187"
+                },
+                {
+                    "village": "Dewariya",
+                    "lat": "25.6311476",
+                    "lon": "75.9158063"
+                },
+                {
+                    "village": "Dhadhoon",
+                    "lat": "25.6311476",
+                    "lon": "75.9158063"
+                },
+                {
+                    "village": "Dhanoogaon",
+                    "lat": "25.8592236",
+                    "lon": "75.8698869"
+                },
+                {
+                    "village": "Dheerpur",
+                    "lat": "25.8343122",
+                    "lon": "75.8418953"
+                },
+                {
+                    "village": "Diyali",
+                    "lat": "25.7400266",
+                    "lon": "75.8057070"
+                },
+                {
+                    "village": "Dodi",
+                    "lat": "25.6479293",
+                    "lon": "75.8582353"
+                },
+                {
+                    "village": "Dugari",
+                    "lat": "25.6679868",
+                    "lon": "75.8145904"
+                },
+                {
+                    "village": "Fatehganj",
+                    "lat": "25.7649384",
+                    "lon": "76.0326648"
+                },
+                {
+                    "village": "Fatehpura",
+                    "lat": "25.5986609",
+                    "lon": "75.8535898"
+                },
+                {
+                    "village": "Gadarya",
+                    "lat": "25.5986609",
+                    "lon": "75.8535898"
+                },
+                {
+                    "village": "Gambheera",
+                    "lat": "25.8564237",
+                    "lon": "75.9628844"
+                },
+                {
+                    "village": "Gambheeri",
+                    "lat": "25.8425780",
+                    "lon": "75.9521341"
+                },
+                {
+                    "village": "Ganeshpura",
+                    "lat": "25.6893848",
+                    "lon": "75.9610498"
+                },
+                {
+                    "village": "Gaonri",
+                    "lat": "25.7412636",
+                    "lon": "75.9575844"
+                },
+                {
+                    "village": "Gobalya",
+                    "lat": "25.7412636",
+                    "lon": "75.9575844"
+                },
+                {
+                    "village": "Goojarya Khera",
+                    "lat": "25.6189202",
+                    "lon": "75.7946885"
+                },
+                {
+                    "village": "Gudali",
+                    "lat": "25.6040502",
+                    "lon": "76.0720074"
+                },
+                {
+                    "village": "Gurha Gopalji",
+                    "lat": "25.6466622",
+                    "lon": "75.9431219"
+                },
+                {
+                    "village": "Gurha Sadavartian",
+                    "lat": "25.5999285",
+                    "lon": "75.8877611"
+                },
+                {
+                    "village": "Gurhadeoji",
+                    "lat": "25.7263970",
+                    "lon": "75.9436370"
+                },
+                {
+                    "village": "Gurjaniyan",
+                    "lat": "25.7089423",
+                    "lon": "75.9005070"
+                },
+                {
+                    "village": "Hapolai",
+                    "lat": "25.6486836",
+                    "lon": "75.9927535"
+                },
+                {
+                    "village": "Haripura",
+                    "lat": "25.6790198",
+                    "lon": "75.8633637"
+                },
+                {
+                    "village": "Heerapur",
+                    "lat": "25.7413989",
+                    "lon": "76.1325502"
+                },
+                {
+                    "village": "Heerapur",
+                    "lat": "25.7413989",
+                    "lon": "76.1325502"
+                },
+                {
+                    "village": "Hirapur",
+                    "lat": "25.6606759",
+                    "lon": "76.1228084"
+                },
+                {
+                    "village": "Jagdishpura",
+                    "lat": "25.8542417",
+                    "lon": "75.9911442"
+                },
+                {
+                    "village": "Jagmunda",
+                    "lat": "25.6426871",
+                    "lon": "75.9179950"
+                },
+                {
+                    "village": "Jajawar",
+                    "lat": "25.7172071",
+                    "lon": "75.7397890"
+                },
+                {
+                    "village": "Jarkhoda",
+                    "lat": "25.7394081",
+                    "lon": "76.0292101"
+                },
+                {
+                    "village": "Jeewanpura",
+                    "lat": "25.6313314",
+                    "lon": "75.8919668"
+                },
+                {
+                    "village": "Jetpur",
+                    "lat": "25.6156793",
+                    "lon": "75.9775185"
+                },
+                {
+                    "village": "Kalamal",
+                    "lat": "25.6229155",
+                    "lon": "75.8813774"
+                },
+                {
+                    "village": "Kalanala",
+                    "lat": "25.5666591",
+                    "lon": "75.8202123"
+                },
+                {
+                    "village": "Kalmiya",
+                    "lat": "25.7346145",
+                    "lon": "76.0647869"
+                },
+                {
+                    "village": "Kalyani Khera",
+                    "lat": "25.7241278",
+                    "lon": "76.1418736"
+                },
+                {
+                    "village": "Kanakpura",
+                    "lat": "25.7100249",
+                    "lon": "76.1622262"
+                },
+                {
+                    "village": "Kankariya",
+                    "lat": "25.7100249",
+                    "lon": "76.1622262"
+                },
+                {
+                    "village": "Kareeri",
+                    "lat": "25.7739626",
+                    "lon": "75.9834623"
+                },
+                {
+                    "village": "Karwar",
+                    "lat": "25.7205032",
+                    "lon": "76.1141395"
+                },
+                {
+                    "village": "Kashipura",
+                    "lat": "25.7826383",
+                    "lon": "76.1145043"
+                },
+                {
+                    "village": "Kedara Ki Jhopdiyan",
+                    "lat": "25.7826383",
+                    "lon": "76.1145043"
+                },
+                {
+                    "village": "Kemla",
+                    "lat": "25.6871127",
+                    "lon": "76.1612713"
+                },
+                {
+                    "village": "Kethooda",
+                    "lat": "25.7623682",
+                    "lon": "76.0841203"
+                },
+                {
+                    "village": "Khajoora",
+                    "lat": "25.7107016",
+                    "lon": "76.0589290"
+                },
+                {
+                    "village": "Khajoori",
+                    "lat": "25.7154962",
+                    "lon": "76.0276866"
+                },
+                {
+                    "village": "Khanika @ Deopura",
+                    "lat": "25.6557824",
+                    "lon": "76.0144043"
+                },
+                {
+                    "village": "Khanpura",
+                    "lat": "25.7384416",
+                    "lon": "75.8349752"
+                },
+                {
+                    "village": "Khaspuriya",
+                    "lat": "25.8679316",
+                    "lon": "75.9416199"
+                },
+                {
+                    "village": "Kheri",
+                    "lat": "25.6708781",
+                    "lon": "76.0635638"
+                },
+                {
+                    "village": "Kheroona",
+                    "lat": "25.7543675",
+                    "lon": "75.9075880"
+                },
+                {
+                    "village": "Kholara",
+                    "lat": "25.8286147",
+                    "lon": "75.8257270"
+                },
+                {
+                    "village": "Khori",
+                    "lat": "25.8286147",
+                    "lon": "75.8257270"
+                },
+                {
+                    "village": "Khuri",
+                    "lat": "25.6561499",
+                    "lon": "76.0521054"
+                },
+                {
+                    "village": "Kishanganj",
+                    "lat": "25.6302674",
+                    "lon": "75.9995878"
+                },
+                {
+                    "village": "Kolahera",
+                    "lat": "25.7241181",
+                    "lon": "75.9637856"
+                },
+                {
+                    "village": "Korma",
+                    "lat": "25.7549666",
+                    "lon": "75.7994628"
+                },
+                {
+                    "village": "Kotri",
+                    "lat": "25.7040604",
+                    "lon": "76.1787808"
+                },
+                {
+                    "village": "Kumahariya Gaon @ Laxmi Pura",
+                    "lat": "25.7040604",
+                    "lon": "76.1787808"
+                },
+                {
+                    "village": "Kumhariya",
+                    "lat": "25.7530919",
+                    "lon": "76.1323786"
+                },
+                {
+                    "village": "Kushalipura",
+                    "lat": "25.7821842",
+                    "lon": "76.1058891"
+                },
+                {
+                    "village": "Lalganj",
+                    "lat": "25.7821842",
+                    "lon": "76.1058891"
+                },
+                {
+                    "village": "Lamba Barda",
+                    "lat": "25.6329565",
+                    "lon": "75.9674549"
+                },
+                {
+                    "village": "Laxmipura",
+                    "lat": "25.6905063",
+                    "lon": "75.8588469"
+                },
+                {
+                    "village": "Leelda",
+                    "lat": "25.6533453",
+                    "lon": "75.9262669"
+                },
+                {
+                    "village": "Luharpura",
+                    "lat": "25.6533453",
+                    "lon": "75.9262669"
+                },
+                {
+                    "village": "Mahaveerpura",
+                    "lat": "25.7279650",
+                    "lon": "75.7876611"
+                },
+                {
+                    "village": "Malera",
+                    "lat": "25.7387509",
+                    "lon": "75.9865093"
+                },
+                {
+                    "village": "Manak Chowk",
+                    "lat": "25.7387509",
+                    "lon": "75.9865093"
+                },
+                {
+                    "village": "Mandpur",
+                    "lat": "25.5642298",
+                    "lon": "75.9884083"
+                },
+                {
+                    "village": "Mani",
+                    "lat": "25.7609962",
+                    "lon": "76.1052131"
+                },
+                {
+                    "village": "Manpura",
+                    "lat": "25.7117456",
+                    "lon": "75.8490085"
+                },
+                {
+                    "village": "Manpura",
+                    "lat": "25.7117456",
+                    "lon": "75.8490085"
+                },
+                {
+                    "village": "Manpura",
+                    "lat": "25.7117456",
+                    "lon": "75.8490085"
+                },
+                {
+                    "village": "Maran",
+                    "lat": "25.5978579",
+                    "lon": "75.8425927"
+                },
+                {
+                    "village": "Medhakpura",
+                    "lat": "25.6634224",
+                    "lon": "75.9781194"
+                },
+                {
+                    "village": "Meenon Ki Jhonparyan",
+                    "lat": "25.6634224",
+                    "lon": "75.9781194"
+                },
+                {
+                    "village": "Mena",
+                    "lat": "25.6634224",
+                    "lon": "75.9781194"
+                },
+                {
+                    "village": "Modsa",
+                    "lat": "25.6634224",
+                    "lon": "75.9781194"
+                },
+                {
+                    "village": "Mohabbatpura",
+                    "lat": "25.6487658",
+                    "lon": "75.9730232"
+                },
+                {
+                    "village": "Moondli",
+                    "lat": "25.6019023",
+                    "lon": "75.8330011"
+                },
+                {
+                    "village": "Motipura",
+                    "lat": "25.5583935",
+                    "lon": "75.9325218"
+                },
+                {
+                    "village": "Murdiya",
+                    "lat": "25.5583935",
+                    "lon": "75.9325218"
+                },
+                {
+                    "village": "Naharganj",
+                    "lat": "25.7710834",
+                    "lon": "76.0145759"
+                },
+                {
+                    "village": "Nahri",
+                    "lat": "25.8552748",
+                    "lon": "76.0105634"
+                },
+                {
+                    "village": "Nainwa (M)",
+                    "lat": "25.7698671",
+                    "lon": "75.8541304"
+                },
+                {
+                    "village": "Nainwa(Rural)",
+                    "lat": "25.7698671",
+                    "lon": "75.8541304"
+                },
+                {
+                    "village": "Nandgaon",
+                    "lat": "25.6230026",
+                    "lon": "75.9503317"
+                },
+                {
+                    "village": "Nathra",
+                    "lat": "25.7381517",
+                    "lon": "75.9100556"
+                },
+                {
+                    "village": "Nathri",
+                    "lat": "25.7302846",
+                    "lon": "75.9066224"
+                },
+                {
+                    "village": "Nayagaon @ Ramganj",
+                    "lat": "25.7302846",
+                    "lon": "75.9066224"
+                },
+                {
+                    "village": "Nayagaon @ Ratanganj",
+                    "lat": "25.6712359",
+                    "lon": "75.9020948"
+                },
+                {
+                    "village": "Neem Khera",
+                    "lat": "25.6095456",
+                    "lon": "76.0811162"
+                },
+                {
+                    "village": "Pai",
+                    "lat": "25.6095456",
+                    "lon": "76.0811162"
+                },
+                {
+                    "village": "Pandoola",
+                    "lat": "25.8471934",
+                    "lon": "75.8582568"
+                },
+                {
+                    "village": "Pandoola",
+                    "lat": "25.8471934",
+                    "lon": "75.8582568"
+                },
+                {
+                    "village": "Peepalya",
+                    "lat": "25.8471934",
+                    "lon": "75.8582568"
+                },
+                {
+                    "village": "Peeparwala",
+                    "lat": "25.7059069",
+                    "lon": "76.0681772"
+                },
+                {
+                    "village": "Peeparwala",
+                    "lat": "25.7059069",
+                    "lon": "76.0681772"
+                },
+                {
+                    "village": "Phalasthooni",
+                    "lat": "25.5700852",
+                    "lon": "75.8395242"
+                },
+                {
+                    "village": "Phatookara",
+                    "lat": "25.5700852",
+                    "lon": "75.8395242"
+                },
+                {
+                    "village": "Phuleta",
+                    "lat": "25.7317150",
+                    "lon": "75.8910656"
+                },
+                {
+                    "village": "Phuleta @ Lachhmiganj",
+                    "lat": "25.7317150",
+                    "lon": "75.8910656"
+                },
+                {
+                    "village": "Raghunathpura",
+                    "lat": "25.6896748",
+                    "lon": "75.7932722"
+                },
+                {
+                    "village": "Rajlawata",
+                    "lat": "25.7961820",
+                    "lon": "75.8824396"
+                },
+                {
+                    "village": "Ralri",
+                    "lat": "25.7867151",
+                    "lon": "75.8953571"
+                },
+                {
+                    "village": "Ramganj",
+                    "lat": "25.6272686",
+                    "lon": "75.8203625"
+                },
+                {
+                    "village": "Ramgarh",
+                    "lat": "25.5309021",
+                    "lon": "75.7385948"
+                },
+                {
+                    "village": "Rampuriya",
+                    "lat": "25.5309021",
+                    "lon": "75.7385948"
+                },
+                {
+                    "village": "Rashali",
+                    "lat": "25.5868947",
+                    "lon": "76.0095549"
+                },
+                {
+                    "village": "Rethoda",
+                    "lat": "25.7421527",
+                    "lon": "75.9856510"
+                },
+                {
+                    "village": "Rughnathganj",
+                    "lat": "25.8270116",
+                    "lon": "76.0075807"
+                },
+                {
+                    "village": "Sabalpura",
+                    "lat": "25.5532538",
+                    "lon": "75.9383154"
+                },
+                {
+                    "village": "Sadera",
+                    "lat": "25.6079783",
+                    "lon": "75.7989049"
+                },
+                {
+                    "village": "Sagatpura",
+                    "lat": "25.7702332",
+                    "lon": "76.0604739"
+                },
+                {
+                    "village": "Sameedhi",
+                    "lat": "25.7702332",
+                    "lon": "76.0604739"
+                },
+                {
+                    "village": "Sandeela",
+                    "lat": "25.8253313",
+                    "lon": "75.9720254"
+                },
+                {
+                    "village": "Sangoda",
+                    "lat": "25.8253313",
+                    "lon": "75.9720254"
+                },
+                {
+                    "village": "Sangram Ganj",
+                    "lat": "25.8253313",
+                    "lon": "75.9720254"
+                },
+                {
+                    "village": "Sasti",
+                    "lat": "25.5610068",
+                    "lon": "75.9775400"
+                },
+                {
+                    "village": "Seesola",
+                    "lat": "25.7173231",
+                    "lon": "75.7787990"
+                },
+                {
+                    "village": "Shahan",
+                    "lat": "25.6843281",
+                    "lon": "76.0274935"
+                },
+                {
+                    "village": "Sheriya",
+                    "lat": "25.6843281",
+                    "lon": "76.0274935"
+                },
+                {
+                    "village": "Shivdanpura",
+                    "lat": "25.6843281",
+                    "lon": "76.0274935"
+                },
+                {
+                    "village": "Shivpura",
+                    "lat": "25.6648536",
+                    "lon": "76.0353470"
+                },
+                {
+                    "village": "Shreepura",
+                    "lat": "25.6648536",
+                    "lon": "76.0353470"
+                },
+                {
+                    "village": "Soonsa",
+                    "lat": "25.7878357",
+                    "lon": "76.0762238"
+                },
+                {
+                    "village": "Soonsadiya",
+                    "lat": "25.5795112",
+                    "lon": "75.9748578"
+                },
+                {
+                    "village": "Soorli",
+                    "lat": "25.6289131",
+                    "lon": "75.9884190"
+                },
+                {
+                    "village": "Sunthli",
+                    "lat": "25.8417862",
+                    "lon": "75.8356404"
+                },
+                {
+                    "village": "Surgali",
+                    "lat": "25.8417862",
+                    "lon": "75.8356404"
+                },
+                {
+                    "village": "Suwansara",
+                    "lat": "25.7117649",
+                    "lon": "75.7548952"
+                },
+                {
+                    "village": "Suwanya",
+                    "lat": "25.8091638",
+                    "lon": "75.8391809"
+                },
+                {
+                    "village": "Takla",
+                    "lat": "25.6821526",
+                    "lon": "75.7317209"
+                },
+                {
+                    "village": "Talwas",
+                    "lat": "25.6209614",
+                    "lon": "76.0434365"
+                },
+                {
+                    "village": "Topa",
+                    "lat": "25.6209614",
+                    "lon": "76.0434365"
+                },
+                {
+                    "village": "Tumbipura",
+                    "lat": "25.6209614",
+                    "lon": "76.0434365"
+                },
+                {
+                    "village": "Ugen",
+                    "lat": "25.8074446",
+                    "lon": "75.7766318"
+                },
+                {
+                    "village": "Uransi",
+                    "lat": "25.6323954",
+                    "lon": "75.8469486"
+                }
+            ]
+        }
+    ]
+}

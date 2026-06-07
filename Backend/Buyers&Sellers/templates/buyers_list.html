@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buyers List</title>
+</head>
+<body>
+
+<h2>All Buyers</h2>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>City</th>
+        <th>Crop</th>
+        <th>Quantity</th>
+    </tr>
+
+    {% for b in buyers %}
+    <tr>
+        <td>{{ b.name }}</td>
+        <td>{{ b.phone }}</td>
+        <td>{{ b.city }}</td>
+        <td>{{ b.crop }}</td>
+        <td>{{ b.quantity }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

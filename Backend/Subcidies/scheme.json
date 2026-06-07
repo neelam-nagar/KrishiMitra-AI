@@ -1,0 +1,1328 @@
+[
+  {
+    "id": "pmkisan",
+    "type": "central",
+    "link": "https://pmkisan.gov.in",
+    "name": {
+      "en": "PM-KISAN",
+      "hi": "PM-KISAN"
+    },
+    "eligibility": {
+      "en": "Landholding farmers as per land records",
+      "hi": "राजस्व रिकॉर्ड में दर्ज सभी भू-धारक किसान"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" },
+      { "en": "Land record", "hi": "भूमि अभिलेख" }
+    ],
+    "apply_process": {
+      "en": "Visit PM-KISAN portal -> Farmers Corner -> New Farmer Registration or apply via CSC.",
+      "hi": "PM-KISAN पोर्टल पर जाएँ → Farmers Corner → New Farmer Registration या नज़दीकी CSC से आवेदन करें।"
+    }
+  },
+  {
+    "id": "pmfby",
+    "type": "central",
+    "link": "https://pmfby.gov.in",
+    "name": {
+      "en": "Pradhan Mantri Fasal Bima Yojana",
+      "hi": "प्रधानमंत्री फसल बीमा योजना"
+    },
+    "eligibility": {
+      "en": "Farmers growing notified crops in notified areas",
+      "hi": "अधिसूचित क्षेत्रों में अधिसूचित फसलें उगाने वाले किसान"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Crop details", "hi": "फसल विवरण" }
+    ],
+    "apply_process": {
+      "en": "Apply through PMFBY portal, bank, or CSC.",
+      "hi": "PMFBY पोर्टल, बैंक या CSC के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "cm_kisan_sahayata",
+    "type": "state",
+    "link": "https://rajkisan.rajasthan.gov.in",
+    "name": {
+      "en": "Mukhyamantri Kisan Sahayata Yojana",
+      "hi": "मुख्यमंत्री किसान सहायता योजना"
+    },
+    "eligibility": {
+      "en": "Rajasthan farmers affected by crop loss",
+      "hi": "फसल हानि से प्रभावित राजस्थान के किसान"
+    },
+    "docs": [
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Girdawari report", "hi": "गिर्दावरी रिपोर्ट" }
+    ],
+    "apply_process": {
+      "en": "Apply on Raj Kisan Sathi or agriculture office.",
+      "hi": "राज किसान साथी पोर्टल या कृषि कार्यालय में आवेदन करें।"
+    }
+  },
+  {
+    "id": "rg_krishak_saathi",
+    "type": "state",
+    "link": "https://rajkisan.rajasthan.gov.in",
+    "name": {
+      "en": "Rajiv Gandhi Krishak Saathi Sahayata Yojana",
+      "hi": "राजीव गांधी कृषक साथी सहायता योजना"
+    },
+    "eligibility": {
+      "en": "Farmers or dependents affected by accident during agricultural work",
+      "hi": "कृषि कार्य के दौरान दुर्घटना से प्रभावित किसान या आश्रित"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Death/disability certificate", "hi": "मृत्यु/विकलांगता प्रमाण पत्र" }
+    ],
+    "apply_process": {
+      "en": "Apply via district agriculture office or portal.",
+      "hi": "जिला कृषि कार्यालय या पोर्टल के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "kcc",
+    "type": "central",
+    "link": "https://www.myscheme.gov.in/schemes/kcc",
+    "name": {
+      "en": "Kisan Credit Card",
+      "hi": "किसान क्रेडिट कार्ड"
+    },
+    "eligibility": {
+      "en": "Farmers engaged in agriculture or allied activities",
+      "hi": "कृषि या सम्बंधित गतिविधियों से जुड़े किसान"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Bank documents", "hi": "बैंक दस्तावेज़" }
+    ],
+    "apply_process": {
+      "en": "Apply at any bank branch for KCC.",
+      "hi": "किसी भी बैंक शाखा में KCC के लिए आवेदन करें।"
+    }
+  },
+  {
+    "id": "interest_subvention",
+    "type": "central",
+    "link": "https://www.myscheme.gov.in",
+    "name": {
+      "en": "Interest Subvention Scheme",
+      "hi": "ब्याज सब्सिडी योजना"
+    },
+    "eligibility": {
+      "en": "Farmers repaying short-term crop loans on time",
+      "hi": "समय पर अल्पकालिक फसली ऋण चुकाने वाले किसान"
+    },
+    "docs": [
+      { "en": "Loan account details", "hi": "ऋण खाते का विवरण" },
+      { "en": "KYC", "hi": "KYC दस्तावेज़" }
+    ],
+    "apply_process": {
+      "en": "Subvention applied automatically by bank.",
+      "hi": "ब्याज सब्सिडी बैंक द्वारा स्वतः समायोजित की जाती है।"
+    }
+  },
+  {
+    "id": "cm_krishi_saathi",
+    "type": "state",
+    "link": "https://rajkisan.rajasthan.gov.in",
+    "name": {
+      "en": "Mukhyamantri Krishi Saathi Yojana",
+      "hi": "मुख्यमंत्री कृषि साथी योजना"
+    },
+    "eligibility": {
+      "en": "Young farmers and agriculture graduates",
+      "hi": "युवा किसान एवं कृषि स्नातक"
+    },
+    "docs": [
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Degree certificate", "hi": "डिग्री प्रमाण पत्र" },
+      { "en": "Project report", "hi": "प्रोजेक्ट रिपोर्ट" }
+    ],
+    "apply_process": {
+      "en": "Apply through Raj Kisan Sathi.",
+      "hi": "राज किसान साथी पोर्टल के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "agri_input_subsidy",
+    "type": "state",
+    "link": "https://rajkisan.rajasthan.gov.in",
+    "name": {
+      "en": "Krishi Input Subsidy Yojana",
+      "hi": "कृषि इनपुट सब्सिडी योजना"
+    },
+    "eligibility": {
+      "en": "Farmers affected by natural calamities",
+      "hi": "प्राकृतिक आपदा से प्रभावित किसान"
+    },
+    "docs": [
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Girdawari", "hi": "गिर्दावरी" },
+      { "en": "Jan Aadhaar", "hi": "जन आधार" }
+    ],
+    "apply_process": {
+      "en": "Apply after government notification.",
+      "hi": "सरकारी अधिसूचना के बाद आवेदन करें।"
+    }
+  },
+  {
+    "id": "pm_kisan_maandhan",
+    "type": "central",
+    "link": "https://www.myscheme.gov.in/schemes/pmkmy",
+    "name": {
+      "en": "PM Kisan Maandhan Yojana",
+      "hi": "PM किसान मानधन योजना"
+    },
+    "eligibility": {
+      "en": "Small/marginal farmers, age 18–40",
+      "hi": "18–40 वर्ष के लघु एवं सीमांत किसान"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" },
+      { "en": "Land record", "hi": "भूमि अभिलेख" }
+    ],
+    "apply_process": {
+      "en": "Enroll through CSC or online portal.",
+      "hi": "CSC केंद्र या ऑनलाइन पोर्टल के माध्यम से नामांकन करें।"
+    }
+  },
+  {
+    "id": "cooperative_kisan_kalyan",
+    "type": "state",
+    "link": "https://rajkisan.rajasthan.gov.in",
+    "name": {
+      "en": "Sahkari Kisan Kalyan Yojana",
+      "hi": "सहकारी किसान कल्याण योजना"
+    },
+    "eligibility": {
+      "en": "Farmers linked to cooperative banks",
+      "hi": "सहकारी बैंकों से जुड़े किसान"
+    },
+    "docs": [
+      { "en": "Cooperative membership", "hi": "सहकारी सदस्यता प्रमाण" },
+      { "en": "Aadhaar", "hi": "आधार" }
+    ],
+    "apply_process": {
+      "en": "Apply via cooperative society.",
+      "hi": "संबंधित सहकारी समिति के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "pmksy_main",
+    "type": "central",
+    "link": "https://pmksy.gov.in",
+    "name": {
+      "en": "Pradhan Mantri Krishi Sinchai Yojana (PMKSY)",
+      "hi": "प्रधानमंत्री कृषि सिंचाई योजना (PMKSY)"
+    },
+    "eligibility": {
+      "en": "Farmers in notified irrigation areas",
+      "hi": "अधिसूचित सिंचाई क्षेत्रों के किसान"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Bank details", "hi": "बैंक विवरण" }
+    ],
+    "apply_process": {
+      "en": "Apply through state agriculture/water department.",
+      "hi": "राज्य कृषि/जल संसाधन विभाग के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "pmksy_pdmc",
+    "type": "central_state",
+    "link": "https://agriculture.rajasthan.gov.in",
+    "name": {
+      "en": "PMKSY – Per Drop More Crop (Micro Irrigation)",
+      "hi": "PMKSY – प्रति बूंद अधिक फसल (सूक्ष्म सिंचाई)"
+    },
+    "eligibility": {
+      "en": "Farmers installing drip/sprinkler systems",
+      "hi": "ड्रिप/स्प्रिंकलर सिस्टम स्थापित करने वाले किसान"
+    },
+    "docs": [
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Company quotation", "hi": "कंपनी का कोटेशन" }
+    ],
+    "apply_process": {
+      "en": "Apply on Raj Kisan Sathi under Micro Irrigation.",
+      "hi": "राज किसान साथी पोर्टल पर सूक्ष्म सिंचाई कंपोनेंट के अंतर्गत आवेदन करें।"
+    }
+  },
+  {
+    "id": "pmksy_water_harvesting",
+    "type": "central_state",
+    "link": "https://agriculture.rajasthan.gov.in",
+    "name": {
+      "en": "PMKSY – Water Harvesting",
+      "hi": "PMKSY – जल संचयन (Water Harvesting)"
+    },
+    "eligibility": {
+      "en": "Farmers constructing farm ponds/diggies",
+      "hi": "फार्म पॉन्ड/डिग्गी निर्माण करने वाले किसान"
+    },
+    "docs": [
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Land map", "hi": "भूमि मानचित्र" },
+      { "en": "Jan Aadhaar", "hi": "जन आधार" }
+    ],
+    "apply_process": {
+      "en": "Apply via Raj Kisan Sathi before construction.",
+      "hi": "निर्माण से पूर्व राज किसान साथी पोर्टल पर आवेदन करें।"
+    }
+  },
+  {
+    "id": "nmsa",
+    "type": "central",
+    "link": "https://www.myscheme.gov.in",
+    "name": {
+      "en": "National Mission for Sustainable Agriculture (NMSA)",
+      "hi": "राष्ट्रीय सतत कृषि मिशन (NMSA)"
+    },
+    "eligibility": {
+      "en": "Farmers adopting water and soil conservation practices",
+      "hi": "जल एवं मृदा संरक्षण प्रथाएँ अपनाने वाले किसान"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Land record", "hi": "भूमि अभिलेख" }
+    ],
+    "apply_process": {
+      "en": "Apply under specific components via agriculture office.",
+      "hi": "विशेष कंपोनेंट के अंतर्गत कृषि कार्यालय के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "cm_urja_subsidy",
+    "type": "state",
+    "link": "https://energy.rajasthan.gov.in",
+    "name": {
+      "en": "Mukhyamantri Kisan Urja Subsidy Yojana",
+      "hi": "मुख्यमंत्री किसान ऊर्जा सब्सिडी योजना"
+    },
+    "eligibility": {
+      "en": "Agriculture electricity consumers of Rajasthan",
+      "hi": "राजस्थान के कृषि विद्युत उपभोक्ता"
+    },
+    "docs": [
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Connection details", "hi": "बिजली कनेक्शन विवरण" }
+    ],
+    "apply_process": {
+      "en": "Subsidy is auto-adjusted in the bill; apply for DBT if required.",
+      "hi": "सब्सिडी विद्युत बिल में स्वतः समायोजित होती है; आवश्यकता होने पर DBT के लिए आवेदन करें।"
+    }
+  },
+  {
+    "id": "solar_pump_kusum",
+    "type": "central_state",
+    "link": "https://pmkusum.rajasthan.gov.in",
+    "name": {
+      "en": "PM-KUSUM Solar Pump Subsidy",
+      "hi": "PM-KUSUM सोलर पम्प सब्सिडी योजना"
+    },
+    "eligibility": {
+      "en": "Farmers installing solar pumps or solar plants",
+      "hi": "सोलर पम्प/सोलर प्लांट स्थापित करने वाले किसान"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" }
+    ],
+    "apply_process": {
+      "en": "Register on PM-KUSUM Rajasthan portal.",
+      "hi": "PM-KUSUM राजस्थान पोर्टल पर पंजीकरण करें।"
+    }
+  },
+  {
+    "id": "well_tubewell",
+    "type": "state",
+    "link": "https://rajkisan.rajasthan.gov.in",
+    "name": {
+      "en": "Well / Tubewell Construction Scheme",
+      "hi": "कूप / नलकूप निर्माण योजना"
+    },
+    "eligibility": {
+      "en": "Farmers needing new well or tubewell",
+      "hi": "नया कूप/नलकूप निर्माण करवाने वाले किसान"
+    },
+    "docs": [
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Groundwater permit", "hi": "भूजल स्वीकृति (अनुमति)" }
+    ],
+    "apply_process": {
+      "en": "Apply on Raj Kisan Sathi under Well/Tubewell scheme.",
+      "hi": "राज किसान साथी पोर्टल पर कूप/नलकूप योजना के अंतर्गत आवेदन करें।"
+    }
+  },
+  {
+    "id": "farm_pond",
+    "type": "state",
+    "link": "https://rajkisan.rajasthan.gov.in",
+    "name": {
+      "en": "Farm Pond Subsidy",
+      "hi": "खेत तलाई (Farm Pond) सब्सिडी"
+    },
+    "eligibility": {
+      "en": "Small and marginal farmers meeting land criteria",
+      "hi": "भूमि मानदंड पूरा करने वाले लघु एवं सीमांत किसान"
+    },
+    "docs": [
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Map", "hi": "खेत का नक्शा" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" }
+    ],
+    "apply_process": {
+      "en": "Apply via Raj Kisan Sathi; subsidy after verification.",
+      "hi": "राज किसान साथी के माध्यम से आवेदन करें; सत्यापन के बाद सब्सिडी दी जाती है।"
+    }
+  },
+  {
+    "id": "canal_lining",
+    "type": "state",
+    "link": "https://waterresources.rajasthan.gov.in",
+    "name": {
+      "en": "Canal Lining Scheme",
+      "hi": "नहर लाइनिंग योजना"
+    },
+    "eligibility": {
+      "en": "Farmers in canal command area",
+      "hi": "नहर कमांड क्षेत्र के किसान"
+    },
+    "docs": [
+      { "en": "Land/command area proof", "hi": "भूमि/कमांड क्षेत्र का प्रमाण" }
+    ],
+    "apply_process": {
+      "en": "Implemented by department; no direct application form.",
+      "hi": "योजना विभाग द्वारा क्रियान्वित; किसान के लिए सीधे आवेदन की आवश्यकता नहीं।"
+    }
+  },
+  {
+    "id": "water_use_efficiency",
+    "type": "state",
+    "link": "https://agriculture.rajasthan.gov.in",
+    "name": {
+      "en": "Water Use Efficiency Promotion",
+      "hi": "जल उपयोग दक्षता संवर्धन"
+    },
+    "eligibility": {
+      "en": "Farmers using micro-irrigation or water-saving devices",
+      "hi": "सूक्ष्म सिंचाई/जल-संरक्षण उपकरण उपयोग करने वाले किसान"
+    },
+    "docs": [
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" }
+    ],
+    "apply_process": {
+      "en": "Apply through Raj Kisan Sathi under relevant component.",
+      "hi": "राज किसान साथी पर संबंधित कंपोनेंट के अंतर्गत आवेदन करें।"
+    }
+  },
+  {
+    "id": "farm_mechanization",
+    "type": "central_state",
+    "link": "https://rajkisan.rajasthan.gov.in",
+    "name": {
+      "en": "Farm Mechanization Subsidy Scheme",
+      "hi": "कृषि यंत्रीकरण सब्सिडी योजना"
+    },
+    "eligibility": {
+      "en": "Farmers buying tractors or agricultural machines",
+      "hi": "ट्रैक्टर/कृषि यंत्र खरीदने वाले किसान"
+    },
+    "docs": [
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Machine quotation", "hi": "मशीन का कोटेशन" }
+    ],
+    "apply_process": {
+      "en": "Apply online on Raj Kisan Sathi before purchase.",
+      "hi": "खरीद से पहले राज किसान साथी पोर्टल पर ऑनलाइन आवेदन करें।"
+    }
+  },
+  {
+    "id": "custom_hiring_centre",
+    "type": "central",
+    "link": "https://agriculture.rajasthan.gov.in",
+    "name": {
+      "en": "Custom Hiring Centre (CHC Subsidy)",
+      "hi": "कस्टम हायरिंग सेंटर (CHC सब्सिडी)"
+    },
+    "eligibility": {
+      "en": "FPOs, cooperatives and farmer groups",
+      "hi": "किसान उत्पादक संगठन (FPO), सहकारी समितियाँ एवं किसान समूह"
+    },
+    "docs": [
+      { "en": "Group registration", "hi": "समूह पंजीकरण दस्तावेज़" },
+      { "en": "Project report", "hi": "प्रोजेक्ट रिपोर्ट" }
+    ],
+    "apply_process": {
+      "en": "Submit proposal at district agriculture office.",
+      "hi": "जिला कृषि कार्यालय में प्रोजेक्ट प्रस्ताव जमा करें।"
+    }
+  },
+  {
+    "id": "tarbandi",
+    "type": "state",
+    "link": "http://rajkisan.rajasthan.gov.in/WebsiteNew/fieldfencing.html",
+    "name": {
+      "en": "Tarbandi Yojana (Field Fencing Subsidy)",
+      "hi": "तारबंदी योजना (Field Fencing Subsidy)"
+    },
+    "eligibility": {
+      "en": "Farmers owning minimum eligible land area",
+      "hi": "न्यूनतम पात्र भूमि क्षेत्र वाले किसान"
+    },
+    "docs": [
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Jan Aadhaar", "hi": "जन आधार" }
+    ],
+    "apply_process": {
+      "en": "Apply on Raj Kisan Sathi; subsidy after fencing work.",
+      "hi": "राज किसान साथी पोर्टल पर आवेदन करें; तारबंदी कार्य के बाद सब्सिडी दी जाती है।"
+    }
+  },
+  {
+    "id": "rkv y",
+    "type": "central",
+    "link": "https://rkvy.nic.in",
+    "name": {
+      "en": "Rashtriya Krishi Vikas Yojana (RKVY)",
+      "hi": "राष्ट्रीय कृषि विकास योजना (RKVY)"
+    },
+    "eligibility": {
+      "en": "FPOs, institutions and implementing agencies",
+      "hi": "किसान उत्पादक संगठन, विभिन्न संस्थाएँ एवं कार्यान्वयन एजेंसियाँ"
+    },
+    "docs": [
+      { "en": "Project proposal (DPR)", "hi": "विस्तृत प्रोजेक्ट रिपोर्ट (DPR)" }
+    ],
+    "apply_process": {
+      "en": "Submit DPR through state agriculture department.",
+      "hi": "राज्य कृषि विभाग के माध्यम से DPR जमा करें।"
+    }
+  },
+  {
+    "id": "pkvy",
+    "type": "central",
+    "link": "https://pgsindia-ncof.gov.in",
+    "name": {
+      "en": "Paramparagat Krishi Vikas Yojana (Organic Farming)",
+      "hi": "परंपरागत कृषि विकास योजना (जैविक खेती)"
+    },
+    "eligibility": {
+      "en": "Farmer groups adopting organic farming",
+      "hi": "सामूहिक रूप से जैविक खेती अपनाने वाले किसान समूह"
+    },
+    "docs": [
+      { "en": "Group details", "hi": "समूह विवरण" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" }
+    ],
+    "apply_process": {
+      "en": "Apply through organic cell/PKVY implementing agency.",
+      "hi": "ऑर्गेनिक सेल/PKVY कार्यान्वयन एजेंसी के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "nhm",
+    "type": "central",
+    "link": "https://nhb.gov.in",
+    "name": {
+      "en": "National Horticulture Mission (NHM)",
+      "hi": "राष्ट्रीय बागवानी मिशन (NHM)"
+    },
+    "eligibility": {
+      "en": "Farmers developing orchards, nurseries, protected cultivation or cold storage units",
+      "hi": "बाग, नर्सरी, संरक्षित खेती या कोल्ड स्टोरेज इकाइयाँ विकसित करने वाले किसान"
+    },
+    "docs": [
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Project report", "hi": "प्रोजेक्ट रिपोर्ट" },
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" }
+    ],
+    "apply_process": {
+      "en": "Apply via horticulture department; DPR required for large projects.",
+      "hi": "उद्यान (बागवानी) विभाग के माध्यम से आवेदन करें; बड़े प्रोजेक्ट के लिए DPR अनिवार्य है।"
+    }
+  },
+  {
+    "id": "warehouse_cold_storage",
+    "type": "central_state",
+    "link": "https://www.mofpi.gov.in",
+    "name": {
+      "en": "Warehouse / Cold Storage Subsidy",
+      "hi": "वेयरहाउस / कोल्ड स्टोरेज सब्सिडी"
+    },
+    "eligibility": {
+      "en": "Farmers, FPOs and cooperatives building cold chain or warehouse",
+      "hi": "कोल्ड-चेन या वेयरहाउस बनाने वाले किसान, FPO एवं सहकारी संस्थाएँ"
+    },
+    "docs": [
+      { "en": "Project report", "hi": "प्रोजेक्ट रिपोर्ट" },
+      { "en": "Land/lease papers", "hi": "भूमि/लीज़ से जुड़े कागज़ात" },
+      { "en": "Bank sanction", "hi": "बैंक स्वीकृति पत्र" }
+    ],
+    "apply_process": {
+      "en": "Apply to NABARD/bank or state nodal agency.",
+      "hi": "NABARD/बैंक या राज्य नोडल एजेंसी के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "agroforestry",
+    "type": "central",
+    "link": "https://www.myscheme.gov.in",
+    "name": {
+      "en": "Sub-Mission on Agroforestry",
+      "hi": "सब-मिशन ऑन एग्रोफॉरेस्ट्री"
+    },
+    "eligibility": {
+      "en": "Farmers planting approved tree species on farmland",
+      "hi": "खेत पर स्वीकृत वृक्ष प्रजातियाँ लगाने वाले किसान"
+    },
+    "docs": [
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" }
+    ],
+    "apply_process": {
+      "en": "Apply via forest/agriculture department programmes.",
+      "hi": "वन/कृषि विभाग की संबंधित योजनाओं के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "fpo",
+    "type": "central",
+    "link": "https://sfacindia.com",
+    "name": {
+      "en": "Farmer Producer Organisation (FPO) Scheme",
+      "hi": "किसान उत्पादक संगठन (FPO) योजना"
+    },
+    "eligibility": {
+      "en": "Farmer groups forming FPO with minimum members",
+      "hi": "निर्धारित न्यूनतम सदस्यों के साथ FPO बनाने वाले किसान समूह"
+    },
+    "docs": [
+      { "en": "Farmer member list", "hi": "किसान सदस्यों की सूची" },
+      { "en": "PAN/Aadhaar of promoters", "hi": "प्रमोटरों का PAN/आधार" },
+      { "en": "Registration documents", "hi": "पंजीकरण दस्तावेज़" }
+    ],
+    "apply_process": {
+      "en": "Apply via SFAC/NABARD or state nodal agency.",
+      "hi": "SFAC/NABARD या राज्य नोडल एजेंसी के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "negp_a",
+    "type": "central",
+    "link": "https://farmer.gov.in",
+    "name": {
+      "en": "National e-Governance Plan – Agriculture (NeGP-A)",
+      "hi": "राष्ट्रीय ई-गवर्नेंस योजना – कृषि (NeGP-A)"
+    },
+    "eligibility": {
+      "en": "All farmers using ICT-based advisory services",
+      "hi": "ICT आधारित परामर्श सेवाएँ लेने वाले सभी किसान"
+    },
+    "docs": [
+      { "en": "Mobile number", "hi": "मोबाइल नंबर" },
+      { "en": "Aadhaar (where required)", "hi": "आधार (जहाँ आवश्यक हो)" }
+    ],
+    "apply_process": {
+      "en": "No formal application; farmers use apps or portal to receive advisories.",
+      "hi": "कोई औपचारिक आवेदन नहीं; किसान पोर्टल/ऐप के माध्यम से सलाह प्राप्त करते हैं।"
+    }
+  },
+  {
+    "id": "pashudhan_free_health",
+    "type": "state",
+    "link": "https://animalhusbandry.rajasthan.gov.in",
+    "name": {
+      "en": "Pashudhan Nishulk Arogya Yojana",
+      "hi": "पशुधन निःशुल्क आरोग्य योजना"
+    },
+    "eligibility": {
+      "en": "Livestock owners of Rajasthan",
+      "hi": "राजस्थान के पशुधन मालिक/पशुपालक"
+    },
+    "docs": [
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Animal details", "hi": "पशु विवरण" }
+    ],
+    "apply_process": {
+      "en": "Visit nearest government veterinary hospital for free treatment and medicines.",
+      "hi": "निकटतम सरकारी पशु चिकित्सालय पर जाकर निःशुल्क उपचार एवं दवाओं का लाभ लें।"
+    }
+  },
+  {
+    "id": "bhamashah_pashu_beema",
+    "type": "state",
+    "link": "https://animalhusbandry.rajasthan.gov.in",
+    "name": {
+      "en": "Bhamashah Pashu Bima / Avika Kavach",
+      "hi": "भामाशाह पशु बीमा / अविका कवच"
+    },
+    "eligibility": {
+      "en": "Owners of specified livestock eligible for insurance",
+      "hi": "निर्धारित पशुधन (गाय, भैंस, ऊँट, भेड़, बकरी आदि) वाले पशुपालक"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Animal photos", "hi": "पशु के फोटो" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" }
+    ],
+    "apply_process": {
+      "en": "Enroll animals through insurance company or veterinary officer.",
+      "hi": "बीमा कंपनी या पशु चिकित्सा अधिकारी के माध्यम से पशुओं का बीमा कराएँ।"
+    }
+  },
+  {
+    "id": "gokul_mission",
+    "type": "central",
+    "link": "https://dahd.nic.in",
+    "name": {
+      "en": "Rashtriya Gokul Mission",
+      "hi": "राष्ट्रीय गोकुल मिशन"
+    },
+    "eligibility": {
+      "en": "Government agencies and cooperatives (not individual farmers)",
+      "hi": "सरकारी एजेंसियाँ एवं सहकारी संस्थाएँ (सीधे व्यक्तिगत किसान नहीं)"
+    },
+    "docs": [
+      { "en": "Project proposal", "hi": "प्रोजेक्ट प्रस्ताव" }
+    ],
+    "apply_process": {
+      "en": "Agencies submit projects; farmers receive benefits indirectly.",
+      "hi": "एजेंसियाँ प्रोजेक्ट जमा करती हैं; किसानों को लाभ अप्रत्यक्ष रूप से मिलता है।"
+    }
+  },
+  {
+    "id": "nlm",
+    "type": "central",
+    "link": "https://dahd.nic.in",
+    "name": {
+      "en": "National Livestock Mission (NLM)",
+      "hi": "राष्ट्रीय पशुधन मिशन (NLM)"
+    },
+    "eligibility": {
+      "en": "Farmers, SHGs and cooperatives in animal husbandry sector",
+      "hi": "पशुपालन क्षेत्र के किसान, स्वयं सहायता समूह एवं सहकारी संस्थाएँ"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank details", "hi": "बैंक विवरण" },
+      { "en": "Project details", "hi": "प्रोजेक्ट विवरण" }
+    ],
+    "apply_process": {
+      "en": "Apply via district animal husbandry department.",
+      "hi": "जिला पशुपालन विभाग के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "deds",
+    "type": "central",
+    "link": "https://www.nabard.org",
+    "name": {
+      "en": "Dairy Entrepreneurship Development Scheme (DEDS)",
+      "hi": "डेयरी उद्यमिता विकास योजना (DEDS)"
+    },
+    "eligibility": {
+      "en": "Individuals, SHGs and companies starting dairy units",
+      "hi": "डेयरी इकाई शुरू करने वाले व्यक्ति, SHG एवं कंपनियाँ"
+    },
+    "docs": [
+      { "en": "Project report", "hi": "प्रोजेक्ट रिपोर्ट" },
+      { "en": "KYC", "hi": "KYC दस्तावेज़" },
+      { "en": "Land/lease papers", "hi": "भूमि/लीज़ संबंधी कागज़ात" }
+    ],
+    "apply_process": {
+      "en": "Submit project to bank; subsidy processed through NABARD.",
+      "hi": "प्रोजेक्ट बैंक में जमा करें; सब्सिडी NABARD के माध्यम से दी जाती है।"
+    }
+  },
+  {
+    "id": "fodder_seed",
+    "type": "state",
+    "link": "https://animalhusbandry.rajasthan.gov.in",
+    "name": {
+      "en": "Fodder Seed Production Incentive Scheme",
+      "hi": "चारा बीज उत्पादन प्रोत्साहन योजना"
+    },
+    "eligibility": {
+      "en": "Farmers producing certified fodder seed",
+      "hi": "प्रमाणित चारा बीज उत्पादन करने वाले किसान"
+    },
+    "docs": [
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Aadhaar", "hi": "आधार" }
+    ],
+    "apply_process": {
+      "en": "Apply through district animal husbandry office.",
+      "hi": "जिला पशुपालन कार्यालय के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "matsya_sampada",
+    "type": "central",
+    "link": "https://pmmsy.dof.gov.in",
+    "name": {
+      "en": "Pradhan Mantri Matsya Sampada Yojana (PMMSY)",
+      "hi": "प्रधानमंत्री मत्स्य संपदा योजना (PMMSY)"
+    },
+    "eligibility": {
+      "en": "Fish farmers, cooperatives and fisheries entrepreneurs",
+      "hi": "मत्स्य पालक, सहकारी संस्थाएँ एवं मत्स्य क्षेत्र के उद्यमी"
+    },
+    "docs": [
+      { "en": "Land/pond papers", "hi": "तालाब/भूमि से जुड़े कागज़ात" },
+      { "en": "Project report", "hi": "प्रोजेक्ट रिपोर्ट" }
+    ],
+    "apply_process": {
+      "en": "Apply via fisheries department as per PMMSY guidelines.",
+      "hi": "PMMSY दिशा-निर्देशों के अनुसार मत्स्य विभाग के माध्यम से आवेदन करें।"
+    }
+  } , {
+    "id": "pashu_aahar_subsidy",
+    "type": "state",
+    "link": "https://animalhusbandry.rajasthan.gov.in",
+    "name": {
+      "en": "Pashu Aahar Subsidy",
+      "hi": "पशु आहार सब्सिडी"
+    },
+    "eligibility": {
+      "en": "Livestock owners in notified drought-affected areas",
+      "hi": "अधिसूचित सूखा प्रभावित क्षेत्रों के पशुपालक"
+    },
+    "docs": [
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Animal details", "hi": "पशु विवरण" }
+    ],
+    "apply_process": {
+      "en": "Apply through Gram Panchayat or veterinary officer.",
+      "hi": "ग्राम पंचायत या पशु चिकित्सा अधिकारी के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "vet_polyclinic_ambulance",
+    "type": "state",
+    "link": "https://animalhusbandry.rajasthan.gov.in",
+    "name": {
+      "en": "Pashu Ambulance Service",
+      "hi": "पशु एम्बुलेंस सेवा"
+    },
+    "eligibility": {
+      "en": "All livestock owners needing emergency veterinary service",
+      "hi": "आपातकालीन पशु चिकित्सा सेवा की आवश्यकता वाले सभी पशुपालक"
+    },
+    "docs": [
+      { "en": "Basic details", "hi": "मूल विवरण (नाम, पता, मोबाइल)" }
+    ],
+    "apply_process": {
+      "en": "Call district helpline or contact nearby veterinary hospital.",
+      "hi": "जिला हेल्पलाइन पर कॉल करें या नजदीकी पशु चिकित्सालय से संपर्क करें।"
+    }
+  },
+  {
+    "id": "milk_producer_incentive",
+    "type": "state",
+    "link": "https://sarasmilkfed.rajasthan.gov.in",
+    "name": {
+      "en": "Milk Producer Incentive Scheme",
+      "hi": "दुग्ध उत्पादक प्रोत्साहन योजना"
+    },
+    "eligibility": {
+      "en": "Members of affiliated dairy cooperatives",
+      "hi": "संबद्ध दुग्ध सहकारी समितियों के सदस्य"
+    },
+    "docs": [
+      { "en": "Membership details", "hi": "सदस्यता विवरण" },
+      { "en": "Bank account", "hi": "बैंक खाता विवरण" }
+    ],
+    "apply_process": {
+      "en": "Incentive is credited automatically through dairy society.",
+      "hi": "प्रोत्साहन राशि दुग्ध सहकारी समिति के माध्यम से सीधे खाते में जमा होती है।"
+    }
+  },
+  {
+    "id": "cm_beej_swavlamban",
+    "type": "state",
+    "link": "https://agriculture.rajasthan.gov.in",
+    "name": {
+      "en": "Mukhyamantri Beej Swavlamban Yojana",
+      "hi": "मुख्यमंत्री बीज स्वावलंबन योजना"
+    },
+    "eligibility": {
+      "en": "Farmers producing seeds for local and self-use",
+      "hi": "स्थानीय एवं स्व-उपयोग हेतु बीज उत्पादन करने वाले किसान"
+    },
+    "docs": [
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" }
+    ],
+    "apply_process": {
+      "en": "Apply through Raj Kisan Sathi or agriculture office.",
+      "hi": "राज किसान साथी पोर्टल या कृषि कार्यालय के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "nfsm",
+    "type": "central",
+    "link": "https://nfsm.gov.in",
+    "name": {
+      "en": "National Food Security Mission (NFSM)",
+      "hi": "राष्ट्रीय खाद्य सुरक्षा मिशन (NFSM)"
+    },
+    "eligibility": {
+      "en": "Farmers cultivating rice, wheat or pulses in NFSM districts",
+      "hi": "NFSM जिलों में धान, गेहूँ या दलहन की खेती करने वाले किसान"
+    },
+    "docs": [
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Aadhaar", "hi": "आधार" }
+    ],
+    "apply_process": {
+      "en": "Enroll via agriculture department for minikits/demonstrations.",
+      "hi": "मिनी-किट/प्रदर्शन हेतु कृषि विभाग के माध्यम से पंजीयन कराएँ।"
+    }
+  },
+  {
+    "id": "beej_gram",
+    "type": "central",
+    "link": "https://www.myscheme.gov.in",
+    "name": {
+      "en": "Beej Gram Yojana (Seed Village Programme)",
+      "hi": "बीज ग्राम योजना (Seed Village Programme)"
+    },
+    "eligibility": {
+      "en": "Groups of farmers producing quality seed",
+      "hi": "गुणवत्तायुक्त बीज उत्पादन करने वाले किसान समूह"
+    },
+    "docs": [
+      { "en": "Farmer group list", "hi": "किसान समूह की सूची" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" }
+    ],
+    "apply_process": {
+      "en": "Implemented via seed agencies; join through agriculture office.",
+      "hi": "बीज एजेंसियों के माध्यम से लागू; कृषि कार्यालय के जरिए समूह से जुड़ें।"
+    }
+  },
+  {
+    "id": "pmfme",
+    "type": "central_state",
+    "link": "https://pmfme.mofpi.gov.in",
+    "name": {
+      "en": "PMFME Micro Food Processing Scheme",
+      "hi": "PMFME सूक्ष्म खाद्य प्रसंस्करण योजना"
+    },
+    "eligibility": {
+      "en": "Micro food units, SHGs and FPOs in Rajasthan",
+      "hi": "राजस्थान की सूक्ष्म खाद्य इकाइयाँ, स्वयं सहायता समूह एवं FPO"
+    },
+    "docs": [
+      { "en": "Udyam registration", "hi": "उद्यम पंजीकरण" },
+      { "en": "Project report", "hi": "प्रोजेक्ट रिपोर्ट" },
+      { "en": "KYC", "hi": "KYC दस्तावेज़" }
+    ],
+    "apply_process": {
+      "en": "Apply online on PMFME portal with DPR.",
+      "hi": "PMFME पोर्टल पर DPR सहित ऑनलाइन आवेदन करें।"
+    }
+  },
+  {
+    "id": "kisan_kalewa",
+    "type": "state",
+    "link": "https://agriculture.rajasthan.gov.in",
+    "name": {
+      "en": "Kisan Kaleva Yojana",
+      "hi": "किसान कलेवा योजना"
+    },
+    "eligibility": {
+      "en": "Farmers visiting notified mandis for selling produce",
+      "hi": "सूचीबद्ध मंडियों में उपज बेचने आने वाले किसान"
+    },
+    "docs": [
+      { "en": "Aadhaar/Jan Aadhaar", "hi": "आधार / जन आधार" }
+    ],
+    "apply_process": {
+      "en": "Direct access at mandi canteen through coupons; no separate online form.",
+      "hi": "मंडी प्रांगण में कूपन के माध्यम से सीधे भोजन का लाभ; अलग ऑनलाइन फॉर्म नहीं।"
+    }
+  },
+  {
+    "id": "e_nam",
+    "type": "central",
+    "link": "https://www.enam.gov.in",
+    "name": {
+      "en": "e-NAM (National Agriculture Market)",
+      "hi": "e-NAM (राष्ट्रीय कृषि बाजार)"
+    },
+    "eligibility": {
+      "en": "Farmers, traders and mandi agents with valid ID",
+      "hi": "वैध पहचान पत्र वाले किसान, व्यापारी एवं मंडी एजेंट"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank details", "hi": "बैंक विवरण" }
+    ],
+    "apply_process": {
+      "en": "Register via mandi office or e-NAM portal.",
+      "hi": "मंडी कार्यालय या e-NAM पोर्टल के माध्यम से पंजीकरण करें।"
+    }
+  },
+  {
+    "id": "mandi_fee_waiver",
+    "type": "state",
+    "link": "https://rsamb.rajasthan.gov.in",
+    "name": {
+      "en": "Mandi Fee Waiver Scheme",
+      "hi": "मंडी शुल्क माफी योजना"
+    },
+    "eligibility": {
+      "en": "Farmers selling notified commodities",
+      "hi": "अधिसूचित कृषि उपज बेचने वाले किसान"
+    },
+    "docs": [
+      { "en": "Mandi receipts", "hi": "मंडी रसीदें" }
+    ],
+    "apply_process": {
+      "en": "Fee is waived at mandi level; no separate application needed.",
+      "hi": "शुल्क माफी सीधे मंडी स्तर पर; अलग से आवेदन आवश्यक नहीं।"
+    }
+  },
+  {
+    "id": "coop_crop_loan_zero_interest",
+    "type": "state",
+    "link": "https://rajcrb.rajasthan.gov.in",
+    "name": {
+      "en": "Cooperative Crop Loan (Zero Interest)",
+      "hi": "सहकारी फसली ऋण (शून्य ब्याज)"
+    },
+    "eligibility": {
+      "en": "Members of cooperative societies taking crop loan",
+      "hi": "फसली ऋण लेने वाली सहकारी समितियों के सदस्य"
+    },
+    "docs": [
+      { "en": "KYC", "hi": "KYC दस्तावेज़" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Membership proof", "hi": "सदस्यता प्रमाण" }
+    ],
+    "apply_process": {
+      "en": "Apply in cooperative society/bank.",
+      "hi": "संबंधित सहकारी समिति/बैंक में आवेदन करें।"
+    }
+  },
+  {
+    "id": "krishi_gyaan_dhara",
+    "type": "state",
+    "link": "https://agriculture.rajasthan.gov.in",
+    "name": {
+      "en": "Krishi Gyaan Dhara",
+      "hi": "कृषि ज्ञान धारा"
+    },
+    "eligibility": {
+      "en": "All farmers seeking advisory support",
+      "hi": "सलाह/मार्गदर्शन प्राप्त करना चाहने वाले सभी किसान"
+    },
+    "docs": [
+      { "en": "Mobile number", "hi": "मोबाइल नंबर" }
+    ],
+    "apply_process": {
+      "en": "Register on state advisory platforms or WhatsApp groups.",
+      "hi": "राज्य स्तरीय सलाह मंचों/व्हाट्सऐप समूहों पर पंजीकरण करें।"
+    }
+  },
+  {
+    "id": "biogas_subsidy",
+    "type": "central_state",
+    "link": "https://mnre.gov.in",
+    "name": {
+      "en": "Biogas Unit Subsidy",
+      "hi": "बायोगैस यूनिट सब्सिडी"
+    },
+    "eligibility": {
+      "en": "Rural households installing a biogas plant",
+      "hi": "बायोगैस प्लांट स्थापित करने वाले ग्रामीण परिवार"
+    },
+    "docs": [
+      { "en": "Land/house proof", "hi": "भूमि/मकान का प्रमाण" },
+      { "en": "Aadhaar", "hi": "आधार" }
+    ],
+    "apply_process": {
+      "en": "Apply via state renewable energy department or nodal agency.",
+      "hi": "राज्य नवीकरणीय ऊर्जा विभाग/नोडल एजेंसी के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "indira_canal_farmer_welfare",
+    "type": "state",
+    "link": "https://agriculture.rajasthan.gov.in",
+    "name": {
+      "en": "Indira Gandhi Canal Farmer Welfare Scheme",
+      "hi": "इंदिरा गांधी नहर किसान कल्याण योजना"
+    },
+    "eligibility": {
+      "en": "Farmers in IGNP command area",
+      "hi": "IGNP कमांड क्षेत्र के किसान"
+    },
+    "docs": [
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Jan Aadhaar", "hi": "जन आधार" }
+    ],
+    "apply_process": {
+      "en": "Apply via district agriculture office.",
+      "hi": "जिला कृषि कार्यालय के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "mksp",
+    "type": "central",
+    "link": "https://aajeevika.gov.in",
+    "name": {
+      "en": "Mahila Kisan Sashaktikaran Pariyojana (MKSP)",
+      "hi": "महिला किसान सशक्तिकरण परियोजना (MKSP)"
+    },
+    "eligibility": {
+      "en": "Women SHG members under NRLM",
+      "hi": "NRLM के अंतर्गत पंजीकृत महिला स्वयं सहायता समूह सदस्य"
+    },
+    "docs": [
+      { "en": "SHG membership", "hi": "SHG सदस्यता विवरण" },
+      { "en": "Aadhaar", "hi": "आधार" }
+    ],
+    "apply_process": {
+      "en": "Enrollment is done through Rajasthan Rural Livelihood Mission.",
+      "hi": "नामांकन राजस्थान आजीविका मिशन (RRLM) के माध्यम से किया जाता है।"
+    }
+  },
+  {
+    "id": "women_in_agriculture",
+    "type": "state",
+    "link": "https://agriculture.rajasthan.gov.in",
+    "name": {
+      "en": "Mahila Kisan Participation in Agriculture Scheme",
+      "hi": "कृषि में महिलाओं की भागीदारी योजना"
+    },
+    "eligibility": {
+      "en": "Women farmers purchasing agricultural machinery",
+      "hi": "कृषि यंत्र खरीदने वाली महिला किसान"
+    },
+    "docs": [
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" }
+    ],
+    "apply_process": {
+      "en": "Apply via Raj Kisan Sathi under women mechanization component.",
+      "hi": "राज किसान साथी पोर्टल पर महिला यंत्रीकरण कंपोनेंट के अंतर्गत आवेदन करें।"
+    }
+  },
+  {
+    "id": "pmsby",
+    "type": "central",
+    "link": "https://www.myscheme.gov.in/schemes/pmsby",
+    "name": {
+      "en": "Pradhan Mantri Suraksha Bima Yojana (PMSBY)",
+      "hi": "प्रधानमंत्री सुरक्षा बीमा योजना (PMSBY)"
+    },
+    "eligibility": {
+      "en": "Citizens aged 18–70 years with bank account",
+      "hi": "18–70 वर्ष के बैंक खाता धारक नागरिक"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank details", "hi": "बैंक विवरण" }
+    ],
+    "apply_process": {
+      "en": "Enroll via bank/CSC for yearly premium of ₹12.",
+      "hi": "बैंक/CSC के माध्यम से ₹12 वार्षिक प्रीमियम पर नामांकन करें।"
+    }
+  },
+  {
+    "id": "pmjjby",
+    "type": "central",
+    "link": "https://www.myscheme.gov.in/schemes/pmjjby",
+    "name": {
+      "en": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)",
+      "hi": "प्रधानमंत्री जीवन ज्योति बीमा योजना (PMJJBY)"
+    },
+    "eligibility": {
+      "en": "Citizens aged 18–50 years with bank account",
+      "hi": "18–50 वर्ष के बैंक खाता धारक नागरिक"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank details", "hi": "बैंक विवरण" }
+    ],
+    "apply_process": {
+      "en": "Enroll via bank; yearly premium of ₹330 is auto-debited.",
+      "hi": "बैंक के माध्यम से नामांकन करें; ₹330 वार्षिक प्रीमियम स्वतः खाते से कटेगा।"
+    }
+  },
+  {
+    "id": "apy",
+    "type": "central",
+    "link": "https://www.npscra.nsdl.co.in",
+    "name": {
+      "en": "Atal Pension Yojana (APY)",
+      "hi": "अटल पेंशन योजना (APY)"
+    },
+    "eligibility": {
+      "en": "Citizens aged 18–40 years not covered under any other pension scheme",
+      "hi": "18–40 वर्ष के वे नागरिक जो किसी अन्य पेंशन योजना के सदस्य नहीं हैं"
+    },
+    "docs": [
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Bank passbook", "hi": "बैंक पासबुक" }
+    ],
+    "apply_process": {
+      "en": "Register in bank or post office; monthly contribution is auto-debited.",
+      "hi": "बैंक/डाकघर में पंजीकरण करें; मासिक अंशदान स्वतः खाते से कटेगा।"
+    }
+  },
+  {
+    "id": "agr3_st_mechanization",
+    "type": "central_state",
+    "link": "https://www.myscheme.gov.in/hi/schemes/agr3fmsstf",
+    "name": {
+      "en": "AGR-3 ST Farm Mechanization",
+      "hi": "AGR-3 अनुसूचित जनजाति कृषि यंत्रीकरण"
+    },
+    "eligibility": {
+      "en": "Scheduled Tribe farmers",
+      "hi": "अनुसूचित जनजाति (ST) के किसान"
+    },
+    "docs": [
+      { "en": "ST certificate", "hi": "ST प्रमाण पत्र" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Machine quotation", "hi": "यंत्र/मशीन का कोटेशन" }
+    ],
+    "apply_process": {
+      "en": "Apply via Raj Kisan Sathi portal.",
+      "hi": "राज किसान साथी पोर्टल के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "agr4_sc_mechanization",
+    "type": "central_state",
+    "link": "https://www.myscheme.gov.in/schemes/agr4fmsscf",
+    "name": {
+      "en": "AGR-4 SC Farm Mechanization",
+      "hi": "AGR-4 अनुसूचित जाति कृषि यंत्रीकरण"
+    },
+    "eligibility": {
+      "en": "Scheduled Caste farmers",
+      "hi": "अनुसूचित जाति (SC) के किसान"
+    },
+    "docs": [
+      { "en": "SC certificate", "hi": "SC प्रमाण पत्र" },
+      { "en": "Aadhaar", "hi": "आधार" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" }
+    ],
+    "apply_process": {
+      "en": "Apply through state agriculture department or Raj Kisan Sathi.",
+      "hi": "राज्य कृषि विभाग/राज किसान साथी पोर्टल के माध्यम से आवेदन करें।"
+    }
+  },
+  {
+    "id": "krishi_yantra_scheme",
+    "type": "state",
+    "link": "https://www.myscheme.gov.in/schemes/ky",
+    "name": {
+      "en": "Krishi Yantra Subsidy Scheme",
+      "hi": "कृषि यंत्र सब्सिडी योजना"
+    },
+    "eligibility": {
+      "en": "Rajasthan farmers purchasing approved machinery",
+      "hi": "स्वीकृत कृषि यंत्र खरीदने वाले राजस्थान के किसान"
+    },
+    "docs": [
+      { "en": "Jan Aadhaar", "hi": "जन आधार" },
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Machine quotation", "hi": "यंत्र का कोटेशन" }
+    ],
+    "apply_process": {
+      "en": "Apply on Raj Kisan Sathi under Krishi Yantra scheme.",
+      "hi": "राज किसान साथी पोर्टल पर कृषि यंत्र योजना के अंतर्गत आवेदन करें।"
+    }
+  },
+  {
+    "id": "soil_health_card",
+    "type": "central",
+    "link": "https://soilhealth.dac.gov.in",
+    "name": {
+      "en": "Soil Health Card",
+      "hi": "मृदा स्वास्थ्य कार्ड"
+    },
+    "eligibility": {
+      "en": "All farmers whose soil is tested",
+      "hi": "जिन किसानों की मिट्टी की जाँच की जाती है"
+    },
+    "docs": [
+      { "en": "Land details", "hi": "खेत/भूमि का विवरण" }
+    ],
+    "apply_process": {
+      "en": "Visit agriculture office/KVK for soil sample collection.",
+      "hi": "मिट्टी नमूना देने हेतु कृषि कार्यालय/KVK पर जाएँ।"
+    }
+  },
+  {
+    "id": "green_house_rajasthan",
+    "type": "central_state",
+    "link": "https://rajkisan.rajasthan.gov.in/WebsiteNew/greenhouse.html",
+    "name": {
+      "en": "Green House Subsidy Rajasthan",
+      "hi": "ग्रीन हाउस सब्सिडी राजस्थान"
+    },
+    "eligibility": {
+      "en": "Farmers establishing greenhouse up to 4000 sq.m.",
+      "hi": "4000 वर्गमीटर तक ग्रीन हाउस स्थापित करने वाले किसान"
+    },
+    "docs": [
+      { "en": "Land record", "hi": "भूमि रिकॉर्ड" },
+      { "en": "Layout plan", "hi": "लेआउट प्लान" },
+      { "en": "Aadhaar", "hi": "आधार" }
+    ],
+    "apply_process": {
+      "en": "Apply through Raj Kisan Sathi under horticulture section.",
+      "hi": "राज किसान साथी पोर्टल पर उद्यानिकी (हॉर्टिकल्चर) अनुभाग के अंतर्गत आवेदन करें।"
+    }
+  },
+  {
+    "id": "acabc",
+    "type": "central",
+    "link": "https://www.nabard.org",
+    "name": {
+      "en": "Agri Clinics & Agri Business Centres (ACABC)",
+      "hi": "एग्री क्लीनिक्स एवं एग्री बिज़नेस सेंटर्स (ACABC)"
+    },
+    "eligibility": {
+      "en": "Agriculture graduates starting agri-business",
+      "hi": "एग्री-बिज़नेस शुरू करने के इच्छुक कृषि स्नातक"
+    },
+    "docs": [
+      { "en": "Education proof", "hi": "शैक्षणिक प्रमाण पत्र" },
+      { "en": "Project report", "hi": "प्रोजेक्ट रिपोर्ट" }
+    ],
+    "apply_process": {
+      "en": "Enroll in ACABC training and apply for loan/subsidy.",
+      "hi": "ACABC प्रशिक्षण में नामांकन करें और ऋण/सब्सिडी के लिए आवेदन करें।"
+    }
+  }]
+
+
