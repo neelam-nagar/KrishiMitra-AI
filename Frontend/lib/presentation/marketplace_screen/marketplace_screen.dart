@@ -241,22 +241,42 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
 
     return RefreshIndicator(
       onRefresh: _refreshProducts,
-      child: ListView.builder(
+      child: ListView(
         padding: EdgeInsets.only(bottom: 10.h),
-        itemCount: _filteredProducts.length,
-        itemBuilder: (context, index) {
-          final product = _filteredProducts[index];
-          return ProductCardWidget(
-            product: product,
-            onTap: () {
-              Navigator.pushNamed(
-                context,
-                '/product-detail-screen',
-                arguments: product,
-              );
-            },
-          );
-        },
+        children: [
+
+          // 🟢 SAME LOCATION FIRST
+          ..._filteredProducts
+              .where((p) => p['location'] == "Jaipur") // TODO: make dynamic later
+              .map((product) {
+            return ProductCardWidget(
+              product: product,
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  '/product-detail-screen',
+                  arguments: product,
+                );
+              },
+            );
+          }),
+
+          // 🔴 OTHER LOCATIONS
+          ..._filteredProducts
+              .where((p) => p['location'] != "Jaipur")
+              .map((product) {
+            return ProductCardWidget(
+              product: product,
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  '/product-detail-screen',
+                  arguments: product,
+                );
+              },
+            );
+          }),
+        ],
       ),
     );
   }
