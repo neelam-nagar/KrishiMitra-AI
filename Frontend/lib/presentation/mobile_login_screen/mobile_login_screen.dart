@@ -2,20 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:sizer/sizer.dart';
-
 import 'package:provider/provider.dart';
 import '../../core/language_provider.dart';
-
 import '../../core/app_export.dart';
-import '../../widgets/custom_icon_widget.dart';
+import '../../core/auth/auth_service.dart';
+// FIX: removed unnecessary custom_icon_widget import (already in app_export)
 import './widgets/language_toggle_widget.dart';
 import './widgets/login_form_widget.dart';
 
-//import 'package:firebase_auth/firebase_auth.dart';
-
-/// Mobile Login Screen for KrishiMitra AI
-/// Enables secure farmer authentication using mobile number and OTP verification
-/// Optimized for rural users with simple, accessible interface
 class MobileLoginScreen extends StatefulWidget {
   const MobileLoginScreen({super.key});
 
@@ -31,8 +25,6 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
   bool _isLoading = false;
   String? _errorMessage;
 
- // final FirebaseAuth _auth = FirebaseAuth.instance;
-
   @override
   void initState() {
     super.initState();
@@ -45,25 +37,17 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
     super.dispose();
   }
 
-  /// Load last used mobile number from secure storage
   Future<void> _loadSavedPhoneNumber() async {
-    // In production, load from SharedPreferences
-    // For now, keeping empty for first-time users
+    // TODO: restore last used phone number from SharedPreferences
   }
 
-  /// Save mobile number to secure storage
-  Future<void> _savePhoneNumber(String phoneNumber) async {
-    // In production, save to SharedPreferences
-    // await SharedPreferences.getInstance().then((prefs) => prefs.setString('last_phone', phoneNumber));
-  }
-
-  /// Validate and send OTP
   Future<void> _sendOTP() async {
     final lang = context.read<LanguageProvider>().currentLanguage;
     final bool isHindi = lang == 'hi';
 
-    if (_phoneNumber.phoneNumber == null ||
-        _phoneNumber.phoneNumber!.replaceAll(RegExp(r'\D'), '').length < 10) {
+    final rawNumber =
+        _phoneNumber.phoneNumber?.replaceAll(RegExp(r'\D'), '') ?? '';
+    if (rawNumber.length < 10) {
       setState(() {
         _errorMessage = isHindi
             ? 'कृपया सही मोबाइल नंबर दर्ज करें'
@@ -72,35 +56,29 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
       return;
     }
 
-    if (!_formKey.currentState!.validate()) {
-      return;
-    }
+    if (!_formKey.currentState!.validate()) return;
 
-    setState(() {
-      _isLoading = true;
-      _errorMessage = null;
-    });
+    setState(() { _isLoading = true; _errorMessage = null; });
 
-    // 🔁 FAKE OTP delay (hard‑coded flow)
-    await Future.delayed(const Duration(seconds: 1));
-
-    if (mounted) {
-      Navigator.pushNamed(
-        context,
-        '/otp-verification-screen',
-      );
-    }
-
-    setState(() {
-      _isLoading = false;
-    });
-  }
-
-  /// Handle back button press
-  Future<bool> _onWillPop() async {
-    // Exit app if coming from splash
-    SystemNavigator.pop();
-    return false;
+    await AuthService.instance.sendOtp(
+      phoneNumber: _phoneNumber.phoneNumber ?? '',
+      onCodeSent: (verificationId) {
+        if (!mounted) return;
+        setState(() => _isLoading = false);
+        Navigator.pushNamed(
+          context,
+          AppRoutes.otpVerification,
+          arguments: {
+            'verificationId': verificationId,
+            'phoneNumber': _phoneNumber.phoneNumber ?? '',
+          },
+        );
+      },
+      onError: (message) {
+        if (!mounted) return;
+        setState(() { _isLoading = false; _errorMessage = message; });
+      },
+    );
   }
 
   @override
@@ -110,14 +88,17 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
     final bool isHindi = lang == 'hi';
     final size = MediaQuery.of(context).size;
 
-    return WillPopScope(
-      onWillPop: _onWillPop,
+    // FIX: WillPopScope → PopScope (WillPopScope is deprecated since Flutter 3.12)
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) SystemNavigator.pop();
+      },
       child: Scaffold(
         backgroundColor: theme.colorScheme.surface,
         body: SafeArea(
           child: Stack(
             children: [
-              // Background gradient
               Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -130,8 +111,6 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                   ),
                 ),
               ),
-
-              // Main content
               SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 child: ConstrainedBox(
@@ -144,42 +123,26 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                       child: Column(
                         children: [
                           SizedBox(height: 2.h),
-
-                          // Language toggle
                           Align(
                             alignment: Alignment.centerRight,
                             child: const LanguageToggleWidget(),
                           ),
-
                           SizedBox(height: 4.h),
-
-                          // App logo and branding
                           _buildAppBranding(theme, isHindi),
-
                           SizedBox(height: 6.h),
-
-                          // Login form
                           LoginFormWidget(
                             formKey: _formKey,
                             phoneController: _phoneController,
                             phoneNumber: _phoneNumber,
                             isLoading: _isLoading,
                             errorMessage: _errorMessage,
-
                             onPhoneNumberChanged: (PhoneNumber number) {
-                              setState(() {
-                                _phoneNumber = number;
-                                _errorMessage = null;
-                              });
+                              setState(() { _phoneNumber = number; _errorMessage = null; });
                             },
                             onSendOTP: _sendOTP,
                           ),
-
                           const Spacer(),
-
-                          // Footer text
                           _buildFooter(theme, isHindi),
-
                           SizedBox(height: 3.h),
                         ],
                       ),
@@ -194,11 +157,9 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
     );
   }
 
-  /// Build app branding section with logo and tagline
   Widget _buildAppBranding(ThemeData theme, bool isHindi) {
     return Column(
       children: [
-        // Agriculture-themed logo
         Container(
           width: 30.w,
           height: 30.w,
@@ -214,40 +175,25 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
             ],
           ),
           child: Center(
-            child: CustomIconWidget(
-              iconName: 'agriculture',
-              color: theme.colorScheme.onPrimary,
-              size: 15.w,
-            ),
+            child: Icon(Icons.agriculture, color: theme.colorScheme.onPrimary, size: 15.w),
           ),
         ),
-
         SizedBox(height: 3.h),
-
-        // App name
         Text(
           isHindi ? 'कृषि मित्र AI' : 'KrishiMitra AI',
           style: theme.textTheme.headlineMedium?.copyWith(
-            color: theme.colorScheme.primary,
-            fontWeight: FontWeight.w700,
-          ),
+            color: theme.colorScheme.primary, fontWeight: FontWeight.w700),
         ),
-
         SizedBox(height: 1.h),
-
-        // Tagline
         Text(
           isHindi ? 'आपका डिजिटल कृषि साथी' : 'Your Digital Farming Companion',
-          style: theme.textTheme.bodyMedium?.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
-          ),
+          style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
           textAlign: TextAlign.center,
         ),
       ],
     );
   }
 
-  /// Build footer with terms and privacy policy
   Widget _buildFooter(ThemeData theme, bool isHindi) {
     return Column(
       children: [
@@ -255,9 +201,7 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
           isHindi
               ? 'लॉगिन करके, आप हमारी सेवा की शर्तों से सहमत हैं'
               : 'By logging in, you agree to our Terms of Service',
-          style: theme.textTheme.bodySmall?.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
-          ),
+          style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
           textAlign: TextAlign.center,
         ),
         SizedBox(height: 0.5.h),
@@ -265,42 +209,23 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton(
-              onPressed: () {
-                // Navigate to terms screen
-              },
+              onPressed: () {},
               style: TextButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
-                minimumSize: Size(12.w, 5.h),
-              ),
-              child: Text(
-                isHindi ? 'नियम और शर्तें' : 'Terms',
+                  padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
+                  minimumSize: Size(12.w, 5.h)),
+              child: Text(isHindi ? 'नियम और शर्तें' : 'Terms',
                 style: theme.textTheme.bodySmall?.copyWith(
-                  color: theme.colorScheme.primary,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+                    color: theme.colorScheme.primary, fontWeight: FontWeight.w600)),
             ),
-            Text(
-              ' • ',
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
-            ),
+            Text(' • ', style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant)),
             TextButton(
-              onPressed: () {
-                // Navigate to privacy policy screen
-              },
+              onPressed: () {},
               style: TextButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
-                minimumSize: Size(12.w, 5.h),
-              ),
-              child: Text(
-                isHindi ? 'गोपनीयता नीति' : 'Privacy',
+                  padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
+                  minimumSize: Size(12.w, 5.h)),
+              child: Text(isHindi ? 'गोपनीयता नीति' : 'Privacy',
                 style: theme.textTheme.bodySmall?.copyWith(
-                  color: theme.colorScheme.primary,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+                    color: theme.colorScheme.primary, fontWeight: FontWeight.w600)),
             ),
           ],
         ),

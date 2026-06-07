@@ -1,15 +1,20 @@
-import 'dart:io';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../../services/firestore_service.dart';
 import '../../core/language_provider.dart';
 import '../../widgets/custom_bottom_bar.dart';
 import '../../core/app_export.dart';
-import 'post_model.dart';
-import 'post_card.dart';
 
+/// Community Chat Screen.
+///
+/// - Reads posts from Firestore via FirestoreService.postsStream() (paginated, 20 at a time).
+/// - Writes posts via FirestoreService.instance.addPost() — username comes from
+///   FirebaseAuth.currentUser, never hardcoded.
+/// - Image uploads go through FirestoreService, not directly to FirebaseStorage.
 class CommunityChatScreen extends StatefulWidget {
   const CommunityChatScreen({super.key});
 
@@ -18,60 +23,37 @@ class CommunityChatScreen extends StatefulWidget {
 }
 
 class _CommunityChatScreenState extends State<CommunityChatScreen> {
-  bool get isHindi {
-    final lang = context.watch<LanguageProvider>().currentLanguage;
-    return lang == 'hi';
-  }
   final TextEditingController _postController = TextEditingController();
-
-  final List<PostModel> _posts = [];
-  File? _selectedImage;
-
   final ImagePicker _picker = ImagePicker();
-  final FirestoreService _firestoreService = FirestoreService();
+  final Logger _log = Logger();
 
-  /// 📷 Pick image from camera or gallery
+  Uint8List? _selectedImageBytes;
+  String? _selectedImageName;
+  bool _isPosting = false;
+
+  bool get _isHindi =>
+      context.watch<LanguageProvider>().currentLanguage == 'hi';
+
+  // ---------------------------------------------------------------------------
+  // Image picker
+  // ---------------------------------------------------------------------------
+
   Future<void> _pickImage(ImageSource source) async {
-    final XFile? pickedFile = await _picker.pickImage(
+    final XFile? file = await _picker.pickImage(
       source: source,
       imageQuality: 70,
+      maxWidth: 1024,
     );
+    if (file == null) return;
 
-    if (pickedFile != null) {
-      setState(() {
-        _selectedImage = File(pickedFile.path);
-      });
-    }
+    final bytes = await file.readAsBytes();
+    setState(() {
+      _selectedImageBytes = bytes;
+      _selectedImageName = file.name;
+    });
   }
 
-  Future<void> _addPost() async {
-    print("Post button clicked 🔥");
-
-    final message = _postController.text.trim();
-
-    if (message.isEmpty && _selectedImage == null) {
-      print("Nothing to post ❌");
-      return;
-    }
-
-    try {
-      await FirebaseFirestore.instance.collection('posts').add({
-        'message': message,
-        'username': 'Neelam', // temporary (later from auth)
-        'time': FieldValue.serverTimestamp(),
-      });
-
-      _postController.clear();
-      setState(() {
-        _selectedImage = null;
-      });
-    } catch (e) {
-      print("Error posting: $e");
-    }
-  }
-
-  /// 📸 Image picker bottom sheet
-  void _showImagePicker() {
+  void _showImagePickerSheet() {
     showModalBottomSheet(
       context: context,
       builder: (_) => SafeArea(
@@ -80,7 +62,7 @@ class _CommunityChatScreenState extends State<CommunityChatScreen> {
           children: [
             ListTile(
               leading: const Icon(Icons.camera_alt),
-              title: Text(isHindi ? 'कैमरा' : 'Camera'),
+              title: Text(_isHindi ? 'कैमरा' : 'Camera'),
               onTap: () {
                 Navigator.pop(context);
                 _pickImage(ImageSource.camera);
@@ -88,7 +70,7 @@ class _CommunityChatScreenState extends State<CommunityChatScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.photo_library),
-              title: Text(isHindi ? 'गैलरी' : 'Gallery'),
+              title: Text(_isHindi ? 'गैलरी' : 'Gallery'),
               onTap: () {
                 Navigator.pop(context);
                 _pickImage(ImageSource.gallery);
@@ -100,144 +82,245 @@ class _CommunityChatScreenState extends State<CommunityChatScreen> {
     );
   }
 
+  // ---------------------------------------------------------------------------
+  // Post
+  // ---------------------------------------------------------------------------
+
+  Future<void> _addPost() async {
+    final message = _postController.text.trim();
+    if (message.isEmpty && _selectedImageBytes == null) return;
+
+    setState(() => _isPosting = true);
+
+    try {
+      await FirestoreService.instance.addPost(
+        message: message,
+        imageBytes: _selectedImageBytes,
+        fileName: _selectedImageName,
+      );
+      _postController.clear();
+      setState(() {
+        _selectedImageBytes = null;
+        _selectedImageName = null;
+      });
+    } catch (e) {
+      _log.e('Failed to post: $e');
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(_isHindi ? 'पोस्ट नहीं हो सका' : 'Could not post. Please try again.'),
+          backgroundColor: Theme.of(context).colorScheme.error,
+        ),
+      );
+    } finally {
+      if (mounted) setState(() => _isPosting = false);
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Dispose
+  // ---------------------------------------------------------------------------
+
   @override
   void dispose() {
     _postController.dispose();
     super.dispose();
   }
 
+  // ---------------------------------------------------------------------------
+  // Build
+  // ---------------------------------------------------------------------------
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(isHindi ? 'समुदाय' : 'Community'),
+        title: Text(_isHindi ? 'समुदाय' : 'Community'),
         backgroundColor: const Color(0xFF2E7D32),
       ),
       body: Column(
         children: [
-          /// 📝 Create post box
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              children: [
-                TextField(
-                  controller: _postController,
-                  onSubmitted: (value) => _addPost(),
-                  decoration: InputDecoration(
-                    hintText: isHindi
-                        ? 'सवाल पूछें या जानकारी साझा करें...'
-                        : 'Ask a question or share info...',
-                    border: const OutlineInputBorder(),
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Row(
-                  children: [
-                    IconButton(
-                      icon: const Icon(Icons.image),
-                      onPressed: _showImagePicker,
-                    ),
-                    if (_selectedImage != null)
-                      Text(isHindi ? 'तस्वीर चुनी गई' : 'Image selected'),
-                    const Spacer(),
-                    SizedBox(
-                      height: 45,
-                      child: ElevatedButton.icon(
-                        onPressed: _addPost,
-                        icon: const Icon(Icons.send),
-                        label: Text(isHindi ? 'पोस्ट करें' : 'Post'),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF2E7D32),
-                          minimumSize: const Size(100, 45),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
-
-          /// 🧵 Posts feed
-          Expanded(
-            child: StreamBuilder(
-              stream: FirebaseFirestore.instance
-                  .collection('posts')
-                  .orderBy('time', descending: true)
-                  .snapshots(),
-              builder: (context, snapshot) {
-                if (!snapshot.hasData) {
-                  return const Center(child: CircularProgressIndicator());
-                }
-
-                if (snapshot.data!.docs.isEmpty) {
-                  return Center(
-                    child: Text(isHindi ? 'अभी कोई पोस्ट नहीं है' : 'No posts yet'),
-                  );
-                }
-
-                final posts = snapshot.data!.docs;
-
-                return ListView.builder(
-                  itemCount: posts.length,
-                  itemBuilder: (context, index) {
-                    final doc = posts[index];
-                    final data = doc.data() as Map<String, dynamic>;
-
-                    return Card(
-                      margin: const EdgeInsets.all(10),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              data['username'] ?? 'User',
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF2E7D32),
-                              ),
-                            ),
-                            const SizedBox(height: 5),
-                            Text(data['message'] ?? ''),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                );
-              },
-            ),
-          ),
+          _buildComposer(),
+          Expanded(child: _buildFeed()),
         ],
-      )
-      ,
+      ),
       bottomNavigationBar: CustomBottomBar(
         currentItem: CustomBottomBarItem.community,
         onItemTapped: (item) {
           switch (item) {
             case CustomBottomBarItem.dashboard:
               Navigator.pushReplacementNamed(context, AppRoutes.mainDashboard);
-              break;
-
             case CustomBottomBarItem.marketplace:
               Navigator.pushReplacementNamed(context, AppRoutes.marketplace);
-              break;
-
             case CustomBottomBarItem.community:
-              // already here
               break;
-
             case CustomBottomBarItem.chatbot:
               Navigator.pushReplacementNamed(context, AppRoutes.aiChatbot);
-              break;
-
             case CustomBottomBarItem.profile:
               Navigator.pushReplacementNamed(context, AppRoutes.profile);
-              break;
           }
         },
-      )
+      ),
+    );
+  }
+
+  // ---------------------------------------------------------------------------
+  // Composer widget
+  // ---------------------------------------------------------------------------
+
+  Widget _buildComposer() {
+    return Padding(
+      padding: const EdgeInsets.all(12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextField(
+            controller: _postController,
+            decoration: InputDecoration(
+              hintText: _isHindi
+                  ? 'सवाल पूछें या जानकारी साझा करें...'
+                  : 'Ask a question or share info...',
+              border: const OutlineInputBorder(),
+            ),
+            maxLines: 3,
+            minLines: 1,
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.image),
+                tooltip: _isHindi ? 'तस्वीर जोड़ें' : 'Add image',
+                onPressed: _showImagePickerSheet,
+              ),
+              if (_selectedImageBytes != null)
+                Row(
+                  children: [
+                    const Icon(Icons.check_circle,
+                        color: Color(0xFF2E7D32), size: 16),
+                    const SizedBox(width: 4),
+                    Text(
+                      _isHindi ? 'तस्वीर चुनी गई' : 'Image selected',
+                      style: const TextStyle(fontSize: 12),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.close, size: 16),
+                      tooltip: _isHindi ? 'हटाएं' : 'Remove',
+                      onPressed: () => setState(() {
+                        _selectedImageBytes = null;
+                        _selectedImageName = null;
+                      }),
+                    ),
+                  ],
+                ),
+              const Spacer(),
+              SizedBox(
+                height: 40,
+                child: ElevatedButton.icon(
+                  onPressed: _isPosting ? null : _addPost,
+                  icon: _isPosting
+                      ? const SizedBox(
+                          width: 16,
+                          height: 16,
+                          child: CircularProgressIndicator(
+                              strokeWidth: 2, color: Colors.white),
+                        )
+                      : const Icon(Icons.send),
+                  label: Text(_isHindi ? 'पोस्ट करें' : 'Post'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF2E7D32),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ---------------------------------------------------------------------------
+  // Feed — paginated Firestore stream
+  // ---------------------------------------------------------------------------
+
+  Widget _buildFeed() {
+    return StreamBuilder<List<Map<String, dynamic>>>(
+      stream: FirestoreService.instance.postsStream(limit: 20),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (snapshot.hasError) {
+          _log.e('Feed error: ${snapshot.error}');
+          return Center(
+            child: Text(
+              _isHindi ? 'पोस्ट लोड नहीं हो सकीं' : 'Could not load posts',
+            ),
+          );
+        }
+
+        final posts = snapshot.data ?? [];
+
+        if (posts.isEmpty) {
+          return Center(
+            child: Text(_isHindi ? 'अभी कोई पोस्ट नहीं है' : 'No posts yet'),
+          );
+        }
+
+        return ListView.builder(
+          itemCount: posts.length,
+          itemBuilder: (context, index) {
+            final data = posts[index];
+            return _PostCard(data: data);
+          },
+        );
+      },
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Post card widget (extracted to keep build() clean)
+// ---------------------------------------------------------------------------
+
+class _PostCard extends StatelessWidget {
+  final Map<String, dynamic> data;
+  const _PostCard({required this.data});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              data['username'] ?? 'User',
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF2E7D32),
+              ),
+            ),
+            if ((data['message'] as String?)?.isNotEmpty == true) ...[
+              const SizedBox(height: 6),
+              Text(data['message'] as String),
+            ],
+            if (data['imageUrl'] != null) ...[
+              const SizedBox(height: 8),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.network(
+                  data['imageUrl'] as String,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
     );
   }
 }

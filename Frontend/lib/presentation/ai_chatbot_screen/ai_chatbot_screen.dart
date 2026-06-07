@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 import '../../core/language_provider.dart';
-
-import '../../widgets/custom_icon_widget.dart';
 import './widgets/chat_message_widget.dart';
 import './widgets/message_input_widget.dart';
 import './widgets/quick_action_buttons_widget.dart';
-import './widgets/suggested_questions_widget.dart';
 import './widgets/typing_indicator_widget.dart';
 import '../../widgets/custom_bottom_bar.dart';
 import '../../core/app_export.dart';
-
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../../core/config/app_config.dart';
 
 class AiChatbotScreen extends StatefulWidget {
   const AiChatbotScreen({super.key});
@@ -25,24 +20,19 @@ class AiChatbotScreen extends StatefulWidget {
 
 class _AiChatbotScreenState extends State<AiChatbotScreen> {
   final ScrollController _scrollController = ScrollController();
-
   final List<Map<String, dynamic>> _messages = [];
   bool _isTyping = false;
-  bool _showSuggestions = true;
 
   @override
   void initState() {
     super.initState();
-    // welcome message will be added after build using provider
   }
 
-  // ================= TIME =================
   String _getCurrentTime() {
     final now = DateTime.now();
     return '${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}';
   }
 
-  // ================= WELCOME =================
   void _addWelcomeMessage(String lang) {
     _messages.clear();
     _messages.add({
@@ -54,7 +44,6 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
     });
   }
 
-  // ================= SCROLL =================
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 300), () {
       if (_scrollController.hasClients) {
@@ -67,7 +56,6 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
     });
   }
 
-  // ================= SEND MESSAGE =================
   void _handleSendMessage(String message) {
     if (message.trim().isEmpty) return;
 
@@ -79,54 +67,45 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
       });
       _messages.add({
         'isUser': false,
-        'text': "⏳ KrishiMitra AI soch raha hai...",
+        'text': '⏳ KrishiMitra AI soch raha hai...',
         'time': _getCurrentTime(),
       });
       _isTyping = true;
-      _showSuggestions = false;
     });
 
     _scrollToBottom();
-
     _getAIResponse(message);
   }
 
   Future<void> _getAIResponse(String message) async {
     try {
       final response = await http.post(
-        Uri.parse("https://krishimitra-ai-6.onrender.com/chat"),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: jsonEncode({
-          "question": message,
-        }),
+        Uri.parse('${AppConfig.chatApiBase}/chat'),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'question': message}),
       );
-
-      print("STATUS CODE: ${response.statusCode}");
-      print("BODY: ${response.body}");
 
       final data = jsonDecode(response.body);
 
-      if (data["status"] == "success") {
+      if (data['status'] == 'success') {
         setState(() {
           _messages.removeLast();
           _messages.add({
             'isUser': false,
-            'text': data["answer"],
+            'text': data['answer'],
             'time': _getCurrentTime(),
           });
           _isTyping = false;
         });
       } else {
-        throw Exception(data["message"]);
+        throw Exception(data['message']);
       }
     } catch (e) {
       setState(() {
         _messages.removeLast();
         _messages.add({
           'isUser': false,
-          'text': "Server se connect nahi ho pa raha, dobara try karein",
+          'text': 'Server se connect nahi ho pa raha, dobara try karein',
           'time': _getCurrentTime(),
         });
         _isTyping = false;
@@ -136,15 +115,15 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
     _scrollToBottom();
   }
 
-  // ================= UI =================
   @override
   Widget build(BuildContext context) {
     final lang = context.watch<LanguageProvider>().currentLanguage;
     if (_messages.isEmpty) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        _addWelcomeMessage(lang);
+        setState(() => _addWelcomeMessage(lang));
       });
     }
+
     return Scaffold(
       appBar: AppBar(
         title: Column(
@@ -152,16 +131,12 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
           children: [
             const Text('KrishiMitra AI'),
             Text(
-              lang == 'en'
-                  ? 'Online'
-                  : 'ऑनलाइन',
+              lang == 'en' ? 'Online' : 'ऑनलाइन',
               style: const TextStyle(fontSize: 12),
             ),
           ],
         ),
-        actions: [
-          const SizedBox(), // language controlled from Profile screen
-        ],
+        actions: const [SizedBox()],
       ),
       body: Column(
         children: [
@@ -178,42 +153,31 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
               },
             ),
           ),
-
-          QuickActionButtonsWidget(
-            onActionTap: _handleSendMessage,
-          ),
+          QuickActionButtonsWidget(onActionTap: _handleSendMessage),
           MessageInputWidget(
             onSendMessage: _handleSendMessage,
             onImagePick: () {},
             onVoiceRecord: () {},
           ),
         ],
-      )
-      ,
+      ),
       bottomNavigationBar: CustomBottomBar(
         currentItem: CustomBottomBarItem.chatbot,
         onItemTapped: (item) {
           switch (item) {
             case CustomBottomBarItem.dashboard:
               Navigator.pushReplacementNamed(context, AppRoutes.mainDashboard);
-              break;
             case CustomBottomBarItem.marketplace:
               Navigator.pushReplacementNamed(context, AppRoutes.marketplace);
-              break;
             case CustomBottomBarItem.community:
               Navigator.pushReplacementNamed(context, AppRoutes.communityChat);
-              break;
-
             case CustomBottomBarItem.chatbot:
-              // already here
               break;
-
             case CustomBottomBarItem.profile:
               Navigator.pushReplacementNamed(context, AppRoutes.profile);
-              break;
           }
         },
-      )
+      ),
     );
   }
 }

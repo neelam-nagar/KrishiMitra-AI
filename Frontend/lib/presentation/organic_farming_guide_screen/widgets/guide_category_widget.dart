@@ -43,7 +43,7 @@ class RegionSelectionWidget extends StatelessWidget {
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.05),
+                color: Colors.black.withValues(alpha: 0.05),
                 blurRadius: 6,
                 offset: const Offset(0, 3),
               ),
@@ -57,8 +57,8 @@ class RegionSelectionWidget extends StatelessWidget {
             ),
             title: Text(
               lang == 'en'
-                  ? (region['en'] ?? region['key'])
-                  : (region['hi'] ?? region['key']),
+                  ? (region['en'] ?? region['key'] ?? '')
+                  : (region['hi'] ?? region['key'] ?? ''),
               style: theme.textTheme.bodyLarge?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: Colors.green.shade900,
@@ -76,7 +76,11 @@ class RegionSelectionWidget extends StatelessWidget {
               ),
               child: const Icon(Icons.arrow_forward, color: Colors.white, size: 16),
             ),
-            onTap: () => onRegionSelected(region['key']!),
+            // FIX: null-safe key access — no more String? assignment error
+            onTap: () {
+              final key = region['key'];
+              if (key != null) onRegionSelected(key);
+            },
           ),
         );
       },

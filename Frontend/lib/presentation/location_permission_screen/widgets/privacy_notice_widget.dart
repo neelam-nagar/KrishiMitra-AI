@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../../core/language_provider.dart';
-
 import '../../../../core/app_export.dart';
 import '../../../widgets/custom_icon_widget.dart';
 
 /// Privacy notice widget for location permission screen
-/// Explains data usage and provides link to privacy policy
 class PrivacyNoticeWidget extends StatelessWidget {
   const PrivacyNoticeWidget({super.key});
 
@@ -23,7 +20,7 @@ class PrivacyNoticeWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: theme.colorScheme.surface,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: theme.dividerColor, width: 1),
+        border: Border.all(color: theme.dividerColor),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,9 +55,6 @@ class PrivacyNoticeWidget extends StatelessWidget {
           SizedBox(height: 1.h),
           InkWell(
             onTap: () {
-              // Optional: open external privacy policy link
-              // final url = Uri.parse('https://yourdomain.com/privacy-policy');
-              // launchUrl(url, mode: LaunchMode.externalApplication);
               Navigator.pushNamed(context, '/privacy-policy-screen');
             },
             child: Text(
