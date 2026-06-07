@@ -15,7 +15,9 @@ import 'widgets/custom_error_widget.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   bool _hasShownError = false;
 

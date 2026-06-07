@@ -52,8 +52,8 @@ class SevenDayForecastWidget extends StatelessWidget {
             // Day
             Text(
               lang == 'en'
-                  ? forecast["day"] as String
-                  : _getHindiDay(forecast["day"] as String),
+                  ? DateFormat('EEE').format(DateTime.parse(forecast["date"]))
+                  : _getHindiDay(DateFormat('EEEE').format(DateTime.parse(forecast["date"]))),
               style: theme.textTheme.titleSmall?.copyWith(
                 fontWeight: FontWeight.w600,
                 color: Colors.black87,
@@ -64,31 +64,39 @@ class SevenDayForecastWidget extends StatelessWidget {
 
             // Date
             Text(
-              DateFormat('dd MMM').format(forecast["date"] as DateTime),
+              DateFormat('dd MMM').format(DateTime.parse(forecast["date"])),
               style: theme.textTheme.bodySmall?.copyWith(
                 color: Colors.grey.shade600,
               ),
             ),
 
             // Weather icon
-            CustomIconWidget(
-              iconName: forecast["weatherIcon"] as String,
-              color: _getWeatherIconColor(forecast["weatherIcon"] as String),
-              size: 40,
-            ),
+            (() {
+              final condition = forecast["condition"] ?? "sunny";
+              final iconName = condition == "Rainy"
+                  ? "water_drop"
+                  : condition == "Cloudy"
+                      ? "cloud"
+                      : "wb_sunny";
+              return CustomIconWidget(
+                iconName: iconName,
+                color: _getWeatherIconColor(iconName),
+                size: 40,
+              );
+            })(),
 
             // Temperature range
             Column(
               children: [
                 Text(
-                  '${forecast["highTemp"]}°',
+                  '${forecast["highTemp"]?.toStringAsFixed(0)}°',
                   style: theme.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: Colors.black87,
                   ),
                 ),
                 Text(
-                  '${forecast["lowTemp"]}°',
+                  '${forecast["lowTemp"]?.toStringAsFixed(0)}°',
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: Colors.grey.shade600,
                   ),
@@ -107,7 +115,7 @@ class SevenDayForecastWidget extends StatelessWidget {
                 ),
                 const SizedBox(width: 4),
                 Text(
-                  '${forecast["rainfallProbability"]}%',
+                  '${forecast["rainfallProbability"] ?? 0} mm',
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: Colors.blue.shade400,
                     fontWeight: FontWeight.w500,

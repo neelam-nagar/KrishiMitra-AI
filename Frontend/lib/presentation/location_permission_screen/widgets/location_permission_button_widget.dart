@@ -10,8 +10,13 @@ import '../../../widgets/custom_icon_widget.dart';
 /// Full-width, thumb-reachable button with clear call-to-action
 class LocationPermissionButtonWidget extends StatelessWidget {
   final VoidCallback onPressed;
+  final bool isLoading;
 
-  const LocationPermissionButtonWidget({super.key, required this.onPressed});
+  const LocationPermissionButtonWidget({
+    super.key,
+    required this.onPressed,
+    this.isLoading = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,29 +25,42 @@ class LocationPermissionButtonWidget extends StatelessWidget {
     final bool isHindi = lang == 'hi';
 
     return ElevatedButton(
-      onPressed: onPressed,
+      onPressed: isLoading ? null : onPressed,
       style: ElevatedButton.styleFrom(
         minimumSize: Size(double.infinity, 6.h),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CustomIconWidget(
-            iconName: 'my_location',
-            color: theme.colorScheme.onPrimary,
-            size: 20,
-          ),
-          SizedBox(width: 2.w),
-          Text(
-            !isHindi ? 'Allow Location Access' : 'लोकेशन की अनुमति दें',
-            style: theme.textTheme.labelLarge?.copyWith(
-              fontSize: 14.sp,
-              color: theme.colorScheme.onPrimary,
+      child: isLoading
+          ? SizedBox(
+              height: 20,
+              width: 20,
+              child: CircularProgressIndicator(
+                strokeWidth: 2,
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  theme.colorScheme.onPrimary,
+                ),
+              ),
+            )
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomIconWidget(
+                  iconName: 'my_location',
+                  color: theme.colorScheme.onPrimary,
+                  size: 20,
+                ),
+                SizedBox(width: 2.w),
+                Text(
+                  !isHindi
+                      ? 'Allow Location Access'
+                      : 'लोकेशन की अनुमति दें',
+                  style: theme.textTheme.labelLarge?.copyWith(
+                    fontSize: 14.sp,
+                    color: theme.colorScheme.onPrimary,
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
-      ),
     );
   }
 }

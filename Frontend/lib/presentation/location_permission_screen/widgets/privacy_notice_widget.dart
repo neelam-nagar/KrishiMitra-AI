@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../../core/language_provider.dart';
 
 import '../../../../core/app_export.dart';
@@ -57,8 +58,10 @@ class PrivacyNoticeWidget extends StatelessWidget {
           SizedBox(height: 1.h),
           InkWell(
             onTap: () {
-              // Navigate to privacy policy screen
-              // In production, this would open a detailed privacy policy
+              // Optional: open external privacy policy link
+              // final url = Uri.parse('https://yourdomain.com/privacy-policy');
+              // launchUrl(url, mode: LaunchMode.externalApplication);
+              Navigator.pushNamed(context, '/privacy-policy-screen');
             },
             child: Text(
               !isHindi ? 'Read our Privacy Policy' : 'हमारी गोपनीयता नीति पढ़ें',

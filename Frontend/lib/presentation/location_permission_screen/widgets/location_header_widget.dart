@@ -17,6 +17,7 @@ class LocationHeaderWidget extends StatelessWidget {
     final theme = Theme.of(context);
     final lang = context.watch<LanguageProvider>().currentLanguage;
     final bool isHindi = lang == 'hi';
+    final bool isAutoDetecting = true; // you can pass this later dynamically
 
     return Column(
       children: [
@@ -41,7 +42,9 @@ class LocationHeaderWidget extends StatelessWidget {
 
         // Header title
         Text(
-          !isHindi ? 'Enable Location Access' : 'लोकेशन की अनुमति दें',
+          isAutoDetecting
+              ? (!isHindi ? 'Detecting Your Location...' : 'आपकी लोकेशन पता की जा रही है...')
+              : (!isHindi ? 'Enable Location Access' : 'लोकेशन की अनुमति दें'),
           style: theme.textTheme.headlineSmall?.copyWith(
             fontWeight: FontWeight.w600,
             color: theme.colorScheme.onSurface,
@@ -51,13 +54,27 @@ class LocationHeaderWidget extends StatelessWidget {
 
         SizedBox(height: 2.h),
 
+        if (isAutoDetecting)
+          Padding(
+            padding: EdgeInsets.only(bottom: 2.h),
+            child: SizedBox(
+              height: 20,
+              width: 20,
+              child: CircularProgressIndicator(strokeWidth: 2),
+            ),
+          ),
+
         // Explanation text
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 2.w),
           child: Text(
-            !isHindi
-              ? 'We need your location to provide accurate weather forecasts, local mandi prices, and region-specific farming guidance for your area.'
-              : 'सटीक मौसम पूर्वानुमान, स्थानीय मंडी भाव और क्षेत्र-विशिष्ट कृषि मार्गदर्शन देने के लिए हमें आपकी लोकेशन की आवश्यकता है।',
+            isAutoDetecting
+                ? (!isHindi
+                    ? 'Please wait while we fetch your location for better accuracy...'
+                    : 'कृपया प्रतीक्षा करें, हम आपकी लोकेशन प्राप्त कर रहे हैं...')
+                : (!isHindi
+                    ? 'We need your location to provide accurate weather forecasts, local mandi prices, and region-specific farming guidance for your area.'
+                    : 'सटीक मौसम पूर्वानुमान, स्थानीय मंडी भाव और क्षेत्र-विशिष्ट कृषि मार्गदर्शन देने के लिए हमें आपकी लोकेशन की आवश्यकता है।'),
             style: theme.textTheme.bodyMedium?.copyWith(
               color: theme.colorScheme.onSurfaceVariant,
               height: 1.5,

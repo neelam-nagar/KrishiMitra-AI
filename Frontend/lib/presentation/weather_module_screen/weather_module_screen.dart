@@ -14,8 +14,7 @@ import './widgets/hourly_forecast_widget.dart';
 import './widgets/seven_day_forecast_widget.dart';
 import './widgets/weather_alerts_widget.dart';
 import 'widgets/location_selector_bottom_sheet.dart';
-/// Weather Module Screen - Provides comprehensive agricultural weather information
-/// with location-based forecasts optimized for farming decisions
+
 class WeatherModuleScreen extends StatefulWidget {
   const WeatherModuleScreen({super.key});
 
@@ -28,7 +27,6 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
   bool _hasError = false;
   DateTime _lastUpdated = DateTime.now();
 
-  // Hierarchical location selection state
   String? _selectedDistrict;
   String? _selectedTehsil;
   String? _selectedVillage;
@@ -36,7 +34,6 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
   List<String> _tehsils = [];
   List<String> _villages = [];
 
-  // Current weather data (populated from API)
   Map<String, dynamic> _currentWeather = {
     "temperature": 28,
     "condition": "Partly Cloudy",
@@ -49,7 +46,6 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     "visibility": 10,
   };
 
-  // 7-day forecast data (populated from API)
   List<Map<String, dynamic>> _sevenDayForecast = [
     {
       "date": DateTime.now(),
@@ -73,9 +69,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     },
     {
       "date": DateTime.now().add(const Duration(days: 2)),
-      "day": DateFormat(
-        'EEEE',
-      ).format(DateTime.now().add(const Duration(days: 2))),
+      "day": DateFormat('EEEE').format(DateTime.now().add(const Duration(days: 2))),
       "weatherIcon": "umbrella",
       "condition": "Rainy",
       "highTemp": 27,
@@ -85,9 +79,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     },
     {
       "date": DateTime.now().add(const Duration(days: 3)),
-      "day": DateFormat(
-        'EEEE',
-      ).format(DateTime.now().add(const Duration(days: 3))),
+      "day": DateFormat('EEEE').format(DateTime.now().add(const Duration(days: 3))),
       "weatherIcon": "wb_sunny",
       "condition": "Sunny",
       "highTemp": 31,
@@ -97,9 +89,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     },
     {
       "date": DateTime.now().add(const Duration(days: 4)),
-      "day": DateFormat(
-        'EEEE',
-      ).format(DateTime.now().add(const Duration(days: 4))),
+      "day": DateFormat('EEEE').format(DateTime.now().add(const Duration(days: 4))),
       "weatherIcon": "cloud",
       "condition": "Partly Cloudy",
       "highTemp": 29,
@@ -109,9 +99,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     },
     {
       "date": DateTime.now().add(const Duration(days: 5)),
-      "day": DateFormat(
-        'EEEE',
-      ).format(DateTime.now().add(const Duration(days: 5))),
+      "day": DateFormat('EEEE').format(DateTime.now().add(const Duration(days: 5))),
       "weatherIcon": "cloud",
       "condition": "Cloudy",
       "highTemp": 28,
@@ -121,9 +109,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     },
     {
       "date": DateTime.now().add(const Duration(days: 6)),
-      "day": DateFormat(
-        'EEEE',
-      ).format(DateTime.now().add(const Duration(days: 6))),
+      "day": DateFormat('EEEE').format(DateTime.now().add(const Duration(days: 6))),
       "weatherIcon": "wb_sunny",
       "condition": "Sunny",
       "highTemp": 33,
@@ -133,7 +119,6 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     },
   ];
 
-  // Mock weather alerts data
   final List<Map<String, dynamic>> _weatherAlerts = [
     {
       "severity": "high",
@@ -153,7 +138,6 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     },
   ];
 
-  // Hourly forecast data (populated from API)
   List<Map<String, dynamic>> _hourlyForecast = [];
 
   @override
@@ -164,44 +148,116 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
   }
 
   Future<void> _loadDistricts() async {
-    final res = await http.get(Uri.parse("https://krishimitra-ai-3-65a1.onrender.com/locations/districts"));
-    _districts = List<String>.from(json.decode(res.body));
+    try {
+      final res = await http.get(
+        Uri.parse("https://krishimitra-ai-7.onrender.com/locations/districts"),
+      );
+      if (!mounted) return; // ✅ FIX
+      if (res.statusCode == 200) {
+        setState(() {
+          _districts = List<String>.from(json.decode(res.body));
+        });
+      } else {
+        throw Exception("Failed to load districts");
+      }
+    } catch (e) {
+      if (!mounted) return; // ✅ FIX
+      setState(() {
+        _hasError = true;
+      });
+    }
   }
 
   Future<void> _loadTehsils(String district) async {
-    final res = await http.get(
-      Uri.parse("https://krishimitra-ai-3-65a1.onrender.com/locations/tehsils?district=$district"),
-    );
-    _tehsils = List<String>.from(json.decode(res.body));
+    try {
+      final res = await http.get(
+        Uri.parse(
+          "https://krishimitra-ai-7.onrender.com/locations/tehsils?district=${Uri.encodeComponent(district)}",
+        ),
+      );
+      if (!mounted) return; // ✅ FIX
+      if (res.statusCode == 200) {
+        setState(() {
+          _tehsils = List<String>.from(json.decode(res.body));
+        });
+      } else {
+        throw Exception("Failed to load tehsils");
+      }
+    } catch (e) {
+      if (!mounted) return; // ✅ FIX
+      setState(() {
+        _hasError = true;
+      });
+    }
   }
 
   Future<void> _loadVillages(String district, String tehsil) async {
-    final res = await http.get(
-      Uri.parse("https://krishimitra-ai-3-65a1.onrender.com/locations/villages?district=$district&tehsil=$tehsil"),
-    );
-    _villages = List<String>.from(json.decode(res.body));
+    try {
+      final res = await http.get(
+        Uri.parse(
+          "https://krishimitra-ai-7.onrender.com/locations/villages?district=${Uri.encodeComponent(district)}&tehsil=${Uri.encodeComponent(tehsil)}",
+        ),
+      );
+      if (!mounted) return; // ✅ FIX
+      if (res.statusCode == 200) {
+        setState(() {
+          _villages = List<String>.from(json.decode(res.body));
+        });
+      } else {
+        throw Exception("Failed to load villages");
+      }
+    } catch (e) {
+      if (!mounted) return; // ✅ FIX
+      setState(() {
+        _hasError = true;
+      });
+    }
   }
 
-  /// Loads weather data from Python Flask API
   Future<void> _loadWeatherData() async {
+    if (!mounted) return; // ✅ FIX
+
+    final locationProvider = context.read<LocationProvider>();
+    final district = locationProvider.district;
+    final tehsil = locationProvider.tehsil;
+    final village = locationProvider.village;
+
+    // ✅ FIX - location nahi hai to quietly return karo, error mat dikhao
+    if (district == null || district.isEmpty ||
+        tehsil == null || tehsil.isEmpty ||
+        village == null || village.isEmpty) {
+      return;
+    }
+
     setState(() {
       _isLoading = true;
       _hasError = false;
     });
 
     try {
-      final locationProvider = context.read<LocationProvider>();
-      final district = locationProvider.district;
-      final tehsil = locationProvider.tehsil;
-      final village = locationProvider.village;
       final url =
-          "https://krishimitra-ai-3-65a1.onrender.com/weather"
-          "?district=$district&tehsil=$tehsil&village=$village";
+          "https://krishimitra-ai-7.onrender.com/weather"
+          "?district=${Uri.encodeComponent(district)}"
+          "&tehsil=${Uri.encodeComponent(tehsil)}"
+          "&village=${Uri.encodeComponent(village)}";
 
       final response = await http.get(Uri.parse(url));
+
+      if (!mounted) return; // ✅ FIX
+
+      if (response.statusCode != 200) {
+        throw Exception("API error: ${response.statusCode}");
+      }
+
       final data = json.decode(response.body);
 
-      _currentWeather = {
+      if (data["current"] == null ||
+          data["forecast"] == null ||
+          data["hourly"] == null) {
+        throw Exception("Invalid API response");
+      }
+
+      final currentWeather = {
         "temperature": data["current"]["temperature"],
         "condition": "Clear",
         "conditionIcon": "wb_sunny",
@@ -213,7 +269,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
         "visibility": 10,
       };
 
-      _sevenDayForecast = List<Map<String, dynamic>>.from(
+      final sevenDayForecast = List<Map<String, dynamic>>.from(
         data["forecast"].map((day) {
           return {
             "date": DateTime.parse(day["date"]),
@@ -228,12 +284,13 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
         }),
       );
 
-      _hourlyForecast = List<Map<String, dynamic>>.from(
+      final hourlyForecast = List<Map<String, dynamic>>.from(
         data["hourly"].map((h) {
-          final rawTime = h["time"].toString().split("T")[1];
+          final rawTime = h["time"].toString().contains("T")
+              ? h["time"].toString().split("T")[1]
+              : h["time"].toString();
           final hour = int.parse(rawTime.split(":")[0]);
           final minute = rawTime.split(":")[1];
-
           final formattedTime = hour == 0
               ? "12:$minute AM"
               : hour < 12
@@ -250,11 +307,17 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
         }),
       );
 
+      if (!mounted) return; // ✅ FIX
+
       setState(() {
+        _currentWeather = currentWeather;
+        _sevenDayForecast = sevenDayForecast;
+        _hourlyForecast = hourlyForecast;
         _lastUpdated = DateTime.now();
         _isLoading = false;
       });
     } catch (e) {
+      if (!mounted) return; // ✅ FIX
       setState(() {
         _hasError = true;
         _isLoading = false;
@@ -262,12 +325,10 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     }
   }
 
-  /// Handles pull-to-refresh
   Future<void> _handleRefresh() async {
     await _loadWeatherData();
   }
 
-  /// Handles location change (hierarchical selector)
   void _handleLocationChange() {
     showModalBottomSheet(
       context: context,
@@ -288,18 +349,18 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Select Location',
-                      style: Theme.of(context).textTheme.titleLarge),
+                  Text(
+                    'Select Location',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
                   const SizedBox(height: 16),
 
                   // District
                   DropdownButtonFormField<String>(
-                    decoration:
-                        const InputDecoration(labelText: 'District'),
+                    decoration: const InputDecoration(labelText: 'District'),
                     value: _selectedDistrict,
                     items: districts
-                        .map((d) =>
-                            DropdownMenuItem(value: d, child: Text(d)))
+                        .map((d) => DropdownMenuItem(value: d, child: Text(d)))
                         .toList(),
                     onChanged: (value) async {
                       setModalState(() {
@@ -320,8 +381,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
                     decoration: const InputDecoration(labelText: 'Tehsil'),
                     value: _selectedTehsil,
                     items: tehsils
-                        .map((t) =>
-                            DropdownMenuItem(value: t, child: Text(t)))
+                        .map((t) => DropdownMenuItem(value: t, child: Text(t)))
                         .toList(),
                     onChanged: _selectedDistrict == null
                         ? null
@@ -342,8 +402,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
                     decoration: const InputDecoration(labelText: 'Village'),
                     value: _selectedVillage,
                     items: villages
-                        .map((v) =>
-                            DropdownMenuItem(value: v, child: Text(v)))
+                        .map((v) => DropdownMenuItem(value: v, child: Text(v)))
                         .toList(),
                     onChanged: _selectedTehsil == null
                         ? null
@@ -363,10 +422,10 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
                           ? null
                           : () {
                               context.read<LocationProvider>().updateLocation(
-                                district: _selectedDistrict!,
-                                tehsil: _selectedTehsil!,
-                                village: _selectedVillage!,
-                              );
+                                    district: _selectedDistrict!,
+                                    tehsil: _selectedTehsil!,
+                                    village: _selectedVillage!,
+                                  );
                               Navigator.pop(context);
                               _loadWeatherData();
                             },
@@ -382,9 +441,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     );
   }
 
-  /// Handles share functionality
   void _handleShare() {
-    // In a real app, this would use share_plus package
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Weather information shared successfully'),
@@ -438,7 +495,6 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     );
   }
 
-  /// Builds loading state with skeleton screens
   Widget _buildLoadingState(ThemeData theme) {
     return ListView(
       padding: const EdgeInsets.all(16),
@@ -470,7 +526,6 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     );
   }
 
-  /// Builds error state
   Widget _buildErrorState(ThemeData theme) {
     final lang = context.watch<LanguageProvider>().currentLanguage;
     return Center(
@@ -520,14 +575,12 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     );
   }
 
-  /// Builds main weather content
   Widget _buildWeatherContent(ThemeData theme) {
     final lang = context.watch<LanguageProvider>().currentLanguage;
     final locationProvider = context.watch<LocationProvider>();
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        // Location and last updated info
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -559,11 +612,9 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
         ),
         const SizedBox(height: 16),
 
-        // Current weather card
         CurrentWeatherCardWidget(weatherData: _currentWeather),
         const SizedBox(height: 24),
 
-        // Weather alerts section
         _weatherAlerts.isNotEmpty
             ? Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -589,7 +640,6 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
               )
             : const SizedBox.shrink(),
 
-        // Hourly forecast section
         Text(
           lang == 'en' ? 'Hourly Forecast' : 'घंटेवार पूर्वानुमान',
           style: theme.textTheme.titleLarge?.copyWith(
@@ -600,7 +650,6 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
         HourlyForecastWidget(hourlyData: _hourlyForecast),
         const SizedBox(height: 24),
 
-        // 7-day forecast section
         Text(
           lang == 'en' ? '7-Day Forecast' : '7-दिवसीय पूर्वानुमान',
           style: theme.textTheme.titleLarge?.copyWith(

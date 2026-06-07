@@ -5,6 +5,10 @@ import '../../widgets/custom_bottom_bar.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:sizer/sizer.dart';
 
+import 'package:geocoding/geocoding.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
 import '../../../core/app_export.dart';
 import '../../widgets/custom_icon_widget.dart';
 import './widgets/location_header_widget.dart';
@@ -34,6 +38,7 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
   void initState() {
     super.initState();
     _checkLocationServiceStatus();
+    _requestLocationPermission(); // Automatically detect location on start
   }
 
   /// Check if location services are enabled
@@ -99,15 +104,21 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
         timeLimit: const Duration(seconds: 10),
       );
 
-      // Get address from coordinates (mock implementation)
-      String detectedLocation = await _getAddressFromCoordinates(
+      // Get address from coordinates and fetch weather
+      var locationData = await _getAddressFromCoordinates(
         position.latitude,
         position.longitude,
       );
 
+      String district = locationData["district"] ?? "";
+      String tehsil = locationData["tehsil"] ?? "";
+      String village = locationData["village"] ?? "";
+
+      await fetchWeather(district, tehsil, village);
+
       setState(() {
         _isLoading = false;
-        _detectedLocation = detectedLocation;
+        _detectedLocation = "$village, $tehsil, $district";
         _permissionStatus = permission;
       });
     } catch (e) {
@@ -119,12 +130,37 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
     }
   }
 
-  /// Mock method to get address from coordinates
-  /// In production, this would use a geocoding API
-  Future<String> _getAddressFromCoordinates(double lat, double lon) async {
-    await Future.delayed(const Duration(seconds: 1));
-    // Mock location based on coordinates
-    return 'Jaipur, Rajasthan, India';
+  /// Get address from coordinates using geocoding API
+  Future<Map<String, String>> _getAddressFromCoordinates(double lat, double lon) async {
+    List<Placemark> placemarks = await placemarkFromCoordinates(lat, lon);
+    Placemark place = placemarks[0];
+
+    return {
+      "district": place.subAdministrativeArea ?? "",
+      "tehsil": place.locality ?? "",
+      "village": place.subLocality ?? ""
+    };
+  }
+
+  /// Fetch weather data from API using location details
+  Future<void> fetchWeather(String district, String tehsil, String village) async {
+    final url = Uri.parse(
+      "https://krishimitra-ai-4-vaxn.onrender.com/weather"
+      "?district=$district&tehsil=$tehsil&village=$village"
+    );
+
+    try {
+      final response = await http.get(url);
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        print("Weather Data: $data");
+      } else {
+        print("Error: ${response.body}");
+      }
+    } catch (e) {
+      print("API Error: $e");
+    }
   }
 
   /// Handle location confirmation
@@ -223,7 +259,7 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
               ],
 
               // Primary location permission button
-              if (_detectedLocation == null && !_isLoading)
+              if (_detectedLocation == null && !_isLoading && _errorMessage != null)
                 LocationPermissionButtonWidget(
                   onPressed: _requestLocationPermission,
                 ),

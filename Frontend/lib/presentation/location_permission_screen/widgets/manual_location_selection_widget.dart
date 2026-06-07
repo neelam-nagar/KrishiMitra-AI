@@ -153,7 +153,8 @@ class _ManualLocationSelectionWidgetState
             label: !isHindi ? 'Tehsil' : 'तहसील',
             value: _selectedTehsil,
             items: _selectedDistrict != null
-                ? _tehsils[_selectedDistrict!] ?? [!isHindi ? 'Not Available' : 'उपलब्ध नहीं']
+                ? (_tehsils[_selectedDistrict!] ??
+                    [!isHindi ? 'All Tehsils' : 'सभी तहसील'])
                 : [],
             onChanged: (value) {
               setState(() {
@@ -170,7 +171,8 @@ class _ManualLocationSelectionWidgetState
             onPressed:
                 _selectedState != null &&
                     _selectedDistrict != null &&
-                    _selectedTehsil != null
+                    _selectedTehsil != null &&
+                    _selectedTehsil!.isNotEmpty
                 ? () {
                     widget.onLocationSelected(
                       _selectedState!,

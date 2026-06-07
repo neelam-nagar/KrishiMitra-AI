@@ -6,7 +6,7 @@ import '../../../widgets/custom_icon_widget.dart';
 
 /// Current weather card widget displaying comprehensive weather information
 class CurrentWeatherCardWidget extends StatelessWidget {
-  final Map<String, dynamic> weatherData;
+  final Map<String, dynamic>? weatherData;
 
   const CurrentWeatherCardWidget({super.key, required this.weatherData});
 
@@ -14,6 +14,12 @@ class CurrentWeatherCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final lang = context.watch<LanguageProvider>().currentLanguage;
+
+    if (weatherData == null || weatherData!.isEmpty) {
+      return const Center(
+        child: Text("No weather data available"),
+      );
+    }
 
     return Card(
       elevation: 4,
@@ -43,7 +49,7 @@ class CurrentWeatherCardWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '${weatherData["temperature"]}°C',
+                        '${(weatherData!["temperature"] is num ? (weatherData!["temperature"] as num).toStringAsFixed(0) : '--')}°C',
                         style: theme.textTheme.displayLarge?.copyWith(
                           color: const Color(0xFF1E293B),
                           fontWeight: FontWeight.w800,
@@ -53,7 +59,11 @@ class CurrentWeatherCardWidget extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        weatherData["condition"] as String,
+                        (weatherData!["rain"] ?? 0) > 0
+                            ? (lang == 'en' ? 'Rainy' : 'बारिश')
+                            : (weatherData!["temperature"] ?? 0) >= 30
+                                ? (lang == 'en' ? 'Sunny' : 'धूप')
+                                : (lang == 'en' ? 'Cloudy' : 'बादल'),
                         style: theme.textTheme.titleLarge?.copyWith(
                           color: const Color(0xFF1F2937),
                         ),
@@ -61,8 +71,8 @@ class CurrentWeatherCardWidget extends StatelessWidget {
                       const SizedBox(height: 4),
                       Text(
                         lang == 'en'
-                          ? 'Feels like ${weatherData["feelsLike"]}°C'
-                          : 'महसूस ${weatherData["feelsLike"]}°C',
+                            ? 'Humidity ${weatherData!["humidity"] ?? '--'}%'
+                            : 'नमी ${weatherData!["humidity"] ?? '--'}%',
                         style: theme.textTheme.bodyMedium?.copyWith(
                           color: const Color(0xFF334155),
                         ),
@@ -70,13 +80,15 @@ class CurrentWeatherCardWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                CustomIconWidget(
-                  iconName: weatherData["icon"] ?? 'wb_sunny',
-                  color: _getMainWeatherIconColor(
-                    weatherData["icon"] ?? 'sun',
-                  ),
-                  size: 80,
-                ),
+                (() {
+                  final rain = (weatherData!["rain"] ?? 0);
+                  final iconName = rain > 0 ? "water_drop" : "wb_sunny";
+                  return CustomIconWidget(
+                    iconName: iconName,
+                    color: _getMainWeatherIconColor(iconName),
+                    size: 80,
+                  );
+                })(),
               ],
             ),
             const SizedBox(height: 24),
@@ -97,7 +109,7 @@ class CurrentWeatherCardWidget extends StatelessWidget {
                           context,
                           icon: 'water_drop',
                           label: lang == 'en' ? 'Humidity' : 'नमी',
-                          value: '${weatherData["humidity"]}%',
+                          value: '${weatherData!["humidity"] ?? 0}%',
                         ),
                       ),
                       Expanded(
@@ -105,7 +117,7 @@ class CurrentWeatherCardWidget extends StatelessWidget {
                           context,
                           icon: 'grain',
                           label: lang == 'en' ? 'Rainfall' : 'वर्षा',
-                          value: '${weatherData["rainfall"]} mm',
+                          value: '${weatherData!["rain"] ?? 0} mm',
                         ),
                       ),
                     ],
@@ -118,7 +130,7 @@ class CurrentWeatherCardWidget extends StatelessWidget {
                           context,
                           icon: 'air',
                           label: lang == 'en' ? 'Wind Speed' : 'हवा की गति',
-                          value: '${weatherData["windSpeed"]} km/h',
+                          value: '${weatherData!["wind"] ?? 0} km/h',
                         ),
                       ),
                       Expanded(
@@ -126,7 +138,7 @@ class CurrentWeatherCardWidget extends StatelessWidget {
                           context,
                           icon: 'wb_sunny',
                           label: lang == 'en' ? 'UV Index' : 'यूवी सूचकांक',
-                          value: '${weatherData["uvIndex"]}',
+                          value: '--',
                         ),
                       ),
                     ],
