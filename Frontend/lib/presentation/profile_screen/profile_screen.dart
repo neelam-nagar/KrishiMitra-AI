@@ -53,7 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               gradient: LinearGradient(
                 colors: [
                   Theme.of(context).colorScheme.primary,
-                  Theme.of(context).colorScheme.primary.withOpacity(0.8),
+                  Theme.of(context).colorScheme.primary.withValues(alpha: 0.8),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -70,7 +70,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.15),
+                        color: Colors.black.withValues(alpha: 0.15),
                         blurRadius: 12,
                         offset: Offset(0, 6),
                       ),
@@ -103,7 +103,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Text(
                   _phone,
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.85),
+                    color: Colors.white.withValues(alpha: 0.85),
                     fontSize: 15,
                     letterSpacing: 0.3,
                   ),
@@ -112,7 +112,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(vertical: 14),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.18),
+                    color: Colors.white.withValues(alpha: 0.18),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
@@ -206,7 +206,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: Builder(
         builder: (context) => InkWell(
           borderRadius: BorderRadius.circular(14),
-          splashColor: Theme.of(context).colorScheme.primary.withOpacity(0.12),
+          splashColor: Theme.of(context).colorScheme.primary.withValues(alpha: 0.12),
           highlightColor: Colors.transparent,
           onTap: onTap,
           child: AnimatedContainer(
@@ -217,7 +217,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               borderRadius: BorderRadius.circular(18),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.06),
+                  color: Colors.black.withValues(alpha: 0.06),
                   blurRadius: 12,
                   offset: const Offset(0, 6),
                 ),

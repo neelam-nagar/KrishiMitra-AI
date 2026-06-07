@@ -98,10 +98,10 @@ class WeatherAlertsWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: color.withOpacity(0.25)),
+          border: Border.all(color: color.withValues(alpha: 0.25)),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.06),
+              color: Colors.black.withValues(alpha: 0.06),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
@@ -114,7 +114,7 @@ class WeatherAlertsWidget extends StatelessWidget {
             Container(
               width: 4,
               decoration: BoxDecoration(
-                color: color.withOpacity(0.8),
+                color: color.withValues(alpha: 0.8),
                 borderRadius: const BorderRadius.horizontal(
                   left: Radius.circular(14),
                 ),
@@ -130,7 +130,7 @@ class WeatherAlertsWidget extends StatelessWidget {
                       children: [
                         CustomIconWidget(
                           iconName: 'warning',
-                          color: color.withOpacity(0.85),
+                          color: color.withValues(alpha: 0.85),
                           size: 20,
                         ),
                         const SizedBox(width: 8),
@@ -148,7 +148,7 @@ class WeatherAlertsWidget extends StatelessWidget {
                             vertical: 4,
                           ),
                           decoration: BoxDecoration(
-                            color: color.withOpacity(0.12),
+                            color: color.withValues(alpha: 0.12),
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Text(

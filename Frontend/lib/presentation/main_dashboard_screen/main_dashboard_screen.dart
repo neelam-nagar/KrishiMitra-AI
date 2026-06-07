@@ -342,7 +342,7 @@ class _MainDashboardState extends State<MainDashboard>
                         ? '${_weatherData!['temperature']}°C, ${_weatherData!['condition']}'
                         : subtitle as String,
                     onTap: () => _handleModuleTap(module['route'] as String),
-                    onLongPress: () => _handleModuleLongPress(title as String),
+                    onLongPress: () => _handleModuleLongPress(title),
                   );
                 },
                 childCount: _moduleData.length,

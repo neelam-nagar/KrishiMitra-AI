@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 
 import '../../../core/app_export.dart';
 import '../../../core/language_provider.dart';
-import '../../../widgets/custom_icon_widget.dart';
 
 /// Price card widget for displaying crop price information
 class PriceCardWidget extends StatelessWidget {
@@ -20,8 +19,8 @@ class PriceCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final lang = context.watch<LanguageProvider>().currentLanguage;
-    final bool isHindi = lang == 'hi';
+    final bool isHindi =
+        context.watch<LanguageProvider>().currentLanguage == 'hi';
     final change = cropData['change'] as double;
     final isPositive = change >= 0;
 
@@ -101,7 +100,6 @@ class PriceCardWidget extends StatelessWidget {
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // 🔥 BIG AVG PRICE
                         Text(
                           '₹${cropData['avgPrice'] ?? 0}',
                           style: theme.textTheme.titleLarge?.copyWith(
@@ -110,8 +108,6 @@ class PriceCardWidget extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 0.5.h),
-
-                        // 🔹 MIN MAX BELOW
                         if (cropData['minPrice'] != null &&
                             cropData['maxPrice'] != null &&
                             cropData['minPrice'] != 0 &&
@@ -149,39 +145,6 @@ class PriceCardWidget extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  /// Build price info column
-  Widget _buildPriceInfo(
-    String label,
-    String value,
-    ThemeData theme, {
-    bool isHighlighted = false,
-  }) {
-    // 🔥 Hide completely if value is empty or null-like
-    if (value.trim().isEmpty || value == '₹') {
-      return const SizedBox();
-    }
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: theme.textTheme.bodySmall?.copyWith(
-            color: theme.colorScheme.onSurface.withAlpha(153),
-          ),
-        ),
-        SizedBox(height: 0.5.h),
-        Text(
-          value,
-          style: theme.textTheme.titleSmall?.copyWith(
-            fontWeight: isHighlighted ? FontWeight.bold : FontWeight.w600,
-            color: isHighlighted ? theme.colorScheme.primary : null,
-          ),
-        ),
-      ],
     );
   }
 }

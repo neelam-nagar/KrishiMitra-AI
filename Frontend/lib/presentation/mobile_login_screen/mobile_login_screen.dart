@@ -21,7 +21,7 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
   final TextEditingController _phoneController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  PhoneNumber _phoneNumber = PhoneNumber(isoCode: 'IN', phoneNumber: '');
+  PhoneNumber _phoneNumber = PhoneNumber(isoCode: 'IN');
   bool _isLoading = false;
   String? _errorMessage;
 

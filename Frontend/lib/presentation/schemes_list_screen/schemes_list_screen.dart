@@ -5,7 +5,6 @@ import 'package:sizer/sizer.dart';
 import '../../core/language_provider.dart';
 import '../../core/app_export.dart';
 import '../../widgets/custom_app_bar.dart';
-import '../../widgets/custom_icon_widget.dart';
 import '../../widgets/custom_bottom_bar.dart';
 import '../main_shell/main_shell_screen.dart';
 
@@ -613,7 +612,7 @@ class SchemesListScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),
@@ -624,7 +623,7 @@ class SchemesListScreen extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(3.w),
                       decoration: BoxDecoration(
-                        color: theme.colorScheme.primary.withOpacity(0.1),
+                        color: theme.colorScheme.primary.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: CustomIconWidget(
@@ -652,7 +651,7 @@ class SchemesListScreen extends StatelessWidget {
                                 ? scheme['subtitle_en']
                                 : scheme['subtitle_hi'],
                             style: theme.textTheme.bodySmall?.copyWith(
-                              color: theme.colorScheme.onSurface.withOpacity(0.7),
+                              color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
                             ),
                           ),
                         ],
@@ -661,7 +660,7 @@ class SchemesListScreen extends StatelessWidget {
                     Icon(
                       Icons.arrow_forward_ios,
                       size: 16,
-                      color: theme.colorScheme.onSurface.withOpacity(0.4),
+                      color: theme.colorScheme.onSurface.withValues(alpha: 0.4),
                     ),
                   ],
                 ),

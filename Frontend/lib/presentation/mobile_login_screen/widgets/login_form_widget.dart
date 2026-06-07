@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 import '../../../core/language_provider.dart';
 
 /// Login form widget containing phone input and send OTP button
-/// Handles validation, formatting, and OTP generation
 class LoginFormWidget extends StatelessWidget {
   final GlobalKey<FormState> formKey;
   final TextEditingController phoneController;
@@ -39,7 +38,6 @@ class LoginFormWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Section title
           Text(
             isHindi ? 'मोबाइल नंबर से लॉगिन करें' : 'Login with Mobile Number',
             style: theme.textTheme.titleLarge?.copyWith(
@@ -47,10 +45,7 @@ class LoginFormWidget extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-
           SizedBox(height: 1.h),
-
-          // Section description
           Text(
             isHindi
                 ? 'अपना 10 अंकों का मोबाइल नंबर दर्ज करें'
@@ -59,10 +54,9 @@ class LoginFormWidget extends StatelessWidget {
               color: theme.colorScheme.onSurfaceVariant,
             ),
           ),
-
           SizedBox(height: 3.h),
 
-          // Phone number input field
+          // Phone number input
           Container(
             decoration: BoxDecoration(
               color: theme.colorScheme.surface,
@@ -90,7 +84,8 @@ class LoginFormWidget extends StatelessWidget {
                 setSelectorButtonAsPrefixIcon: true,
                 leadingPadding: 16,
               ),
-              ignoreBlank: false,
+              // FIX: false → true — prevents tooShortNsn error on empty field load
+              ignoreBlank: true,
               selectorTextStyle: theme.textTheme.bodyLarge?.copyWith(
                 color: theme.colorScheme.onSurface,
               ),
@@ -101,9 +96,7 @@ class LoginFormWidget extends StatelessWidget {
               inputDecoration: InputDecoration(
                 hintText: isHindi ? '10 अंकों का नंबर' : '10-digit number',
                 hintStyle: theme.textTheme.bodyLarge?.copyWith(
-                  color: theme.colorScheme.onSurfaceVariant.withValues(
-                    alpha: 0.6,
-                  ),
+                  color: theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.6),
                 ),
                 border: InputBorder.none,
                 enabledBorder: InputBorder.none,
@@ -113,35 +106,6 @@ class LoginFormWidget extends StatelessWidget {
                 contentPadding: EdgeInsets.symmetric(
                   horizontal: 4.w,
                   vertical: 2.h,
-                ),
-                prefixIcon: Padding(
-                  padding: EdgeInsets.only(left: 4.w, right: 2.w),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      CustomImageWidget(
-                        imageUrl: 'https://flagcdn.com/w40/in.png',
-                        width: 8.w,
-                        height: 6.w,
-                        fit: BoxFit.cover,
-                        semanticLabel: 'Indian flag icon',
-                      ),
-                      SizedBox(width: 2.w),
-                      Text(
-                        '+91',
-                        style: theme.textTheme.bodyLarge?.copyWith(
-                          color: theme.colorScheme.onSurface,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      SizedBox(width: 2.w),
-                      Container(
-                        width: 1,
-                        height: 4.h,
-                        color: theme.colorScheme.outline,
-                      ),
-                    ],
-                  ),
                 ),
               ),
               validator: (value) {
@@ -201,9 +165,8 @@ class LoginFormWidget extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                disabledBackgroundColor: theme.colorScheme.primary.withValues(
-                  alpha: 0.5,
-                ),
+                disabledBackgroundColor:
+                    theme.colorScheme.primary.withValues(alpha: 0.5),
               ),
               child: isLoading
                   ? SizedBox(
@@ -212,8 +175,7 @@ class LoginFormWidget extends StatelessWidget {
                       child: CircularProgressIndicator(
                         strokeWidth: 2,
                         valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.colorScheme.onPrimary,
-                        ),
+                            theme.colorScheme.onPrimary),
                       ),
                     )
                   : Text(
@@ -228,7 +190,6 @@ class LoginFormWidget extends StatelessWidget {
 
           SizedBox(height: 2.h),
 
-          // Help text
           Center(
             child: Text(
               isHindi

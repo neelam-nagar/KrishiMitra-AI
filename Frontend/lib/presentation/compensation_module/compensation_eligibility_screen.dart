@@ -156,8 +156,8 @@ class _CompensationEligibilityScreenState
                 boxShadow: [
                   BoxShadow(
                     color: isEligible
-                        ? Colors.green.withOpacity(0.2)
-                        : Colors.red.withOpacity(0.2),
+                        ? Colors.green.withValues(alpha: 0.2)
+                        : Colors.red.withValues(alpha: 0.2),
                     blurRadius: 8,
                     offset: const Offset(0, 4),
                   ),
