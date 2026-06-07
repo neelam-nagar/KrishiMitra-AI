@@ -7,7 +7,6 @@ Backend/Chatbot/.env
 
 # Environment files
 env.json
-lib/firebase_options.dart
 
 # Flutter / Dart
 .dart_tool/
