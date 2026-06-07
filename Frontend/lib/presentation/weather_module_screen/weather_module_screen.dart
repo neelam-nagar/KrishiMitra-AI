@@ -1,4 +1,6 @@
 import 'package:provider/provider.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:geocoding/geocoding.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../core/language_provider.dart';
@@ -143,7 +145,39 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
   void initState() {
     super.initState();
     _loadDistricts();
-    _loadWeatherData();
+    _autoDetectAndLoadWeather();
+  }
+
+  Future<void> _autoDetectAndLoadWeather() async {
+    try {
+      LocationPermission perm = await Geolocator.checkPermission();
+      if (perm == LocationPermission.denied) {
+        perm = await Geolocator.requestPermission();
+      }
+      if (perm == LocationPermission.deniedForever || perm == LocationPermission.denied) {
+        _loadWeatherData();
+        return;
+      }
+      final position = await Geolocator.getCurrentPosition(
+        locationSettings: const LocationSettings(accuracy: LocationAccuracy.medium, timeLimit: Duration(seconds: 10)),
+      );
+      final placemarks = await placemarkFromCoordinates(position.latitude, position.longitude);
+      if (placemarks.isNotEmpty && mounted) {
+        final place = placemarks.first;
+        final district = place.subAdministrativeArea ?? place.administrativeArea ?? '';
+        final tehsil = place.locality ?? district;
+        final village = place.subLocality ?? tehsil;
+        if (district.isNotEmpty) {
+          context.read<LocationProvider>().updateLocation(
+            district: district, tehsil: tehsil, village: village,
+            latitude: position.latitude, longitude: position.longitude,
+          );
+        }
+      }
+      _loadWeatherData();
+    } catch (_) {
+      _loadWeatherData();
+    }
   }
 
   Future<void> _loadDistricts() async {

@@ -60,7 +60,7 @@ class _MainDashboardState extends State<MainDashboard>
       if (!locationProvider.hasLocation) {
         _showLocationDialog();
       } else {
-        _loadDashboardWeather();
+        _autoDetectLocation();
       }
     });
   }
@@ -137,6 +137,36 @@ class _MainDashboardState extends State<MainDashboard>
           borderRadius: BorderRadius.vertical(top: Radius.circular(16))),
       builder: (context) => location_sheet.LocationSelectorBottomSheet(),
     ).then((_) => _loadDashboardWeather());
+  }
+
+  Future<void> _autoDetectLocation() async {
+    try {
+      LocationPermission perm = await Geolocator.checkPermission();
+      if (perm == LocationPermission.denied) {
+        perm = await Geolocator.requestPermission();
+      }
+      if (perm == LocationPermission.deniedForever || perm == LocationPermission.denied) {
+        _loadDashboardWeather();
+        return;
+      }
+      final position = await Geolocator.getCurrentPosition(
+        locationSettings: const LocationSettings(accuracy: LocationAccuracy.medium, timeLimit: Duration(seconds: 10)),
+      );
+      final placemarks = await placemarkFromCoordinates(position.latitude, position.longitude);
+      if (placemarks.isNotEmpty && mounted) {
+        final place = placemarks.first;
+        final district = place.subAdministrativeArea ?? place.administrativeArea ?? '';
+        final tehsil = place.locality ?? district;
+        final village = place.subLocality ?? tehsil;
+        if (district.isNotEmpty) {
+          context.read<LocationProvider>().updateLocation(
+            district: district, tehsil: tehsil, village: village,
+            latitude: position.latitude, longitude: position.longitude,
+          );
+        }
+      }
+    } catch (_) {}
+    _loadDashboardWeather();
   }
 
   Future<void> _loadDashboardWeather() async {
