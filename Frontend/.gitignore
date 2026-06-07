@@ -1,3 +1,10 @@
+# Ignore env files globally
+.env
+Backend/Chatbot/.env
+
+# macOS
+.DS_Store
+
 # Environment files
 env.json
 lib/firebase_options.dart
