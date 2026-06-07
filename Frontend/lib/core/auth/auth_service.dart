@@ -18,7 +18,9 @@ class AuthService {
     try {
       // Initialize GoogleSignIn v7 singleton once
       if (!_googleInitialized) {
-        await GoogleSignIn.instance.initialize();
+        await GoogleSignIn.instance.initialize(
+        serverClientId: '639200881122-54p7643bu7i28cabolprcloqrkept3b8.apps.googleusercontent.com',
+      );
         _googleInitialized = true;
       }
 
