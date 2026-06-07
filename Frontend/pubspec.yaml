@@ -7,28 +7,24 @@ environment:
   sdk: ^3.9.0
 
 dependencies:
-  flutter:       # CRITICAL: Required for every Flutter project - DO NOT REMOVE
-    sdk: flutter # CRITICAL: Required for every Flutter project - DO NOT REMOVE
+  flutter:       
+    sdk: flutter 
     
   http: ^1.1.0
   image_picker: ^1.2.1
   share_plus: ^10.0.0
 
-  # 🌐 Localization (LANGUAGE SUPPORT)
   flutter_localizations:
     sdk: flutter
 
-  # 🧠 State management (for language persistence)
   provider: ^6.1.2
 
-  # CRITICAL: Core UI and responsive design - DO NOT REMOVE OR MODIFY
-  sizer: ^2.0.15              # Required for responsive design system
-  flutter_svg: ^2.0.9        # Required for SVG icon support
-  google_fonts: ^6.1.0       # Required for typography (replaces local fonts)
-  shared_preferences: ^2.2.2 # Required for local data storage
+  sizer: ^2.0.15              
+  flutter_svg: ^2.0.9        
+  google_fonts: ^6.1.0       
+  shared_preferences: ^2.2.2 
   web: ^1.1.1
 
-  # Feature dependencies - safe to modify
   cached_network_image: ^3.3.1
   connectivity_plus: ^6.1.4
   dio: ^5.4.0
@@ -37,7 +33,7 @@ dependencies:
   pinput: ^6.0.1
   intl_phone_number_input: ^0.7.5
   geolocator: ^13.0.4
-  intl: ^0.20.2   # ⚠️ MUST be 0.20.2 (Flutter SDK requirement)
+  intl: ^0.20.2  
   url_launcher: ^6.3.0
   geocoding: ^3.0.0
   firebase_core: ^4.3.0
@@ -45,13 +41,16 @@ dependencies:
   cloud_firestore: ^6.2.0
   firebase_storage: ^13.2.0
 
+  permission_handler: ^11.3.1
+  logger: ^2.0.2+1
+
 dev_dependencies:
-  flutter_test:    # CRITICAL: Required for Flutter project testing - DO NOT REMOVE
-    sdk: flutter   # CRITICAL: Required for Flutter project testing - DO NOT REMOVE
-  flutter_lints: ^5.0.0 # CRITICAL: Required for code quality - DO NOT REMOVE
+  flutter_test:    
+    sdk: flutter  
+  flutter_lints: ^5.0.0 
 
 flutter:
-  uses-material-design: true # CRITICAL: Required for Material icon font - DO NOT REMOVE
+  uses-material-design: true 
   assets:
     - assets/
     - assets/images/

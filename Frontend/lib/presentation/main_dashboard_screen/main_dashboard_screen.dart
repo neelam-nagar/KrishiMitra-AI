@@ -244,14 +244,14 @@ class _MainDashboardState extends State<MainDashboard>
     String url;
     if (location.latitude != null && location.longitude != null) {
       url =
-          "http://127.0.0.1:5001/weather"
+          "https://krishimitra-ai-7.onrender.com/weather"
           "?lat=${location.latitude}"
           "&lon=${location.longitude}";
     } else if (location.district != null &&
         location.tehsil != null &&
         location.village != null) {
       url =
-          "http://127.0.0.1:5001/weather"
+          "https://krishimitra-ai-7.onrender.com/weather"
           "?district=${location.district}"
           "&tehsil=${location.tehsil}"
           "&village=${location.village}";

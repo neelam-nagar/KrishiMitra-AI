@@ -56,8 +56,22 @@ class WeatherAlertsWidget extends StatelessWidget {
     final theme = Theme.of(context);
     final lang = context.watch<LanguageProvider>().currentLanguage;
 
-    final severity = alert["severity"] as String;
-    final isExpanded = alert["isExpanded"] ?? false;
+    final severity = (alert["severity"] ?? "low").toString();
+
+    // ✅ SAFE DATE HANDLING
+    final validUntilRaw = alert["validUntil"];
+    DateTime validUntil;
+
+    if (validUntilRaw is DateTime) {
+      validUntil = validUntilRaw;
+    } else if (validUntilRaw != null) {
+      validUntil =
+          DateTime.tryParse(validUntilRaw.toString()) ?? DateTime.now();
+    } else {
+      validUntil = DateTime.now();
+    }
+
+    final isExpanded = alert["isExpanded"] == true;
 
     Color color;
     String label;
@@ -122,7 +136,7 @@ class WeatherAlertsWidget extends StatelessWidget {
                         const SizedBox(width: 8),
                         Expanded(
                           child: Text(
-                            alert["title"],
+                            alert["title"]?.toString() ?? "Weather Alert",
                             style: theme.textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.w600,
                             ),
@@ -150,8 +164,8 @@ class WeatherAlertsWidget extends StatelessWidget {
                     const SizedBox(height: 6),
                     Text(
                       lang == 'en'
-                          ? 'Valid till ${DateFormat('dd MMM, HH:mm').format(alert["validUntil"])}'
-                          : 'मान्य ${DateFormat('dd MMM, HH:mm').format(alert["validUntil"])} तक',
+                          ? 'Valid till ${DateFormat('dd MMM, HH:mm').format(validUntil)}'
+                          : 'मान्य ${DateFormat('dd MMM, HH:mm').format(validUntil)} तक',
                       style: theme.textTheme.bodySmall?.copyWith(
                         color: theme.colorScheme.onSurfaceVariant,
                       ),
@@ -160,8 +174,10 @@ class WeatherAlertsWidget extends StatelessWidget {
                       const SizedBox(height: 10),
                       Text(
                         lang == 'en'
-                            ? alert["description"]
-                            : (alert["descriptionHindi"] ?? alert["description"]),
+                            ? alert["description"]?.toString() ?? "No details available"
+                            : alert["descriptionHindi"]?.toString() ??
+                              alert["description"]?.toString() ??
+                              "कोई विवरण उपलब्ध नहीं",
                         style: theme.textTheme.bodyMedium,
                       ),
                     ],

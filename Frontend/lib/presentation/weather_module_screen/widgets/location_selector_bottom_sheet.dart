@@ -32,26 +32,53 @@ class _LocationSelectorBottomSheetState
 
   Future<void> _loadDistricts() async {
     setState(() => isLoading = true);
-    final res = await http.get(Uri.parse('http://127.0.0.1:5001/locations/districts'));
-    districts = List<String>.from(json.decode(res.body));
+    try {
+      final res = await http.get(Uri.parse('https://krishimitra-ai-2-xbdu.onrender.com/locations/districts'));
+      if (res.statusCode == 200) {
+        districts = List<String>.from(json.decode(res.body));
+      } else {
+        districts = [];
+      }
+    } catch (e) {
+      districts = [];
+    }
     setState(() => isLoading = false);
   }
 
   Future<void> _loadTehsils(String district) async {
     setState(() => isLoading = true);
+    final encodedDistrict = Uri.encodeComponent(district);
     final res = await http.get(
-      Uri.parse('http://127.0.0.1:5001/locations/tehsils?district=$district'),
+      Uri.parse('https://krishimitra-ai-2-xbdu.onrender.com/locations/tehsils?district=$encodedDistrict'),
     );
-    tehsils = List<String>.from(json.decode(res.body));
+    try {
+      if (res.statusCode == 200) {
+        tehsils = List<String>.from(json.decode(res.body));
+      } else {
+        tehsils = [];
+      }
+    } catch (e) {
+      tehsils = [];
+    }
     setState(() => isLoading = false);
   }
 
   Future<void> _loadVillages(String district, String tehsil) async {
     setState(() => isLoading = true);
+    final encodedDistrict = Uri.encodeComponent(district);
+    final encodedTehsil = Uri.encodeComponent(tehsil);
     final res = await http.get(
-      Uri.parse('http://127.0.0.1:5001/locations/villages?district=$district&tehsil=$tehsil'),
+      Uri.parse('https://krishimitra-ai-2-xbdu.onrender.com/locations/villages?district=$encodedDistrict&tehsil=$encodedTehsil'),
     );
-    villages = List<String>.from(json.decode(res.body));
+    try {
+      if (res.statusCode == 200) {
+        villages = List<String>.from(json.decode(res.body));
+      } else {
+        villages = [];
+      }
+    } catch (e) {
+      villages = [];
+    }
     setState(() => isLoading = false);
   }
 

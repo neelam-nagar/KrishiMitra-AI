@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/intl.dart';
 import '../../../../core/language_provider.dart';
 
 import '../../../core/app_export.dart';
@@ -66,9 +67,7 @@ class HourlyForecastWidget extends StatelessWidget {
     children: [
           // Time
           Text(
-            lang == 'en'
-              ? hour["time"] as String
-              : _getHindiTime(hour["time"] as String),
+            DateFormat('hh a').format(DateTime.parse(hour["time"])),
             style: theme.textTheme.bodySmall?.copyWith(
               fontWeight: FontWeight.w500,
               color: Colors.grey.shade700,
@@ -76,15 +75,19 @@ class HourlyForecastWidget extends StatelessWidget {
           ),
 
           // Weather icon
-          CustomIconWidget(
-            iconName: hour["icon"] as String,
-            color: _getWeatherIconColor(hour["icon"] as String),
-            size: 28,
-          ),
+          (() {
+            final rain = hour["rain"] ?? 0;
+            final iconName = rain > 0 ? "water_drop" : "wb_sunny";
+            return CustomIconWidget(
+              iconName: iconName,
+              color: _getWeatherIconColor(iconName),
+              size: 28,
+            );
+          })(),
 
           // Temperature
           Text(
-            '${hour["temperature"]}°',
+            '${hour["temperature"]?.toStringAsFixed(0)}°',
             style: theme.textTheme.titleSmall?.copyWith(
               fontWeight: FontWeight.w600,
               color: Colors.black87,
@@ -102,7 +105,7 @@ class HourlyForecastWidget extends StatelessWidget {
               ),
               const SizedBox(width: 2),
               Text(
-                '${hour["precipitation"]}%',
+                '${hour["rain"] ?? 0} mm',
                 style: theme.textTheme.bodySmall?.copyWith(
                   color: Colors.blue.shade400,
                   fontSize: 10,
