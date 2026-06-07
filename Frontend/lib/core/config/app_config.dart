@@ -3,51 +3,53 @@
 /// Values are injected at build time via --dart-define-from-file=env.json
 /// so no secrets ever live in source code.
 ///
-/// Usage:
-///   AppConfig.chatApiBase          → chat/AI endpoint
-///   AppConfig.weatherApiBase       → weather + location endpoint
-///   AppConfig.diseaseApiBase       → crop disease ML endpoint
-///   AppConfig.cropPriceApiBase     → mandi price endpoint
-///
 /// Setup (developer):
 ///   1. Copy env.json.example → env.json  (already in .gitignore)
-///   2. Fill in your Render / Railway / cloud URLs
+///   2. Fill in your deployed backend URL
 ///   3. Run:  flutter run --dart-define-from-file=env.json
+///
+/// All modules now share a SINGLE unified backend URL.
 class AppConfig {
   AppConfig._(); // prevent instantiation
 
   // ---------------------------------------------------------------------------
-  // API base URLs
+  // Unified backend base URL
+  // In production, point this to your deployed backend (Render, Railway, etc.)
+  // ---------------------------------------------------------------------------
+  static const String _backendBase = String.fromEnvironment(
+    'BACKEND_BASE',
+    defaultValue: 'http://10.0.2.2:8000', // Android emulator → host localhost
+  );
+
+  // ---------------------------------------------------------------------------
+  // Individual module API bases — all derived from the unified backend.
+  // Keep separate constants for clarity and future independent scaling.
   // ---------------------------------------------------------------------------
 
   static const String chatApiBase = String.fromEnvironment(
     'CHAT_API_BASE',
-    defaultValue: 'https://krishimitra-ai-6.onrender.com',
+    defaultValue: _backendBase,
   );
 
   static const String weatherApiBase = String.fromEnvironment(
     'WEATHER_API_BASE',
-    defaultValue: 'https://krishimitra-ai-7.onrender.com',
+    defaultValue: _backendBase,
   );
 
-  /// Disease-detection ML backend (Flask/FastAPI with /predict endpoint).
-  /// In development this is your local server; in CI/prod it's the deployed URL.
   static const String diseaseApiBase = String.fromEnvironment(
     'DISEASE_API_BASE',
-    defaultValue: 'http://127.0.0.1:8000', // overridden via env.json in prod
+    defaultValue: _backendBase,
   );
 
-  /// Mandi / crop-price backend (/mandi, /districts, /mandis endpoints).
   static const String cropPriceApiBase = String.fromEnvironment(
     'CROP_PRICE_API_BASE',
-    defaultValue: 'http://127.0.0.1:5000', // overridden via env.json in prod
+    defaultValue: _backendBase,
   );
 
   // ---------------------------------------------------------------------------
   // Feature flags (easy to flip per environment)
   // ---------------------------------------------------------------------------
 
-  /// Set to 'true' in env.json to enable verbose API logging in debug builds.
   static const bool enableApiLogging = bool.fromEnvironment(
     'ENABLE_API_LOGGING',
     defaultValue: false,

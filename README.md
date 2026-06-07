@@ -1,275 +1,215 @@
-<div align="center">
-
 # 🌾 KrishiMitra AI
 
-**AI-powered farming assistant for Rajasthan's farmers**
-*Disease detection · Weather alerts · Govt schemes · Mandi prices · Marketplace*
-
-[![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=flat-square&logo=flutter)](https://flutter.dev)
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-ML-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)](https://tensorflow.org)
-[![Firebase](https://img.shields.io/badge/Firebase-Auth_&_DB-FFCA28?style=flat-square&logo=firebase&logoColor=black)](https://firebase.google.com)
-[![License](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Android_|_iOS-6366f1?style=flat-square&logo=android)](https://flutter.dev)
-
-</div>
+> Intelligent farming companion for Rajasthan farmers — AI chatbot, real-time weather, mandi prices, government schemes, crop disease detection, and compensation calculator.
 
 ---
 
-## 📖 About
-
-KrishiMitra AI is a **Flutter mobile app** built for the farmers of **Rajasthan, India**. Farmers can photograph a diseased crop leaf and get an instant AI diagnosis, check live weather before irrigating, discover government schemes they qualify for, and sell produce directly to buyers — all in one app.
-
----
-
-## ✨ Features
-
-| Feature | Description |
-|---------|-------------|
-| 🔬 **Disease Detection** | Click a leaf photo → CNN model diagnoses the disease + treatment steps |
-| 🌦 **Weather Dashboard** | 5-day forecast with storm & heatwave alerts for Rajasthan |
-| 🌱 **Crop Advisory** | Gemini AI-powered crop & fertilizer recommendations |
-| 🏛 **Scheme Navigator** | Browse PM Kisan, PMFBY, Rajasthan state schemes with eligibility check |
-| 📈 **Mandi Prices** | Live market prices before selling — never get cheated by traders |
-| 🛒 **Marketplace** | Sell produce directly to buyers — 30–40% better prices, no middlemen |
-| 👥 **Community Forum** | Ask questions, share experiences with farmers across Rajasthan |
-
----
-
-## 🛠 Tech Stack
-
-```
-Frontend   →  Flutter (Dart)  ·  Firebase Auth  ·  Firestore  ·  Firebase Storage
-Backend    →  Python (Flask / FastAPI)  ·  TensorFlow / Keras CNN
-AI & APIs  →  Google Gemini API  ·  OpenWeatherMap API
-DevOps     →  Docker  ·  VS Code
-```
-
-**Language breakdown:**
-```
-Dart        ████████████████████  83.6%
-Python      ██████                10.9%
-Jupyter     ██                     4.5%
-Other       █                      1.0%
-```
-
----
-
-## 🏗 Architecture
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                    📱 Flutter App                        │
-└────────┬────────────────┬───────────────┬───────────────┘
-         │                │               │
-         ▼                ▼               ▼
-  ┌─────────────┐  ┌────────────┐  ┌───────────────┐
-  │ 🐍 Python   │  │ 🔥 Firebase│  │  🌐 External  │
-  │ ML Backend  │  │            │  │     APIs      │
-  │             │  │ Auth       │  │               │
-  │ /predict    │  │ Firestore  │  │ Gemini AI     │
-  │ CNN Model   │  │ Storage    │  │ OpenWeather   │
-  └──────┬──────┘  └────────────┘  └───────────────┘
-         │
-  ┌──────▼──────┐
-  │ 🧠 TFLite  │
-  │  .h5 Model  │
-  └─────────────┘
-```
-
-### Disease Detection Flow
-```
-Farmer  →  📸 Snap photo  →  Flutter compresses image
-       →  POST /api/predict  →  CNN runs inference
-       →  Returns: disease + confidence + treatment  →  📱 Result card shown
-```
-
----
-
-## 📁 Project Structure
+## Architecture
 
 ```
 KrishiMitra-AI/
-├── Backend/
-│   ├── app.py                   # Flask/FastAPI entry point
+├── backend_unified/        # Single FastAPI backend (all modules)
+│   ├── main.py             # Unified API — all 6 modules
+│   ├── Dockerfile          # Production container (gunicorn + uvicorn)
 │   ├── requirements.txt
-│   ├── models/
-│   │   └── disease_model.h5     # Trained CNN model
-│   ├── routes/
-│   │   └── predict.py           # POST /api/predict
-│   └── notebooks/
-│       └── model_training.ipynb
+│   ├── .env.example        # Copy → .env, fill in secrets
+│   ├── final_clean.json    # Weather location data (31 districts)
+│   ├── mandi_cache.json    # Crop price data (709 records)
+│   ├── scheme.json         # Government schemes (62 schemes)
+│   ├── model/              # Crop disease ML model (.pth)
+│   └── tests/
+│       └── test_main.py    # 37 tests — all passing
 │
-└── Frontend/
+└── Frontend/               # Flutter mobile app
+    ├── lib/
+    │   ├── main.dart
+    │   ├── firebase_options.dart   ← replace with real Firebase config
+    │   ├── core/config/app_config.dart
+    │   ├── presentation/           # All screens
+    │   └── services/               # Storage, Firestore, OrganicGuide
     ├── pubspec.yaml
-    └── lib/
-        ├── main.dart
-        ├── screens/
-        │   ├── home_screen.dart
-        │   ├── disease_detector_screen.dart
-        │   ├── weather_screen.dart
-        │   ├── scheme_navigator_screen.dart
-        │   ├── marketplace_screen.dart
-        │   └── community_screen.dart
-        ├── services/
-        │   ├── disease_service.dart
-        │   ├── weather_service.dart
-        │   ├── gemini_service.dart
-        │   └── auth_service.dart
-        └── models/
+    ├── env.json.example    # Copy → env.json, fill in BACKEND_BASE
+    └── test/
+        └── widget_test.dart  # LanguageProvider + LocationProvider tests
 ```
 
 ---
 
-## 🚀 Getting Started
+## Quick Start
 
-### Prerequisites
-
-- Flutter 3.x · Python 3.10+ · Android Studio · Firebase CLI
-
-### 1. Clone
+### 1. Backend
 
 ```bash
-git clone https://github.com/neelam-nagar/KrishiMitra-AI.git
-cd KrishiMitra-AI
-```
+cd backend_unified
 
-### 2. Backend
-
-```bash
-cd Backend
-python -m venv venv && source venv/bin/activate
+# Install dependencies
 pip install -r requirements.txt
-cp .env.example .env        # Add your API keys
-python app.py               # Runs at http://localhost:8000
+
+# Configure environment
+cp .env.example .env
+# Edit .env — set GEMINI_API_KEY
+
+# Run (development)
+uvicorn main:app --reload --port 8000
+
+# Run (production)
+gunicorn main:app --worker-class uvicorn.workers.UvicornWorker \
+  --workers 2 --bind 0.0.0.0:8000
+
+# Run tests
+pytest tests/ -v
 ```
 
-### 3. Frontend
+**API docs**: http://localhost:8000/docs  
+**Health check**: http://localhost:8000/api/health
+
+### 2. Flutter App
 
 ```bash
 cd Frontend
+
+# Copy and fill environment
+cp env.json.example env.json
+# Edit env.json — set BACKEND_BASE to your deployed backend URL
+
+# Get packages
 flutter pub get
-flutterfire configure       # Connect your Firebase project
-flutter run
+
+# Run on emulator (Android — connects to localhost via 10.0.2.2)
+flutter run --dart-define-from-file=env.json
+
+# Run tests
+flutter test
+
+# Build release APK
+flutter build apk --dart-define-from-file=env.json
 ```
 
 ---
 
-## 🔑 Environment Variables
+## Required External Setup
 
-| Variable | Required | Description |
-|----------|:--------:|-------------|
-| `GOOGLE_API_KEY` | ✅ | Google Gemini API key |
-| `WEATHER_API_KEY` | ✅ | OpenWeatherMap API key |
-| `MODEL_PATH` | ✅ | Path to `disease_model.h5` |
-| `PORT` | ⚙️ | Server port (default: `8000`) |
-| `ALLOWED_ORIGINS` | ⚙️ | CORS origins |
+### Firebase (mandatory for auth, community, marketplace)
 
-> ⚠️ Never commit `.env` to GitHub.
+1. Go to [Firebase Console](https://console.firebase.google.com)
+2. Create a project named `krishimitra-ai`
+3. Enable **Phone Authentication**
+4. Enable **Firestore** and **Storage**
+5. Install FlutterFire CLI and run:
+   ```bash
+   dart pub global activate flutterfire_cli
+   flutterfire configure
+   ```
+   This overwrites `lib/firebase_options.dart` with real credentials.
 
----
+### Gemini API Key (mandatory for chatbot)
 
-## 📡 API Reference
+1. Get a free key at [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. Add to `backend_unified/.env`:
+   ```
+   GEMINI_API_KEY=your_key_here
+   ```
 
-### `POST /api/predict`
+### PyTorch — Crop Disease Detection (optional)
 
 ```bash
-curl -X POST http://localhost:8000/api/predict \
-  -F "file=@leaf_photo.jpg"
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+```
+Without PyTorch the disease endpoint returns HTTP 503 gracefully.
+
+---
+
+## Environment Files
+
+### `backend_unified/.env`
+```env
+GEMINI_API_KEY=your_gemini_key_here
 ```
 
+### `Frontend/env.json`
 ```json
 {
-  "success": true,
-  "disease": "Tomato Late Blight",
-  "confidence": 0.92,
-  "severity": "High",
-  "treatment": [
-    "Remove infected leaves immediately.",
-    "Apply copper-based fungicide every 7–10 days."
-  ]
+  "BACKEND_BASE": "https://your-deployed-backend.onrender.com"
 }
 ```
-
-### `GET /health`
-
-```json
-{ "status": "ok", "model_loaded": true }
-```
+> **Never commit `.env` or `env.json`.** Both are in `.gitignore`.
 
 ---
 
-## 🗄 Database Schema (Firestore)
+## API Reference
 
-```
-users/{uid}          →  name, phone, district, landSize, primaryCrops[]
-listings/{id}        →  sellerId, cropType, quantity, price, location, status
-disease_scans/{id}   →  userId, imageUrl, disease, confidence, treatment[]
-community_posts/{id} →  authorId, title, body, tags[], likes, replies/
-```
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/health` | Health check + module status |
+| POST | `/api/chat` | AI chatbot (Gemini 1.5 Flash) |
+| GET | `/api/weather/districts` | List all 31 Rajasthan districts |
+| GET | `/api/weather/tehsils?district=` | List tehsils for a district |
+| GET | `/api/weather/villages?district=&tehsil=` | List villages |
+| GET | `/api/weather?district=&tehsil=&village=` | Current + 7-day forecast |
+| GET | `/api/mandi/districts` | All mandi districts |
+| GET | `/api/mandi/mandis?district=` | Mandis in a district |
+| GET | `/api/mandi/crops?district=&mandi=` | Crops at a mandi |
+| GET | `/api/mandi?district=&mandi=&crop=` | Crop price history |
+| GET | `/api/schemes` | List government schemes |
+| GET | `/api/schemes/{id}` | Scheme detail |
+| POST | `/api/disease/predict` | Crop disease (multipart image) |
+| POST | `/api/disease/predict-base64` | Crop disease (base64 JSON) |
+| GET | `/api/compensation/calculate` | Compensation estimate |
 
----
-
-## 🚢 Deployment
-
-**Backend (Render / Railway):**
-```bash
-# Set root directory: Backend
-# Start command: python app.py
-# Add env vars in dashboard → Deploy
-```
-
-**Flutter APK:**
-```bash
-cd Frontend
-flutter build apk --release
-# → build/app/outputs/flutter-apk/app-release.apk
-```
+Full interactive docs: `/docs` (Swagger UI)
 
 ---
 
-## 🛣 Roadmap
+## Deployment
 
-- [x] Disease detection (CNN model)
-- [x] Weather dashboard
-- [x] Government scheme navigator
-- [x] Mandi price tracker
-- [x] Direct marketplace
-- [x] Community forum
-- [ ] Offline mode (TFLite on-device)
-- [ ] Hindi UI localisation
-- [ ] Voice input in Hindi
-- [ ] Push notifications (FCM)
-- [ ] UPI / Razorpay in-app payments
-- [ ] WhatsApp bot for feature phones
+### Backend on Render (recommended free tier)
 
----
+1. Connect the `KrishiMitra-AI` repo to Render
+2. Set **Root Directory**: `backend_unified`
+3. Set **Build Command**: `pip install -r requirements.txt`
+4. Set **Start Command**: `gunicorn main:app --worker-class uvicorn.workers.UvicornWorker --workers 2 --bind 0.0.0.0:$PORT`
+5. Add environment variable: `GEMINI_API_KEY`
 
-## 🤝 Contributing
+### Backend with Docker
 
 ```bash
-git checkout -b feature/your-feature
-git commit -m "feat: your change"
-git push origin feature/your-feature
-# Open a Pull Request
+cd backend_unified
+docker build -t krishimitra-backend .
+docker run -p 8000:8000 -e GEMINI_API_KEY=your_key krishimitra-backend
 ```
 
-Use [Conventional Commits](https://conventionalcommits.org) · Run `flutter analyze` and `black` before pushing.
+---
+
+## Module Status
+
+| Module | Backend | Flutter | Notes |
+|--------|---------|---------|-------|
+| AI Chatbot | ✅ | ✅ | Needs GEMINI_API_KEY |
+| Weather | ✅ | ✅ | Uses Open-Meteo (free, no key) |
+| Mandi Prices | ✅ | ✅ | 709 records, Rajasthan |
+| Government Schemes | ✅ | ✅ | 62 schemes, bilingual |
+| Crop Disease | ✅ | ✅ | Needs PyTorch (optional) |
+| Compensation Calc | ✅ | ✅ | Crop-specific PMFBY/SDRF rates |
+| Community Chat | ✅ | ✅ | Needs Firebase |
+| Marketplace | ✅ | ✅ | Needs Firebase Storage |
+| Land Records | — | ✅ | External (Rajasthan e-Dharti) |
+| Kisan Loan | — | ✅ | Static info screen |
+| Profile | — | ✅ | Firebase Auth + SharedPreferences |
 
 ---
 
-## 📄 License
+## Security Notes
 
-MIT © [Neelam Nagar](https://github.com/neelam-nagar)
+- No secrets are hardcoded — all come from environment variables or `--dart-define`
+- Firebase Auth enforces phone-number identity before Firestore writes
+- Firestore Security Rules should restrict each user to their own documents
+- Backend CORS is open (`*`) — appropriate for a mobile-first API; tighten if adding a web frontend
 
 ---
 
-<div align="center">
+## Test Results
 
-Made with ❤️ for the farmers of Rajasthan 🌾
-
-⭐ **Star this repo if it helped you!**
-
-[![GitHub stars](https://img.shields.io/github/stars/neelam-nagar/KrishiMitra-AI?style=social)](https://github.com/neelam-nagar/KrishiMitra-AI)
-
-</div>
+```
+Backend:  37/37 passing  (pytest tests/ -v)
+Frontend: Widget + unit tests for LanguageProvider & LocationProvider
+```

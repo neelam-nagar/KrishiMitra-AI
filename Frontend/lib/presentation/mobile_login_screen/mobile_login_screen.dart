@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 import '../../core/language_provider.dart';
@@ -38,7 +39,17 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
   }
 
   Future<void> _loadSavedPhoneNumber() async {
-    // TODO: restore last used phone number from SharedPreferences
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final saved = prefs.getString('last_phone_number');
+      if (saved != null && saved.isNotEmpty && mounted) {
+        setState(() {
+          _phoneController.text = saved;
+        });
+      }
+    } catch (_) {
+      // Non-critical; silently ignore
+    }
   }
 
   Future<void> _sendOTP() async {

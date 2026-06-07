@@ -144,16 +144,16 @@ class _MainDashboardState extends State<MainDashboard>
     String url;
 
     if (location.latitude != null && location.longitude != null) {
-      url = '${AppConfig.weatherApiBase}/weather'
+      url = '${AppConfig.weatherApiBase}/api/weather'
           '?lat=${location.latitude}&lon=${location.longitude}';
     } else if (location.district.isNotEmpty &&
         location.tehsil.isNotEmpty &&
         location.village.isNotEmpty) {
       // FIX: district/tehsil/village are non-nullable — removed null checks
-      url = '${AppConfig.weatherApiBase}/weather'
-          '?district=${location.district}'
-          '&tehsil=${location.tehsil}'
-          '&village=${location.village}';
+      url = '${AppConfig.weatherApiBase}/api/weather'
+          '?district=${Uri.encodeComponent(location.district)}'
+          '&tehsil=${Uri.encodeComponent(location.tehsil)}'
+          '&village=${Uri.encodeComponent(location.village)}';
     } else {
       return;
     }

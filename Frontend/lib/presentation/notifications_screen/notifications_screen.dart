@@ -38,7 +38,7 @@ class _NotificationsScreenState extends State<NotificationsScreen>
       length: _categories.length,
       vsync: this,
     );
-    _loadDummyNotifications();
+    _loadNotifications();
   }
 
   @override
@@ -47,7 +47,48 @@ class _NotificationsScreenState extends State<NotificationsScreen>
     super.dispose();
   }
 
-  void _loadDummyNotifications() {
+  /// Loads notifications — tries Firestore first (real data when Firebase is
+  /// configured), falls back to curated static content so the screen is
+  /// always useful even in demo / offline mode.
+  Future<void> _loadNotifications() async {
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        // Try to load from Firestore user notifications sub-collection
+        final snap = await FirebaseFirestore.instance
+            .collection('users')
+            .doc(user.uid)
+            .collection('notifications')
+            .orderBy('timestamp', descending: true)
+            .limit(30)
+            .get();
+
+        if (snap.docs.isNotEmpty) {
+          if (mounted) {
+            setState(() {
+              _notifications = snap.docs.map((d) {
+                final data = d.data();
+                data['id'] = d.id;
+                // Firestore Timestamp → DateTime
+                if (data['timestamp'] is Timestamp) {
+                  data['timestamp'] =
+                      (data['timestamp'] as Timestamp).toDate();
+                }
+                return data;
+              }).toList();
+            });
+          }
+          return;
+        }
+      }
+    } catch (_) {
+      // Firebase not configured or offline — fall through to static content
+    }
+    // Static curated content shown when Firebase is not yet configured
+    _loadStaticNotifications();
+  }
+
+  void _loadStaticNotifications() {
     setState(() {
       _notifications = [
         {

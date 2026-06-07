@@ -41,16 +41,19 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
   List<Map<String, dynamic>> _filteredProducts = [];
 
   Future<String> _uploadImage() async {
-    final picker = ImagePicker();
-    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
-    if (pickedFile == null) return '';
-
-    final bytes = await pickedFile.readAsBytes();
-    final ref = FirebaseStorage.instance
-        .ref()
-        .child('products/${DateTime.now().millisecondsSinceEpoch}.jpg');
-    await ref.putData(bytes);
-    return await ref.getDownloadURL();
+    try {
+      return await StorageService.instance.uploadProductImage(
+        bytes: await () async {
+          final picker = ImagePicker();
+          final f = await picker.pickImage(source: ImageSource.gallery);
+          if (f == null) return null;
+          return await f.readAsBytes();
+        }().then((b) => b ?? Uint8List(0)),
+        fileName: 'product_${DateTime.now().millisecondsSinceEpoch}.jpg',
+      );
+    } catch (_) {
+      return '';
+    }
   }
 
   Future<void> _fetchProducts() async {
