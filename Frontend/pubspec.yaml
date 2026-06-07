@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter # CRITICAL: Required for every Flutter project - DO NOT REMOVE
     
   http: ^1.1.0
-  image_picker: ^1.0.7
+  image_picker: ^1.2.1
   share_plus: ^10.0.0
 
   # 🌐 Localization (LANGUAGE SUPPORT)
@@ -43,6 +43,7 @@ dependencies:
   firebase_core: ^4.3.0
   firebase_auth: ^6.3.0
   cloud_firestore: ^6.2.0
+  firebase_storage: ^13.2.0
 
 dev_dependencies:
   flutter_test:    # CRITICAL: Required for Flutter project testing - DO NOT REMOVE

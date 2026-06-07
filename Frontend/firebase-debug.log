@@ -1,0 +1,25 @@
+[debug] [2026-04-02T15:02:13.546Z] ----------------------------------------------------------------------
+[debug] [2026-04-02T15:02:13.548Z] Command:       /opt/homebrew/Cellar/node/24.10.0_1/bin/node /opt/homebrew/bin/firebase apps:create ios krishimitra_ai (ios) --bundle-id=com.krishimitra_ai.app.testProject --json --project=krishimitra-ai-c75a6
+[debug] [2026-04-02T15:02:13.548Z] CLI Version:   15.12.0
+[debug] [2026-04-02T15:02:13.548Z] Platform:      darwin
+[debug] [2026-04-02T15:02:13.548Z] Node Version:  v24.10.0
+[debug] [2026-04-02T15:02:13.548Z] Time:          Thu Apr 02 2026 20:32:13 GMT+0530 (India Standard Time)
+[debug] [2026-04-02T15:02:13.548Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-02T15:02:13.665Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"flutter"}
+[debug] [2026-04-02T15:02:13.668Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-02T15:02:13.668Z] > authorizing via signed-in user (neelamnagar526@gmail.com)
+[info] Create your IOS app in project krishimitra-ai-c75a6:
+[debug] [2026-04-02T15:02:13.670Z] Checked if tokens are valid: true, expires at: 1775145542043
+[debug] [2026-04-02T15:02:13.670Z] Checked if tokens are valid: true, expires at: 1775145542043
+[debug] [2026-04-02T15:02:13.671Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/krishimitra-ai-c75a6/iosApps [none]
+[debug] [2026-04-02T15:02:13.671Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/krishimitra-ai-c75a6/iosApps {"displayName":"krishimitra_ai (ios)","bundleId":"com.krishimitra_ai.app.testProject"}
+[debug] [2026-04-02T15:02:19.734Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/krishimitra-ai-c75a6/iosApps 400
+[debug] [2026-04-02T15:02:19.734Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/krishimitra-ai-c75a6/iosApps {"error":{"code":400,"message":"Request contains an invalid argument.","status":"INVALID_ARGUMENT"}}
+[debug] [2026-04-02T15:02:19.735Z] Request to https://firebase.googleapis.com/v1beta1/projects/krishimitra-ai-c75a6/iosApps had HTTP Error: 400, Request contains an invalid argument.
+[debug] [2026-04-02T15:02:19.736Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/krishimitra-ai-c75a6/iosApps had HTTP Error: 400, Request contains an invalid argument.
+    at responseToError (/opt/homebrew/lib/node_modules/firebase-tools/lib/responseToError.js:53:12)
+    at RetryOperation._fn (/opt/homebrew/lib/node_modules/firebase-tools/lib/apiv2.js:333:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to create iOS app for project krishimitra-ai-c75a6. See firebase-debug.log for more info.
