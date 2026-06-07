@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
 import 'package:provider/provider.dart';
 import '../../../../core/language_provider.dart';
-
 import '../../../../core/app_export.dart';
-import '../../../widgets/custom_icon_widget.dart';
+// FIX: removed unnecessary custom_icon_widget import (already in app_export)
 
-/// Header widget for location permission screen
-/// Shows location icon, illustration, and explanation text
+/// Header widget for location permission screen.
+/// Shows location icon, illustration, and explanation text.
+///
+/// Pass [isAutoDetecting] = true while GPS is in progress,
+/// false when asking user to manually grant permission.
 class LocationHeaderWidget extends StatelessWidget {
-  const LocationHeaderWidget({super.key});
+  // FIX: was 'final bool isAutoDetecting = true' (compile-time constant)
+  // → now a constructor parameter so the analyzer sees both branches as reachable
+  final bool isAutoDetecting;
+
+  const LocationHeaderWidget({
+    super.key,
+    this.isAutoDetecting = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final lang = context.watch<LanguageProvider>().currentLanguage;
     final bool isHindi = lang == 'hi';
-    final bool isAutoDetecting = true; // you can pass this later dynamically
 
     return Column(
       children: [
@@ -40,7 +47,7 @@ class LocationHeaderWidget extends StatelessWidget {
 
         SizedBox(height: 3.h),
 
-        // Header title
+        // Header title — different text depending on state
         Text(
           isAutoDetecting
               ? (!isHindi ? 'Detecting Your Location...' : 'आपकी लोकेशन पता की जा रही है...')
@@ -54,10 +61,11 @@ class LocationHeaderWidget extends StatelessWidget {
 
         SizedBox(height: 2.h),
 
+        // Spinner shown only while auto-detecting
         if (isAutoDetecting)
           Padding(
             padding: EdgeInsets.only(bottom: 2.h),
-            child: SizedBox(
+            child: const SizedBox(
               height: 20,
               width: 20,
               child: CircularProgressIndicator(strokeWidth: 2),
@@ -85,29 +93,33 @@ class LocationHeaderWidget extends StatelessWidget {
 
         SizedBox(height: 3.h),
 
-        // Benefits list
         _buildBenefitsList(theme, isHindi),
       ],
     );
   }
 
-  /// Build benefits list
   Widget _buildBenefitsList(ThemeData theme, bool isHindi) {
     final benefits = [
       {
         'icon': 'wb_sunny',
         'title': !isHindi ? 'Accurate Weather' : 'सटीक मौसम जानकारी',
-        'description': !isHindi ? 'Get precise weather forecasts for your location' : 'आपके क्षेत्र के अनुसार सटीक मौसम पूर्वानुमान पाएं',
+        'description': !isHindi
+            ? 'Get precise weather forecasts for your location'
+            : 'आपके क्षेत्र के अनुसार सटीक मौसम पूर्वानुमान पाएं',
       },
       {
         'icon': 'store',
         'title': !isHindi ? 'Local Mandi Prices' : 'स्थानीय मंडी भाव',
-        'description': !isHindi ? 'View real-time crop prices from nearby mandis' : 'नजदीकी मंडियों के वास्तविक समय के भाव देखें',
+        'description': !isHindi
+            ? 'View real-time crop prices from nearby mandis'
+            : 'नजदीकी मंडियों के वास्तविक समय के भाव देखें',
       },
       {
         'icon': 'agriculture',
         'title': !isHindi ? 'Regional Guidance' : 'क्षेत्रीय मार्गदर्शन',
-        'description': !isHindi ? 'Receive farming tips specific to your area' : 'अपने क्षेत्र के अनुसार खेती की सलाह पाएं',
+        'description': !isHindi
+            ? 'Receive farming tips specific to your area'
+            : 'अपने क्षेत्र के अनुसार खेती की सलाह पाएं',
       },
     ];
 

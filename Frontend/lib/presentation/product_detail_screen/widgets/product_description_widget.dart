@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
 import 'package:provider/provider.dart';
 import '../../../core/language_provider.dart';
-
 import '../../../core/app_export.dart';
-import '../../../widgets/custom_icon_widget.dart';
 
 /// Product description widget with farming details
 class ProductDescriptionWidget extends StatelessWidget {
@@ -86,7 +83,6 @@ class _DescriptionSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final lang = context.watch<LanguageProvider>().currentLanguage;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

@@ -61,7 +61,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               children: [
                 CircleAvatar(
                   radius: 52,
-                  backgroundColor: theme.colorScheme.primary.withOpacity(0.12),
+                  backgroundColor: theme.colorScheme.primary.withValues(alpha: 0.12),
                   backgroundImage:
                       _profileImageBytes != null
                           ? MemoryImage(_profileImageBytes!)

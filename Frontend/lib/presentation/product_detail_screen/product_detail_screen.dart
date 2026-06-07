@@ -7,7 +7,6 @@ import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../widgets/custom_bottom_bar.dart';
 import '../../core/app_export.dart';
-import '../../widgets/custom_icon_widget.dart';
 import './widgets/price_comparison_widget.dart';
 import './widgets/product_description_widget.dart';
 import './widgets/product_image_gallery_widget.dart';
@@ -15,6 +14,7 @@ import './widgets/product_info_widget.dart';
 import './widgets/seller_info_widget.dart';
 import './widgets/similar_products_widget.dart';
 import '../../presentation/main_shell/main_shell_screen.dart';
+
 /// Product Detail Screen - Comprehensive product information for informed buying decisions
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({super.key});
@@ -40,20 +40,17 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     'isOrganic': true,
     'images': [
       {
-        'url':
-            'https://images.unsplash.com/photo-1554277090-565e6570bc8a',
+        'url': 'https://images.unsplash.com/photo-1554277090-565e6570bc8a',
         'semanticLabel':
             'Golden wheat stalks in agricultural field with clear blue sky background',
       },
       {
-        'url':
-            'https://images.unsplash.com/photo-1501180536772-5fd6e427968a',
+        'url': 'https://images.unsplash.com/photo-1501180536772-5fd6e427968a',
         'semanticLabel':
             'Close-up of wheat grains in farmer hands showing quality and texture',
       },
       {
-        'url':
-            'https://images.unsplash.com/photo-1716445867588-105a60770e1d',
+        'url': 'https://images.unsplash.com/photo-1716445867588-105a60770e1d',
         'semanticLabel':
             'Wheat field during harvest season with farming equipment in background',
       },
@@ -96,8 +93,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       'price': 26.00,
       'unit': 'kg',
       'distance': '8 km away',
-      'image':
-          'https://images.unsplash.com/photo-1633320882893-069f02daedaf',
+      'image': 'https://images.unsplash.com/photo-1633320882893-069f02daedaf',
       'imageSemanticLabel': 'Golden wheat field with morning sunlight',
     },
     {
@@ -116,8 +112,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       'price': 24.00,
       'unit': 'kg',
       'distance': '5 km away',
-      'image':
-          'https://images.unsplash.com/photo-1707811179851-c1f93698ad46',
+      'image': 'https://images.unsplash.com/photo-1707811179851-c1f93698ad46',
       'imageSemanticLabel': 'Fresh wheat harvest in rural farm',
     },
   ];
@@ -125,41 +120,24 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final lang = context.watch<LanguageProvider>().currentLanguage;
     return MainShellScreen(
       currentItem: CustomBottomBarItem.marketplace,
       child: Scaffold(
-      backgroundColor: theme.brightness == Brightness.light
-          ? const Color(0xFFFAFAFA)
-          : const Color(0xFF121212),
-      body: SafeArea(
-        child: Stack(
-          children: [
-            // Main content
-            CustomScrollView(
-              slivers: [
-                // App bar
-                SliverAppBar(
-                  expandedHeight: 40.h,
-                  pinned: true,
-                  backgroundColor: theme.colorScheme.surface,
-                  leading: IconButton(
-                    icon: Container(
-                      padding: EdgeInsets.all(2.w),
-                      decoration: BoxDecoration(
-                        color: Colors.black.withValues(alpha: 0.5),
-                        shape: BoxShape.circle,
-                      ),
-                      child: CustomIconWidget(
-                        iconName: 'arrow_back',
-                        color: Colors.white,
-                        size: 20,
-                      ),
-                    ),
-                    onPressed: () => Navigator.pop(context),
-                  ),
-                  actions: [
-                    IconButton(
+        backgroundColor: theme.brightness == Brightness.light
+            ? const Color(0xFFFAFAFA)
+            : const Color(0xFF121212),
+        body: SafeArea(
+          child: Stack(
+            children: [
+              // Main content
+              CustomScrollView(
+                slivers: [
+                  // App bar
+                  SliverAppBar(
+                    expandedHeight: 40.h,
+                    pinned: true,
+                    backgroundColor: theme.colorScheme.surface,
+                    leading: IconButton(
                       icon: Container(
                         padding: EdgeInsets.all(2.w),
                         decoration: BoxDecoration(
@@ -167,87 +145,92 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           shape: BoxShape.circle,
                         ),
                         child: CustomIconWidget(
-                          iconName: 'share',
+                          iconName: 'arrow_back',
                           color: Colors.white,
                           size: 20,
                         ),
                       ),
-                      onPressed: _shareProduct,
+                      onPressed: () => Navigator.pop(context),
                     ),
-                    IconButton(
-                      icon: Container(
-                        padding: EdgeInsets.all(2.w),
-                        decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.5),
-                          shape: BoxShape.circle,
+                    actions: [
+                      IconButton(
+                        icon: Container(
+                          padding: EdgeInsets.all(2.w),
+                          decoration: BoxDecoration(
+                            color: Colors.black.withValues(alpha: 0.5),
+                            shape: BoxShape.circle,
+                          ),
+                          child: CustomIconWidget(
+                            iconName: 'share',
+                            color: Colors.white,
+                            size: 20,
+                          ),
                         ),
-                        child: CustomIconWidget(
-                          iconName: _isBookmarked
-                              ? 'bookmark'
-                              : 'bookmark_border',
-                          color: Colors.white,
-                          size: 20,
+                        onPressed: _shareProduct,
+                      ),
+                      IconButton(
+                        icon: Container(
+                          padding: EdgeInsets.all(2.w),
+                          decoration: BoxDecoration(
+                            color: Colors.black.withValues(alpha: 0.5),
+                            shape: BoxShape.circle,
+                          ),
+                          child: CustomIconWidget(
+                            iconName: _isBookmarked
+                                ? 'bookmark'
+                                : 'bookmark_border',
+                            color: Colors.white,
+                            size: 20,
+                          ),
                         ),
+                        onPressed: _toggleBookmark,
                       ),
-                      onPressed: _toggleBookmark,
-                    ),
-                    SizedBox(width: 2.w),
-                  ],
-                  flexibleSpace: FlexibleSpaceBar(
-                    background: ProductImageGalleryWidget(
-                      images:
-                          _productData['images'] as List<Map<String, dynamic>>,
-                    ),
-                  ),
-                ),
-
-                // Product content
-                SliverToBoxAdapter(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Product information
-                      ProductInfoWidget(product: _productData),
-
-                      // Seller information
-                      SellerInfoWidget(
-                        seller: _productData['seller'] as Map<String, dynamic>,
-                      ),
-
-                      // Product description
-                      ProductDescriptionWidget(
-                        description:
-                            _productData['description'] as Map<String, dynamic>,
-                      ),
-
-                      // Price comparison
-                      PriceComparisonWidget(
-                        priceData:
-                            _productData['priceComparison']
-                                as Map<String, dynamic>,
-                      ),
-
-                      // Similar products
-                      SimilarProductsWidget(products: _similarProducts),
-
-                      // Bottom spacing for floating button
-                      SizedBox(height: 10.h),
+                      SizedBox(width: 2.w),
                     ],
+                    flexibleSpace: FlexibleSpaceBar(
+                      background: ProductImageGalleryWidget(
+                        images: _productData['images']
+                            as List<Map<String, dynamic>>,
+                      ),
+                    ),
                   ),
-                ),
-              ],
-            ),
 
-            // Contact seller button
-            Positioned(
-              bottom: 2.h,
-              left: 4.w,
-              right: 4.w,
-              child: _buildContactButton(theme),
-            ),
-          ],
+                  // Product content
+                  SliverToBoxAdapter(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ProductInfoWidget(product: _productData),
+                        SellerInfoWidget(
+                          seller:
+                              _productData['seller'] as Map<String, dynamic>,
+                        ),
+                        ProductDescriptionWidget(
+                          description: _productData['description']
+                              as Map<String, dynamic>,
+                        ),
+                        PriceComparisonWidget(
+                          priceData: _productData['priceComparison']
+                              as Map<String, dynamic>,
+                        ),
+                        SimilarProductsWidget(products: _similarProducts),
+                        SizedBox(height: 10.h),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+
+              // Contact seller button
+              Positioned(
+                bottom: 2.h,
+                left: 4.w,
+                right: 4.w,
+                child: _buildContactButton(theme),
+              ),
+            ],
+          ),
         ),
-      ),
       ),
     );
   }
@@ -297,7 +280,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   ),
                   SizedBox(width: 2.w),
                   Text(
-                    lang == 'en' ? 'Contact Seller' : 'विक्रेता से संपर्क करें',
+                    lang == 'en'
+                        ? 'Contact Seller'
+                        : 'विक्रेता से संपर्क करें',
                     style: theme.textTheme.titleMedium?.copyWith(
                       color: theme.colorScheme.onPrimary,
                       fontWeight: FontWeight.w600,
@@ -318,8 +303,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     try {
       final seller = _productData['seller'] as Map<String, dynamic>;
       final phoneNumber = seller['phone'] as String;
-
-      // Show contact options dialog
       await showModalBottomSheet(
         context: context,
         backgroundColor: Colors.transparent,
@@ -359,7 +342,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Handle bar
           Container(
             width: 12.w,
             height: 0.5.h,
@@ -369,8 +351,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             ),
           ),
           SizedBox(height: 2.h),
-
-          // Title
           Text(
             lang == 'en' ? 'Contact Seller' : 'विक्रेता से संपर्क करें',
             style: theme.textTheme.titleLarge?.copyWith(
@@ -387,8 +367,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             ),
           ),
           SizedBox(height: 3.h),
-
-          // Phone call option
           ListTile(
             leading: Container(
               padding: EdgeInsets.all(2.w),
@@ -424,8 +402,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             },
           ),
           SizedBox(height: 1.h),
-
-          // WhatsApp option
           ListTile(
             leading: Container(
               padding: EdgeInsets.all(2.w),
@@ -481,9 +457,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              lang == 'en'
-                  ? 'Unable to make phone call'
-                  : 'कॉल नहीं हो पाई',
+              lang == 'en' ? 'Unable to make phone call' : 'कॉल नहीं हो पाई',
             ),
             backgroundColor: const Color(0xFFD32F2F),
           ),
@@ -497,7 +471,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     final cleanNumber = phoneNumber.replaceAll(RegExp(r'[^\d+]'), '');
     final Uri whatsappUri = Uri.parse('https://wa.me/$cleanNumber');
     final lang = context.watch<LanguageProvider>().currentLanguage;
-
     try {
       if (await canLaunchUrl(whatsappUri)) {
         await launchUrl(whatsappUri, mode: LaunchMode.externalApplication);
@@ -532,11 +505,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     final unit = _productData['unit'] as String;
     final seller = _productData['seller'] as Map<String, dynamic>;
 
-    final shareText =
-        '''
-${lang == 'en'
-    ? 'Check out this product on KrishiMitra AI:'
-    : 'KrishiMitra AI पर यह उत्पाद देखें:'}
+    final shareText = '''
+${lang == 'en' ? 'Check out this product on KrishiMitra AI:' : 'KrishiMitra AI पर यह उत्पाद देखें:'}
 
 $productName
 ₹$price per $unit
@@ -568,9 +538,7 @@ ${lang == 'en' ? 'Contact:' : 'संपर्क:'} ${seller['phone']}
   /// Toggle bookmark
   void _toggleBookmark() {
     HapticFeedback.lightImpact();
-    setState(() {
-      _isBookmarked = !_isBookmarked;
-    });
+    setState(() => _isBookmarked = !_isBookmarked);
 
     final theme = Theme.of(context);
     final lang = context.watch<LanguageProvider>().currentLanguage;

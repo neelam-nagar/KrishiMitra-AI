@@ -105,7 +105,7 @@ class _LocationSelectorBottomSheetState
 
             /// 🟢 District Dropdown
             DropdownButtonFormField<String>(
-              value: selectedDistrict,
+              initialValue: selectedDistrict,
               hint: Text(lang == 'en' ? 'Select District' : 'जिला चुनें'),
               items: districts
                   .map((d) => DropdownMenuItem(value: d, child: Text(d)))
@@ -129,7 +129,7 @@ class _LocationSelectorBottomSheetState
 
             /// 🟢 Tehsil Dropdown
             DropdownButtonFormField<String>(
-              value: selectedTehsil,
+              initialValue: selectedTehsil,
               hint: Text(lang == 'en' ? 'Select Tehsil' : 'तहसील चुनें'),
               items: tehsils
                   .map((t) => DropdownMenuItem(value: t, child: Text(t)))
@@ -153,7 +153,7 @@ class _LocationSelectorBottomSheetState
 
             /// 🟢 Village Dropdown
             DropdownButtonFormField<String>(
-              value: selectedVillage,
+              initialValue: selectedVillage,
               hint: Text(lang == 'en' ? 'Select Village' : 'गांव चुनें'),
               items: villages
                   .map((v) => DropdownMenuItem(value: v, child: Text(v)))

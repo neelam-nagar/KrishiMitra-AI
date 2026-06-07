@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import '../../core/language_provider.dart';
 import '../../core/app_export.dart';
 import '../../widgets/custom_app_bar.dart';
-import '../../widgets/custom_icon_widget.dart';
 import '../../widgets/custom_bottom_bar.dart';
 import './widgets/price_card_widget.dart';
 import '../../data/crop_price/crop_price_api.dart';
@@ -30,76 +29,6 @@ class _CropPriceScreenState extends State<CropPriceScreen>
   List<String> _availableDistricts = [];
   List<String> _availableMandis = [];
   List<String> _availableCrops = [];
-
-  // Mock crop prices kept for display fallback only — clearly marked
-  final List<Map<String, dynamic>> _cropPrices = [
-    {
-      'name': 'Wheat',
-      'nameHindi': 'गेहूं',
-      'minPrice': 2050,
-      'maxPrice': 2150,
-      'avgPrice': 2100,
-      'unit': 'Quintal',
-      'change': 2.5,
-      'lastUpdated': '2 hours ago',
-      'category': 'Grains',
-    },
-    {
-      'name': 'Rice',
-      'nameHindi': 'चावल',
-      'minPrice': 2800,
-      'maxPrice': 3200,
-      'avgPrice': 3000,
-      'unit': 'Quintal',
-      'change': -1.2,
-      'lastUpdated': '1 hour ago',
-      'category': 'Grains',
-    },
-    {
-      'name': 'Potato',
-      'nameHindi': 'आलू',
-      'minPrice': 1200,
-      'maxPrice': 1500,
-      'avgPrice': 1350,
-      'unit': 'Quintal',
-      'change': 5.8,
-      'lastUpdated': '3 hours ago',
-      'category': 'Vegetables',
-    },
-    {
-      'name': 'Tomato',
-      'nameHindi': 'टमाटर',
-      'minPrice': 800,
-      'maxPrice': 1200,
-      'avgPrice': 1000,
-      'unit': 'Quintal',
-      'change': -3.5,
-      'lastUpdated': '2 hours ago',
-      'category': 'Vegetables',
-    },
-    {
-      'name': 'Onion',
-      'nameHindi': 'प्याज',
-      'minPrice': 1500,
-      'maxPrice': 1800,
-      'avgPrice': 1650,
-      'unit': 'Quintal',
-      'change': 4.2,
-      'lastUpdated': '1 hour ago',
-      'category': 'Vegetables',
-    },
-    {
-      'name': 'Cotton',
-      'nameHindi': 'कपास',
-      'minPrice': 6500,
-      'maxPrice': 7200,
-      'avgPrice': 6850,
-      'unit': 'Quintal',
-      'change': 1.5,
-      'lastUpdated': '4 hours ago',
-      'category': 'Cash Crops',
-    },
-  ];
 
   @override
   void initState() {
@@ -240,8 +169,8 @@ class _CropPriceScreenState extends State<CropPriceScreen>
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final lang = context.watch<LanguageProvider>().currentLanguage;
-    final bool isHindi = lang == 'hi';
+    final bool isHindi =
+        context.watch<LanguageProvider>().currentLanguage == 'hi';
 
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
@@ -258,7 +187,7 @@ class _CropPriceScreenState extends State<CropPriceScreen>
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
               child: DropdownButtonFormField<String>(
-                value: _availableDistricts.contains(_selectedDistrict)
+                initialValue: _availableDistricts.contains(_selectedDistrict)
                     ? _selectedDistrict
                     : null,
                 decoration: InputDecoration(
@@ -289,7 +218,7 @@ class _CropPriceScreenState extends State<CropPriceScreen>
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
               child: DropdownButtonFormField<String>(
-                value: _availableMandis.contains(_selectedMandi)
+                initialValue: _availableMandis.contains(_selectedMandi)
                     ? _selectedMandi
                     : null,
                 decoration: InputDecoration(
@@ -318,7 +247,7 @@ class _CropPriceScreenState extends State<CropPriceScreen>
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
               child: DropdownButtonFormField<String>(
-                value: _selectedCrop.isEmpty ? null : _selectedCrop,
+                initialValue: _selectedCrop.isEmpty ? null : _selectedCrop,
                 decoration: InputDecoration(
                   labelText: isHindi ? 'फसल' : 'Crop',
                   border: OutlineInputBorder(

@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 
 import '../../core/app_export.dart';
 import '../../core/language_provider.dart';
-import '../../widgets/custom_icon_widget.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

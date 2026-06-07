@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import '../../core/language_provider.dart';
 import '../../core/auth/auth_service.dart';
 import '../../core/app_export.dart';
-import '../../widgets/custom_icon_widget.dart';
 import './widgets/mobile_number_header_widget.dart';
 import './widgets/otp_input_widget.dart';
 import './widgets/resend_timer_widget.dart';

@@ -319,7 +319,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
 
                   DropdownButtonFormField<String>(
                     decoration: const InputDecoration(labelText: 'District'),
-                    value: _selectedDistrict,
+                    initialValue: _selectedDistrict,
                     items: _districts
                         .map((d) => DropdownMenuItem(value: d, child: Text(d)))
                         .toList(),
@@ -339,7 +339,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
 
                   DropdownButtonFormField<String>(
                     decoration: const InputDecoration(labelText: 'Tehsil'),
-                    value: _selectedTehsil,
+                    initialValue: _selectedTehsil,
                     items: _tehsils
                         .map((t) => DropdownMenuItem(value: t, child: Text(t)))
                         .toList(),
@@ -359,7 +359,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
 
                   DropdownButtonFormField<String>(
                     decoration: const InputDecoration(labelText: 'Village'),
-                    value: _selectedVillage,
+                    initialValue: _selectedVillage,
                     items: _villages
                         .map((v) => DropdownMenuItem(value: v, child: Text(v)))
                         .toList(),

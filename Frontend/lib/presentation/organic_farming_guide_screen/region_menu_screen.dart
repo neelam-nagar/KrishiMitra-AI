@@ -103,12 +103,6 @@ class _RegionMenuScreenState extends State<RegionMenuScreen> {
       );
     }
 
-    final excludedKeys = ['area', 'districts', 'introduction', 'crop_wise_detailed_guidance'];
-
-    final menuKeys = data!.keys
-        .where((key) => !excludedKeys.contains(key))
-        .toList();
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -232,17 +226,17 @@ class _RegionMenuScreenState extends State<RegionMenuScreen> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      sectionColor.withOpacity(0.08),
+                      sectionColor.withValues(alpha: 0.08),
                       Colors.white,
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: sectionColor.withOpacity(0.2)),
+                  border: Border.all(color: sectionColor.withValues(alpha: 0.2)),
                   boxShadow: [
                     BoxShadow(
-                      color: sectionColor.withOpacity(0.08),
+                      color: sectionColor.withValues(alpha: 0.08),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),
@@ -259,7 +253,7 @@ class _RegionMenuScreenState extends State<RegionMenuScreen> {
                           Container(
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                              color: sectionColor.withOpacity(0.15),
+                              color: sectionColor.withValues(alpha: 0.15),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Icon(sectionIcon, color: sectionColor),
