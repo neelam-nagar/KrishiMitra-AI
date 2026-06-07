@@ -164,20 +164,20 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
   }
 
   Future<void> _loadDistricts() async {
-    final res = await http.get(Uri.parse("http://127.0.0.1:5001/locations/districts"));
+    final res = await http.get(Uri.parse("https://krishimitra-ai-3-65a1.onrender.com/locations/districts"));
     _districts = List<String>.from(json.decode(res.body));
   }
 
   Future<void> _loadTehsils(String district) async {
     final res = await http.get(
-      Uri.parse("http://127.0.0.1:5001/locations/tehsils?district=$district"),
+      Uri.parse("https://krishimitra-ai-3-65a1.onrender.com/locations/tehsils?district=$district"),
     );
     _tehsils = List<String>.from(json.decode(res.body));
   }
 
   Future<void> _loadVillages(String district, String tehsil) async {
     final res = await http.get(
-      Uri.parse("http://127.0.0.1:5001/locations/villages?district=$district&tehsil=$tehsil"),
+      Uri.parse("https://krishimitra-ai-3-65a1.onrender.com/locations/villages?district=$district&tehsil=$tehsil"),
     );
     _villages = List<String>.from(json.decode(res.body));
   }
@@ -195,7 +195,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
       final tehsil = locationProvider.tehsil;
       final village = locationProvider.village;
 final url =
-    "http://127.0.0.1:5001/weather"
+    "https://krishimitra-ai-3-65a1.onrender.com/weather"
     "?district=$district&tehsil=$tehsil&village=$village";
 
       final response = await http.get(Uri.parse(url));
