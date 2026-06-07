@@ -434,7 +434,6 @@ class LoanDetailScreen extends StatelessWidget {
                   isEnglish
                     ? "Step 1: Visit nearest bank (SBI / RRB / Cooperative) and ask for Kisan Credit Card (KCC) application form"
                     : "स्टेप 1: नजदीकी बैंक (SBI / RRB / सहकारी) में जाकर केसीसी फॉर्म लें",
-
                   isEnglish
                     ? "Step 2: Fill form with land size, crop type, irrigation source and personal details"
                     : "स्टेप 2: फॉर्म में जमीन, फसल, सिंचाई और व्यक्तिगत जानकारी भरें",
