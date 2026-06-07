@@ -33,7 +33,6 @@ class AuthService {
 
       final credential = GoogleAuthProvider.credential(
         idToken: googleAuth.idToken,
-        accessToken: googleAuth.accessToken,
       );
 
       await _auth.signInWithCredential(credential);
