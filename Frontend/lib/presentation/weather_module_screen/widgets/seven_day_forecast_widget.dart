@@ -52,8 +52,8 @@ class SevenDayForecastWidget extends StatelessWidget {
             // Day
             Text(
               lang == 'en'
-                  ? DateFormat('EEE').format(DateTime.parse(forecast["date"]))
-                  : _getHindiDay(DateFormat('EEEE').format(DateTime.parse(forecast["date"]))),
+                  ? DateFormat('EEE').format(forecast["date"] is String ? (forecast["date"] is String ? DateTime.parse(forecast["date"] as String) : forecast["date"] as DateTime) : forecast["date"] as DateTime)
+                  : _getHindiDay(DateFormat('EEEE').format(forecast["date"] is String ? (forecast["date"] is String ? DateTime.parse(forecast["date"] as String) : forecast["date"] as DateTime) : forecast["date"] as DateTime)),
               style: theme.textTheme.titleSmall?.copyWith(
                 fontWeight: FontWeight.w600,
                 color: Colors.black87,
@@ -64,7 +64,7 @@ class SevenDayForecastWidget extends StatelessWidget {
 
             // Date
             Text(
-              DateFormat('dd MMM').format(DateTime.parse(forecast["date"])),
+              DateFormat('dd MMM').format((forecast["date"] is String ? DateTime.parse(forecast["date"] as String) : forecast["date"] as DateTime)),
               style: theme.textTheme.bodySmall?.copyWith(
                 color: Colors.grey.shade600,
               ),
