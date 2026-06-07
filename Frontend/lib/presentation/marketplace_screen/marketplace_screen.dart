@@ -13,6 +13,9 @@ import './widgets/search_filter_bar_widget.dart';
 import 'package:provider/provider.dart';
 import '../../core/language_provider.dart';
 
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 /// Marketplace Screen - Connects farmers and buyers through product listings
 /// Provides search, filter, and direct contact functionality
 class MarketplaceScreen extends StatefulWidget {
@@ -36,129 +39,84 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
   bool _isLoading = false;
   String _userRole = 'Buyer'; // Mock user role: 'Farmer' or 'Buyer'
 
-  // Mock product data
-  final List<Map<String, dynamic>> _allProducts = [
-    {
-      "id": 1,
-      "nameHindi": "गेहूं",
-      "nameEnglish": "Wheat",
-      "category": "Grains",
-      "quantity": 500,
-      "unit": "kg",
-      "pricePerUnit": 25,
-      "location": "Jaipur, Rajasthan",
-      "distance": 12,
-      "contactNumber": "+91 98765 43210",
-      "sellerRating": 4.5,
-      "harvestDate": "15 Dec 2025",
-      "isOrganic": true,
-      "availabilityStatus": "Available",
-      "image":
-          "https://images.unsplash.com/photo-1687230733030-38734dfac30c",
-      "semanticLabel":
-          "Golden wheat stalks in a field ready for harvest under bright sunlight",
-    },
-    {
-      "id": 2,
-      "nameHindi": "टमाटर",
-      "nameEnglish": "Tomato",
-      "category": "Vegetables",
-      "quantity": 200,
-      "unit": "kg",
-      "pricePerUnit": 30,
-      "location": "Ajmer, Rajasthan",
-      "distance": 25,
-      "contactNumber": "+91 98765 43211",
-      "sellerRating": 4.2,
-      "harvestDate": "20 Dec 2025",
-      "isOrganic": false,
-      "availabilityStatus": "Available",
-      "image":
-          "https://images.unsplash.com/photo-1732348679625-05320604ab24",
-      "semanticLabel":
-          "Fresh red tomatoes on vine with green leaves in natural lighting",
-    },
-    {
-      "id": 3,
-      "nameHindi": "धान",
-      "nameEnglish": "Rice",
-      "category": "Grains",
-      "quantity": 1000,
-      "unit": "kg",
-      "pricePerUnit": 35,
-      "location": "Udaipur, Rajasthan",
-      "distance": 45,
-      "contactNumber": "+91 98765 43212",
-      "sellerRating": 4.8,
-      "harvestDate": "10 Dec 2025",
-      "isOrganic": true,
-      "availabilityStatus": "Limited Stock",
-      "image":
-          "https://images.unsplash.com/photo-1622213768697-26eca8b4b803",
-      "semanticLabel":
-          "Green rice paddy field with water reflecting blue sky and clouds",
-    },
-    {
-      "id": 4,
-      "nameHindi": "आम",
-      "nameEnglish": "Mango",
-      "category": "Fruits",
-      "quantity": 150,
-      "unit": "kg",
-      "pricePerUnit": 80,
-      "location": "Kota, Rajasthan",
-      "distance": 35,
-      "contactNumber": "+91 98765 43213",
-      "sellerRating": 4.6,
-      "harvestDate": "18 Dec 2025",
-      "isOrganic": false,
-      "availabilityStatus": "Available",
-      "image":
-          "https://images.unsplash.com/photo-1652018539099-2dc2a809856e",
-      "semanticLabel":
-          "Ripe yellow mangoes hanging from tree branch with green leaves",
-    },
-    {
-      "id": 5,
-      "nameHindi": "प्याज",
-      "nameEnglish": "Onion",
-      "category": "Vegetables",
-      "quantity": 300,
-      "unit": "kg",
-      "pricePerUnit": 20,
-      "location": "Jodhpur, Rajasthan",
-      "distance": 55,
-      "contactNumber": "+91 98765 43214",
-      "sellerRating": 4.3,
-      "harvestDate": "22 Dec 2025",
-      "isOrganic": true,
-      "availabilityStatus": "Available",
-      "image":
-          "https://images.unsplash.com/photo-1654722371999-365b88acabdc",
-      "semanticLabel":
-          "Purple and white onions with papery skin arranged on wooden surface",
-    },
-    {
-      "id": 6,
-      "nameHindi": "मिर्च",
-      "nameEnglish": "Chili",
-      "category": "Spices",
-      "quantity": 50,
-      "unit": "kg",
-      "pricePerUnit": 120,
-      "location": "Bikaner, Rajasthan",
-      "distance": 70,
-      "contactNumber": "+91 98765 43215",
-      "sellerRating": 4.7,
-      "harvestDate": "12 Dec 2025",
-      "isOrganic": false,
-      "availabilityStatus": "Limited Stock",
-      "image":
-          "https://images.unsplash.com/photo-1728430161401-639911af4b50",
-      "semanticLabel":
-          "Bright red chili peppers arranged in rows on dark background",
-    },
-  ];
+  // 🔥 Data will come from API now
+  List<Map<String, dynamic>> _allProducts = [];
+
+  Future<void> fetchProducts() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      final response = await http.get(
+        Uri.parse("http://10.0.2.2:5000/products"),
+      );
+
+      if (response.statusCode == 200) {
+        final List data = jsonDecode(response.body);
+
+        setState(() {
+          if (data.isEmpty) {
+            // 🔥 Fallback sample data (for testing)
+            _allProducts = [
+              {
+                "id": 1,
+                "nameHindi": "गेहूं",
+                "nameEnglish": "Wheat",
+                "category": "Grains",
+                "quantity": 100,
+                "unit": "kg",
+                "pricePerUnit": 25,
+                "location": "Jaipur",
+                "distance": 10,
+                "contactNumber": "9876543210",
+                "sellerRating": 4.5,
+                "harvestDate": "10 March",
+                "isOrganic": true,
+                "availabilityStatus": "Available",
+                "image": "https://images.unsplash.com/photo-1687230733030-38734dfac30c",
+                "semanticLabel": "Wheat image"
+              }
+            ];
+          } else {
+            _allProducts = List<Map<String, dynamic>>.from(data);
+          }
+
+          _filteredProducts = List.from(_allProducts);
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      print("Error: $e");
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
+  // 🔥 ADD PRODUCT (POST API)
+  Future<void> addProduct(Map<String, dynamic> product) async {
+    try {
+      final response = await http.post(
+        Uri.parse("http://10.0.2.2:5000/add-product"),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: jsonEncode(product),
+      );
+
+      if (response.statusCode == 200) {
+        print("Product Added ✅");
+
+        // refresh list after adding
+        fetchProducts();
+      } else {
+        print("Error: ${response.body}");
+      }
+    } catch (e) {
+      print("Error: $e");
+    }
+  }
 
   List<Map<String, dynamic>> _filteredProducts = [];
 
@@ -166,7 +124,7 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
-    _filteredProducts = List.from(_allProducts);
+    fetchProducts();
   }
 
   @override
@@ -298,16 +256,28 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
   }
 
   Widget _buildMyListingsTab() {
-    final lang = context.watch<LanguageProvider>().currentLanguage;
-    final bool isHindi = lang == 'hi';
-    return EmptyStateWidget(
-      message: isHindi ? 'अभी कोई सूची नहीं है' : 'No listings yet',
-      submessage: isHindi
-          ? 'अपनी पहली फसल जोड़कर बिक्री शुरू करें'
-          : 'Start selling your crops by posting your first product',
-      actionLabel: isHindi ? 'फसल जोड़ें' : 'Post Product',
-      onActionTapped: () {
-        // Navigate to product listing creation
+    if (_allProducts.isEmpty) {
+      return EmptyStateWidget(
+        message: 'No listings yet',
+        submessage: 'Start selling your crops',
+      );
+    }
+
+    return ListView.builder(
+      padding: EdgeInsets.only(bottom: 10.h),
+      itemCount: _allProducts.length,
+      itemBuilder: (context, index) {
+        final product = _allProducts[index];
+        return ProductCardWidget(
+          product: product,
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              '/product-detail-screen',
+              arguments: product,
+            );
+          },
+        );
       },
     );
   }
@@ -404,10 +374,24 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
   onPressed: () {
     HapticFeedback.lightImpact();
 
-    Navigator.pushNamed(
-      context,
-      '/add-product-screen',
-    );
+    // 🔥 Temporary test API call
+    addProduct({
+      "nameHindi": "गेहूं",
+      "nameEnglish": "Wheat",
+      "category": "Grains",
+      "quantity": 100,
+      "unit": "kg",
+      "pricePerUnit": 25,
+      "location": "Jaipur",
+      "distance": 10,
+      "contactNumber": "9876543210",
+      "sellerRating": 4.5,
+      "harvestDate": "10 March",
+      "isOrganic": true,
+      "availabilityStatus": "Available",
+      "image": "https://images.unsplash.com/photo-1687230733030-38734dfac30c",
+      "semanticLabel": "Wheat image"
+    });
   },
   icon: const Icon(Icons.add, color: Colors.white),
   label: Text(
