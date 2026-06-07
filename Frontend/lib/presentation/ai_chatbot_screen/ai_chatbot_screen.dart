@@ -60,8 +60,8 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeOut,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
         );
       }
     });
@@ -98,6 +98,9 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
         }),
       );
 
+      print("STATUS CODE: ${response.statusCode}");
+      print("BODY: ${response.body}");
+
       final data = jsonDecode(response.body);
 
       if (data["status"] == "success") {
@@ -116,7 +119,7 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
       setState(() {
         _messages.add({
           'isUser': false,
-          'text': "Error: API not working",
+          'text': "Server se connect nahi ho pa raha, dobara try karein",
           'time': _getCurrentTime(),
         });
         _isTyping = false;
@@ -157,6 +160,7 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
         children: [
           Expanded(
             child: ListView.builder(
+              padding: EdgeInsets.only(bottom: 10.h),
               controller: _scrollController,
               itemCount: _messages.length + (_isTyping ? 1 : 0),
               itemBuilder: (context, index) {
@@ -198,11 +202,9 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
             case CustomBottomBarItem.dashboard:
               Navigator.pushReplacementNamed(context, AppRoutes.mainDashboard);
               break;
-
             case CustomBottomBarItem.marketplace:
               Navigator.pushReplacementNamed(context, AppRoutes.marketplace);
               break;
-
             case CustomBottomBarItem.community:
               Navigator.pushReplacementNamed(context, AppRoutes.communityChat);
               break;
