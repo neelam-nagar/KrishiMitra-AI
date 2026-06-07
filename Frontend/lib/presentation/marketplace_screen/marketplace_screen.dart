@@ -13,8 +13,12 @@ import './widgets/search_filter_bar_widget.dart';
 import 'package:provider/provider.dart';
 import '../../core/language_provider.dart';
 
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'package:image_picker/image_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'dart:typed_data';
+import 'package:flutter/foundation.dart';
 
 /// Marketplace Screen - Connects farmers and buyers through product listings
 /// Provides search, filter, and direct contact functionality
@@ -42,79 +46,81 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
   // 🔥 Data will come from API now
   List<Map<String, dynamic>> _allProducts = [];
 
+  Future<String> uploadImage() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile == null) return '';
+
+    Uint8List bytes = await pickedFile.readAsBytes();
+
+    final ref = FirebaseStorage.instance
+        .ref()
+        .child('products/${DateTime.now().millisecondsSinceEpoch}.jpg');
+
+    await ref.putData(bytes);
+
+    return await ref.getDownloadURL();
+  }
+
   Future<void> fetchProducts() async {
     setState(() {
       _isLoading = true;
     });
 
     try {
-      final response = await http.get(
-        Uri.parse("http://10.0.2.2:5000/products"),
-      );
+      final snapshot = await FirebaseFirestore.instance
+          .collection('products')
+          .orderBy('time', descending: true)
+          .get();
 
-      if (response.statusCode == 200) {
-        final List data = jsonDecode(response.body);
+      final data = snapshot.docs.map((doc) {
+        final d = doc.data();
+        return {
+          "id": doc.id,
+          "nameHindi": d['nameHindi'] ?? '',
+          "nameEnglish": d['nameEnglish'] ?? '',
+          "category": d['category'] ?? '',
+          "quantity": d['quantity'] ?? 0,
+          "unit": d['unit'] ?? '',
+          "pricePerUnit": d['pricePerUnit'] ?? 0,
+          "location": d['location'] ?? '',
+          "distance": d['distance'] ?? 0,
+          "contactNumber": d['contactNumber'] ?? '',
+          "sellerRating": d['sellerRating'] ?? 0,
+          "harvestDate": d['harvestDate'] ?? '',
+          "isOrganic": d['isOrganic'] ?? false,
+          "availabilityStatus": d['availabilityStatus'] ?? '',
+          "image": d['image'] ?? '',
+          "semanticLabel": d['semanticLabel'] ?? '',
+        };
+      }).toList();
 
-        setState(() {
-          if (data.isEmpty) {
-            // 🔥 Fallback sample data (for testing)
-            _allProducts = [
-              {
-                "id": 1,
-                "nameHindi": "गेहूं",
-                "nameEnglish": "Wheat",
-                "category": "Grains",
-                "quantity": 100,
-                "unit": "kg",
-                "pricePerUnit": 25,
-                "location": "Jaipur",
-                "distance": 10,
-                "contactNumber": "9876543210",
-                "sellerRating": 4.5,
-                "harvestDate": "10 March",
-                "isOrganic": true,
-                "availabilityStatus": "Available",
-                "image": "https://images.unsplash.com/photo-1687230733030-38734dfac30c",
-                "semanticLabel": "Wheat image"
-              }
-            ];
-          } else {
-            _allProducts = List<Map<String, dynamic>>.from(data);
-          }
-
-          _filteredProducts = List.from(_allProducts);
-          _isLoading = false;
-        });
-      }
+      setState(() {
+        _allProducts = data;
+        _filteredProducts = List.from(_allProducts);
+        _isLoading = false;
+      });
     } catch (e) {
-      print("Error: $e");
+      print("Firestore Error: $e");
       setState(() {
         _isLoading = false;
       });
     }
   }
 
-  // 🔥 ADD PRODUCT (POST API)
+  // 🔥 ADD PRODUCT (Firestore)
   Future<void> addProduct(Map<String, dynamic> product) async {
     try {
-      final response = await http.post(
-        Uri.parse("http://10.0.2.2:5000/add-product"),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: jsonEncode(product),
-      );
+      await FirebaseFirestore.instance.collection('products').add({
+        ...product,
+        'time': FieldValue.serverTimestamp(),
+      });
 
-      if (response.statusCode == 200) {
-        print("Product Added ✅");
-
-        // refresh list after adding
-        fetchProducts();
-      } else {
-        print("Error: ${response.body}");
-      }
+      print("Product Added to Firebase ✅");
+      fetchProducts();
     } catch (e) {
-      print("Error: $e");
+      print("Firestore Error: $e");
     }
   }
 
@@ -371,10 +377,13 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-  onPressed: () {
+  onPressed: () async {
     HapticFeedback.lightImpact();
 
-    // 🔥 Temporary test API call
+    String imageUrl = await uploadImage();
+
+    if (imageUrl.isEmpty) return;
+
     addProduct({
       "nameHindi": "गेहूं",
       "nameEnglish": "Wheat",
@@ -389,7 +398,7 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
       "harvestDate": "10 March",
       "isOrganic": true,
       "availabilityStatus": "Available",
-      "image": "https://images.unsplash.com/photo-1687230733030-38734dfac30c",
+      "image": imageUrl,
       "semanticLabel": "Wheat image"
     });
   },
