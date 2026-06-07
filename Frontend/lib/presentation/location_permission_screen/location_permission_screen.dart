@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../core/language_provider.dart';
+import '../../core/location_provider.dart';
 import '../../widgets/custom_bottom_bar.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:sizer/sizer.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:http/http.dart' as http;
+import '../../core/config/app_config.dart';
 import '../../../core/app_export.dart';
 import './widgets/location_header_widget.dart';
 import './widgets/location_permission_button_widget.dart';
@@ -98,6 +100,17 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
       final tehsil = locationData['tehsil'] ?? '';
       final village = locationData['village'] ?? '';
 
+      // Update LocationProvider so weather module can use it
+      if (mounted) {
+        context.read<LocationProvider>().updateLocation(
+          district: district,
+          tehsil: tehsil,
+          village: village,
+          latitude: position.latitude,
+          longitude: position.longitude,
+        );
+      }
+
       await _fetchWeather(district, tehsil, village);
 
       if (!mounted) return;
@@ -129,8 +142,8 @@ class _LocationPermissionScreenState extends State<LocationPermissionScreen> {
   Future<void> _fetchWeather(
       String district, String tehsil, String village) async {
     final url = Uri.parse(
-      'https://krishimitra-ai-4-vaxn.onrender.com/weather'
-      '?district=$district&tehsil=$tehsil&village=$village',
+      '${AppConfig.weatherApiBase}/api/weather'
+      '?district=\${Uri.encodeComponent(district)}&tehsil=\${Uri.encodeComponent(tehsil)}&village=\${Uri.encodeComponent(village)}',
     );
     try {
       await http.get(url);

@@ -146,7 +146,9 @@ class _CropPriceScreenState extends State<CropPriceScreen>
   Future<void> _handleRefresh() async => _loadPriceData();
 
   Future<Map<String, dynamic>> _getPrediction() async {
-    final url = Uri.parse('${AppConfig.cropPriceApiBase}/predict');
+    // Price prediction not available in current backend
+    return {};
+  }/predict');
 
     final response = await http.post(
       url,
