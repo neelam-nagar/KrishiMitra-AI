@@ -9,7 +9,7 @@ import '../../../widgets/custom_icon_widget.dart';
 /// Quick action buttons for common chatbot queries
 /// Provides single-tap access to frequently asked topics
 class QuickActionButtonsWidget extends StatelessWidget {
-  final Function(String) onActionTap;
+  final void Function(String) onActionTap;
 
   const QuickActionButtonsWidget({
     super.key,
