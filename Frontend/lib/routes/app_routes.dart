@@ -31,6 +31,9 @@ import '../presentation/ai_chatbot_screen/ai_chatbot_screen.dart';
 // Schemes
 import '../presentation/schemes_list_screen/schemes_list_screen.dart';
 
+import '../presentation/crop_disease_screen/crop_disease_screen.dart';
+import '../presentation/kisan_loan_screen/kisan_loan_screen.dart';
+
 
 class AppRoutes {
   static const String initial = '/';
@@ -51,6 +54,8 @@ class AppRoutes {
   static const String marketplace = '/marketplace-screen';
   static const String aiChatbot = '/ai-chatbot-screen';
   static const String organicFarming = '/organic-farming-screen';
+  static const String cropDisease = '/crop-disease-screen';
+  static const String kisanLoan = '/kisan-loan-screen';
   // Extra
   static const String productDetail = '/product-detail-screen';
   static const String landRecord = '/land-record';
@@ -92,6 +97,8 @@ class AppRoutes {
     productDetail: (context) => const ProductDetailScreen(),
     notifications: (context) => const NotificationsScreen(),
     organicFarming: (context) => const OrganicFarmingGuideScreen(),
+    cropDisease: (context) => const CropDiseaseScreen(),
+    kisanLoan: (context) => const KisanLoanScreen(),
     // Schemes ✅
     schemesList: (context) => const SchemesListScreen(),
     schemeDetail: (context) {

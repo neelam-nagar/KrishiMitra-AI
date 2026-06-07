@@ -52,11 +52,11 @@ class _MainDashboardState extends State<MainDashboard>
       'route': '/crop-price-screen',
     },
     {
-  'iconName': 'account_balance',
-  'title': 'Govt Schemes' ,
-  'subtitle': 'View all schemes',
-  'route': AppRoutes.schemesList,
-},
+      'iconName': 'account_balance',
+      'title': 'Govt Schemes' ,
+      'subtitle': 'View all schemes',
+      'route': AppRoutes.schemesList,
+    },
     {
       'iconName': 'eco',
       'title': 'Organic Farming',
@@ -76,17 +76,33 @@ class _MainDashboardState extends State<MainDashboard>
       'route': '/ai-chatbot-screen',
     },
     {
-  'iconName': 'payments',
-  'title': 'Compensation',
-  'subtitle': 'Crop loss & relief',
-  'route': AppRoutes.compensationHome,
-},
-{
-  'iconName': 'assignment',
-  'title': 'Land Record',
-  'subtitle': 'Bhulekh / Apna Khata',
-  'route': AppRoutes.landRecord,
-},
+      'iconName': 'payments',
+      'title': 'Compensation',
+      'subtitle': 'Crop loss & relief',
+      'route': AppRoutes.compensationHome,
+    },
+    {
+      'iconName': 'assignment',
+      'title': 'Land Record',
+      'subtitle': 'Bhulekh / Apna Khata',
+      'route': AppRoutes.landRecord,
+    },
+    {
+      'iconName': 'biotech',
+      'title_en': 'Crop Disease',
+      'title_hi': 'फसल रोग पहचान',
+      'subtitle_en': 'Detect crop disease',
+      'subtitle_hi': 'फसल का रोग पहचानें',
+      'route': '/crop-disease-screen',
+    },
+    {
+      'iconName': 'account_balance_wallet',
+      'title_en': 'Kisan Loan',
+      'title_hi': 'किसान ऋण',
+      'subtitle_en': 'Apply for loan',
+      'subtitle_hi': 'ऋण के लिए आवेदन करें',
+      'route': '/kisan-loan-screen',
+    },
   ];
 
   @override
@@ -487,15 +503,23 @@ void _showLocationDialog() {
               ),
               delegate: SliverChildBuilderDelegate((context, index) {
                 final module = _moduleData[index];
+                final title = module.containsKey('title_en')
+                    ? (lang == 'en' ? module['title_en'] : module['title_hi'])
+                    : module['title'];
+
+                final subtitle = module.containsKey('subtitle_en')
+                    ? (lang == 'en' ? module['subtitle_en'] : module['subtitle_hi'])
+                    : module['subtitle'];
+
                 return ModuleCardWidget(
                   iconName: module['iconName'] as String,
-                  title: module['title'] as String,
+                  title: title as String,
                   subtitle: module['title'] == 'Weather' && _weatherData != null
                       ? '${_weatherData!['temperature']}°C, ${_weatherData!['condition']}'
-                      : module['subtitle'] as String,
+                      : subtitle as String,
                   onTap: () => _handleModuleTap(module['route'] as String),
                   onLongPress: () =>
-                      _handleModuleLongPress(module['title'] as String),
+                      _handleModuleLongPress(title as String),
                 );
               }, childCount: _moduleData.length),
             ),
