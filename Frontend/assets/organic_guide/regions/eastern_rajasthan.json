@@ -1,0 +1,891 @@
+{
+  "area": {
+    "en": "Eastern Rajasthan",
+    "hi": "पूर्वी राजस्थान"
+  },
+
+  "districts": {
+    "en": [
+      "Jaipur",
+      "Alwar",
+      "Bharatpur",
+      "Dausa",
+      "Karauli",
+      "Dholpur"
+    ],
+    "hi": [
+      "जयपुर",
+      "अलवर",
+      "भरतपुर",
+      "दौसा",
+      "करौली",
+      "धौलपुर"
+    ]
+  },
+
+  "introduction": {
+    "en": "Eastern Rajasthan is one of the most agriculturally productive regions of the state. Due to relatively better rainfall, fertile soils, and availability of irrigation sources, this region supports diverse cropping systems under organic farming.",
+    "hi": "पूर्वी राजस्थान राज्य का एक प्रमुख कृषि क्षेत्र है। अपेक्षाकृत बेहतर वर्षा, उपजाऊ मिट्टी और सिंचाई संसाधनों की उपलब्धता के कारण यह क्षेत्र जैविक खेती के लिए अत्यंत उपयुक्त माना जाता है।"
+  },
+
+  "agro_climatic_characteristics": {
+    "rainfall": {
+      "en": "Average annual rainfall ranges between 500 mm to 700 mm.",
+      "hi": "औसत वार्षिक वर्षा 500 से 700 मिमी के बीच होती है।"
+    },
+    "temperature": {
+      "summer": {
+        "en": "35°C to 45°C",
+        "hi": "35°C से 45°C"
+      },
+      "winter": {
+        "en": "5°C to 15°C",
+        "hi": "5°C से 15°C"
+      }
+    },
+    "climate_nature": {
+      "en": "Sub-humid to semi-arid climate with distinct seasons.",
+      "hi": "उप-आर्द्र से अर्ध-शुष्क जलवायु, जिसमें स्पष्ट ऋतुएँ होती हैं।"
+    }
+  },
+
+  "soil_profile": {
+    "major_soil_types": {
+      "en": [
+        "Loamy soil",
+        "Alluvial soil"
+      ],
+      "hi": [
+        "दोमट मिट्टी",
+        "जलोढ़ मिट्टी"
+      ]
+    },
+    "soil_properties": {
+      "en": [
+        "Good fertility",
+        "Balanced texture",
+        "Moderate to high water holding capacity"
+      ],
+      "hi": [
+        "अच्छी उर्वरता",
+        "संतुलित बनावट",
+        "मध्यम से अधिक जल धारण क्षमता"
+      ]
+    },
+    "soil_related_problems": {
+      "en": [
+        "Decline in organic carbon due to excessive chemical use",
+        "Soil compaction in irrigated areas"
+      ],
+      "hi": [
+        "अत्यधिक रासायनिक उपयोग से जैविक कार्बन में कमी",
+        "सिंचित क्षेत्रों में मिट्टी का सख्त होना"
+      ]
+    }
+  },
+
+  "soil_improvement_under_organic_farming": {
+    "principles": {
+      "en": [
+        "Increase organic matter gradually",
+        "Maintain soil biological activity",
+        "Avoid chemical fertilizers completely"
+      ],
+      "hi": [
+        "धीरे-धीरे जैविक पदार्थ बढ़ाना",
+        "मिट्टी में जैविक गतिविधि बनाए रखना",
+        "रासायनिक उर्वरकों से पूर्णतः बचाव"
+      ]
+    },
+    "recommended_practices": {
+      "en": [
+        "Regular application of farmyard manure",
+        "Use of vermicompost",
+        "Incorporation of crop residues",
+        "Green manuring with legumes"
+      ],
+      "hi": [
+        "गोबर की खाद का नियमित प्रयोग",
+        "वर्मी कम्पोस्ट का उपयोग",
+        "फसल अवशेषों को मिट्टी में मिलाना",
+        "दलहनी फसलों द्वारा हरी खाद"
+      ]
+    }
+  },
+
+  "water_resources": {
+    "sources": {
+      "en": [
+        "Rainfall",
+        "Tube wells",
+        "Open wells",
+        "Ponds and small canals"
+      ],
+      "hi": [
+        "वर्षा",
+        "ट्यूबवेल",
+        "कुएँ",
+        "तालाब और छोटी नहरें"
+      ]
+    },
+    "water_availability": {
+      "en": "Moderate to good in most districts",
+      "hi": "अधिकांश जिलों में मध्यम से अच्छी"
+    },
+    "organic_water_management_guidelines": {
+      "en": [
+        "Irrigate only at critical crop stages",
+        "Avoid over-irrigation",
+        "Use mulching to reduce evaporation losses"
+      ],
+      "hi": [
+        "केवल आवश्यक अवस्था पर सिंचाई करें",
+        "अधिक पानी देने से बचें",
+        "वाष्पीकरण कम करने के लिए मल्चिंग करें"
+      ]
+    }
+  },
+
+  "cropping_seasons": {
+    "kharif": {
+      "en": "June to September",
+      "hi": "जून से सितंबर"
+    },
+    "rabi": {
+      "en": "October to March",
+      "hi": "अक्टूबर से मार्च"
+    },
+    "zaid": {
+      "en": "April to June (limited area)",
+      "hi": "अप्रैल से जून (सीमित क्षेत्र)"
+    }
+  },
+
+  "major_crops_overview": {
+    "kharif_crops": {
+      "en": [
+        "Pearl Millet",
+        "Vegetables",
+        "Pulses"
+      ],
+      "hi": [
+        "बाजरा",
+        "सब्ज़ियाँ",
+        "दलहन"
+      ]
+    },
+    "rabi_crops": {
+      "en": [
+        "Wheat",
+        "Mustard",
+        "Chana"
+      ],
+      "hi": [
+        "गेहूं",
+        "सरसों",
+        "चना"
+      ]
+    }
+  },
+
+  "land_preparation": {
+    "overview": {
+      "en": "Land preparation under organic farming focuses on improving soil structure, aeration, and biological activity without disturbing soil health.",
+      "hi": "जैविक खेती में भूमि की तैयारी का उद्देश्य मिट्टी की संरचना, वायु संचार और जैविक गतिविधि को बेहतर बनाना होता है।"
+    },
+    "summer_ploughing": {
+      "en": [
+        "One deep ploughing during peak summer helps in breaking hard soil layers",
+        "Exposes harmful insects and pathogens to sunlight"
+      ],
+      "hi": [
+        "गर्मी में एक बार गहरी जुताई करने से सख्त परत टूटती है",
+        "हानिकारक कीट और रोग धूप से नष्ट होते हैं"
+      ]
+    },
+    "pre_sowing_operations": {
+      "en": [
+        "Two to three light ploughings before sowing",
+        "Levelling of field to ensure uniform irrigation"
+      ],
+      "hi": [
+        "बुवाई से पहले 2–3 हल्की जुताई",
+        "समान सिंचाई के लिए खेत को समतल करना"
+      ]
+    }
+  },
+
+  "organic_input_management": {
+    "solid_manures": {
+      "en": [
+        "Farmyard manure (FYM)",
+        "Vermicompost",
+        "Compost prepared from farm waste"
+      ],
+      "hi": [
+        "गोबर की खाद",
+        "वर्मी कम्पोस्ट",
+        "खेत के अपशिष्ट से बनी कम्पोस्ट"
+      ]
+    },
+    "liquid_manures": {
+      "en": [
+        "Jeevamrut",
+        "Beejamrut"
+      ],
+      "hi": [
+        "जीवामृत",
+        "बीजामृत"
+      ]
+    },
+    "application_guidelines": {
+      "en": [
+        "Apply solid manures before sowing",
+        "Liquid manures should be applied at 15–20 day intervals"
+      ],
+      "hi": [
+        "ठोस खाद बुवाई से पहले डालें",
+        "तरल खाद 15–20 दिन के अंतर पर दें"
+      ]
+    }
+  },
+
+  "weed_management": {
+    "principles": {
+      "en": [
+        "Avoid chemical herbicides completely",
+        "Control weeds during early crop stages"
+      ],
+      "hi": [
+        "रासायनिक खरपतवारनाशी का प्रयोग न करें",
+        "फसल की शुरुआती अवस्था में खरपतवार नियंत्रण करें"
+      ]
+    },
+    "methods": {
+      "en": [
+        "Manual weeding",
+        "Mulching using crop residues",
+        "Crop rotation"
+      ],
+      "hi": [
+        "हाथ से निराई",
+        "फसल अवशेष से मल्चिंग",
+        "फसल चक्र अपनाना"
+      ]
+    }
+  },
+
+  "pest_management": {
+    "general_principles": {
+      "en": [
+        "Maintain ecological balance",
+        "Encourage beneficial insects"
+      ],
+      "hi": [
+        "प्राकृतिक संतुलन बनाए रखें",
+        "लाभकारी कीटों को बढ़ावा दें"
+      ]
+    },
+    "organic_solutions": {
+      "en": [
+        "Neem oil spray",
+        "Neem seed kernel extract",
+        "Soap solution for sucking pests"
+      ],
+      "hi": [
+        "नीम तेल का छिड़काव",
+        "नीम बीज घोल",
+        "रस चूसने वाले कीटों के लिए साबुन घोल"
+      ]
+    }
+  },
+
+  "disease_management": {
+    "preventive_measures": {
+      "en": [
+        "Use disease-free seeds",
+        "Seed treatment with Trichoderma",
+        "Proper drainage to avoid fungal diseases"
+      ],
+      "hi": [
+        "रोगमुक्त बीज का प्रयोग",
+        "ट्राइकोडर्मा से बीज उपचार",
+        "फफूंद रोग से बचाव के लिए जल निकास"
+      ]
+    }
+  }  ,
+
+  "crop_wise_detailed_guidance": {
+
+    "wheat": {
+      "title": {
+        "en": "Organic Wheat Cultivation – Complete Step by Step Guide",
+        "hi": "जैविक गेहूं खेती – चरणबद्ध संपूर्ण मार्गदर्शिका"
+      },
+
+      "season": {
+        "en": "Rabi",
+        "hi": "रबी"
+      },
+
+      "field_selection": {
+        "en": [
+          "Well-drained loamy or alluvial soil is ideal",
+          "Field should not retain standing water"
+        ],
+        "hi": [
+          "अच्छी जल निकास वाली दोमट या जलोढ़ मिट्टी उपयुक्त",
+          "खेत में पानी रुकना नहीं चाहिए"
+        ]
+      },
+
+      "land_preparation": {
+        "en": [
+          "One deep ploughing during summer",
+          "Two light ploughings before sowing",
+          "Apply compost and level the field"
+        ],
+        "hi": [
+          "गर्मी में एक गहरी जुताई",
+          "बुवाई से पहले दो हल्की जुताई",
+          "कम्पोस्ट डालकर खेत समतल करें"
+        ]
+      },
+
+      "sowing_time": {
+        "en": "Last week of October to mid-November",
+        "hi": "अक्टूबर के अंतिम सप्ताह से नवंबर के मध्य तक"
+      },
+
+      "seed_rate": {
+        "en": "40–45 kg per acre",
+        "hi": "40–45 किलोग्राम प्रति एकड़"
+      },
+
+      "seed_treatment": {
+        "en": [
+          "Trichoderma 5 g per kg seed",
+          "Mix with little water and shade dry"
+        ],
+        "hi": [
+          "ट्राइकोडर्मा 5 ग्राम प्रति किलोग्राम बीज",
+          "थोड़ा पानी मिलाकर छाया में सुखाएँ"
+        ]
+      },
+
+      "nutrient_management": {
+        "en": [
+          "Apply FYM or compost before sowing",
+          "Apply Jeevamrut at 20–25 days",
+          "Second Jeevamrut at 40–45 days"
+        ],
+        "hi": [
+          "बुवाई से पहले गोबर खाद या कम्पोस्ट डालें",
+          "20–25 दिन पर जीवामृत दें",
+          "40–45 दिन पर दूसरा जीवामृत"
+        ]
+      },
+
+      "irrigation_schedule": {
+        "en": [
+          "First irrigation at CRI stage (20–25 days)",
+          "Second at tillering stage",
+          "Third at flowering stage",
+          "Fourth at grain filling stage"
+        ],
+        "hi": [
+          "पहली सिंचाई CRI अवस्था (20–25 दिन)",
+          "दूसरी कल्ले निकलने पर",
+          "तीसरी फूल अवस्था पर",
+          "चौथी दाना भरने पर"
+        ]
+      },
+
+      "weed_management": {
+        "en": [
+          "First hand weeding at 20–25 days",
+          "Second weeding if required at 40 days"
+        ],
+        "hi": [
+          "20–25 दिन पर पहली निराई",
+          "40 दिन पर आवश्यकतानुसार दूसरी निराई"
+        ]
+      },
+
+      "pest_and_disease_management": {
+        "en": [
+          "Neem oil spray for aphids",
+          "Avoid excess irrigation to prevent root diseases"
+        ],
+        "hi": [
+          "माहू के लिए नीम तेल छिड़काव",
+          "जड़ रोग से बचाव हेतु अधिक सिंचाई न करें"
+        ]
+      },
+
+      "harvesting": {
+        "en": "Harvest in March when grains are hard",
+        "hi": "मार्च में जब दाने सख्त हो जाएँ तब कटाई करें"
+      }
+    },
+
+    "mustard": {
+      "title": {
+        "en": "Organic Mustard Cultivation – Complete Guide",
+        "hi": "जैविक सरसों खेती – संपूर्ण मार्गदर्शिका"
+      },
+
+      "season": {
+        "en": "Rabi",
+        "hi": "रबी"
+      },
+
+      "sowing_time": {
+        "en": "October",
+        "hi": "अक्टूबर"
+      },
+
+      "seed_rate": {
+        "en": "2–2.5 kg per acre",
+        "hi": "2–2.5 किलोग्राम प्रति एकड़"
+      },
+
+      "seed_treatment": {
+        "en": [
+          "Trichoderma seed treatment",
+          "Shade drying before sowing"
+        ],
+        "hi": [
+          "ट्राइकोडर्मा से बीज उपचार",
+          "छाया में सुखाकर बुवाई"
+        ]
+      },
+
+      "nutrient_management": {
+        "en": [
+          "Apply compost before sowing",
+          "Neem cake application improves soil health"
+        ],
+        "hi": [
+          "बुवाई से पहले कम्पोस्ट डालें",
+          "नीम खली से मिट्टी की सेहत सुधरती है"
+        ]
+      },
+
+      "pest_management": {
+        "en": [
+          "Neem oil spray for aphids",
+          "Spray during evening hours"
+        ],
+        "hi": [
+          "माहू नियंत्रण हेतु नीम तेल",
+          "शाम के समय छिड़काव करें"
+        ]
+      },
+
+      "harvesting": {
+        "en": "February to March",
+        "hi": "फरवरी से मार्च"
+      }
+    },
+
+    "chana": {
+      "title": {
+        "en": "Organic Chana (Gram) Cultivation – Complete Guide",
+        "hi": "जैविक चना खेती – संपूर्ण मार्गदर्शिका"
+      },
+
+      "season": {
+        "en": "Rabi",
+        "hi": "रबी"
+      },
+
+      "sowing_time": {
+        "en": "October to early November",
+        "hi": "अक्टूबर से नवंबर की शुरुआत"
+      },
+
+      "seed_rate": {
+        "en": "30–35 kg per acre",
+        "hi": "30–35 किलोग्राम प्रति एकड़"
+      },
+
+      "seed_treatment": {
+        "en": [
+          "Rhizobium culture for nitrogen fixation",
+          "Trichoderma for disease prevention"
+        ],
+        "hi": [
+          "नाइट्रोजन के लिए राइजोबियम कल्चर",
+          "रोग रोकथाम हेतु ट्राइकोडर्मा"
+        ]
+      },
+
+      "nutrient_management": {
+        "en": [
+          "Compost before sowing",
+          "Jeevamrut at vegetative stage"
+        ],
+        "hi": [
+          "बुवाई से पहले कम्पोस्ट",
+          "वृद्धि अवस्था पर जीवामृत"
+        ]
+      },
+
+      "pest_management": {
+        "en": [
+          "Pheromone traps for pod borer",
+          "Neem oil spray if required"
+        ],
+        "hi": [
+          "फली छेदक के लिए फेरोमोन ट्रैप",
+          "आवश्यकता पर नीम तेल छिड़काव"
+        ]
+      },
+
+      "harvesting": {
+        "en": "February to March",
+        "hi": "फरवरी से मार्च"
+      }
+    }
+
+  }  ,
+
+  "month_wise_farming_calendar": {
+    "January": {
+      "en": [
+        "Monitor rabi crops for pests and diseases",
+        "Light irrigation if soil moisture is low",
+        "Manual weeding in wheat and mustard fields"
+      ],
+      "hi": [
+        "रबी फसलों में कीट व रोग की निगरानी",
+        "मिट्टी सूखी हो तो हल्की सिंचाई",
+        "गेहूं और सरसों में हाथ से निराई"
+      ]
+    },
+
+    "February": {
+      "en": [
+        "Irrigation at flowering and grain formation stage",
+        "Neem oil spray if aphids appear",
+        "Field inspection for nutrient deficiency symptoms"
+      ],
+      "hi": [
+        "फूल व दाना बनने की अवस्था पर सिंचाई",
+        "माहू दिखे तो नीम तेल छिड़काव",
+        "पोषक तत्व कमी के लक्षणों की जाँच"
+      ]
+    },
+
+    "March": {
+      "en": [
+        "Harvest wheat, mustard and chana",
+        "Dry harvested produce properly",
+        "Store grains in clean and dry place"
+      ],
+      "hi": [
+        "गेहूं, सरसों और चना की कटाई",
+        "कटाई के बाद अच्छी तरह सुखाना",
+        "अनाज को साफ और सूखे स्थान पर भंडारण"
+      ]
+    },
+
+    "April": {
+      "en": [
+        "Remove crop residues and clean fields",
+        "Composting of farm waste",
+        "Planning for next season crops"
+      ],
+      "hi": [
+        "फसल अवशेष हटाकर खेत साफ करें",
+        "खेत के कचरे से कम्पोस्ट बनाना",
+        "अगले मौसम की फसल की योजना"
+      ]
+    },
+
+    "May": {
+      "en": [
+        "Deep summer ploughing",
+        "Expose soil to sunlight to control pests",
+        "Repair field bunds and drainage"
+      ],
+      "hi": [
+        "गर्मी में गहरी जुताई",
+        "कीट नियंत्रण हेतु मिट्टी को धूप लगने दें",
+        "मेढ़ व जल निकास की मरम्मत"
+      ]
+    },
+
+    "June": {
+      "en": [
+        "Seed treatment for kharif crops",
+        "Prepare nursery for vegetables",
+        "Sow crops after first monsoon rain"
+      ],
+      "hi": [
+        "खरीफ फसलों के लिए बीज उपचार",
+        "सब्ज़ियों की नर्सरी तैयार करें",
+        "पहली बारिश के बाद बुवाई"
+      ]
+    },
+
+    "July": {
+      "en": [
+        "Weeding in kharif crops",
+        "Application of Jeevamrut",
+        "Mulching to conserve moisture"
+      ],
+      "hi": [
+        "खरीफ फसलों में निराई",
+        "जीवामृत का प्रयोग",
+        "नमी संरक्षण हेतु मल्चिंग"
+      ]
+    },
+
+    "August": {
+      "en": [
+        "Monitor kharif crops for pests and diseases",
+        "Neem-based sprays if required",
+        "Maintain drainage during heavy rainfall"
+      ],
+      "hi": [
+        "खरीफ फसलों में कीट व रोग निगरानी",
+        "आवश्यकता पर नीम आधारित छिड़काव",
+        "अधिक बारिश में जल निकास बनाए रखें"
+      ]
+    },
+
+    "September": {
+      "en": [
+        "Harvest kharif crops",
+        "Prepare fields for rabi season",
+        "Incorporate crop residues into soil"
+      ],
+      "hi": [
+        "खरीफ फसलों की कटाई",
+        "रबी के लिए खेत तैयार करना",
+        "फसल अवशेष मिट्टी में मिलाना"
+      ]
+    },
+
+    "October": {
+      "en": [
+        "Apply compost and FYM",
+        "Sow mustard and chana",
+        "Field levelling for uniform irrigation"
+      ],
+      "hi": [
+        "कम्पोस्ट व गोबर खाद डालना",
+        "सरसों और चना की बुवाई",
+        "समान सिंचाई हेतु खेत समतल करना"
+      ]
+    },
+
+    "November": {
+      "en": [
+        "Sow wheat",
+        "First irrigation after germination",
+        "Early weed control"
+      ],
+      "hi": [
+        "गेहूं की बुवाई",
+        "अंकुरण के बाद पहली सिंचाई",
+        "शुरुआती खरपतवार नियंत्रण"
+      ]
+    },
+
+    "December": {
+      "en": [
+        "Irrigation at tillering stage",
+        "Second weeding if required",
+        "Cold stress monitoring"
+      ],
+      "hi": [
+        "कल्ले निकलने की अवस्था पर सिंचाई",
+        "आवश्यकता पर दूसरी निराई",
+        "ठंड से फसल की सुरक्षा"
+      ]
+    }
+  },
+
+  "common_problems_and_solutions": {
+    "soil_related": {
+      "en": [
+        "Low organic matter due to continuous cropping",
+        "Soil compaction from heavy irrigation"
+      ],
+      "solutions_en": [
+        "Regular compost application",
+        "Avoid excess irrigation and heavy machinery"
+      ],
+      "hi": [
+        "लगातार खेती से जैविक पदार्थ की कमी",
+        "अधिक सिंचाई से मिट्टी का सख्त होना"
+      ],
+      "solutions_hi": [
+        "नियमित कम्पोस्ट डालना",
+        "अधिक सिंचाई और भारी मशीनों से बचाव"
+      ]
+    },
+
+    "crop_related": {
+      "en": [
+        "Poor germination due to untreated seed",
+        "Pest attack at early stage"
+      ],
+      "solutions_en": [
+        "Always treat seed with Trichoderma",
+        "Use neem-based sprays at early stage"
+      ],
+      "hi": [
+        "बिना उपचार बीज से कमजोर अंकुरण",
+        "शुरुआती अवस्था में कीट प्रकोप"
+      ],
+      "solutions_hi": [
+        "हमेशा बीज उपचार करें",
+        "शुरुआती अवस्था में नीम आधारित छिड़काव"
+      ]
+    },
+
+    "water_related": {
+      "en": [
+        "Waterlogging during heavy rains",
+        "Moisture stress during dry spells"
+      ],
+      "solutions_en": [
+        "Ensure proper drainage",
+        "Use mulching to conserve moisture"
+      ],
+      "hi": [
+        "अधिक बारिश में जलभराव",
+        "सूखे समय में नमी की कमी"
+      ],
+      "solutions_hi": [
+        "उचित जल निकास व्यवस्था",
+        "नमी बचाने हेतु मल्चिंग"
+      ]
+    }
+  }  ,
+
+  "district_specific_notes": {
+    "Jaipur": {
+      "en": [
+        "Loamy soils with moderate fertility are common",
+        "Wheat–Mustard rotation performs well",
+        "Vegetable cultivation near urban markets is profitable"
+      ],
+      "hi": [
+        "दोमट मिट्टी सामान्य है और उर्वरता मध्यम होती है",
+        "गेहूं–सरसों फसल चक्र अच्छा रहता है",
+        "शहरी बाजारों के पास सब्ज़ी खेती लाभकारी है"
+      ]
+    },
+    "Alwar": {
+      "en": [
+        "Alluvial soils with good moisture retention",
+        "Mustard and vegetables give good returns",
+        "Timely irrigation is essential"
+      ],
+      "hi": [
+        "जलोढ़ मिट्टी में नमी रोकने की क्षमता अच्छी होती है",
+        "सरसों और सब्ज़ियाँ अच्छा उत्पादन देती हैं",
+        "समय पर सिंचाई आवश्यक है"
+      ]
+    },
+    "Bharatpur": {
+      "en": [
+        "High fertility soils with better irrigation facilities",
+        "Wheat, mustard and pulses are suitable",
+        "Drainage management required during heavy rains"
+      ],
+      "hi": [
+        "उच्च उर्वरता वाली मिट्टी और अच्छी सिंचाई सुविधा",
+        "गेहूं, सरसों और दलहन उपयुक्त",
+        "अधिक बारिश में जल निकास पर ध्यान दें"
+      ]
+    },
+    "Dausa": {
+      "en": [
+        "Sandy loam soils with limited water availability",
+        "Chana and mustard are preferred",
+        "Moisture conservation practices are important"
+      ],
+      "hi": [
+        "रेतीली दोमट मिट्टी और सीमित पानी",
+        "चना और सरसों उपयुक्त फसलें",
+        "नमी संरक्षण उपाय आवश्यक"
+      ]
+    },
+    "Karauli": {
+      "en": [
+        "Mixed soils with rainfed agriculture",
+        "Pulses and oilseeds are suitable",
+        "Organic manures improve soil health"
+      ],
+      "hi": [
+        "मिश्रित मिट्टी और वर्षा आधारित खेती",
+        "दलहन और तिलहन उपयुक्त",
+        "जैविक खाद से मिट्टी की सेहत सुधरती है"
+      ]
+    },
+    "Dholpur": {
+      "en": [
+        "Alluvial soils influenced by river systems",
+        "Wheat and vegetables perform well",
+        "Balanced irrigation is necessary"
+      ],
+      "hi": [
+        "नदी प्रणाली से प्रभावित जलोढ़ मिट्टी",
+        "गेहूं और सब्ज़ियाँ अच्छी रहती हैं",
+        "संतुलित सिंचाई आवश्यक"
+      ]
+    }
+  },
+
+  "dos_and_donts": {
+    "dos": {
+      "en": [
+        "Use certified or healthy seeds",
+        "Apply organic manures regularly",
+        "Follow crop rotation",
+        "Monitor crops weekly"
+      ],
+      "hi": [
+        "स्वस्थ और प्रमाणित बीज का प्रयोग करें",
+        "नियमित रूप से जैविक खाद डालें",
+        "फसल चक्र अपनाएँ",
+        "फसलों की साप्ताहिक निगरानी करें"
+      ]
+    },
+    "donts": {
+      "en": [
+        "Do not use chemical fertilizers or pesticides",
+        "Do not over-irrigate fields",
+        "Do not leave soil bare",
+        "Do not ignore early pest symptoms"
+      ],
+      "hi": [
+        "रासायनिक खाद और कीटनाशक का प्रयोग न करें",
+        "खेत में अधिक सिंचाई न करें",
+        "मिट्टी को खाली न छोड़ें",
+        "शुरुआती कीट लक्षणों की अनदेखी न करें"
+      ]
+    }
+  },
+
+  "final_guiding_principles": {
+    "en": [
+      "Understand soil and climate before crop selection",
+      "Organic farming is a gradual process and requires patience",
+      "Healthy soil leads to healthy crops and sustainable income",
+      "Natural balance is the key to long-term productivity"
+    ],
+    "hi": [
+      "फसल चुनने से पहले मिट्टी और जलवायु को समझें",
+      "जैविक खेती एक क्रमिक प्रक्रिया है और धैर्य की आवश्यकता होती है",
+      "स्वस्थ मिट्टी से स्वस्थ फसल और टिकाऊ आय मिलती है",
+      "दीर्घकालीन उत्पादन के लिए प्राकृतिक संतुलन आवश्यक है"
+    ]
+  }
+}
