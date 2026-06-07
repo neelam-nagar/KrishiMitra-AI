@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fetch_weather import get_weather_for_chatbot
 import os
 
@@ -14,11 +14,17 @@ def home():
 @app.get("/weather")
 def weather(district: str, tehsil: str, village: str):
     try:
-        return get_weather_for_chatbot(
+        result = get_weather_for_chatbot(
             json_path,
             district,
             tehsil,
             village
         )
+
+        if not result:
+            raise HTTPException(status_code=404, detail="Location not found")
+
+        return result
+
     except Exception as e:
-        return {"error": str(e)}
+        raise HTTPException(status_code=500, detail=str(e))

@@ -43,7 +43,6 @@ def get_7_day_forecast(lat, lon):
         tmin = res["daily"]["temperature_2m_min"][i]
         rain = res["daily"]["rain_sum"][i]
 
-        # simple condition logic
         if rain > 0:
             condition = "Rainy"
         elif tmax >= 30:
@@ -63,9 +62,6 @@ def get_7_day_forecast(lat, lon):
     return forecast
 
 
-# --------------------------
-# HOURLY FORECAST FUNCTION
-# --------------------------
 def get_hourly_forecast(lat, lon):
     url = (
         f"https://api.open-meteo.com/v1/forecast?"
@@ -100,47 +96,29 @@ def get_icon(rain, tmax):
     return "⛅"
 
 
+# ✅ FIXED FUNCTION
 def print_forecast(data):
     print("\n=========== 7-DAY FORECAST ===========")
-    for i in range(len(data["daily"]["time"])):
-        date = data["daily"]["time"][i]
-        tmax = data["daily"]["temperature_2m_max"][i]
-        tmin = data["daily"]["temperature_2m_min"][i]
-        rain = data["daily"]["rain_sum"][i]
+    for day in data:
+        date = day["date"]
+        tmax = day["highTemp"]
+        tmin = day["lowTemp"]
+        rain = day["rainfallProbability"]
         icon = get_icon(rain, tmax)
         print(f"{date}  {icon}  {int(tmax)}° / {int(tmin)}°")
     print("====================================")
 
 
-# -------------------------------------------------
-# CHATBOT FUNCTION (NO input(), ONLY return)
-# -------------------------------------------------
-
 def get_weather_for_chatbot(json_file, district_name, tehsil_name, village_name):
-    """
-    Chatbot ke liye weather function
-    """
-
     try:
         with open(json_file, "r", encoding="utf-8") as f:
             data = json.load(f)
 
         districts = data["districts"]
 
-        district = next(
-            d for d in districts
-            if d["district"].lower() == district_name.lower()
-        )
-
-        tehsil = next(
-            t for t in district["tehsils"]
-            if t["tehsil"].lower() == tehsil_name.lower()
-        )
-
-        village = next(
-            v for v in tehsil["villages"]
-            if v["village"].lower() == village_name.lower()
-        )
+        district = next(d for d in districts if d["district"].lower() == district_name.lower())
+        tehsil = next(t for t in district["tehsils"] if t["tehsil"].lower() == tehsil_name.lower())
+        village = next(v for v in tehsil["villages"] if v["village"].lower() == village_name.lower())
 
         lat = float(village["lat"])
         lon = float(village["lon"])
@@ -169,10 +147,6 @@ def get_weather_for_chatbot(json_file, district_name, tehsil_name, village_name)
         return "Weather data abhi update ho raha hai"
 
 
-# -------------------------------------------------
-# CLI MODE (AS IT WAS)
-# -------------------------------------------------
-
 def main(json_file):
 
     with open(json_file, "r", encoding="utf-8") as f:
@@ -181,7 +155,6 @@ def main(json_file):
     print("\n🌾 STATE: Rajasthan")
 
     districts = data["districts"]
-
     district_names = sorted(d["district"] for d in districts)
 
     print("\nAvailable Districts:")
@@ -195,10 +168,7 @@ def main(json_file):
     else:
         district_name = d_choice
 
-    district = next(
-        d for d in districts
-        if d["district"].lower() == district_name.lower()
-    )
+    district = next(d for d in districts if d["district"].lower() == district_name.lower())
 
     print("\nAvailable Tehsils:")
     for i, t in enumerate(district["tehsils"], 1):
@@ -209,15 +179,9 @@ def main(json_file):
     if t_choice.isdigit():
         tehsil = district["tehsils"][int(t_choice) - 1]
     else:
-        tehsil = next(
-            t for t in district["tehsils"]
-            if t["tehsil"].lower() == t_choice.lower()
-        )
+        tehsil = next(t for t in district["tehsils"] if t["tehsil"].lower() == t_choice.lower())
 
-    villages = [
-        v for v in tehsil["villages"]
-        if isinstance(v, dict) and v.get("village")
-    ]
+    villages = [v for v in tehsil["villages"] if isinstance(v, dict) and v.get("village")]
 
     print("\nAvailable Villages:")
     for v in villages:
@@ -225,10 +189,7 @@ def main(json_file):
 
     village_name = input("\nEnter Village Name: ").strip()
 
-    village = next(
-        v for v in villages
-        if v["village"].lower() == village_name.lower()
-    )
+    village = next(v for v in villages if v["village"].lower() == village_name.lower())
 
     lat = float(village["lat"])
     lon = float(village["lon"])
@@ -254,11 +215,6 @@ def main(json_file):
         time = h["time"].split("T")[1]
         print(f"{time}  🌡 {h['temperature']} °C  🌧 {h['rain']} mm")
     print("======================================")
-
-
-# -------------------------------------------------
-# RUN
-# -------------------------------------------------
 
 
 if __name__ == "__main__":
