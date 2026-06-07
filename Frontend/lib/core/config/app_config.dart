@@ -18,7 +18,7 @@ class AppConfig {
   // ---------------------------------------------------------------------------
   static const String _backendBase = String.fromEnvironment(
     'BACKEND_BASE',
-    defaultValue: 'http://10.0.2.2:8000', // Android emulator → host localhost
+    defaultValue: 'https://krishimitra-hrrf.onrender.com', // Android emulator → host localhost
   );
 
   // ---------------------------------------------------------------------------
