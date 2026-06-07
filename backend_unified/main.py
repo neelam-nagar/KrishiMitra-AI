@@ -90,10 +90,9 @@ def get_genai_model():
     if not GEMINI_API_KEY:
         return None
     try:
-        import google.generativeai as genai  # type: ignore
-        genai.configure(api_key=GEMINI_API_KEY)
-        # Use stable model name - gemini-1.5-flash is the correct current model
-        _genai_model = genai.GenerativeModel("gemini-1.5-flash")
+        from google import genai  # type: ignore
+        client = genai.Client(api_key=GEMINI_API_KEY)
+        _genai_model = client
         log.info("Gemini model loaded")
         return _genai_model
     except Exception as e:
@@ -440,21 +439,35 @@ def chat(data: ChatRequest):
 
     try:
         # Get or create session
-        session = _chat_sessions.get(data.session_id)
-        if session is None:
-            session = model.start_chat(history=list(CHAT_HISTORY_INIT))
-            _chat_sessions[data.session_id] = session
-
-        response = session.send_message(
-            data.question,
-            generation_config={"max_output_tokens": 250, "temperature": 0.2},
+        # Build history for this session
+        history = _chat_sessions.get(data.session_id, [])
+        
+        # Add system context on first message
+        if not history:
+            history = [
+                {"role": "user", "parts": [CHATBOT_INSTRUCTION]},
+                {"role": "model", "parts": ["Samajh gaya. Main hamesha 2-3 poore bullets mein jawab dunga."]},
+            ]
+        
+        # Add user message
+        history.append({"role": "user", "parts": [data.question]})
+        
+        # Keep history trimmed
+        if len(history) > 12:
+            history = history[:2] + history[-10:]
+        
+        response = model.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=[{"role": m["role"], "parts": [{"text": m["parts"][0]}]} for m in history],
+            config={"max_output_tokens": 250, "temperature": 0.2},
         )
+        
+        # Save model reply to history
+        reply_text = response.text
+        history.append({"role": "model", "parts": [reply_text]})
+        _chat_sessions[data.session_id] = history
 
-        # Trim history to avoid context bloat
-        if len(session.history) > 10:
-            session.history = session.history[-10:]
-
-        lines = _clean_output(response.text)
+        lines = _clean_output(reply_text)
         answer = "\n".join(lines) if lines else (
             "⚠️ उत्तर सही format में नहीं आया।\n"
             "💡 अपना सवाल फिर से clearly लिखें।\n"
