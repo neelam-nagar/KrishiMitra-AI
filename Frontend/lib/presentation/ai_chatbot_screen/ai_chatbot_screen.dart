@@ -13,6 +13,9 @@ import './widgets/typing_indicator_widget.dart';
 import '../../widgets/custom_bottom_bar.dart';
 import '../../core/app_export.dart';
 
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 class AiChatbotScreen extends StatefulWidget {
   const AiChatbotScreen({super.key});
 
@@ -80,56 +83,45 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
 
     _scrollToBottom();
 
-    Future.delayed(const Duration(seconds: 2), () {
-      _generateAIResponse(message);
-    });
+    _getAIResponse(message);
   }
 
-  // ================= AI RESPONSE =================
-  void _generateAIResponse(String userMessage) {
-    final lang = context.read<LanguageProvider>().currentLanguage;
-    final msg = userMessage.toLowerCase();
+  Future<void> _getAIResponse(String message) async {
+    try {
+      final response = await http.post(
+        Uri.parse("http://10.0.2.2:8000/chat"),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: jsonEncode({
+          "question": message,
+        }),
+      );
 
-    Map<String, dynamic> response = {
-      'isUser': false,
-      'time': _getCurrentTime(),
-    };
+      final data = jsonDecode(response.body);
 
-    if (msg.contains('weather')) {
-      response['text'] = lang == 'en'
-          ? 'Today the weather is clear with 28°C temperature.'
-          : 'आज मौसम साफ है और तापमान 28°C है।';
-
-    } else if (msg.contains('price') || msg.contains('mandi')) {
-      response['text'] = lang == 'en'
-          ? 'Today wheat price is ₹2,150 per quintal.'
-          : 'आज गेहूं का भाव ₹2,150 प्रति क्विंटल है।';
-
-    } else if (msg.contains('scheme')) {
-      response['text'] = lang == 'en'
-          ? 'PM-KISAN provides ₹6,000 annual support to farmers.'
-          : 'PM-KISAN योजना में किसानों को ₹6,000 सालाना मिलते हैं।';
-
-    } else if (msg.contains('organic')) {
-      response['text'] = lang == 'en'
-          ? 'Organic farming improves soil health and income.'
-          : 'जैविक खेती मिट्टी की गुणवत्ता और आय बढ़ाती है।';
-
-    } else if (msg.contains('market')) {
-      response['text'] = lang == 'en'
-          ? 'You can buy and sell crops using marketplace.'
-          : 'आप मार्केटप्लेस से फसल खरीद और बेच सकते हैं।';
-
-    } else {
-      response['text'] = lang == 'en'
-          ? 'I can help with weather, mandi prices, schemes and farming tips.'
-          : 'मैं मौसम, मंडी भाव, योजनाओं और खेती की जानकारी दे सकता हूँ।';
+      if (data["status"] == "success") {
+        setState(() {
+          _messages.add({
+            'isUser': false,
+            'text': data["answer"],
+            'time': _getCurrentTime(),
+          });
+          _isTyping = false;
+        });
+      } else {
+        throw Exception(data["message"]);
+      }
+    } catch (e) {
+      setState(() {
+        _messages.add({
+          'isUser': false,
+          'text': "Error: API not working",
+          'time': _getCurrentTime(),
+        });
+        _isTyping = false;
+      });
     }
-
-    setState(() {
-      _messages.add(response);
-      _isTyping = false;
-    });
 
     _scrollToBottom();
   }
@@ -169,14 +161,27 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
               itemCount: _messages.length + (_isTyping ? 1 : 0),
               itemBuilder: (context, index) {
                 if (_isTyping && index == _messages.length) {
-                  return const TypingIndicatorWidget();
+                  return TypingIndicatorWidget(isTyping: _isTyping);
                 }
                 return ChatMessageWidget(message: _messages[index]);
               },
             ),
           ),
-          QuickActionButtonsWidget(
-            onActionTap: _handleSendMessage,
+          Expanded(
+            flex: 0,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  if (_showSuggestions)
+                    SuggestedQuestionsWidget(
+                      onQuestionTap: _handleSendMessage,
+                    ),
+                  QuickActionButtonsWidget(
+                    onActionTap: _handleSendMessage,
+                  ),
+                ],
+              ),
+            ),
           ),
           MessageInputWidget(
             onSendMessage: _handleSendMessage,

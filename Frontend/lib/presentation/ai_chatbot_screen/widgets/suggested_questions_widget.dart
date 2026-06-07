@@ -9,7 +9,7 @@ import '../../../core/language_provider.dart';
 /// Suggested questions widget for conversation guidance
 /// Appears during conversation lulls to help farmers
 class SuggestedQuestionsWidget extends StatelessWidget {
-  final Function(String) onQuestionTap;
+  final void Function(String) onQuestionTap;
 
   const SuggestedQuestionsWidget({
     super.key,
