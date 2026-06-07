@@ -1,24 +1,14 @@
 import json
 import os
 import sys
-
-# -----------------------------
-# Load Schemes JSON (scheme.json in same folder)
-# -----------------------------
 with open("scheme.json", "r", encoding="utf-8") as f:
     SCHEMES = json.load(f)
 
-# -----------------------------
-# Global language (default English)
-# -----------------------------
 LANG = "en"  # "en" or "hi"
 
 
-# -----------------------------
-# Beautiful UI Headers
-# -----------------------------
+
 def header(text):
-    # ensure text is str and handle unicode properly
     text = str(text)
     line_len = 54
     print("╭" + "─" * line_len + "╮")
@@ -30,9 +20,7 @@ def line():
     print("─" * 60)
 
 
-# -----------------------------
-# Language selection
-# -----------------------------
+
 def select_language():
     global LANG
     header("SELECT LANGUAGE / भाषा चुनें")
@@ -47,9 +35,6 @@ def select_language():
     os.system("cls" if os.name == "nt" else "clear")
 
 
-# -----------------------------
-# Helpers for bilingual fields
-# -----------------------------
 def t(obj, default=""):
     """
     Pick text for current language from dict like {"en": "...", "hi": "..."}.
@@ -59,9 +44,6 @@ def t(obj, default=""):
     return str(obj)
 
 
-# -----------------------------
-# Show list of schemes
-# -----------------------------
 def show_scheme_list():
     if LANG == "hi":
         title = "कृषि एवं किसान योजनाएँ (राजस्थान)"
@@ -82,9 +64,7 @@ def show_scheme_list():
     return input(prompt).strip()
 
 
-# -----------------------------
-# Show selected scheme details
-# -----------------------------
+
 def show_scheme_details(scheme):
     name = t(scheme["name"])
     header(name)
