@@ -99,7 +99,6 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen>
     setState(() => _isLoading = true);
 
     try {
-      // FIX: use AppConfig instead of hardcoded localhost
       final request = http.MultipartRequest(
         'POST',
         Uri.parse('${AppConfig.diseaseApiBase}/predict'),
@@ -111,22 +110,25 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen>
       final responseData = await response.stream.bytesToString();
 
       if (response.statusCode == 200) {
-        final data = jsonDecode(responseData);
+        final data = jsonDecode(responseData) as Map<String, dynamic>;
+        // Backend returns: label (e.g. "टमाटर_Late_Blight"), hindi, confidence,
+        // severity, pesticides, spray, savdhani, helpline, is_healthy
+        final label = data['label']?.toString() ?? '';
+        final parts = label.split('_');
         setState(() {
-          plant = data['prediction']['plant'].toString() == 'Pepper, bell'
-              ? 'शिमला मिर्च'
-              : data['prediction']['plant'].toString();
-          disease = data['prediction']['disease'].toString() == 'healthy'
+          // Extract plant name (first segment of label) from hindi field
+          plant = data['hindi']?.toString().split(' - ').first ?? parts.first;
+          disease = data['hindi']?.toString().contains('स्वस्थ') == true
               ? 'स्वस्थ'
-              : data['prediction']['disease'].toString();
+              : (parts.length > 1 ? parts.sublist(1).join(' ') : label);
           confidenceValue =
-              double.tryParse(data['prediction']['confidence'].toString()) ?? 0;
-          isHealthy = data['prediction']['is_healthy'] ?? false;
-          severity = data['severity'] ?? '';
-          pesticides = data['pesticides'] ?? [];
-          spray = data['spray'] ?? '';
-          savdhani = data['savdhani'] ?? '';
-          helplines = data['helpline'] ?? [];
+              double.tryParse(data['confidence']?.toString() ?? '0') ?? 0;
+          isHealthy = data['is_healthy'] as bool? ?? false;
+          severity = data['severity']?.toString() ?? '';
+          pesticides = data['pesticides'] as List<dynamic>? ?? [];
+          spray = data['spray']?.toString() ?? '';
+          savdhani = data['savdhani']?.toString() ?? '';
+          helplines = data['helpline'] as List<dynamic>? ?? [];
         });
         _resultController.forward(from: 0);
         _confidenceController.forward(from: 0);

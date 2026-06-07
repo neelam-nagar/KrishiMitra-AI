@@ -80,7 +80,7 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
   Future<void> _getAIResponse(String message) async {
     try {
       final response = await http.post(
-        Uri.parse('${AppConfig.chatApiBase}/chat'),
+        Uri.parse('${AppConfig.chatApiBase}/api/chat'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'question': message}),
       );

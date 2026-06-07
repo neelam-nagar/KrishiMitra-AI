@@ -149,11 +149,12 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
   Future<void> _loadDistricts() async {
     try {
       final res = await http.get(
-        Uri.parse('${AppConfig.weatherApiBase}/locations/districts'),
+        Uri.parse('${AppConfig.weatherApiBase}/api/weather/districts'),
       );
       if (!mounted) return;
       if (res.statusCode == 200) {
-        setState(() => _districts = List<String>.from(json.decode(res.body)));
+        final decoded = json.decode(res.body);
+        setState(() => _districts = List<String>.from(decoded is Map ? decoded['districts'] ?? [] : decoded));
       }
     } catch (_) {
       if (!mounted) return;
@@ -164,11 +165,12 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
   Future<void> _loadTehsils(String district) async {
     try {
       final res = await http.get(Uri.parse(
-        '${AppConfig.weatherApiBase}/locations/tehsils?district=${Uri.encodeComponent(district)}',
+        '${AppConfig.weatherApiBase}/api/weather/tehsils?district=${Uri.encodeComponent(district)}',
       ));
       if (!mounted) return;
       if (res.statusCode == 200) {
-        setState(() => _tehsils = List<String>.from(json.decode(res.body)));
+        final decoded = json.decode(res.body);
+        setState(() => _tehsils = List<String>.from(decoded is Map ? decoded['tehsils'] ?? [] : decoded));
       }
     } catch (_) {
       if (!mounted) return;
@@ -179,11 +181,12 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
   Future<void> _loadVillages(String district, String tehsil) async {
     try {
       final res = await http.get(Uri.parse(
-        '${AppConfig.weatherApiBase}/locations/villages?district=${Uri.encodeComponent(district)}&tehsil=${Uri.encodeComponent(tehsil)}',
+        '${AppConfig.weatherApiBase}/api/weather/villages?district=${Uri.encodeComponent(district)}&tehsil=${Uri.encodeComponent(tehsil)}',
       ));
       if (!mounted) return;
       if (res.statusCode == 200) {
-        setState(() => _villages = List<String>.from(json.decode(res.body)));
+        final decoded = json.decode(res.body);
+        setState(() => _villages = List<String>.from(decoded is Map ? decoded['villages'] ?? [] : decoded));
       }
     } catch (_) {
       if (!mounted) return;
@@ -209,7 +212,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
 
     try {
       final url =
-          '${AppConfig.weatherApiBase}/weather'
+          '${AppConfig.weatherApiBase}/api/weather'
           '?district=${Uri.encodeComponent(district)}'
           '&tehsil=${Uri.encodeComponent(tehsil)}'
           '&village=${Uri.encodeComponent(village)}';

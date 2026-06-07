@@ -20,15 +20,26 @@ class _CompensationCalculatorScreenState
   double _sdrfAmount = 0;
   double _totalAmount = 0;
 
-  final List<String> crops = ['गेहूँ', 'सरसों', 'सोयाबीन', 'चना', 'मक्का'];
+  final List<String> crops = ['गेहूँ', 'सरसों', 'सोयाबीन', 'चना', 'मक्का', 'चावल', 'कपास'];
   final List<String> causes = ['ओलावृष्टि', 'बाढ़', 'सूखा', 'कीट / रोग', 'अन्य'];
 
+  // Crop-specific rates (₹/hectare) matching backend COMP_RATES
+  static const Map<String, Map<String, double>> _cropRates = {
+    'गेहूँ':    {'pmfby': 30000, 'sdrf': 13500},
+    'सरसों':   {'pmfby': 25000, 'sdrf': 13500},
+    'सोयाबीन': {'pmfby': 20000, 'sdrf': 6800},
+    'चना':     {'pmfby': 22000, 'sdrf': 6800},
+    'मक्का':   {'pmfby': 20000, 'sdrf': 6800},
+    'चावल':    {'pmfby': 25000, 'sdrf': 6800},
+    'कपास':    {'pmfby': 35000, 'sdrf': 13500},
+  };
+
   void _calculateCompensation() {
-    const double pmfbyRate = 30000;
-    const double sdrfRate = 13500;
+    final rates = _cropRates[_selectedCrop] ??
+        {'pmfby': 20000.0, 'sdrf': 6800.0};
     setState(() {
-      _pmfbyAmount = pmfbyRate * (_damagePercent / 100);
-      _sdrfAmount = sdrfRate * (_damagePercent / 100);
+      _pmfbyAmount = rates['pmfby']! * (_damagePercent / 100);
+      _sdrfAmount  = rates['sdrf']!  * (_damagePercent / 100);
       _totalAmount = _pmfbyAmount + _sdrfAmount;
     });
   }
