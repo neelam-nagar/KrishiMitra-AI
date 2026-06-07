@@ -1,8 +1,6 @@
 import json
 import requests
 import sys
-from flask import Flask
-from flask_cors import CORS
 
 # -------------------------
 # WEATHER API
@@ -232,8 +230,6 @@ def main(json_file):
 # RUN
 # -------------------------------------------------
 
-app = Flask(__name__)
-CORS(app)
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
