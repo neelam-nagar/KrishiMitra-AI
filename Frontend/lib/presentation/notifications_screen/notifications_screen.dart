@@ -57,7 +57,7 @@ class _NotificationsScreenState extends State<NotificationsScreen>
     final theme = Theme.of(context);
 
     return MainShellScreen(
-      currentItem: CustomBottomBarItem.notifications,
+      currentItem: CustomBottomBarItem.dashboard, // FIX: notifications नहीं है enum में, dashboard use karo
       child: Scaffold(
         backgroundColor: const Color(0xFFF8FBF8),
         appBar: AppBar(
@@ -193,18 +193,15 @@ class _NotificationsScreenState extends State<NotificationsScreen>
             ],
           ),
           child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            // Icon
             Container(
               width: 48, height: 48,
               decoration: BoxDecoration(
                 color: color.withValues(alpha: 0.12),
                 borderRadius: BorderRadius.circular(14),
               ),
-              child: Icon(_iconFor(n['icon'] as String? ?? ''),
-                  color: color, size: 22),
+              child: Icon(_iconFor(n['icon'] as String? ?? ''), color: color, size: 22),
             ),
             const SizedBox(width: 14),
-            // Content
             Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Row(children: [
                 Expanded(child: Text(n['title'] ?? '',
@@ -222,8 +219,7 @@ class _NotificationsScreenState extends State<NotificationsScreen>
                       border: Border.all(color: Colors.red.shade200),
                     ),
                     child: const Text('ज़रूरी',
-                        style: TextStyle(color: Colors.red, fontSize: 10,
-                            fontWeight: FontWeight.w700)),
+                        style: TextStyle(color: Colors.red, fontSize: 10, fontWeight: FontWeight.w700)),
                   ),
               ]),
               const SizedBox(height: 6),
@@ -247,7 +243,7 @@ class _NotificationsScreenState extends State<NotificationsScreen>
                 if (!isRead) ...[
                   const SizedBox(width: 8),
                   Container(width: 8, height: 8,
-                    decoration: BoxDecoration(color: color, shape: BoxShape.circle)),
+                      decoration: BoxDecoration(color: color, shape: BoxShape.circle)),
                 ],
               ]),
             ])),
@@ -261,24 +257,17 @@ class _NotificationsScreenState extends State<NotificationsScreen>
     return Center(child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Container(
         padding: const EdgeInsets.all(28),
-        decoration: BoxDecoration(
-          color: const Color(0xFFE8F5E9),
-          shape: BoxShape.circle,
-        ),
-        child: const Icon(Icons.notifications_none_rounded,
-            size: 52, color: Color(0xFF2E7D32)),
+        decoration: const BoxDecoration(color: Color(0xFFE8F5E9), shape: BoxShape.circle),
+        child: const Icon(Icons.notifications_none_rounded, size: 52, color: Color(0xFF2E7D32)),
       ),
       const SizedBox(height: 20),
       Text(
         lang == 'en' ? 'No notifications yet' : 'अभी कोई सूचना नहीं',
-        style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700,
-            color: Color(0xFF1B5E20)),
+        style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700, color: Color(0xFF1B5E20)),
       ),
       const SizedBox(height: 8),
       Text(
-        lang == 'en'
-            ? 'Weather alerts and updates will appear here'
-            : 'मौसम अलर्ट और अपडेट यहाँ दिखेंगे',
+        lang == 'en' ? 'Weather alerts and updates will appear here' : 'मौसम अलर्ट और अपडेट यहाँ दिखेंगे',
         style: TextStyle(fontSize: 13, color: Colors.grey.shade500),
         textAlign: TextAlign.center,
       ),

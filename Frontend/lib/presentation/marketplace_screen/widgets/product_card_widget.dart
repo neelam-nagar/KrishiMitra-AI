@@ -6,7 +6,6 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../core/app_export.dart';
 import 'package:provider/provider.dart';
 import '../../../core/language_provider.dart';
-import '../chat_screen.dart'; // NEW
 
 class ProductCardWidget extends StatelessWidget {
   final Map<String, dynamic> product;
@@ -25,33 +24,26 @@ class ProductCardWidget extends StatelessWidget {
     }
   }
 
-  // UPDATED: opens real chat screen
   void _openChat(BuildContext context) {
-    final currentUserId = product['sellerId'] as String? ?? '';
-    // Don't open chat with yourself
-    final myUid = FirebaseAuth.instance.currentUser?.uid ?? '';
-    if (currentUserId == myUid) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('यह आपका अपना उत्पाद है')),
-      );
-      return;
-    }
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => ChatScreen(
-          otherUserId: currentUserId,
-          otherUserName: (product['sellerName'] ?? 'विक्रेता') as String,
-          productId: (product['id'] ?? '') as String,
-          productName: (product['nameHindi'] ?? product['nameEnglish'] ?? '') as String,
+    final lang = context.read<LanguageProvider>().currentLanguage;
+    final bool isHindi = lang == 'hi';
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          isHindi
+              ? 'चैट सुविधा जल्द उपलब्ध होगी।'
+              : 'Chat feature coming soon.',
         ),
       ),
     );
   }
 
+  // FIX: safe image widget — handles empty/null/network/asset URLs
   Widget _buildImage(String? imageUrl, double height) {
     final url = (imageUrl ?? '').trim();
+
     if (url.isEmpty) {
+      // No image — show placeholder
       return Container(
         width: double.infinity,
         height: height,
@@ -59,14 +51,19 @@ class ProductCardWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.grass, color: Color(0xFF388E3C), size: 40),
+            Icon(Icons.grass, color: const Color(0xFF388E3C), size: 40),
             const SizedBox(height: 8),
-            Text('No Image', style: TextStyle(color: Colors.grey[500], fontSize: 12)),
+            Text(
+              'No Image',
+              style: TextStyle(color: Colors.grey[500], fontSize: 12),
+            ),
           ],
         ),
       );
     }
+
     if (url.startsWith('http://') || url.startsWith('https://')) {
+      // Network image from Firebase Storage
       return Image.network(
         url,
         width: double.infinity,
@@ -76,7 +73,7 @@ class ProductCardWidget extends StatelessWidget {
           width: double.infinity,
           height: height,
           color: const Color(0xFFE8F5E9),
-          child: const Icon(Icons.grass, color: Color(0xFF388E3C), size: 40),
+          child: Icon(Icons.grass, color: const Color(0xFF388E3C), size: 40),
         ),
         loadingBuilder: (_, child, progress) {
           if (progress == null) return child;
@@ -84,11 +81,15 @@ class ProductCardWidget extends StatelessWidget {
             width: double.infinity,
             height: height,
             color: const Color(0xFFE8F5E9),
-            child: const Center(child: CircularProgressIndicator(strokeWidth: 2)),
+            child: const Center(
+              child: CircularProgressIndicator(strokeWidth: 2),
+            ),
           );
         },
       );
     }
+
+    // Asset image (local)
     return Image.asset(
       url,
       width: double.infinity,
@@ -98,7 +99,7 @@ class ProductCardWidget extends StatelessWidget {
         width: double.infinity,
         height: height,
         color: const Color(0xFFE8F5E9),
-        child: const Icon(Icons.grass, color: Color(0xFF388E3C), size: 40),
+        child: Icon(Icons.grass, color: const Color(0xFF388E3C), size: 40),
       ),
     );
   }
@@ -108,6 +109,7 @@ class ProductCardWidget extends StatelessWidget {
     final theme = Theme.of(context);
     final lang = context.watch<LanguageProvider>().currentLanguage;
     final bool isHindi = lang == 'hi';
+
     final imageUrl = (product['image'] ?? '') as String;
 
     return InkWell(
@@ -122,6 +124,7 @@ class ProductCardWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Product Image — FIX: use safe image builder
             ClipRRect(
               borderRadius: const BorderRadius.vertical(top: Radius.circular(8)),
               child: Stack(
@@ -132,7 +135,10 @@ class ProductCardWidget extends StatelessWidget {
                       top: 2.w,
                       right: 2.w,
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 0.5.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 2.w,
+                          vertical: 0.5.h,
+                        ),
                         decoration: BoxDecoration(
                           color: const Color(0xFF388E3C),
                           borderRadius: BorderRadius.circular(4),
@@ -165,7 +171,9 @@ class ProductCardWidget extends StatelessWidget {
                     isHindi
                         ? (product['nameHindi'] ?? product['nameEnglish'] ?? '')
                         : (product['nameEnglish'] ?? ''),
-                    style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -175,10 +183,13 @@ class ProductCardWidget extends StatelessWidget {
                       Expanded(
                         child: Row(
                           children: [
-                            Icon(Icons.inventory_2, color: theme.colorScheme.primary, size: 18),
+                            Icon(Icons.inventory_2,
+                                color: theme.colorScheme.primary, size: 18),
                             SizedBox(width: 1.w),
-                            Text('${product['quantity'] ?? 0} ${product['unit'] ?? 'kg'}',
-                                style: theme.textTheme.bodyMedium),
+                            Text(
+                              '${product['quantity'] ?? 0} ${product['unit'] ?? 'kg'}',
+                              style: theme.textTheme.bodyMedium,
+                            ),
                           ],
                         ),
                       ),
@@ -213,10 +224,15 @@ class ProductCardWidget extends StatelessWidget {
                     children: [
                       const Icon(Icons.star, color: Color(0xFFFF6F00), size: 16),
                       SizedBox(width: 1.w),
-                      Text('${product['sellerRating'] ?? 0}',
-                          style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600)),
+                      Text(
+                        '${product['sellerRating'] ?? 0}',
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                       SizedBox(width: 3.w),
-                      Icon(Icons.calendar_today, color: Colors.grey[600], size: 14),
+                      Icon(Icons.calendar_today,
+                          color: Colors.grey[600], size: 14),
                       SizedBox(width: 1.w),
                       Text(
                         isHindi
@@ -229,13 +245,16 @@ class ProductCardWidget extends StatelessWidget {
                   SizedBox(height: 1.h),
                   Row(
                     children: [
-                      Icon(Icons.person, color: theme.colorScheme.primary, size: 16),
+                      Icon(Icons.person,
+                          color: theme.colorScheme.primary, size: 16),
                       SizedBox(width: 1.w),
                       Text(
                         isHindi
                             ? 'विक्रेता: ${product['sellerName'] ?? 'स्थानीय किसान'}'
                             : 'Seller: ${product['sellerName'] ?? 'Local Farmer'}',
-                        style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ],
                   ),
@@ -248,16 +267,22 @@ class ProductCardWidget extends StatelessWidget {
                           child: ElevatedButton.icon(
                             onPressed: () {
                               HapticFeedback.lightImpact();
-                              _makePhoneCall((product['contactNumber'] ?? '').toString());
+                              _makePhoneCall(
+                                  (product['contactNumber'] ?? '').toString());
                             },
-                            icon: const Icon(Icons.phone, color: Colors.white, size: 18),
+                            icon: const Icon(Icons.phone,
+                                color: Colors.white, size: 18),
                             label: Text(
                               isHindi ? 'कॉल करें' : 'Call',
-                              style: theme.textTheme.labelLarge?.copyWith(color: Colors.white),
+                              style: theme.textTheme.labelLarge?.copyWith(
+                                color: Colors.white,
+                              ),
                             ),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: theme.colorScheme.primary,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
                             ),
                           ),
                         ),
@@ -269,17 +294,22 @@ class ProductCardWidget extends StatelessWidget {
                           child: OutlinedButton.icon(
                             onPressed: () {
                               HapticFeedback.lightImpact();
-                              _openChat(context); // NOW OPENS REAL CHAT
+                              _openChat(context);
                             },
-                            icon: Icon(Icons.chat, color: theme.colorScheme.primary, size: 18),
+                            icon: Icon(Icons.chat,
+                                color: theme.colorScheme.primary, size: 18),
                             label: Text(
                               isHindi ? 'संदेश' : 'Message',
                               style: theme.textTheme.labelLarge?.copyWith(
-                                  color: theme.colorScheme.primary),
+                                color: theme.colorScheme.primary,
+                              ),
                             ),
                             style: OutlinedButton.styleFrom(
-                              side: BorderSide(color: theme.colorScheme.primary),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                              side:
+                                  BorderSide(color: theme.colorScheme.primary),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
                             ),
                           ),
                         ),
