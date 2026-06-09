@@ -1,4 +1,5 @@
 import 'package:provider/provider.dart';
+import '../../services/notification_service.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../core/language_provider.dart';
@@ -61,6 +62,10 @@ class _MainDashboardState extends State<MainDashboard>
         _showLocationDialog();
       } else {
         _autoDetectLocation();
+    // Refresh notifications in background
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      NotificationService.instance.refreshNotifications(context.read<LocationProvider>());
+    });
       }
     });
   }

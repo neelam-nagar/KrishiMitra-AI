@@ -1,499 +1,331 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:sizer/sizer.dart';
-import '../../widgets/custom_bottom_bar.dart';
-import '../../core/app_export.dart';
-import '../../widgets/custom_icon_widget.dart';
-import './widgets/notification_card_widget.dart';
-import '../../presentation/main_shell/main_shell_screen.dart';
 import 'package:provider/provider.dart';
 import '../../core/language_provider.dart';
-/// Notifications Screen displaying all agricultural alerts and updates
-/// Features category filtering, swipe-to-dismiss, and chronological ordering
+import '../../core/location_provider.dart';
+import '../../services/notification_service.dart';
+import '../../widgets/custom_bottom_bar.dart';
+import '../main_shell/main_shell_screen.dart';
+
 class NotificationsScreen extends StatefulWidget {
   const NotificationsScreen({super.key});
-
   @override
   State<NotificationsScreen> createState() => _NotificationsScreenState();
 }
 
 class _NotificationsScreenState extends State<NotificationsScreen>
     with SingleTickerProviderStateMixin {
-  late TabController _categoryTabController;
+  late TabController _tabController;
   String _selectedCategory = 'All';
-  List<Map<String, dynamic>> _notifications = [];
+  bool _isRefreshing = false;
 
-  final List<String> _categories = [
-    'All',
-    'Schemes',
-    'Prices',
-    'Weather',
-    'Messages',
+  final List<Map<String, dynamic>> _categories = [
+    {'key': 'All',     'label': 'सभी',       'icon': Icons.notifications_rounded},
+    {'key': 'Weather', 'label': 'मौसम',      'icon': Icons.cloud_rounded},
+    {'key': 'Prices',  'label': 'मंडी भाव',  'icon': Icons.trending_up_rounded},
+    {'key': 'Schemes', 'label': 'योजनाएं',  'icon': Icons.description_rounded},
   ];
 
   @override
   void initState() {
     super.initState();
-    _categoryTabController = TabController(
-      length: _categories.length,
-      vsync: this,
-    );
-    _loadNotifications();
+    _tabController = TabController(length: _categories.length, vsync: this);
+    _tabController.addListener(() {
+      if (_tabController.indexIsChanging) {
+        setState(() => _selectedCategory = _categories[_tabController.index]['key']);
+      }
+    });
+    _refreshNotifications();
+  }
+
+  Future<void> _refreshNotifications() async {
+    if (_isRefreshing) return;
+    setState(() => _isRefreshing = true);
+    final location = context.read<LocationProvider>();
+    await NotificationService.instance.refreshNotifications(location);
+    if (mounted) setState(() => _isRefreshing = false);
   }
 
   @override
   void dispose() {
-    _categoryTabController.dispose();
+    _tabController.dispose();
     super.dispose();
   }
 
-  /// Loads notifications — tries Firestore first (real data when Firebase is
-  /// configured), falls back to curated static content so the screen is
-  /// always useful even in demo / offline mode.
-  Future<void> _loadNotifications() async {
-    try {
-      final user = FirebaseAuth.instance.currentUser;
-      if (user != null) {
-        // Try to load from Firestore user notifications sub-collection
-        final snap = await FirebaseFirestore.instance
-            .collection('users')
-            .doc(user.uid)
-            .collection('notifications')
-            .orderBy('timestamp', descending: true)
-            .limit(30)
-            .get();
+  @override
+  Widget build(BuildContext context) {
+    final lang = context.watch<LanguageProvider>().currentLanguage;
+    final theme = Theme.of(context);
 
-        if (snap.docs.isNotEmpty) {
-          if (mounted) {
-            setState(() {
-              _notifications = snap.docs.map((d) {
-                final data = d.data();
-                data['id'] = d.id;
-                // Firestore Timestamp → DateTime
-                if (data['timestamp'] is Timestamp) {
-                  data['timestamp'] =
-                      (data['timestamp'] as Timestamp).toDate();
+    return MainShellScreen(
+      currentItem: CustomBottomBarItem.notifications,
+      child: Scaffold(
+        backgroundColor: const Color(0xFFF8FBF8),
+        appBar: AppBar(
+          backgroundColor: const Color(0xFF1B5E20),
+          elevation: 0,
+          title: Text(
+            lang == 'en' ? 'Notifications' : 'सूचनाएं',
+            style: const TextStyle(fontWeight: FontWeight.w700, color: Colors.white),
+          ),
+          actions: [
+            if (_isRefreshing)
+              const Padding(
+                padding: EdgeInsets.all(14),
+                child: SizedBox(width: 20, height: 20,
+                    child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2)),
+              )
+            else
+              IconButton(
+                icon: const Icon(Icons.refresh_rounded, color: Colors.white),
+                onPressed: _refreshNotifications,
+                tooltip: 'Refresh',
+              ),
+            IconButton(
+              icon: const Icon(Icons.done_all_rounded, color: Colors.white),
+              onPressed: () async {
+                await NotificationService.instance.markAllRead();
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(lang == 'en' ? 'All marked as read' : 'सभी पढ़ी गईं'),
+                      backgroundColor: const Color(0xFF2E7D32),
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
                 }
-                return data;
-              }).toList();
-            });
-          }
-          return;
-        }
-      }
-    } catch (_) {
-      // Firebase not configured or offline — fall through to static content
-    }
-    // Static curated content shown when Firebase is not yet configured
-    _loadStaticNotifications();
-  }
-
-  void _loadStaticNotifications() {
-    setState(() {
-      _notifications = [
-        {
-          'id': '1',
-          'title': 'New Scheme: PM-KISAN',
-          'description':
-              'Direct income support to farmers. Check eligibility and apply now.',
-          'category': 'Schemes',
-          'priority': 'high',
-          'timestamp': DateTime.now().subtract(const Duration(hours: 2)),
-          'isUnread': true,
-        },
-        {
-          'id': '2',
-          'title': 'Wheat Price Alert',
-          'description':
-              'Mandi rates increased by 5% in your region. Current price: ₹2,250/quintal',
-          'category': 'Prices',
-          'priority': 'normal',
-          'timestamp': DateTime.now().subtract(const Duration(hours: 5)),
-          'isUnread': true,
-        },
-        {
-          'id': '3',
-          'title': 'Weather Warning',
-          'description':
-              'Heavy rainfall expected in next 48 hours. Take necessary precautions.',
-          'category': 'Weather',
-          'priority': 'high',
-          'timestamp': DateTime.now().subtract(const Duration(hours: 8)),
-          'isUnread': true,
-        },
-        {
-          'id': '4',
-          'title': 'New Buyer Message',
-          'description':
-              'A buyer is interested in your maize crop. Check marketplace messages.',
-          'category': 'Messages',
-          'priority': 'normal',
-          'timestamp': DateTime.now().subtract(const Duration(days: 1)),
-          'isUnread': false,
-        },
-        {
-          'id': '5',
-          'title': 'Subsidy Update',
-          'description':
-              'Fertilizer subsidy application deadline extended till 31st Dec.',
-          'category': 'Schemes',
-          'priority': 'normal',
-          'timestamp': DateTime.now().subtract(const Duration(days: 2)),
-          'isUnread': false,
-        },
-        {
-          'id': '6',
-          'title': 'Cotton Price Drop',
-          'description':
-              'Cotton prices decreased by 3%. Consider holding inventory.',
-          'category': 'Prices',
-          'priority': 'normal',
-          'timestamp': DateTime.now().subtract(const Duration(days: 3)),
-          'isUnread': false,
-        },
-        {
-          'id': '7',
-          'title': 'Sunny Weather Ahead',
-          'description':
-              'Clear skies expected for next 5 days. Ideal for harvesting.',
-          'category': 'Weather',
-          'priority': 'normal',
-          'timestamp': DateTime.now().subtract(const Duration(days: 4)),
-          'isUnread': false,
-        },
-        {
-          'id': '8',
-          'title': 'Order Confirmed',
-          'description':
-              'Your order for organic fertilizer has been confirmed.',
-          'category': 'Messages',
-          'priority': 'normal',
-          'timestamp': DateTime.now().subtract(const Duration(days: 5)),
-          'isUnread': false,
-        },
-      ];
-    });
-  }
-
-  List<Map<String, dynamic>> _getFilteredNotifications() {
-    if (_selectedCategory == 'All') {
-      return _notifications;
-    }
-    return _notifications
-        .where((n) => n['category'] == _selectedCategory)
-        .toList();
-  }
-
-  void _handleNotificationTap(Map<String, dynamic> notification) {
-    setState(() {
-      notification['isUnread'] = false;
-    });
-    HapticFeedback.lightImpact();
-
-    final lang = context.read<LanguageProvider>().currentLanguage;
-    final bool isHindi = lang == 'hi';
-
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(notification['title'] as String),
-        content: Text(notification['description'] as String),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(isHindi ? 'बंद करें' : 'Close'),
+              },
+            ),
+          ],
+          bottom: TabBar(
+            controller: _tabController,
+            isScrollable: true,
+            indicatorColor: Colors.white,
+            indicatorWeight: 3,
+            labelColor: Colors.white,
+            unselectedLabelColor: Colors.white60,
+            tabs: _categories.map((c) => Tab(
+              child: Row(children: [
+                Icon(c['icon'] as IconData, size: 16),
+                const SizedBox(width: 6),
+                Text(c['label'], style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
+              ]),
+            )).toList(),
           ),
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(isHindi
-                      ? 'यह आपको संबंधित अनुभाग में ले जाएगा'
-                      : 'This will navigate to relevant section'),
-                ),
-              );
-            },
-            child: Text(isHindi ? 'विवरण देखें' : 'View Details'),
-          ),
-        ],
-      ),
-    );
-  }
+        ),
+        body: StreamBuilder<List<Map<String, dynamic>>>(
+          stream: NotificationService.instance.notificationsStream(),
+          builder: (context, snap) {
+            if (snap.connectionState == ConnectionState.waiting && !snap.hasData) {
+              return const Center(child: CircularProgressIndicator(color: Color(0xFF2E7D32)));
+            }
 
-  void _handleDismissNotification(Map<String, dynamic> notification) {
-    final lang = context.read<LanguageProvider>().currentLanguage;
-    final bool isHindi = lang == 'hi';
+            final all = snap.data ?? [];
+            final filtered = _selectedCategory == 'All'
+                ? all
+                : all.where((n) => n['type'] == _selectedCategory).toList();
 
-    setState(() {
-      _notifications.remove(notification);
-    });
+            if (filtered.isEmpty) {
+              return _buildEmptyState(lang, _selectedCategory);
+            }
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(isHindi ? 'सूचना हटाई गई' : 'Notification dismissed'),
-        action: SnackBarAction(
-          label: 'Undo',
-          onPressed: () {
-            setState(() {
-              _notifications.add(notification);
-              _notifications.sort(
-                (a, b) => (b['timestamp'] as DateTime).compareTo(
-                  a['timestamp'] as DateTime,
-                ),
-              );
-            });
+            return RefreshIndicator(
+              onRefresh: _refreshNotifications,
+              color: const Color(0xFF2E7D32),
+              child: ListView.separated(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                itemCount: filtered.length,
+                separatorBuilder: (_, __) => const SizedBox(height: 10),
+                itemBuilder: (_, i) => _buildNotificationCard(filtered[i], lang),
+              ),
+            );
           },
         ),
       ),
     );
   }
 
-  void _handleClearAll() {
-    final lang = context.read<LanguageProvider>().currentLanguage;
-    final bool isHindi = lang == 'hi';
+  Widget _buildNotificationCard(Map<String, dynamic> n, String lang) {
+    final isRead = n['read'] as bool? ?? false;
+    final color = Color(n['color'] as int? ?? 0xFF2E7D32);
+    final priority = n['priority'] as String? ?? 'low';
+    final ts = n['timestamp'];
+    final time = ts is DateTime ? _formatTime(ts) : '';
 
-    HapticFeedback.mediumImpact();
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(isHindi ? 'सभी सूचनाएं हटाएं' : 'Clear All Notifications'),
-        content: Text(isHindi
-            ? 'क्या आप वाकई सभी सूचनाएं हटाना चाहते हैं? यह क्रिया वापस नहीं होगी।'
-            : 'Are you sure you want to clear all notifications? This action cannot be undone.'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(isHindi ? 'रद्द करें' : 'Cancel'),
-          ),
-          TextButton(
-            onPressed: () {
-              setState(() {
-                _notifications.clear();
-              });
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(isHindi ? 'सभी सूचनाएं हटा दी गईं' : 'All notifications cleared')),
-              );
-            },
-            style: TextButton.styleFrom(
-              foregroundColor: const Color(0xFFE53935),
+    return Dismissible(
+      key: Key(n['id']?.toString() ?? n['title']),
+      direction: DismissDirection.endToStart,
+      background: Container(
+        alignment: Alignment.centerRight,
+        padding: const EdgeInsets.only(right: 20),
+        decoration: BoxDecoration(
+          color: Colors.red.shade400,
+          borderRadius: BorderRadius.circular(18),
+        ),
+        child: const Icon(Icons.delete_rounded, color: Colors.white, size: 26),
+      ),
+      onDismissed: (_) {
+        if (n['id'] != null) {
+          NotificationService.instance.deleteNotification(n['id']);
+        }
+      },
+      child: GestureDetector(
+        onTap: () {
+          if (n['id'] != null && !isRead) {
+            NotificationService.instance.markRead(n['id']);
+          }
+        },
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: isRead ? Colors.white : color.withValues(alpha: 0.04),
+            borderRadius: BorderRadius.circular(18),
+            border: Border.all(
+              color: isRead ? Colors.grey.shade100 : color.withValues(alpha: 0.25),
+              width: isRead ? 1 : 1.5,
             ),
-            child: Text(isHindi ? 'सभी हटाएं' : 'Clear All'),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: isRead ? 0.03 : 0.07),
+                blurRadius: isRead ? 8 : 14,
+                offset: const Offset(0, 3),
+              ),
+            ],
           ),
-        ],
+          child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            // Icon
+            Container(
+              width: 48, height: 48,
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: Icon(_iconFor(n['icon'] as String? ?? ''),
+                  color: color, size: 22),
+            ),
+            const SizedBox(width: 14),
+            // Content
+            Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(children: [
+                Expanded(child: Text(n['title'] ?? '',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: isRead ? FontWeight.w600 : FontWeight.w800,
+                      color: const Color(0xFF1A1A1A),
+                    ))),
+                if (priority == 'high')
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                    decoration: BoxDecoration(
+                      color: Colors.red.shade50,
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.red.shade200),
+                    ),
+                    child: const Text('ज़रूरी',
+                        style: TextStyle(color: Colors.red, fontSize: 10,
+                            fontWeight: FontWeight.w700)),
+                  ),
+              ]),
+              const SizedBox(height: 6),
+              Text(n['message'] ?? '',
+                  style: TextStyle(fontSize: 12.5, color: Colors.grey.shade600, height: 1.4)),
+              const SizedBox(height: 8),
+              Row(children: [
+                Icon(Icons.access_time_rounded, size: 12, color: Colors.grey.shade400),
+                const SizedBox(width: 4),
+                Text(time, style: TextStyle(fontSize: 11, color: Colors.grey.shade400)),
+                const Spacer(),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(_categoryLabel(n['type'] as String? ?? ''),
+                      style: TextStyle(fontSize: 10, color: color, fontWeight: FontWeight.w600)),
+                ),
+                if (!isRead) ...[
+                  const SizedBox(width: 8),
+                  Container(width: 8, height: 8,
+                    decoration: BoxDecoration(color: color, shape: BoxShape.circle)),
+                ],
+              ]),
+            ])),
+          ]),
+        ),
       ),
     );
   }
 
-  void _handleMarkAllRead() {
-    final lang = context.read<LanguageProvider>().currentLanguage;
-    final bool isHindi = lang == 'hi';
-
-    setState(() {
-      for (var notification in _notifications) {
-        notification['isUnread'] = false;
-      }
-    });
-    HapticFeedback.lightImpact();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(isHindi ? 'सभी सूचनाएं पढ़ी हुई चिन्हित की गईं' : 'All notifications marked as read')),
-    );
+  Widget _buildEmptyState(String lang, String category) {
+    return Center(child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Container(
+        padding: const EdgeInsets.all(28),
+        decoration: BoxDecoration(
+          color: const Color(0xFFE8F5E9),
+          shape: BoxShape.circle,
+        ),
+        child: const Icon(Icons.notifications_none_rounded,
+            size: 52, color: Color(0xFF2E7D32)),
+      ),
+      const SizedBox(height: 20),
+      Text(
+        lang == 'en' ? 'No notifications yet' : 'अभी कोई सूचना नहीं',
+        style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700,
+            color: Color(0xFF1B5E20)),
+      ),
+      const SizedBox(height: 8),
+      Text(
+        lang == 'en'
+            ? 'Weather alerts and updates will appear here'
+            : 'मौसम अलर्ट और अपडेट यहाँ दिखेंगे',
+        style: TextStyle(fontSize: 13, color: Colors.grey.shade500),
+        textAlign: TextAlign.center,
+      ),
+      const SizedBox(height: 24),
+      ElevatedButton.icon(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xFF2E7D32),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+        ),
+        onPressed: _refreshNotifications,
+        icon: const Icon(Icons.refresh_rounded, color: Colors.white),
+        label: Text(lang == 'en' ? 'Check Now' : 'अभी जांचें',
+            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
+      ),
+    ]));
   }
 
-  String _getCategoryLabel(String category, bool isHindi) {
-    if (!isHindi) return category;
-    switch (category) {
-      case 'All':
-        return 'सभी';
-      case 'Schemes':
-        return 'योजनाएं';
-      case 'Prices':
-        return 'भाव';
-      case 'Weather':
-        return 'मौसम';
-      case 'Messages':
-        return 'संदेश';
-      default:
-        return category;
+  String _formatTime(DateTime dt) {
+    final now = DateTime.now();
+    final diff = now.difference(dt);
+    if (diff.inMinutes < 1) return 'अभी';
+    if (diff.inMinutes < 60) return '${diff.inMinutes} मिनट पहले';
+    if (diff.inHours < 24) return '${diff.inHours} घंटे पहले';
+    if (diff.inDays == 1) return 'कल';
+    return '${diff.inDays} दिन पहले';
+  }
+
+  String _categoryLabel(String type) {
+    switch (type) {
+      case 'Weather': return 'मौसम';
+      case 'Prices': return 'मंडी';
+      case 'Schemes': return 'योजना';
+      default: return type;
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final lang = context.watch<LanguageProvider>().currentLanguage;
-    final bool isHindi = lang == 'hi';
-
-    final filteredNotifications = _getFilteredNotifications();
-    final unreadCount = filteredNotifications
-        .where((n) => n['isUnread'] == true)
-        .length;
-
-    return MainShellScreen(
-      currentItem: CustomBottomBarItem.dashboard,
-      child: Scaffold(
-        backgroundColor: theme.scaffoldBackgroundColor,
-        appBar: AppBar(
-          backgroundColor: theme.colorScheme.surface,
-          elevation: 0,
-          leading: IconButton(
-            icon: CustomIconWidget(
-              iconName: 'arrow_back',
-              color: theme.brightness == Brightness.light
-                  ? const Color(0xFF424242)
-                  : const Color(0xFFE0E0E0),
-              size: 24,
-            ),
-            onPressed: () {
-              HapticFeedback.lightImpact();
-              Navigator.pop(context);
-            },
-          ),
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                isHindi ? 'सूचनाएं' : 'Notifications',
-                style: theme.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              if (unreadCount > 0)
-                Text(
-                  isHindi ? '$unreadCount अपठित' : '$unreadCount unread',
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.brightness == Brightness.light
-                        ? const Color(0xFF757575)
-                        : const Color(0xFFB0B0B0),
-                  ),
-                ),
-            ],
-          ),
-          actions: [
-            if (_notifications.isNotEmpty) ...[
-              IconButton(
-                icon: CustomIconWidget(
-                  iconName: 'done_all',
-                  color: theme.colorScheme.primary,
-                  size: 24,
-                ),
-                onPressed: _handleMarkAllRead,
-                tooltip: isHindi ? 'सभी को पढ़ा हुआ चिन्हित करें' : 'Mark all as read',
-              ),
-              IconButton(
-                icon: CustomIconWidget(
-                  iconName: 'delete_sweep',
-                  color: const Color(0xFFE53935),
-                  size: 24,
-                ),
-                onPressed: _handleClearAll,
-                tooltip: isHindi ? 'सभी हटाएं' : 'Clear all',
-              ),
-            ],
-          ],
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(6.h),
-            child: Container(
-              height: 6.h,
-              color: theme.colorScheme.surface,
-              child: TabBar(
-                controller: _categoryTabController,
-                isScrollable: true,
-                indicatorColor: theme.colorScheme.primary,
-                labelColor: theme.colorScheme.primary,
-                unselectedLabelColor: theme.brightness == Brightness.light
-                    ? const Color(0xFF757575)
-                    : const Color(0xFFB0B0B0),
-                labelStyle: theme.textTheme.titleSmall?.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
-                unselectedLabelStyle: theme.textTheme.titleSmall,
-                onTap: (index) {
-                  setState(() {
-                    _selectedCategory = _categories[index];
-                  });
-                  HapticFeedback.selectionClick();
-                },
-                tabs: _categories.map((category) {
-                  final categoryCount = category == 'All'
-                      ? _notifications.length
-                      : _notifications
-                            .where((n) => n['category'] == category)
-                            .length;
-                  return Tab(text: '${_getCategoryLabel(category, isHindi)} ($categoryCount)');
-                }).toList(),
-              ),
-            ),
-          ),
-        ),
-        body: SafeArea(
-          child: filteredNotifications.isEmpty
-              ? Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomIconWidget(
-                        iconName: 'notifications_off',
-                        color: theme.brightness == Brightness.light
-                            ? const Color(0xFFBDBDBD)
-                            : const Color(0xFF616161),
-                        size: 64,
-                      ),
-                      SizedBox(height: 2.h),
-                      Text(
-                        isHindi ? 'कोई सूचना नहीं' : 'No notifications',
-                        style: theme.textTheme.titleLarge?.copyWith(
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      SizedBox(height: 1.h),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8.w),
-                        child: Text(
-                          _selectedCategory == 'All'
-                              ? (isHindi
-                                  ? 'इस समय कोई सूचना उपलब्ध नहीं है'
-                                  : 'You have no notifications at the moment')
-                              : (isHindi
-                                  ? 'कोई ${_getCategoryLabel(_selectedCategory, true)} सूचना नहीं'
-                                  : 'No ${_selectedCategory.toLowerCase()} notifications'),
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            color: theme.brightness == Brightness.light
-                                ? const Color(0xFF757575)
-                                : const Color(0xFFB0B0B0),
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              : RefreshIndicator(
-                  onRefresh: () async {
-                    HapticFeedback.mediumImpact();
-                    await Future.delayed(const Duration(seconds: 1));
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text(isHindi ? 'सूचनाएं रिफ्रेश की गईं' : 'Notifications refreshed')),
-                    );
-                  },
-                  child: ListView.builder(
-                    padding: EdgeInsets.all(4.w),
-                    itemCount: filteredNotifications.length,
-                    itemBuilder: (context, index) {
-                      final notification = filteredNotifications[index];
-                      return NotificationCardWidget(
-                        notification: notification,
-                        onTap: () => _handleNotificationTap(notification),
-                        onDismiss: () => _handleDismissNotification(notification),
-                      );
-                    },
-                  ),
-                ),
-        ),
-      ),
-    );
+  IconData _iconFor(String name) {
+    switch (name) {
+      case 'thermostat': return Icons.thermostat_rounded;
+      case 'wb_sunny': return Icons.wb_sunny_rounded;
+      case 'water_drop': return Icons.water_drop_rounded;
+      case 'air': return Icons.air_rounded;
+      case 'opacity': return Icons.opacity_rounded;
+      case 'trending_up': return Icons.trending_up_rounded;
+      case 'description': return Icons.description_rounded;
+      default: return Icons.notifications_rounded;
+    }
   }
 }
