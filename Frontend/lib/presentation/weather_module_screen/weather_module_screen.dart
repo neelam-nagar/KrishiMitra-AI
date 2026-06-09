@@ -51,7 +51,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     {
       'date': DateTime.now(),
       'day': 'Today',
-      'weatherIcon': 'wb_sunny',
+      'weatherIcon': _getWeatherIcon(_weatherData['condition'] ?? '', isNight: _isNightTime()),
       'condition': 'Sunny',
       'highTemp': 32,
       'lowTemp': 22,
@@ -81,7 +81,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     {
       'date': DateTime.now().add(const Duration(days: 3)),
       'day': DateFormat('EEEE').format(DateTime.now().add(const Duration(days: 3))),
-      'weatherIcon': 'wb_sunny',
+      'weatherIcon': _getWeatherIcon(_weatherData['condition'] ?? '', isNight: _isNightTime()),
       'condition': 'Sunny',
       'highTemp': 31,
       'lowTemp': 22,
@@ -111,7 +111,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     {
       'date': DateTime.now().add(const Duration(days: 6)),
       'day': DateFormat('EEEE').format(DateTime.now().add(const Duration(days: 6))),
-      'weatherIcon': 'wb_sunny',
+      'weatherIcon': _getWeatherIcon(_weatherData['condition'] ?? '', isNight: _isNightTime()),
       'condition': 'Sunny',
       'highTemp': 33,
       'lowTemp': 23,
@@ -282,7 +282,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
         data['forecast'].map((day) => {
               'date': DateTime.parse(day['date']),
               'day': DateFormat('EEEE').format(DateTime.parse(day['date'])),
-              'weatherIcon': 'wb_sunny',
+              'weatherIcon': _getWeatherIcon(_weatherData['condition'] ?? '', isNight: _isNightTime()),
               'condition': day['condition'],
               'highTemp': day['highTemp'],
               'lowTemp': day['lowTemp'],
@@ -309,7 +309,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
             'time': formattedTime,
             'temperature': h['temperature'],
             'precipitation': h['rain'],
-            'icon': h['rain'] > 0 ? 'cloud' : 'wb_sunny',
+            'icon': h['rain'] > 0 ? 'water_drop' : _getWeatherIcon('sunny', isNight: () { final hr = int.tryParse(h['time']?.toString().split('T').last.split(':').first ?? '12') ?? 12; return hr >= 19 || hr < 6; }()),
           };
         }),
       );
@@ -440,6 +440,47 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
         duration: Duration(seconds: 2),
       ),
     );
+  }
+
+
+  /// Returns the correct weather icon based on condition and current time.
+  /// Shows moon/night icons between 7 PM and 6 AM.
+  static String _getWeatherIcon(String condition, {bool isNight = false}) {
+    if (isNight) {
+      if (condition.toLowerCase().contains('rain') ||
+          condition.toLowerCase().contains('baarish') ||
+          condition.toLowerCase().contains('बारिश')) {
+        return 'nights_stay'; // rainy night
+      }
+      if (condition.toLowerCase().contains('cloud') ||
+          condition.toLowerCase().contains('badal') ||
+          condition.toLowerCase().contains('बादल')) {
+        return 'nights_stay'; // cloudy night
+      }
+      return 'nights_stay'; // clear night
+    }
+    // Daytime icons
+    if (condition.toLowerCase().contains('rain') ||
+        condition.toLowerCase().contains('baarish') ||
+        condition.toLowerCase().contains('बारिश')) {
+      return 'water_drop';
+    }
+    if (condition.toLowerCase().contains('cloud') ||
+        condition.toLowerCase().contains('badal') ||
+        condition.toLowerCase().contains('बादल')) {
+      return 'cloud';
+    }
+    if (condition.toLowerCase().contains('storm') ||
+        condition.toLowerCase().contains('tufan') ||
+        condition.toLowerCase().contains('तूफान')) {
+      return 'thunderstorm';
+    }
+    return 'wb_sunny'; // default sunny
+  }
+
+  static bool _isNightTime() {
+    final hour = DateTime.now().hour;
+    return hour >= 19 || hour < 6; // 7 PM to 6 AM = night
   }
 
   @override
