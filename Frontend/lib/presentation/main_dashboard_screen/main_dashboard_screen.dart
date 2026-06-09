@@ -194,10 +194,10 @@ class _MainDashboardState extends State<MainDashboard>
       if (!mounted) return;
       setState(() {
         _weatherData = {
-          'temperature': data['current']['temperature'],
-          'condition': data['current']['condition'] ?? 'Clear',
-          'humidity': data['current']['humidity'],
-          'windSpeed': data['current']['wind'],
+          'temperature': data['current'] as Map<String, dynamic>??['temperature'],
+          'condition': data['current'] as Map<String, dynamic>??['condition'] ?? 'Clear',
+          'humidity': data['current'] as Map<String, dynamic>??['humidity'],
+          'windSpeed': data['current'] as Map<String, dynamic>?['wind'],
         };
         _lastUpdated = DateTime.now();
       });
@@ -369,7 +369,7 @@ class _MainDashboardState extends State<MainDashboard>
                     iconName: module['iconName'] as String,
                     title: title as String,
                     subtitle: module['title'] == 'Weather' && _weatherData != null
-                        ? '${_weatherData!['temperature']}°C, ${_weatherData!['condition']}'
+                        ? '${_weatherData!?['temperature']}°C, ${_weatherData!?['condition']}'
                         : subtitle as String,
                     onTap: () => _handleModuleTap(module['route'] as String),
                     onLongPress: () => _handleModuleLongPress(title),

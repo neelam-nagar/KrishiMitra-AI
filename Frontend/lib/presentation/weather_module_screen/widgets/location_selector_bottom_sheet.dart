@@ -31,9 +31,11 @@ class _LocationSelectorBottomSheetState
   }
 
   Future<void> _loadDistricts() async {
+    if (!mounted) return;
+
     setState(() => isLoading = true);
     try {
-      final res = await http.get(Uri.parse('https://krishimitra-ai-2-xbdu.onrender.com/locations/districts'));
+      final res = await http.get(Uri.parse('https://krishimitra-hrrf.onrender.com/api/weather/districts'));
       if (res.statusCode == 200) {
         districts = List<String>.from(json.decode(res.body));
       } else {
@@ -42,14 +44,18 @@ class _LocationSelectorBottomSheetState
     } catch (e) {
       districts = [];
     }
+    if (!mounted) return;
+
     setState(() => isLoading = false);
   }
 
   Future<void> _loadTehsils(String district) async {
+    if (!mounted) return;
+
     setState(() => isLoading = true);
     final encodedDistrict = Uri.encodeComponent(district);
     final res = await http.get(
-      Uri.parse('https://krishimitra-ai-2-xbdu.onrender.com/locations/tehsils?district=$encodedDistrict'),
+      Uri.parse('https://krishimitra-hrrf.onrender.com/api/weather/tehsils?district=$encodedDistrict'),
     );
     try {
       if (res.statusCode == 200) {
@@ -60,15 +66,19 @@ class _LocationSelectorBottomSheetState
     } catch (e) {
       tehsils = [];
     }
+    if (!mounted) return;
+
     setState(() => isLoading = false);
   }
 
   Future<void> _loadVillages(String district, String tehsil) async {
+    if (!mounted) return;
+
     setState(() => isLoading = true);
     final encodedDistrict = Uri.encodeComponent(district);
     final encodedTehsil = Uri.encodeComponent(tehsil);
     final res = await http.get(
-      Uri.parse('https://krishimitra-ai-2-xbdu.onrender.com/locations/villages?district=$encodedDistrict&tehsil=$encodedTehsil'),
+      Uri.parse('https://krishimitra-hrrf.onrender.com/api/weather/villages?district=$encodedDistrict&tehsil=$encodedTehsil'),
     );
     try {
       if (res.statusCode == 200) {
@@ -79,6 +89,8 @@ class _LocationSelectorBottomSheetState
     } catch (e) {
       villages = [];
     }
+    if (!mounted) return;
+
     setState(() => isLoading = false);
   }
 
@@ -111,6 +123,8 @@ class _LocationSelectorBottomSheetState
                   .map((d) => DropdownMenuItem(value: d, child: Text(d)))
                   .toList(),
               onChanged: (value) async {
+                if (!mounted) return;
+
                 setState(() {
                   selectedDistrict = value;
                   selectedTehsil = null;
@@ -137,6 +151,8 @@ class _LocationSelectorBottomSheetState
               onChanged: selectedDistrict == null
                   ? null
                   : (value) async {
+                      if (!mounted) return;
+
                       setState(() {
                         selectedTehsil = value;
                         selectedVillage = null;
@@ -161,6 +177,8 @@ class _LocationSelectorBottomSheetState
               onChanged: selectedTehsil == null
                   ? null
                   : (value) {
+                      if (!mounted) return;
+
                       setState(() {
                         selectedVillage = value;
                       });
