@@ -7,8 +7,6 @@ import '../../../core/app_export.dart';
 import 'package:provider/provider.dart';
 import '../../../core/language_provider.dart';
 
-/// Product card widget displaying crop information
-/// Shows crop image, name, quantity, price, location, and contact options
 class ProductCardWidget extends StatelessWidget {
   final Map<String, dynamic> product;
   final VoidCallback onTap;
@@ -33,9 +31,75 @@ class ProductCardWidget extends StatelessWidget {
       SnackBar(
         content: Text(
           isHindi
-              ? 'चैट सुविधा जल्द उपलब्ध होगी (Firebase के साथ)।'
-              : 'Chat feature will be enabled with backend (Firebase).',
+              ? 'चैट सुविधा जल्द उपलब्ध होगी।'
+              : 'Chat feature coming soon.',
         ),
+      ),
+    );
+  }
+
+  // FIX: safe image widget — handles empty/null/network/asset URLs
+  Widget _buildImage(String? imageUrl, double height) {
+    final url = (imageUrl ?? '').trim();
+
+    if (url.isEmpty) {
+      // No image — show placeholder
+      return Container(
+        width: double.infinity,
+        height: height,
+        color: const Color(0xFFE8F5E9),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.grass, color: const Color(0xFF388E3C), size: 40),
+            const SizedBox(height: 8),
+            Text(
+              'No Image',
+              style: TextStyle(color: Colors.grey[500], fontSize: 12),
+            ),
+          ],
+        ),
+      );
+    }
+
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      // Network image from Firebase Storage
+      return Image.network(
+        url,
+        width: double.infinity,
+        height: height,
+        fit: BoxFit.cover,
+        errorBuilder: (_, __, ___) => Container(
+          width: double.infinity,
+          height: height,
+          color: const Color(0xFFE8F5E9),
+          child: Icon(Icons.grass, color: const Color(0xFF388E3C), size: 40),
+        ),
+        loadingBuilder: (_, child, progress) {
+          if (progress == null) return child;
+          return Container(
+            width: double.infinity,
+            height: height,
+            color: const Color(0xFFE8F5E9),
+            child: const Center(
+              child: CircularProgressIndicator(strokeWidth: 2),
+            ),
+          );
+        },
+      );
+    }
+
+    // Asset image (local)
+    return Image.asset(
+      url,
+      width: double.infinity,
+      height: height,
+      fit: BoxFit.cover,
+      errorBuilder: (_, __, ___) => Container(
+        width: double.infinity,
+        height: height,
+        color: const Color(0xFFE8F5E9),
+        child: Icon(Icons.grass, color: const Color(0xFF388E3C), size: 40),
       ),
     );
   }
@@ -45,6 +109,8 @@ class ProductCardWidget extends StatelessWidget {
     final theme = Theme.of(context);
     final lang = context.watch<LanguageProvider>().currentLanguage;
     final bool isHindi = lang == 'hi';
+
+    final imageUrl = (product['image'] ?? '') as String;
 
     return InkWell(
       onTap: () {
@@ -58,20 +124,12 @@ class ProductCardWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Product Image
+            // Product Image — FIX: use safe image builder
             ClipRRect(
-              borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(8),
-              ),
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(8)),
               child: Stack(
                 children: [
-                  CustomImageWidget(
-                    imageUrl: (product['image'] ?? '') as String,
-                    width: double.infinity,
-                    height: 25.h,
-                    fit: BoxFit.cover,
-                    semanticLabel: (product['semanticLabel'] ?? '') as String,
-                  ),
+                  _buildImage(imageUrl, 25.h),
                   if (product['isOrganic'] == true)
                     Positioned(
                       top: 2.w,
@@ -88,11 +146,7 @@ class ProductCardWidget extends StatelessWidget {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            CustomIconWidget(
-                              iconName: 'eco',
-                              color: Colors.white,
-                              size: 14,
-                            ),
+                            const Icon(Icons.eco, color: Colors.white, size: 14),
                             SizedBox(width: 1.w),
                             Text(
                               isHindi ? 'जैविक' : 'Organic',
@@ -113,9 +167,10 @@ class ProductCardWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Crop Name (Hindi/English)
                   Text(
-                    isHindi ? product['nameHindi'] : product['nameEnglish'],
+                    isHindi
+                        ? (product['nameHindi'] ?? product['nameEnglish'] ?? '')
+                        : (product['nameEnglish'] ?? ''),
                     style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
@@ -123,27 +178,23 @@ class ProductCardWidget extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: 1.h),
-                  // Quantity and Price
                   Row(
                     children: [
                       Expanded(
                         child: Row(
                           children: [
-                            CustomIconWidget(
-                              iconName: 'inventory_2',
-                              color: theme.colorScheme.primary,
-                              size: 18,
-                            ),
+                            Icon(Icons.inventory_2,
+                                color: theme.colorScheme.primary, size: 18),
                             SizedBox(width: 1.w),
                             Text(
-                              '${product['quantity'] ?? 0} ${product['unit'] ?? ''}',
+                              '${product['quantity'] ?? 0} ${product['unit'] ?? 'kg'}',
                               style: theme.textTheme.bodyMedium,
                             ),
                           ],
                         ),
                       ),
                       Text(
-                        '₹${product['pricePerUnit'] ?? 0}/${product['unit'] ?? ''}',
+                        '₹${product['pricePerUnit'] ?? 0}/${product['unit'] ?? 'kg'}',
                         style: theme.textTheme.titleMedium?.copyWith(
                           color: theme.colorScheme.primary,
                           fontWeight: FontWeight.w700,
@@ -152,16 +203,9 @@ class ProductCardWidget extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 1.h),
-                  // Location and Distance
                   Row(
                     children: [
-                      CustomIconWidget(
-                        iconName: 'location_on',
-                        color: theme.brightness == Brightness.light
-                            ? const Color(0xFF757575)
-                            : const Color(0xFFB0B0B0),
-                        size: 16,
-                      ),
+                      Icon(Icons.location_on, color: Colors.grey[600], size: 16),
                       SizedBox(width: 1.w),
                       Expanded(
                         child: Text(
@@ -176,14 +220,9 @@ class ProductCardWidget extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 1.h),
-                  // Seller Rating and Harvest Date
                   Row(
                     children: [
-                      CustomIconWidget(
-                        iconName: 'star',
-                        color: const Color(0xFFFF6F00),
-                        size: 16,
-                      ),
+                      const Icon(Icons.star, color: Color(0xFFFF6F00), size: 16),
                       SizedBox(width: 1.w),
                       Text(
                         '${product['sellerRating'] ?? 0}',
@@ -192,13 +231,8 @@ class ProductCardWidget extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: 3.w),
-                      CustomIconWidget(
-                        iconName: 'calendar_today',
-                        color: theme.brightness == Brightness.light
-                            ? const Color(0xFF757575)
-                            : const Color(0xFFB0B0B0),
-                        size: 14,
-                      ),
+                      Icon(Icons.calendar_today,
+                          color: Colors.grey[600], size: 14),
                       SizedBox(width: 1.w),
                       Text(
                         isHindi
@@ -211,11 +245,8 @@ class ProductCardWidget extends StatelessWidget {
                   SizedBox(height: 1.h),
                   Row(
                     children: [
-                      CustomIconWidget(
-                        iconName: 'person',
-                        color: theme.colorScheme.primary,
-                        size: 16,
-                      ),
+                      Icon(Icons.person,
+                          color: theme.colorScheme.primary, size: 16),
                       SizedBox(width: 1.w),
                       Text(
                         isHindi
@@ -236,17 +267,15 @@ class ProductCardWidget extends StatelessWidget {
                           child: ElevatedButton.icon(
                             onPressed: () {
                               HapticFeedback.lightImpact();
-                              _makePhoneCall((product['contactNumber'] ?? '').toString());
+                              _makePhoneCall(
+                                  (product['contactNumber'] ?? '').toString());
                             },
-                            icon: CustomIconWidget(
-                              iconName: 'phone',
-                              color: theme.colorScheme.onPrimary,
-                              size: 18,
-                            ),
+                            icon: const Icon(Icons.phone,
+                                color: Colors.white, size: 18),
                             label: Text(
                               isHindi ? 'कॉल करें' : 'Call',
                               style: theme.textTheme.labelLarge?.copyWith(
-                                color: theme.colorScheme.onPrimary,
+                                color: Colors.white,
                               ),
                             ),
                             style: ElevatedButton.styleFrom(
@@ -267,11 +296,8 @@ class ProductCardWidget extends StatelessWidget {
                               HapticFeedback.lightImpact();
                               _openChat(context);
                             },
-                            icon: CustomIconWidget(
-                              iconName: 'chat',
-                              color: theme.colorScheme.primary,
-                              size: 18,
-                            ),
+                            icon: Icon(Icons.chat,
+                                color: theme.colorScheme.primary, size: 18),
                             label: Text(
                               isHindi ? 'संदेश' : 'Message',
                               style: theme.textTheme.labelLarge?.copyWith(
@@ -279,7 +305,8 @@ class ProductCardWidget extends StatelessWidget {
                               ),
                             ),
                             style: OutlinedButton.styleFrom(
-                              side: BorderSide(color: theme.colorScheme.primary),
+                              side:
+                                  BorderSide(color: theme.colorScheme.primary),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8),
                               ),
