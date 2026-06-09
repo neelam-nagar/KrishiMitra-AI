@@ -51,7 +51,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     {
       'date': DateTime.now(),
       'day': 'Today',
-      'weatherIcon': _getWeatherIcon(_weatherData['condition'] ?? '', isNight: _isNightTime()),
+      'weatherIcon': _getWeatherIcon(_currentWeather['condition'] ?? '', isNight: _isNightTime()),
       'condition': 'Sunny',
       'highTemp': 32,
       'lowTemp': 22,
@@ -81,7 +81,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     {
       'date': DateTime.now().add(const Duration(days: 3)),
       'day': DateFormat('EEEE').format(DateTime.now().add(const Duration(days: 3))),
-      'weatherIcon': _getWeatherIcon(_weatherData['condition'] ?? '', isNight: _isNightTime()),
+      'weatherIcon': _getWeatherIcon(_currentWeather['condition'] ?? '', isNight: _isNightTime()),
       'condition': 'Sunny',
       'highTemp': 31,
       'lowTemp': 22,
@@ -111,7 +111,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
     {
       'date': DateTime.now().add(const Duration(days: 6)),
       'day': DateFormat('EEEE').format(DateTime.now().add(const Duration(days: 6))),
-      'weatherIcon': _getWeatherIcon(_weatherData['condition'] ?? '', isNight: _isNightTime()),
+      'weatherIcon': _getWeatherIcon(_currentWeather['condition'] ?? '', isNight: _isNightTime()),
       'condition': 'Sunny',
       'highTemp': 33,
       'lowTemp': 23,
@@ -282,7 +282,7 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
         data['forecast'].map((day) => {
               'date': DateTime.parse(day['date']),
               'day': DateFormat('EEEE').format(DateTime.parse(day['date'])),
-              'weatherIcon': _getWeatherIcon(_weatherData['condition'] ?? '', isNight: _isNightTime()),
+              'weatherIcon': _getWeatherIcon(_currentWeather['condition'] ?? '', isNight: _isNightTime()),
               'condition': day['condition'],
               'highTemp': day['highTemp'],
               'lowTemp': day['lowTemp'],
