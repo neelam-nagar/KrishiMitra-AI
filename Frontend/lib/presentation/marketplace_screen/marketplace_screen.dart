@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../services/storage_service.dart';
 import 'package:flutter/services.dart';
+import 'dart:typed_data'; // FIX: re-added missing import
 import 'package:sizer/sizer.dart';
 import '../../core/app_export.dart';
 import '../../widgets/custom_bottom_bar.dart';
-// FIX: removed unnecessary custom_icon_widget import (in app_export)
 import './widgets/empty_state_widget.dart';
 import './widgets/filter_bottom_sheet_widget.dart';
 import './widgets/product_card_widget.dart';
@@ -13,8 +13,6 @@ import 'package:provider/provider.dart';
 import '../../core/language_provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-// FIX: removed unnecessary dart:typed_data and flutter/foundation imports
 import 'package:firebase_auth/firebase_auth.dart';
 
 class MarketplaceScreen extends StatefulWidget {
@@ -36,23 +34,24 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
     'availabilityStatus': null,
   };
   bool _isLoading = false;
-  // FIX: removed unused _userRole field
 
   List<Map<String, dynamic>> _allProducts = [];
   List<Map<String, dynamic>> _filteredProducts = [];
+  List<Map<String, dynamic>> _myListings = []; // FIX: separate list for user's own listings
 
+  // FIX: upload image returns bytes properly with null check
   Future<String> _uploadImage() async {
     try {
+      final picker = ImagePicker();
+      final f = await picker.pickImage(source: ImageSource.gallery);
+      if (f == null) return '';
+      final bytes = await f.readAsBytes();
       return await StorageService.instance.uploadProductImage(
-        bytes: await () async {
-          final picker = ImagePicker();
-          final f = await picker.pickImage(source: ImageSource.gallery);
-          if (f == null) return null;
-          return await f.readAsBytes();
-        }().then((b) => b ?? Uint8List(0)),
+        bytes: bytes,
         fileName: 'product_${DateTime.now().millisecondsSinceEpoch}.jpg',
       );
-    } catch (_) {
+    } catch (e) {
+      debugPrint('Image upload error: $e');
       return '';
     }
   }
@@ -60,10 +59,12 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
   Future<void> _fetchProducts() async {
     setState(() => _isLoading = true);
     try {
+      final user = FirebaseAuth.instance.currentUser;
+
       final snapshot = await FirebaseFirestore.instance
           .collection('products')
           .orderBy('time', descending: true)
-          .limit(50) // FIX: added pagination limit
+          .limit(50)
           .get();
 
       final data = snapshot.docs.map((doc) {
@@ -85,35 +86,232 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
           'availabilityStatus': d['availabilityStatus'] ?? '',
           'image': d['image'] ?? '',
           'semanticLabel': d['semanticLabel'] ?? '',
+          'sellerId': d['sellerId'] ?? '',
+          'sellerName': d['sellerName'] ?? '',
         };
       }).toList();
 
       setState(() {
         _allProducts = data;
         _filteredProducts = List.from(_allProducts);
+        // FIX: filter by current user UID for "My Listings" tab
+        _myListings = user != null
+            ? data.where((p) => p['sellerId'] == user.uid).toList()
+            : [];
         _isLoading = false;
       });
     } catch (e) {
-      debugPrint('Firestore Error: $e'); // FIX: print → debugPrint
+      debugPrint('Firestore Error: $e');
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('डेटा लोड नहीं हो सका। पुनः प्रयास करें।')),
+        );
+      }
       setState(() => _isLoading = false);
     }
   }
 
   Future<void> _addProduct(Map<String, dynamic> product) async {
-    // FIX: get real username from Firebase Auth
     final user = FirebaseAuth.instance.currentUser;
+    if (user == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please login to add a product')),
+      );
+      return;
+    }
     try {
       await FirebaseFirestore.instance.collection('products').add({
         ...product,
         'time': FieldValue.serverTimestamp(),
-        'sellerId': user?.uid ?? '',
-        'sellerName': user?.displayName ?? user?.phoneNumber ?? '',
+        'sellerId': user.uid,
+        'sellerName': user.displayName ?? user.phoneNumber ?? '',
       });
-      _fetchProducts();
+      await _fetchProducts(); // FIX: refresh after adding
     } catch (e) {
-      debugPrint('Firestore Error: $e'); // FIX: print → debugPrint
+      debugPrint('Firestore add error: $e');
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('उत्पाद जोड़ने में त्रुटि हुई')),
+        );
+      }
     }
   }
+
+  // FIX: show a real form dialog instead of hardcoded product
+  Future<void> _showAddProductDialog() async {
+    final lang = context.read<LanguageProvider>().currentLanguage;
+    final bool isHindi = lang == 'hi';
+
+    final nameHindiCtrl = TextEditingController();
+    final nameEnglishCtrl = TextEditingController();
+    final quantityCtrl = TextEditingController();
+    final priceCtrl = TextEditingController();
+    final locationCtrl = TextEditingController();
+    final contactCtrl = TextEditingController();
+    String? selectedCategory;
+    bool isOrganic = false;
+    String? imageUrl;
+
+    final categories = ['Grains', 'Vegetables', 'Fruits', 'Spices', 'Pulses'];
+
+    await showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (ctx) => StatefulBuilder(
+        builder: (ctx, setModalState) => Container(
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+          ),
+          padding: EdgeInsets.only(
+            left: 16, right: 16, top: 16,
+            bottom: MediaQuery.of(ctx).viewInsets.bottom + 16,
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      isHindi ? 'फसल बेचें' : 'List Your Crop',
+                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.close),
+                      onPressed: () => Navigator.pop(ctx),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                // Image picker button
+                GestureDetector(
+                  onTap: () async {
+                    final url = await _uploadImage();
+                    if (url.isNotEmpty) setModalState(() => imageUrl = url);
+                  },
+                  child: Container(
+                    height: 120,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[100],
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: Colors.grey[300]!),
+                    ),
+                    child: imageUrl != null
+                        ? ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Image.network(imageUrl!, fit: BoxFit.cover),
+                          )
+                        : Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.camera_alt_outlined, color: Colors.grey[500], size: 32),
+                              const SizedBox(height: 8),
+                              Text(isHindi ? 'फोटो जोड़ें' : 'Add Photo',
+                                  style: TextStyle(color: Colors.grey[500])),
+                            ],
+                          ),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                _field(nameHindiCtrl, isHindi ? 'फसल का नाम (हिन्दी)' : 'Crop name in Hindi'),
+                _field(nameEnglishCtrl, isHindi ? 'फसल का नाम (English)' : 'Crop name in English'),
+                // Category dropdown
+                DropdownButtonFormField<String>(
+                  value: selectedCategory,
+                  decoration: _inputDecoration(isHindi ? 'श्रेणी' : 'Category'),
+                  items: categories.map((c) => DropdownMenuItem(value: c, child: Text(c))).toList(),
+                  onChanged: (v) => setModalState(() => selectedCategory = v),
+                ),
+                const SizedBox(height: 12),
+                Row(
+                  children: [
+                    Expanded(child: _field(quantityCtrl, isHindi ? 'मात्रा (kg)' : 'Quantity (kg)', isNumber: true)),
+                    const SizedBox(width: 12),
+                    Expanded(child: _field(priceCtrl, isHindi ? 'मूल्य/kg (₹)' : 'Price/kg (₹)', isNumber: true)),
+                  ],
+                ),
+                _field(locationCtrl, isHindi ? 'स्थान' : 'Location'),
+                _field(contactCtrl, isHindi ? 'संपर्क नंबर' : 'Contact Number', isNumber: true),
+                Row(
+                  children: [
+                    Checkbox(
+                      value: isOrganic,
+                      onChanged: (v) => setModalState(() => isOrganic = v ?? false),
+                      activeColor: Theme.of(context).colorScheme.primary,
+                    ),
+                    Text(isHindi ? 'जैविक उत्पाद' : 'Organic product'),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    ),
+                    onPressed: () {
+                      if (nameEnglishCtrl.text.isEmpty || priceCtrl.text.isEmpty) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(isHindi ? 'कृपया सभी जानकारी भरें' : 'Please fill all fields')),
+                        );
+                        return;
+                      }
+                      Navigator.pop(ctx);
+                      _addProduct({
+                        'nameHindi': nameHindiCtrl.text,
+                        'nameEnglish': nameEnglishCtrl.text,
+                        'category': selectedCategory ?? 'Grains',
+                        'quantity': int.tryParse(quantityCtrl.text) ?? 0,
+                        'unit': 'kg',
+                        'pricePerUnit': double.tryParse(priceCtrl.text) ?? 0,
+                        'location': locationCtrl.text,
+                        'distance': 0,
+                        'contactNumber': contactCtrl.text,
+                        'sellerRating': 0,
+                        'harvestDate': '',
+                        'isOrganic': isOrganic,
+                        'availabilityStatus': 'Available',
+                        'image': imageUrl ?? '',
+                        'semanticLabel': '${nameEnglishCtrl.text} image',
+                      });
+                    },
+                    child: Text(
+                      isHindi ? 'उत्पाद जोड़ें' : 'Add Product',
+                      style: const TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _field(TextEditingController ctrl, String label, {bool isNumber = false}) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: TextField(
+        controller: ctrl,
+        keyboardType: isNumber ? TextInputType.number : TextInputType.text,
+        decoration: _inputDecoration(label),
+      ),
+    );
+  }
+
+  InputDecoration _inputDecoration(String label) => InputDecoration(
+    labelText: label,
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+    contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+  );
 
   @override
   void initState() {
@@ -173,10 +371,9 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
     );
   }
 
+  // FIX: _refreshProducts now actually calls _fetchProducts
   Future<void> _refreshProducts() async {
-    setState(() => _isLoading = true);
-    await Future.delayed(const Duration(seconds: 1));
-    setState(() => _isLoading = false);
+    await _fetchProducts();
   }
 
   Widget _buildBrowseTab() {
@@ -192,7 +389,13 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
         actionLabel: isHindi ? 'फ़िल्टर हटाएं' : 'Clear Filters',
         onActionTapped: () {
           setState(() {
-            _filters = {'category': null, 'minPrice': 0, 'maxPrice': 10000, 'locationRadius': 50, 'availabilityStatus': null};
+            _filters = {
+              'category': null,
+              'minPrice': 0,
+              'maxPrice': 10000,
+              'locationRadius': 50,
+              'availabilityStatus': null,
+            };
             _searchQuery = '';
             _filteredProducts = List.from(_allProducts);
           });
@@ -200,34 +403,49 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
       );
     }
 
+    // FIX: simplified — no need to split by location in UI layer
     return RefreshIndicator(
       onRefresh: _refreshProducts,
-      child: ListView(
+      child: ListView.builder(
         padding: EdgeInsets.only(bottom: 10.h),
-        children: [
-          ..._filteredProducts.where((p) => p['location'] == 'Jaipur').map((product) =>
-            ProductCardWidget(product: product, onTap: () =>
-              Navigator.pushNamed(context, '/product-detail-screen', arguments: product))),
-          ..._filteredProducts.where((p) => p['location'] != 'Jaipur').map((product) =>
-            ProductCardWidget(product: product, onTap: () =>
-              Navigator.pushNamed(context, '/product-detail-screen', arguments: product))),
-        ],
+        itemCount: _filteredProducts.length,
+        itemBuilder: (context, index) {
+          final product = _filteredProducts[index];
+          return ProductCardWidget(
+            product: product,
+            onTap: () => Navigator.pushNamed(
+              context, '/product-detail-screen', arguments: product),
+          );
+        },
       ),
     );
   }
 
   Widget _buildMyListingsTab() {
-    if (_allProducts.isEmpty) {
-      return const EmptyStateWidget(message: 'No listings yet', submessage: 'Start selling your crops');
+    final lang = context.watch<LanguageProvider>().currentLanguage;
+    final bool isHindi = lang == 'hi';
+
+    if (_isLoading) return const Center(child: CircularProgressIndicator());
+
+    // FIX: show only current user's products
+    if (_myListings.isEmpty) {
+      return EmptyStateWidget(
+        message: isHindi ? 'अभी कोई लिस्टिंग नहीं' : 'No listings yet',
+        submessage: isHindi ? 'अपनी फसल बेचना शुरू करें' : 'Start selling your crops',
+        actionLabel: isHindi ? 'फसल बेचें' : 'Sell Crop',
+        onActionTapped: _showAddProductDialog,
+      );
     }
+
     return ListView.builder(
       padding: EdgeInsets.only(bottom: 10.h),
-      itemCount: _allProducts.length,
+      itemCount: _myListings.length,
       itemBuilder: (context, index) {
-        final product = _allProducts[index];
+        final product = _myListings[index];
         return ProductCardWidget(
           product: product,
-          onTap: () => Navigator.pushNamed(context, '/product-detail-screen', arguments: product),
+          onTap: () => Navigator.pushNamed(
+            context, '/product-detail-screen', arguments: product),
         );
       },
     );
@@ -238,7 +456,9 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
     final bool isHindi = lang == 'hi';
     return EmptyStateWidget(
       message: isHindi ? 'कोई संदेश नहीं' : 'No messages',
-      submessage: isHindi ? 'खरीदारों और विक्रेताओं के संदेश यहाँ दिखेंगे' : 'Your conversations will appear here',
+      submessage: isHindi
+          ? 'खरीदारों और विक्रेताओं के संदेश यहाँ दिखेंगे'
+          : 'Your conversations will appear here',
     );
   }
 
@@ -254,8 +474,13 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
         systemOverlayStyle: SystemUiOverlayStyle.light,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white),
-        title: Text(isHindi ? 'बाज़ार' : 'Marketplace',
-          style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600, color: Colors.white)),
+        title: Text(
+          isHindi ? 'बाज़ार' : 'Marketplace',
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
+          ),
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications_outlined, color: Colors.white),
@@ -279,35 +504,36 @@ class _MarketplaceScreenState extends State<MarketplaceScreen>
           children: [
             SearchFilterBarWidget(
               searchQuery: _searchQuery,
-              onSearchChanged: (query) { setState(() => _searchQuery = query); _applyFilters(); },
+              onSearchChanged: (query) {
+                setState(() => _searchQuery = query);
+                _applyFilters();
+              },
               onFilterTapped: _showFilterBottomSheet,
               onVoiceSearchTapped: () => HapticFeedback.lightImpact(),
             ),
             Expanded(
               child: TabBarView(
                 controller: _tabController,
-                children: [_buildBrowseTab(), _buildMyListingsTab(), _buildMessagesTab()],
+                children: [
+                  _buildBrowseTab(),
+                  _buildMyListingsTab(),
+                  _buildMessagesTab(),
+                ],
               ),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () async {
+        onPressed: () {
           HapticFeedback.lightImpact();
-          final imageUrl = await _uploadImage();
-          if (imageUrl.isEmpty) return;
-          _addProduct({
-            'nameHindi': 'गेहूं', 'nameEnglish': 'Wheat', 'category': 'Grains',
-            'quantity': 100, 'unit': 'kg', 'pricePerUnit': 25, 'location': 'Jaipur',
-            'distance': 10, 'contactNumber': '9876543210', 'sellerRating': 4.5,
-            'harvestDate': '10 March', 'isOrganic': true, 'availabilityStatus': 'Available',
-            'image': imageUrl, 'semanticLabel': 'Wheat image',
-          });
+          _showAddProductDialog(); // FIX: opens real form, not hardcoded product
         },
         icon: const Icon(Icons.add, color: Colors.white),
-        label: Text(isHindi ? 'फसल बेचें' : 'Sell Crop',
-            style: const TextStyle(color: Colors.white)),
+        label: Text(
+          isHindi ? 'फसल बेचें' : 'Sell Crop',
+          style: const TextStyle(color: Colors.white),
+        ),
         backgroundColor: theme.colorScheme.primary,
       ),
       bottomNavigationBar: CustomBottomBar(
