@@ -193,11 +193,12 @@ class _MainDashboardState extends State<MainDashboard>
       final data = json.decode(response.body);
       if (!mounted) return;
       setState(() {
+        final current = data['current'] as Map<String, dynamic>? ?? {};
         _weatherData = {
-          'temperature': data['current'] as Map<String, dynamic>??['temperature'],
-          'condition': data['current'] as Map<String, dynamic>??['condition'] ?? 'Clear',
-          'humidity': data['current'] as Map<String, dynamic>??['humidity'],
-          'windSpeed': data['current'] as Map<String, dynamic>?['wind'],
+          'temperature': current['temperature'],
+          'condition': current['condition'] ?? 'Clear',
+          'humidity': current['humidity'],
+          'windSpeed': current['wind'],
         };
         _lastUpdated = DateTime.now();
       });
