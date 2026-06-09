@@ -15,7 +15,7 @@ if not API_KEY:
 genai.configure(api_key=API_KEY)
 
 # ✅ Model name fix kiya — gemini-3.1-flash-lite-preview exist nahi karta
-model = genai.GenerativeModel("gemini-3.1-flash-lite-preview")
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 
 # 🧠 Aapka original instruction (as-is)
