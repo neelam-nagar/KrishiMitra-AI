@@ -101,10 +101,10 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen>
     try {
       final request = http.MultipartRequest(
         'POST',
-        Uri.parse('${AppConfig.diseaseApiBase}/predict'),
+        Uri.parse('${AppConfig.diseaseApiBase}/api/disease/predict'),
       );
       request.files.add(http.MultipartFile.fromBytes(
-        'file', _webImage!, filename: _selectedImage!.name));
+        'image', _webImage!, filename: _selectedImage!.name));
 
       final response = await request.send();
       final responseData = await response.stream.bytesToString();
