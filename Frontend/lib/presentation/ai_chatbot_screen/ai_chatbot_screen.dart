@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'dart:convert';
+import 'dart:async';
+import 'package:http/http.dart' as http;
 import '../../core/language_provider.dart';
 import './widgets/chat_message_widget.dart';
 import './widgets/message_input_widget.dart';
@@ -7,8 +10,6 @@ import './widgets/quick_action_buttons_widget.dart';
 import './widgets/typing_indicator_widget.dart';
 import '../../widgets/custom_bottom_bar.dart';
 import '../../core/app_export.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 import '../../core/config/app_config.dart';
 
 class AiChatbotScreen extends StatefulWidget {
@@ -83,7 +84,7 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
         Uri.parse('${AppConfig.chatApiBase}/api/chat'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'question': message}),
-      );
+      ).timeout(const Duration(seconds: 60));
 
       final data = jsonDecode(response.body);
 
@@ -100,6 +101,16 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
       } else {
         throw Exception(data['message']);
       }
+    } on TimeoutException {
+      setState(() {
+        _messages.removeLast();
+        _messages.add({
+          'isUser': false,
+          'text': '⏱️ Server respond nahi kar raha, thoda wait karke dobara try karein.',
+          'time': _getCurrentTime(),
+        });
+        _isTyping = false;
+      });
     } catch (e) {
       setState(() {
         _messages.removeLast();
