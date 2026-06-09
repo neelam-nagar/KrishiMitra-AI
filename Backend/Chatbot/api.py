@@ -1,20 +1,18 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-import google.generativeai as genai
+from groq import Groq
 from dotenv import load_dotenv
 import os
 import re
 
 # 🔐 API Key
 load_dotenv()
-API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = os.getenv("GROQ_API_KEY")
 
 if not API_KEY:
-    raise Exception("GEMINI_API_KEY nahi mili")
+    raise Exception("GROQ_API_KEY nahi mili")
 
-
-genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel("gemini-1.5-flash")
+client = Groq(api_key=API_KEY)
 
 # 🚀 FastAPI
 app = FastAPI()
@@ -34,11 +32,11 @@ class Query(BaseModel):
 
 
 # =========================
-# 🧠 YOUR ORIGINAL CODE
+# 🧠 SYSTEM INSTRUCTION
 # =========================
 
 instruction = """
-You are KrishiMitra-AI, an intelligent assistant for farmers.
+You are KrishiMitra-AI, an intelligent assistant for Indian farmers.
 
 Rules:
 - Never guess data
@@ -47,14 +45,8 @@ Rules:
 - Use only 2–3 bullet points with ✅ ⚠️ 💡
 - Each bullet must be ONE complete sentence ending with ।
 - Never leave any sentence incomplete
+- When mentioning days, always use small realistic numbers (e.g. 20-25 दिन)
 """
-
-history = [
-    {"role": "user",  "parts": [instruction]},
-    {"role": "model", "parts": ["✅ Samajh gaya। Main hamesha 2-3 poore bullets mein jawab dunga।"]}
-]
-
-chat = model.start_chat(history=history)
 
 
 def detect_intent(user_msg):
@@ -71,10 +63,10 @@ def detect_intent(user_msg):
 def module_response(intent):
     responses = {
         "weather": "🌦️ सटीक मौसम जानकारी के लिए Weather Module खोलें। वहाँ आपको वर्तमान मौसम और अगले 7 दिनों का पूर्वानुमान मिलेगा।",
-        "mandi": "💰 ताज़ा मंडी भाव देखने के लिए Mandi Price Module खोलें। यहाँ आपको विभिन्न फसलों के अपडेटेड बाजार भाव मिलेंगे।",
-        "scheme": "📋 सरकारी योजनाओं की पूरी जानकारी के लिए Government Schemes Module देखें। यहाँ पात्रता, लाभ और आवेदन प्रक्रिया उपलब्ध है।",
-        "loan": "🏦 कृषि लोन से जुड़ी जानकारी के लिए Loan Guide Module खोलें। यहाँ आपको सही विकल्प और आवेदन प्रक्रिया समझाई गई है।",
-        "land": "📍 जमीन से संबंधित जानकारी के लिए Land Records Module खोलें। यहाँ आप अपने भूमि रिकॉर्ड और विवरण देख सकते हैं।",
+        "mandi":   "💰 ताज़ा मंडी भाव देखने के लिए Mandi Price Module खोलें। यहाँ आपको विभिन्न फसलों के अपडेटेड बाजार भाव मिलेंगे।",
+        "scheme":  "📋 सरकारी योजनाओं की पूरी जानकारी के लिए Government Schemes Module देखें। यहाँ पात्रता, लाभ और आवेदन प्रक्रिया उपलब्ध है।",
+        "loan":    "🏦 कृषि लोन से जुड़ी जानकारी के लिए Loan Guide Module खोलें। यहाँ आपको सही विकल्प और आवेदन प्रक्रिया समझाई गई है।",
+        "land":    "📍 जमीन से संबंधित जानकारी के लिए Land Records Module खोलें। यहाँ आप अपने भूमि रिकॉर्ड और विवरण देख सकते हैं।",
         "disease": "🌱 फसल की बीमारी पहचानने के लिए Crop Disease Module में फोटो अपलोड करें। आपको तुरंत सही पहचान और उपचार के सुझाव मिलेंगे।",
     }
     return responses.get(intent)
@@ -142,23 +134,26 @@ def chat_api(data: Query):
                 "answer": module_response(intent)
             }
 
-        response = chat.send_message(
-            user_msg,
-            generation_config={
-                "max_output_tokens": 250,
-                "temperature": 0.2
-            }
+        completion = client.chat.completions.create(
+            model="llama3-8b-8192",
+            messages=[
+                {"role": "system", "content": instruction},
+                {"role": "user", "content": user_msg}
+            ],
+            max_tokens=250,
+            temperature=0.2
         )
 
-        lines = clean_output(response.text)
+        raw = completion.choices[0].message.content
+        lines = clean_output(raw)
 
         return {
             "status": "success",
-            "answer": "\n".join(lines)
+            "answer": "\n".join(lines) if lines else raw
         }
 
     except Exception as e:
         return {
             "status": "error",
-            "message": "⚠️ अभी सेवा उपलब्ध नहीं है। कृपया थोड़ी देर बाद पुनः प्रयास करें।"
+            "answer": f"⚠️ अभी सेवा उपलब्ध नहीं है। कृपया थोड़ी देर बाद पुनः प्रयास करें।"
         }
