@@ -478,7 +478,7 @@ def chat(data: ChatRequest):
             messages = [{"role": m["role"] if m["role"] != "model" else "assistant",
                          "content": m["parts"][0]} for m in history]
             response = model.chat.completions.create(
-                model="llama3-8b-8192",
+                model="llama-3.1-8b-instant",
                 messages=messages,
                 max_tokens=250,
                 temperature=0.2,
