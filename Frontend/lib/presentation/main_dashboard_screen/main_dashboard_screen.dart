@@ -34,7 +34,7 @@ class _MainDashboardState extends State<MainDashboard>
   late TabController _tabController;
   bool _isRefreshing = false;
   DateTime _lastUpdated = DateTime.now();
-  int _unreadNotificationCount = 3;
+  int _unreadNotificationCount = 0;
   // FIX: removed unused _locationCheckedOnce field
   Map<String, dynamic>? _weatherData;
 
@@ -62,9 +62,17 @@ class _MainDashboardState extends State<MainDashboard>
         _showLocationDialog();
       } else {
         _autoDetectLocation();
-    // Refresh notifications in background
+    // Refresh notifications and listen for real-time unread count
     WidgetsBinding.instance.addPostFrameCallback((_) {
       NotificationService.instance.refreshNotifications(context.read<LocationProvider>());
+      // Listen to real-time unread count from Firestore
+      NotificationService.instance.notificationsStream().listen((notifications) {
+        if (mounted) {
+          setState(() {
+            _unreadNotificationCount = notifications.where((n) => n['read'] != true).length;
+          });
+        }
+      });
     });
       }
     });
