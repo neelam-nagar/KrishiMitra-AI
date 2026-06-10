@@ -75,7 +75,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   // FIX: use real Firebase Auth instead of hardcoded booleans
-  void _navigateToNextScreen() {
+  void _navigateToNextScreen() async {
     final isAuthenticated = FirebaseAuth.instance.currentUser != null;
 
     final prefs = await SharedPreferences.getInstance();
