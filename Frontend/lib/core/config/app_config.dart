@@ -38,7 +38,7 @@ class AppConfig {
 
   static const String diseaseApiBase = String.fromEnvironment(
     'DISEASE_API_BASE',
-    defaultValue: _backendBase,
+    defaultValue: 'https://crop-disease-vo0y.onrender.com',
   );
 
   static const String cropPriceApiBase = String.fromEnvironment(
