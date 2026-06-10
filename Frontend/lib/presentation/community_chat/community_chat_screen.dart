@@ -214,23 +214,21 @@ class _CommunityChatScreenState extends State<CommunityChatScreen> {
                   ],
                 ),
               const Spacer(),
-              SizedBox(
-                height: 40,
-                child: ElevatedButton.icon(
-                  onPressed: _isPosting ? null : _addPost,
-                  icon: _isPosting
-                      ? const SizedBox(
-                          width: 16,
-                          height: 16,
-                          child: CircularProgressIndicator(
-                              strokeWidth: 2, color: Colors.white),
-                        )
-                      : const Icon(Icons.send),
-                  label: Text(_isHindi ? 'पोस्ट करें' : 'Post'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF2E7D32),
-                  ),
+              ElevatedButton(
+                onPressed: _isPosting ? null : _addPost,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF2E7D32),
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                 ),
+                child: _isPosting
+                    ? const SizedBox(width: 18, height: 18,
+                        child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                    : Row(mainAxisSize: MainAxisSize.min, children: [
+                        const Icon(Icons.send, size: 16),
+                        const SizedBox(width: 6),
+                        Text(_isHindi ? 'पोस्ट करें' : 'Post'),
+                      ]),
               ),
             ],
           ),
