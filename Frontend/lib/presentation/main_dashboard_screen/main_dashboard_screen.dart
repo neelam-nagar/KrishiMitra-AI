@@ -59,7 +59,7 @@ class _MainDashboardState extends State<MainDashboard>
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _locationProvider = context.read<LocationProvider>();
       _locationProvider!.addListener(_onLocationChanged);
-      if (!locationProvider.hasLocation) {
+      if (!_locationProvider!.hasLocation) {
         _showLocationDialog();
       } else {
         _autoDetectLocation();
