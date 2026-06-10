@@ -32,6 +32,7 @@ class _MainDashboardState extends State<MainDashboard>
     with SingleTickerProviderStateMixin {
   String get lang => context.watch<LanguageProvider>().currentLanguage;
   late TabController _tabController;
+  LocationProvider? _locationProvider;
   bool _isRefreshing = false;
   DateTime _lastUpdated = DateTime.now();
   int _unreadNotificationCount = 0;
@@ -56,8 +57,8 @@ class _MainDashboardState extends State<MainDashboard>
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final locationProvider = context.read<LocationProvider>();
-      locationProvider.addListener(_onLocationChanged);
+      _locationProvider = context.read<LocationProvider>();
+      _locationProvider!.addListener(_onLocationChanged);
       if (!locationProvider.hasLocation) {
         _showLocationDialog();
       } else {
@@ -122,7 +123,7 @@ class _MainDashboardState extends State<MainDashboard>
 
   @override
   void dispose() {
-    context.read<LocationProvider>().removeListener(_onLocationChanged);
+    _locationProvider?.removeListener(_onLocationChanged);
     _tabController.dispose();
     super.dispose();
   }
