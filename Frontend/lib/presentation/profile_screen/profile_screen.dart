@@ -20,6 +20,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String _name = '';
   String _phone = '';
   String _photoUrl = '';
+  String _village = '';
 
   @override
   void initState() {
@@ -157,9 +158,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         children: [
                           _ProfileStat(
                             title: lang == 'en' ? 'Location' : 'स्थान',
-                            value: locationProvider.village.isNotEmpty
-                                ? locationProvider.village
-                                : (lang == 'en' ? 'Not set' : 'नहीं चुना'),
+                            value: (_village.isNotEmpty ? _village : locationProvider.village.isNotEmpty ? locationProvider.village : (lang == 'en' ? 'Not set' : 'नहीं चुना')),
                           ),
                           const SizedBox(width: 24),
                           _ProfileStat(
