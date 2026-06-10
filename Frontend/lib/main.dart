@@ -44,7 +44,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => LanguageProvider()),
-        ChangeNotifierProvider(create: (_) => LocationProvider()),
+        ChangeNotifierProvider(create: (_) => LocationProvider()..loadSavedLocation()),
       ],
       child: const MyApp(),
     ),

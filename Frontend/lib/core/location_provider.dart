@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LocationProvider with ChangeNotifier {
   String district = '';
@@ -7,23 +8,31 @@ class LocationProvider with ChangeNotifier {
   double? latitude;
   double? longitude;
 
-  // 🔹 Check if any location is selected
-  bool get hasLocation =>
-      latitude != null && longitude != null;
+  bool get hasLocation => latitude != null && longitude != null;
 
-  // 🔹 Location text for UI (AppBar, cards, etc.)
   String get fullLocation {
     final parts = [village, tehsil, district]
         .where((e) => e.trim().isNotEmpty)
         .toList();
-
-    if (parts.isEmpty) {
-      return 'Select Location';
-    }
+    if (parts.isEmpty) return 'Select Location';
     return parts.join(', ');
   }
 
-  // 🔹 Used by BOTH auto-detect & manual dropdown
+  // Load saved location on app start
+  Future<void> loadSavedLocation() async {
+    final prefs = await SharedPreferences.getInstance();
+    district = prefs.getString('loc_district') ?? '';
+    tehsil = prefs.getString('loc_tehsil') ?? '';
+    village = prefs.getString('loc_village') ?? '';
+    final lat = prefs.getDouble('loc_lat');
+    final lng = prefs.getDouble('loc_lng');
+    if (lat != null && lng != null) {
+      latitude = lat;
+      longitude = lng;
+    }
+    notifyListeners();
+  }
+
   void updateLocation({
     String district = '',
     String tehsil = '',
@@ -37,9 +46,18 @@ class LocationProvider with ChangeNotifier {
     this.latitude = latitude;
     this.longitude = longitude;
     notifyListeners();
+    _saveLocation();
   }
 
-  // 🔹 Optional reset
+  Future<void> _saveLocation() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('loc_district', district);
+    await prefs.setString('loc_tehsil', tehsil);
+    await prefs.setString('loc_village', village);
+    if (latitude != null) await prefs.setDouble('loc_lat', latitude!);
+    if (longitude != null) await prefs.setDouble('loc_lng', longitude!);
+  }
+
   void clearLocation() {
     district = '';
     tehsil = '';
@@ -47,5 +65,15 @@ class LocationProvider with ChangeNotifier {
     latitude = null;
     longitude = null;
     notifyListeners();
+    _clearSaved();
+  }
+
+  Future<void> _clearSaved() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove('loc_district');
+    await prefs.remove('loc_tehsil');
+    await prefs.remove('loc_village');
+    await prefs.remove('loc_lat');
+    await prefs.remove('loc_lng');
   }
 }
