@@ -129,7 +129,7 @@ def run_predict(image):
     probs = outputs[0][0]
     idx = int(np.argmax(probs))
     confidence = float(np.max(probs)) * 100
-    if confidence < 60:
+    if confidence < 85:
         return None, confidence, None
     label = CLASSES[idx]
     info = PESTICIDE_DB[label]
