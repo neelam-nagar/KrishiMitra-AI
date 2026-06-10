@@ -168,24 +168,18 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             SizedBox(
               width: double.infinity,
               height: 48,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
+              child: FilledButton(
+                style: FilledButton.styleFrom(
                   backgroundColor: theme.colorScheme.primary,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
                 ),
                 onPressed: _isSaving ? null : _saveProfile,
                 child: _isSaving
-                    ? const SizedBox(
-                        height: 20,
-                        width: 20,
-                        child: CircularProgressIndicator(
-                            strokeWidth: 2, color: Colors.white),
-                      )
-                    : Text(
-                        lang == 'en' ? 'Save Changes' : 'परिवर्तन सहेजें',
-                        style: const TextStyle(fontSize: 16),
-                      ),
+                    ? const SizedBox(height: 20, width: 20,
+                        child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                    : Text(lang == 'en' ? 'Save Changes' : 'परिवर्तन सहेजें',
+                        style: const TextStyle(fontSize: 16, color: Colors.white)),
               ),
             ),
           ],
