@@ -53,6 +53,7 @@ log = logging.getLogger("krishimitra")
 # ---------------------------------------------------------------------------
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -81,23 +82,39 @@ SCHEME_DATA: list = []
 # AI model (lazy-loaded)
 # ---------------------------------------------------------------------------
 _genai_model = None
+_ai_provider = None  # "groq" or "gemini"
 
 
 def get_genai_model():
-    global _genai_model
+    global _genai_model, _ai_provider
     if _genai_model is not None:
         return _genai_model
-    if not GEMINI_API_KEY:
-        return None
-    try:
-        from google import genai  # type: ignore
-        client = genai.Client(api_key=GEMINI_API_KEY)
-        _genai_model = client
-        log.info("Gemini model loaded")
-        return _genai_model
-    except Exception as e:
-        log.error(f"Failed to load Gemini model: {e}")
-        return None
+
+    # Try Groq first (faster, free)
+    if GROQ_API_KEY:
+        try:
+            from groq import Groq  # type: ignore
+            client = Groq(api_key=GROQ_API_KEY)
+            _genai_model = client
+            _ai_provider = "groq"
+            log.info("Groq model loaded")
+            return _genai_model
+        except Exception as e:
+            log.warning(f"Groq failed: {e}, trying Gemini...")
+
+    # Fallback to Gemini
+    if GEMINI_API_KEY:
+        try:
+            from google import genai  # type: ignore
+            client = genai.Client(api_key=GEMINI_API_KEY)
+            _genai_model = client
+            _ai_provider = "gemini"
+            log.info("Gemini model loaded")
+            return _genai_model
+        except Exception as e:
+            log.error(f"Failed to load Gemini model: {e}")
+
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -304,7 +321,7 @@ def health():
         "status": "ok",
         "version": "2.0.0",
         "modules": {
-            "chat": bool(GEMINI_API_KEY),
+            "chat": bool(GROQ_API_KEY or GEMINI_API_KEY),
             "weather": bool(WEATHER_DATA),
             "mandi": bool(MANDI_DATA),
             "schemes": bool(SCHEME_DATA),
@@ -434,7 +451,7 @@ def chat(data: ChatRequest):
     if model is None:
         return {
             "status": "error",
-            "answer": "⚠️ AI सेवा अभी उपलब्ध नहीं है। कृपया GEMINI_API_KEY सेट करें।",
+            "answer": "⚠️ AI सेवा अभी उपलब्ध नहीं है। कृपया GROQ_API_KEY सेट करें।",
         }
 
     try:
@@ -456,14 +473,25 @@ def chat(data: ChatRequest):
         if len(history) > 12:
             history = history[:2] + history[-10:]
         
-        response = model.models.generate_content(
-            model="gemini-2.0-flash",
-            contents=[{"role": m["role"], "parts": [{"text": m["parts"][0]}]} for m in history],
-            config={"max_output_tokens": 250, "temperature": 0.2},
-        )
-        
-        # Save model reply to history
-        reply_text = response.text
+        if _ai_provider == "groq":
+            # Groq API
+            messages = [{"role": m["role"] if m["role"] != "model" else "assistant",
+                         "content": m["parts"][0]} for m in history]
+            response = model.chat.completions.create(
+                model="llama3-8b-8192",
+                messages=messages,
+                max_tokens=250,
+                temperature=0.2,
+            )
+            reply_text = response.choices[0].message.content
+        else:
+            # Gemini API
+            response = model.models.generate_content(
+                model="gemini-2.0-flash",
+                contents=[{"role": m["role"], "parts": [{"text": m["parts"][0]}]} for m in history],
+                config={"max_output_tokens": 250, "temperature": 0.2},
+            )
+            reply_text = response.text
         history.append({"role": "model", "parts": [reply_text]})
         _chat_sessions[data.session_id] = history
 
