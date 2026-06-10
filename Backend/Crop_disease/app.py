@@ -112,7 +112,6 @@ PESTICIDE_DB = {
     },
 }
 
-# Model load
 print("Loading model...")
 session = ort.InferenceSession("model/crop_disease.onnx")
 print("✅ Model loaded!")
@@ -130,6 +129,8 @@ def run_predict(image):
     probs = outputs[0][0]
     idx = int(np.argmax(probs))
     confidence = float(np.max(probs)) * 100
+    if confidence < 60:
+        return None, confidence, None
     label = CLASSES[idx]
     info = PESTICIDE_DB[label]
     return label, confidence, info
@@ -149,6 +150,12 @@ def predict():
             return jsonify({'error': 'Image nahi mili'}), 400
         image = Image.open(request.files['image'].stream).convert('RGB')
         label, confidence, info = run_predict(image)
+        if label is None:
+            return jsonify({
+                'success': False,
+                'error': 'Yeh fasal ki patti nahi lagti! Kripya fasal ki sahi photo lo.',
+                'confidence': round(confidence, 2)
+            }), 400
         return jsonify({
             'success': True, 'label': label,
             'hindi': info['hindi'], 'confidence': round(confidence, 2),
@@ -169,6 +176,12 @@ def predict_base64():
         img_data = base64.b64decode(data['image'])
         image = Image.open(io.BytesIO(img_data)).convert('RGB')
         label, confidence, info = run_predict(image)
+        if label is None:
+            return jsonify({
+                'success': False,
+                'error': 'Yeh fasal ki patti nahi lagti! Kripya fasal ki sahi photo lo.',
+                'confidence': round(confidence, 2)
+            }), 400
         return jsonify({
             'success': True, 'label': label,
             'hindi': info['hindi'], 'confidence': round(confidence, 2),
