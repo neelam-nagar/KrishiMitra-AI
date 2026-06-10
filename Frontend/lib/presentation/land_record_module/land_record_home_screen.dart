@@ -10,9 +10,7 @@ class LandRecordHomeScreen extends StatelessWidget {
 
   Future<void> _openBhulekhPortal() async {
     const url = 'https://apnakhata.rajasthan.gov.in';
-    if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(Uri.parse(url), mode: LaunchMode.inAppWebView);
-    }
+    await launchUrl(Uri.parse(url), mode: LaunchMode.inAppWebView);
   }
 
   @override
