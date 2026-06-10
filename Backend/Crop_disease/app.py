@@ -142,7 +142,7 @@ def home():
 def health():
     return jsonify({'status': 'ok', 'model': 'loaded'})
 
-@app.route('/predict', methods=['POST'])
+@app.route('/api/disease/predict', methods=['POST'])
 def predict():
     try:
         if 'image' not in request.files:
