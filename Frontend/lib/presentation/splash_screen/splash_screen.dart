@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/app_export.dart';
 import '../../core/language_provider.dart';
@@ -77,8 +78,10 @@ class _SplashScreenState extends State<SplashScreen>
   void _navigateToNextScreen() {
     final isAuthenticated = FirebaseAuth.instance.currentUser != null;
 
+    final prefs = await SharedPreferences.getInstance();
+    final setupDone = prefs.getBool('profile_setup_done') ?? false;
     final targetRoute = isAuthenticated
-        ? AppRoutes.mainDashboard
+        ? (setupDone ? AppRoutes.mainDashboard : AppRoutes.profileSetup)
         : AppRoutes.mobileLogin;
 
     Navigator.pushReplacementNamed(context, targetRoute);

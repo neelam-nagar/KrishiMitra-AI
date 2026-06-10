@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../presentation/profile_screen/profile_screen.dart';
 import '../presentation/profile_screen/edit_profile_screen.dart';
+import '../presentation/profile_setup_screen/profile_setup_screen.dart';
 // Compensation Module
 import '../presentation/compensation_module/compensation_home_screen.dart';
 import '../presentation/compensation_module/compensation_calculator_screen.dart';
@@ -72,6 +73,7 @@ class AppRoutes {
   static const String schemeDetail = '/scheme-detail-screen';
   static const String communityChat = '/community-chat';
   static const String profile = '/profile-screen';
+  static const String profileSetup = '/profile-setup';
 
   static Map<String, WidgetBuilder> routes = {
     initial: (context) => const SplashScreen(),
@@ -82,6 +84,7 @@ class AppRoutes {
     otpVerification: (context) => const OtpVerificationScreen(),
     locationPermission: (context) => const LocationPermissionScreen(),
     editProfile: (context) => const EditProfileScreen(),
+    profileSetup: (context) => const ProfileSetupScreen(),
 
     // Dashboard ✅ FIXED
     mainDashboard: (context) => const MainDashboard(),
