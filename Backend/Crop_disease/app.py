@@ -126,7 +126,9 @@ def preprocess(image):
 def run_predict(image):
     input_data = preprocess(image)
     outputs = session.run(None, {'input': input_data})
-    probs = outputs[0][0]
+    logits = outputs[0][0]
+    e_x = np.exp(logits - np.max(logits))
+    probs = e_x / e_x.sum()
     idx = int(np.argmax(probs))
     confidence = float(np.max(probs)) * 100
     if confidence < 85:
