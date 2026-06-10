@@ -17,6 +17,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   late final TextEditingController _nameController;
   late final TextEditingController _villageController;
   Uint8List? _profileImageBytes;
+  late final TextEditingController _phoneController;
   bool _isSaving = false;
 
   @override
@@ -25,14 +26,17 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     final user = FirebaseAuth.instance.currentUser;
     _nameController = TextEditingController(text: user?.displayName ?? '');
     _villageController = TextEditingController();
+    _phoneController = TextEditingController();
     _loadSavedVillage();
   }
 
   Future<void> _loadSavedVillage() async {
     final prefs = await SharedPreferences.getInstance();
     final village = prefs.getString('profile_village') ?? '';
+    final phone = prefs.getString('profile_phone') ?? (FirebaseAuth.instance.currentUser?.phoneNumber ?? '');
     if (mounted) {
       _villageController.text = village;
+      _phoneController.text = phone;
     }
   }
 
@@ -61,6 +65,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('profile_name', name);
       await prefs.setString('profile_village', _villageController.text.trim());
+      await prefs.setString('profile_phone', _phoneController.text.trim());
 
       if (!mounted) return;
       Navigator.pop(context, {
@@ -84,6 +89,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   void dispose() {
     _nameController.dispose();
     _villageController.dispose();
+    _phoneController.dispose();
     super.dispose();
   }
 
@@ -144,20 +150,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               keyboardType: TextInputType.name,
             ),
 
-            // Phone — read-only from Firebase Auth
-            TextFormField(
-              initialValue: user?.phoneNumber ?? '',
-              readOnly: true,
-              decoration: InputDecoration(
-                labelText: lang == 'en' ? 'Phone Number' : 'मोबाइल नंबर',
-                floatingLabelBehavior: FloatingLabelBehavior.auto,
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                suffixIcon: const Icon(Icons.lock_outline, size: 18),
-                helperText: lang == 'en'
-                    ? 'Phone cannot be changed'
-                    : 'मोबाइल नंबर नहीं बदला जा सकता',
-              ),
+            _buildField(
+              label: lang == 'en' ? 'Phone Number' : 'मोबाइल नंबर',
+              controller: _phoneController,
+              keyboardType: TextInputType.phone,
             ),
             const SizedBox(height: 16),
 
