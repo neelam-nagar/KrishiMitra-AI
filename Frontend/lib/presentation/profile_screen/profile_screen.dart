@@ -33,16 +33,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final prefs = await SharedPreferences.getInstance();
 
     setState(() {
-      // Name: prefer saved custom name, then Firebase displayName, then fallback
       _name = prefs.getString('profile_name') ??
           user?.displayName ??
           (user?.phoneNumber != null ? 'Farmer' : 'Farmer Name');
-
-      // Phone: from Firebase Auth (E.164 format)
-      _phone = user?.phoneNumber ?? prefs.getString('last_phone_number') ?? '';
-
-      // Photo URL: prefer saved, then Firebase photoURL
+      _phone = prefs.getString('profile_phone') ?? user?.phoneNumber ?? '';
       _photoUrl = prefs.getString('profile_photo') ?? user?.photoURL ?? '';
+      _village = prefs.getString('profile_village') ?? '';
     });
   }
 
