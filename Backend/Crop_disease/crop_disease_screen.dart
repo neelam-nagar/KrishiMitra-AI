@@ -1,17 +1,13 @@
 // KrishMitra AI — Flutter Camera Integration
 // crop_disease_screen.dart
-// Apni Flutter app mein add karo
-
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 
-// ── API URL — apna local IP yahan lagao ──────────────────────
-// Local testing ke liye: http://192.168.X.X:5000
-// Deployed ke liye: https://your-app.render.com
-const String API_URL = 'http://192.168.1.100:5000';
+const String API_URL = 'https://crop-disease-vo0y.onrender.com';
 
 class CropDiseaseScreen extends StatefulWidget {
   @override
@@ -24,7 +20,6 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
   Map<String, dynamic>? _result;
   final ImagePicker _picker = ImagePicker();
 
-  // ── Camera se photo lo ──────────────────────────────────────
   Future<void> _takePhoto() async {
     final XFile? photo = await _picker.pickImage(
       source: ImageSource.camera,
@@ -39,7 +34,6 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
     }
   }
 
-  // ── Gallery se photo lo ─────────────────────────────────────
   Future<void> _pickFromGallery() async {
     final XFile? photo = await _picker.pickImage(
       source: ImageSource.gallery,
@@ -54,22 +48,24 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
     }
   }
 
-  // ── API call karo ───────────────────────────────────────────
   Future<void> _predict() async {
     if (_image == null) return;
 
     setState(() => _loading = true);
 
     try {
-      // Image ko base64 mein convert karo
       List<int> imageBytes = await _image!.readAsBytes();
       String base64Image = base64Encode(imageBytes);
 
-      // API call karo
       final response = await http.post(
         Uri.parse('$API_URL/predict-base64'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'image': base64Image}),
+      ).timeout(
+        Duration(seconds: 60),
+        onTimeout: () {
+          throw Exception('Server slow hai, dobara try karo!');
+        },
       );
 
       if (response.statusCode == 200) {
@@ -88,7 +84,6 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
     }
   }
 
-  // ── UI ──────────────────────────────────────────────────────
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,10 +92,7 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
         backgroundColor: Color(0xFF2E7D32),
         title: Text(
           '🌾 KrishMitra AI',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         subtitle: Text(
           'Fasal Bimari Detector',
@@ -111,18 +103,13 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
-
-            // ── Image Section ──────────────────────────────
             Container(
               width: double.infinity,
               height: 250,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(
-                  color: Color(0xFF2E7D32),
-                  width: 2,
-                ),
+                border: Border.all(color: Color(0xFF2E7D32), width: 2),
               ),
               child: _image == null
                   ? Column(
@@ -132,10 +119,7 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
                         SizedBox(height: 8),
                         Text(
                           'Patti ki photo lo',
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 16,
-                          ),
+                          style: TextStyle(color: Colors.grey, fontSize: 16),
                         ),
                       ],
                     )
@@ -147,17 +131,13 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
 
             SizedBox(height: 16),
 
-            // ── Buttons ────────────────────────────────────
             Row(
               children: [
                 Expanded(
                   child: ElevatedButton.icon(
                     onPressed: _takePhoto,
                     icon: Icon(Icons.camera_alt, color: Colors.white),
-                    label: Text(
-                      'Camera',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    label: Text('Camera', style: TextStyle(color: Colors.white)),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF2E7D32),
                       padding: EdgeInsets.symmetric(vertical: 14),
@@ -172,10 +152,7 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
                   child: ElevatedButton.icon(
                     onPressed: _pickFromGallery,
                     icon: Icon(Icons.photo_library, color: Colors.white),
-                    label: Text(
-                      'Gallery',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    label: Text('Gallery', style: TextStyle(color: Colors.white)),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF388E3C),
                       padding: EdgeInsets.symmetric(vertical: 14),
@@ -190,7 +167,6 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
 
             SizedBox(height: 16),
 
-            // ── Loading ────────────────────────────────────
             if (_loading)
               Container(
                 padding: EdgeInsets.all(24),
@@ -203,11 +179,15 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
                     CircularProgressIndicator(color: Color(0xFF2E7D32)),
                     SizedBox(height: 12),
                     Text('Bimari dhundh raha hoon...'),
+                    SizedBox(height: 4),
+                    Text(
+                      '(Pehli baar 30-60 sec lag sakte hain)',
+                      style: TextStyle(color: Colors.grey, fontSize: 12),
+                    ),
                   ],
                 ),
               ),
 
-            // ── Result ─────────────────────────────────────
             if (_result != null) _buildResult(),
           ],
         ),
@@ -215,7 +195,6 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
     );
   }
 
-  // ── Result Widget ───────────────────────────────────────────
   Widget _buildResult() {
     bool isHealthy = _result!['is_healthy'] ?? false;
     List pesticides = _result!['pesticides'] ?? [];
@@ -223,8 +202,6 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
 
     return Column(
       children: [
-
-        // ── Disease Info ──────────────────────────────────
         Container(
           width: double.infinity,
           padding: EdgeInsets.all(16),
@@ -260,7 +237,6 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
 
         SizedBox(height: 12),
 
-        // ── Pesticides ────────────────────────────────────
         if (pesticides.isNotEmpty) ...[
           Container(
             width: double.infinity,
@@ -274,10 +250,7 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
               children: [
                 Text(
                   '💊 Dawai (Pesticide):',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 8),
                 ...pesticides.map((p) => Container(
@@ -290,10 +263,7 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        '• ${p['naam']}',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
+                      Text('• ${p['naam']}', style: TextStyle(fontWeight: FontWeight.bold)),
                       Text('  Matra: ${p['matra']}'),
                       Text('  Kimat: ${p['kimat']}'),
                     ],
@@ -309,7 +279,6 @@ class _CropDiseaseScreenState extends State<CropDiseaseScreen> {
           SizedBox(height: 12),
         ],
 
-        // ── Helpline ──────────────────────────────────────
         Container(
           width: double.infinity,
           padding: EdgeInsets.all(16),
