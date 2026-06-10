@@ -21,7 +21,7 @@ class PriceCardWidget extends StatelessWidget {
     final theme = Theme.of(context);
     final bool isHindi =
         context.watch<LanguageProvider>().currentLanguage == 'hi';
-    final change = cropData['change'] as double;
+    final change = (cropData['change'] ?? 0).toDouble();
     final isPositive = change >= 0;
 
     return Card(
