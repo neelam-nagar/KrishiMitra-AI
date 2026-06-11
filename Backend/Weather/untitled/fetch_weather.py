@@ -6,7 +6,6 @@ from datetime import datetime
 # -------------------------
 # WEATHER API
 # -------------------------
-
 def get_current_weather(lat, lon):
     url = (
         f"https://api.open-meteo.com/v1/forecast?"
