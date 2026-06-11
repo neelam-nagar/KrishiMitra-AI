@@ -2,7 +2,6 @@ import json
 import requests
 import sys
 from datetime import datetime
-
 # -------------------------
 # WEATHER API
 # -------------------------
