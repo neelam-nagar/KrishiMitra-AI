@@ -31,7 +31,7 @@ class _SchemeDetailScreenState extends State<SchemeDetailScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final schemeKey = ModalRoute.of(context)!.settings.arguments as String;
+    final schemeKey = ModalRoute.of(context)?.settings.arguments as String? ?? '';
     _schemeData = schemesData[schemeKey] ?? {};
   }
 
@@ -65,7 +65,7 @@ class _SchemeDetailScreenState extends State<SchemeDetailScreen> {
 
     final bool hasOfficialLink =
         _schemeData['officialWebsite'] is String &&
-        (_schemeData['officialWebsite'] as String).isNotEmpty;
+        (_schemeData['officialWebsite']?.toString() ?? '').isNotEmpty;
 
     return MainShellScreen(
       currentItem: CustomBottomBarItem.dashboard,
@@ -173,7 +173,7 @@ class _SchemeDetailScreenState extends State<SchemeDetailScreen> {
               if (hasOfficialLink)
                 ElevatedButton.icon(
                   onPressed: () =>
-                      _openLink(_schemeData['officialWebsite'] as String),
+                      _openLink(_schemeData['officialWebsite']?.toString() ?? ''),
                   icon: const Icon(Icons.open_in_new),
                   label: Text(
                     lang == 'en' ? 'Apply Now' : 'अभी आवेदन करें',

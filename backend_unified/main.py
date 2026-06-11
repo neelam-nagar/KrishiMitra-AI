@@ -33,7 +33,7 @@ from contextlib import asynccontextmanager
 from typing import Optional, Any
 
 import requests
-from fastapi import FastAPI, HTTPException, UploadFile, File, Query
+from fastapi import FastAPI, HTTPException, UploadFile, File, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, field_validator
@@ -52,6 +52,29 @@ log = logging.getLogger("krishimitra")
 # Environment
 # ---------------------------------------------------------------------------
 load_dotenv()
+
+# ---------------------------------------------------------------------------
+# Simple in-memory rate limiter (no Redis needed on free tier)
+# ---------------------------------------------------------------------------
+from collections import defaultdict
+import time as _time
+
+_rate_store: dict = defaultdict(list)
+_RATE_LIMIT_WINDOW = 60  # seconds
+_RATE_LIMIT_MAX = 30     # requests per window per IP
+
+
+def _check_rate_limit(client_ip: str, limit: int = _RATE_LIMIT_MAX) -> bool:
+    """Returns True if request is allowed, False if rate limited."""
+    now = _time.time()
+    window_start = now - _RATE_LIMIT_WINDOW
+    _rate_store[client_ip] = [t for t in _rate_store[client_ip] if t > window_start]
+    if len(_rate_store[client_ip]) >= limit:
+        return False
+    _rate_store[client_ip].append(now)
+    return True
+
+
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -357,7 +380,19 @@ CHAT_HISTORY_INIT = [
 ]
 
 # Per-session chat objects (in-memory, keyed by session_id)
+# Max 1000 sessions to prevent memory leak on free tier
 _chat_sessions: dict = {}
+_MAX_SESSIONS = 1000
+
+def _cleanup_sessions():
+    """Remove oldest sessions when limit exceeded."""
+    global _chat_sessions
+    if len(_chat_sessions) > _MAX_SESSIONS:
+        # Keep newest 500
+        keys = list(_chat_sessions.keys())
+        for k in keys[:len(keys)//2]:
+            del _chat_sessions[k]
+        log.info(f"Session cleanup: {len(_chat_sessions)} sessions remaining")
 
 MODULE_INTENTS = {
     "weather": ["weather", "barish", "mausam", "बारिश", "मौसम", "बरसात", "tufan", "तूफान"],
@@ -442,7 +477,10 @@ class ChatRequest(BaseModel):
 
 
 @app.post("/api/chat", tags=["Chatbot"])
-def chat(data: ChatRequest):
+def chat(data: ChatRequest, request: Request):
+    client_ip = request.client.host if request.client else "unknown"
+    if not _check_rate_limit(client_ip, limit=20):  # 20 chat req/min per IP
+        raise HTTPException(status_code=429, detail="Too many requests. Please wait a moment.")
     intent = detect_intent(data.question)
     if intent:
         return {"status": "success", "answer": MODULE_RESPONSES[intent], "intent": intent}
@@ -493,6 +531,7 @@ def chat(data: ChatRequest):
             )
             reply_text = response.text
         history.append({"role": "model", "parts": [reply_text]})
+        _cleanup_sessions()
         _chat_sessions[data.session_id] = history
 
         lines = _clean_output(reply_text)

@@ -81,8 +81,8 @@ class ApplicationProcessWidget extends StatelessWidget {
                     children: [
                       Text(
                         lang == 'en'
-                          ? step["title"] as String
-                          : (step["titleHindi"] ?? step["title"]) as String,
+                          ? step["title"]?.toString() ?? ""
+                          : (step["titleHindi"] ?? step["title"])?.toString() ?? "",
                         style: theme.textTheme.bodyMedium?.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
@@ -91,8 +91,8 @@ class ApplicationProcessWidget extends StatelessWidget {
                         SizedBox(height: 1.h),
                         Text(
                           lang == 'en'
-                            ? step["description"] as String
-                            : (step["descriptionHindi"] ?? step["description"]) as String,
+                            ? step["description"]?.toString() ?? ""
+                            : (step["descriptionHindi"] ?? step["description"])?.toString() ?? "",
                           style: theme.textTheme.bodySmall?.copyWith(
                             color: theme.colorScheme.onSurfaceVariant,
                           ),

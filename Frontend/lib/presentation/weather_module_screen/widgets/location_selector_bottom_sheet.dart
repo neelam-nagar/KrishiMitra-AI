@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../../../core/language_provider.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../../../core/config/app_config.dart';
 import '../../../../core/location_provider.dart';
 
 class LocationSelectorBottomSheet extends StatefulWidget {
@@ -35,7 +36,7 @@ class _LocationSelectorBottomSheetState
 
     setState(() => isLoading = true);
     try {
-      final res = await http.get(Uri.parse('https://krishimitra-hrrf.onrender.com/api/weather/districts'));
+      final res = await http.get(Uri.parse('${AppConfig.weatherApiBase}/api/weather/districts'));
       if (res.statusCode == 200) {
         districts = List<String>.from(json.decode(res.body));
       } else {
@@ -55,7 +56,7 @@ class _LocationSelectorBottomSheetState
     setState(() => isLoading = true);
     final encodedDistrict = Uri.encodeComponent(district);
     final res = await http.get(
-      Uri.parse('https://krishimitra-hrrf.onrender.com/api/weather/tehsils?district=$encodedDistrict'),
+      Uri.parse('${AppConfig.weatherApiBase}/api/weather/tehsils?district=$encodedDistrict'),
     );
     try {
       if (res.statusCode == 200) {
@@ -78,7 +79,7 @@ class _LocationSelectorBottomSheetState
     final encodedDistrict = Uri.encodeComponent(district);
     final encodedTehsil = Uri.encodeComponent(tehsil);
     final res = await http.get(
-      Uri.parse('https://krishimitra-hrrf.onrender.com/api/weather/villages?district=$encodedDistrict&tehsil=$encodedTehsil'),
+      Uri.parse('${AppConfig.weatherApiBase}/api/weather/villages?district=$encodedDistrict&tehsil=$encodedTehsil'),
     );
     try {
       if (res.statusCode == 200) {

@@ -80,11 +80,25 @@ class _AiChatbotScreenState extends State<AiChatbotScreen> {
 
   Future<void> _getAIResponse(String message) async {
     try {
+      // Wake up server first (Render free tier cold start)
+      try {
+        await http.get(Uri.parse('${AppConfig.chatApiBase}/api/health'))
+            .timeout(const Duration(seconds: 10));
+      } catch (_) {
+        // Server waking up - show message
+        if (mounted) {
+          setState(() {
+            _messages.last['text'] = '⏳ सर्वर जाग रहा है, 30 सेकंड प्रतीक्षा करें...';
+          });
+        }
+        await Future.delayed(const Duration(seconds: 15));
+      }
+
       final response = await http.post(
         Uri.parse('${AppConfig.chatApiBase}/api/chat'),
         headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({'question': message}),
-      ).timeout(const Duration(seconds: 60));
+        body: jsonEncode({'question': message, 'session_id': 'default'}),
+      ).timeout(const Duration(seconds: 90));
 
       final data = jsonDecode(response.body);
 

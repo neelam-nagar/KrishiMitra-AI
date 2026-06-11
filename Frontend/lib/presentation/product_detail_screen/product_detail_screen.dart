@@ -190,7 +190,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     flexibleSpace: FlexibleSpaceBar(
                       background: ProductImageGalleryWidget(
                         images: _productData['images']
-                            as List<Map<String, dynamic>>,
+                            as List<dynamic>? ?? [],).cast<Map<String, dynamic>>(),
                       ),
                     ),
                   ),
@@ -203,15 +203,15 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         ProductInfoWidget(product: _productData),
                         SellerInfoWidget(
                           seller:
-                              _productData['seller'] as Map<String, dynamic>,
+                              (_productData['seller'] as Map<String, dynamic>? ?? {}),
                         ),
                         ProductDescriptionWidget(
                           description: _productData['description']
-                              as Map<String, dynamic>,
+                              as Map<String, dynamic>? ?? {},
                         ),
                         PriceComparisonWidget(
                           priceData: _productData['priceComparison']
-                              as Map<String, dynamic>,
+                              as Map<String, dynamic>? ?? {},
                         ),
                         SimilarProductsWidget(products: _similarProducts),
                         SizedBox(height: 10.h),

@@ -12,15 +12,19 @@ class CropPriceApi {
     required String mandi,
     required String crop,
   }) async {
-    final uri = Uri.parse('$_base/api/mandi').replace(
-      queryParameters: {'district': district, 'mandi': mandi, 'crop': crop},
-    );
-    final response = await http.get(uri).timeout(const Duration(seconds: 15));
-    if (response.statusCode == 200) {
-      final decoded = json.decode(response.body);
-      return decoded is List ? {'prices': decoded} : decoded as Map<String, dynamic>;
+    try {
+      final uri = Uri.parse('$_base/api/mandi').replace(
+        queryParameters: {'district': district, 'mandi': mandi, 'crop': crop},
+      );
+      final response = await http.get(uri).timeout(const Duration(seconds: 15));
+      if (response.statusCode == 200) {
+        final decoded = json.decode(response.body);
+        return decoded is List ? {'prices': decoded} : decoded as Map<String, dynamic>;
+      }
+      throw Exception('Failed to load crop price (\${response.statusCode})');
+    } on Exception {
+      rethrow;
     }
-    throw Exception('Failed to load crop price (${response.statusCode})');
   }
 
   static Future<List<String>> getDistricts() async {

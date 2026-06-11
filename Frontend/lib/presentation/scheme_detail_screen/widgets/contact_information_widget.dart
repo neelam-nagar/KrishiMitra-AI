@@ -71,8 +71,8 @@ class ContactInformationWidget extends StatelessWidget {
                     Expanded(
                       child: Text(
                         lang == 'en'
-                            ? contact["name"] as String
-                            : (contact["nameHindi"] ?? contact["name"]) as String,
+                            ? contact["name"]?.toString() ?? ""
+                            : (contact["nameHindi"] ?? contact["name"])?.toString() ?? "",
                         style: theme.textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
@@ -84,8 +84,8 @@ class ContactInformationWidget extends StatelessWidget {
                   SizedBox(height: 1.h),
                   Text(
                     lang == 'en'
-                        ? contact["designation"] as String
-                        : (contact["designationHindi"] ?? contact["designation"]) as String,
+                        ? contact["designation"]?.toString() ?? ""
+                        : (contact["designationHindi"] ?? contact["designation"])?.toString() ?? "",
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: theme.colorScheme.onSurfaceVariant,
                     ),
@@ -94,7 +94,7 @@ class ContactInformationWidget extends StatelessWidget {
                 SizedBox(height: 2.h),
                 if (contact["phone"] != null)
                   InkWell(
-                    onTap: () => _makePhoneCall(contact["phone"] as String),
+                    onTap: () => _makePhoneCall(contact["phone"]?.toString() ?? ""),
                     borderRadius: BorderRadius.circular(8),
                     child: Container(
                       padding: EdgeInsets.symmetric(
@@ -117,7 +117,7 @@ class ContactInformationWidget extends StatelessWidget {
                           SizedBox(width: 2.w),
                           Expanded(
                             child: Text(
-                              contact["phone"] as String,
+                              contact["phone"]?.toString() ?? "",
                               style: theme.textTheme.bodyMedium?.copyWith(
                                 color: theme.colorScheme.primary,
                                 fontWeight: FontWeight.w500,
@@ -136,7 +136,7 @@ class ContactInformationWidget extends StatelessWidget {
                 if (contact["email"] != null) ...[
                   SizedBox(height: 1.h),
                   InkWell(
-                    onTap: () => _sendEmail(contact["email"] as String),
+                    onTap: () => _sendEmail(contact["email"]?.toString() ?? ""),
                     borderRadius: BorderRadius.circular(8),
                     child: Container(
                       padding: EdgeInsets.symmetric(
@@ -157,7 +157,7 @@ class ContactInformationWidget extends StatelessWidget {
                           SizedBox(width: 2.w),
                           Expanded(
                             child: Text(
-                              contact["email"] as String,
+                              contact["email"]?.toString() ?? "",
                               style: theme.textTheme.bodySmall?.copyWith(
                                 color: theme.colorScheme.onSurfaceVariant,
                               ),
@@ -180,8 +180,8 @@ class ContactInformationWidget extends StatelessWidget {
                       SizedBox(width: 1.w),
                       Text(
                         lang == 'en'
-                            ? contact["timings"] as String
-                            : (contact["timingsHindi"] ?? contact["timings"]) as String,
+                            ? contact["timings"]?.toString() ?? ""
+                            : (contact["timingsHindi"] ?? contact["timings"])?.toString() ?? "",
                         style: theme.textTheme.bodySmall?.copyWith(
                           color: theme.colorScheme.onSurfaceVariant,
                           fontStyle: FontStyle.italic,
