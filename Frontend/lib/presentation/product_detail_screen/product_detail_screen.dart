@@ -189,8 +189,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     ],
                     flexibleSpace: FlexibleSpaceBar(
                       background: ProductImageGalleryWidget(
-                        images: _productData['images']
-                            as List<dynamic>? ?? [],).cast<Map<String, dynamic>>(),
+                        images: (_productData['images'] as List<dynamic>? ?? [])
+                            .cast<Map<String, dynamic>>(),
                       ),
                     ),
                   ),

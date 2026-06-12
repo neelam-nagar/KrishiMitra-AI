@@ -598,22 +598,28 @@ class _WeatherModuleScreenState extends State<WeatherModuleScreen> {
       padding: const EdgeInsets.all(16),
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              children: [
-                CustomIconWidget(
-                    iconName: 'location_on',
-                    color: theme.colorScheme.primary,
-                    size: 20),
-                const SizedBox(width: 4),
-                Text(
-                  locationProvider.fullLocation,
-                  style: theme.textTheme.titleMedium
-                      ?.copyWith(fontWeight: FontWeight.w600),
-                ),
-              ],
+            Expanded(
+              child: Row(
+                children: [
+                  CustomIconWidget(
+                      iconName: 'location_on',
+                      color: theme.colorScheme.primary,
+                      size: 20),
+                  const SizedBox(width: 4),
+                  Expanded(
+                    child: Text(
+                      locationProvider.fullLocation,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: theme.textTheme.titleMedium
+                          ?.copyWith(fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ],
+              ),
             ),
+            const SizedBox(width: 8),
             Text(
               lang == 'en'
                   ? 'Updated ${DateFormat('HH:mm').format(_lastUpdated)}'
