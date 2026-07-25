@@ -104,8 +104,10 @@ flutter build apk --dart-define-from-file=env.json
 
 ### Gemini API Key (mandatory for chatbot)
 
-1. Get a free key at [Google AI Studio](https://aistudio.google.com/app/apikey)
-2. Add to `backend_unified/.env`:
+1. Get a free Gemini key
+   (https://aistudio.google.com/app/apikey)
+3. Get a free groq API key
+4. Add to `backend_unified/.env`:
    ```
    GEMINI_API_KEY=your_key_here
    ```
